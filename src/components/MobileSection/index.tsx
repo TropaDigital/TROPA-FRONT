@@ -27,7 +27,7 @@ const MobileSection: NextPage = () => {
                 <div className="mobile">
                     <img src="/images/mobile.png" />
                     <div className="back-image">
-                        <img src="/images/barça.jpg" alt="" />
+                        <img src="/images/barca.jpg" alt="" />
                     </div>
                 </div>
                 
