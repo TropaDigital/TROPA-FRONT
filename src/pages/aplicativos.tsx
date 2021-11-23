@@ -11,6 +11,9 @@ import { IconCube } from '../components/Svg';
 import WhyTropa from '../components/WhyTropa/WhyTropa';
 import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
+import { LanguagesContainer } from '../assets/styles/HomeStyles';
+import { ContainerCenter } from '../components/Layout/styles';
+import MobileSection from '../components/MobileSection';
 
 const Aplicativos: NextPage = () => {
     const router = useRouter();
@@ -96,7 +99,30 @@ const Aplicativos: NextPage = () => {
                         },
                     ]}
                 />
+                <LanguagesContainer>
+                    <ContainerCenter className="center">
+                        <Animate effect="zoomIn">
+                            <img src="/images/languages/node.png" />
+                        </Animate>
+                        <Animate effect="zoomIn">
+                            <img src="/images/languages/reactjs.png" />
+                        </Animate>
+                        <Animate effect="zoomIn">
+                            <img src="/images/languages/reactnative.png" />
+                        </Animate>
+                        <Animate effect="zoomIn">
+                            <img src="/images/languages/scss.png" />
+                        </Animate>
+                        <Animate effect="zoomIn">
+                            <img src="/images/languages/mysql.png" />
+                        </Animate>
+                        <Animate effect="zoomIn">
+                            <img src="/images/languages/sqlserver.png" />
+                        </Animate>
+                    </ContainerCenter>
+                </LanguagesContainer>
                 <WhyTropa />
+                <MobileSection />
                 <Contact />
                 <Footer />
             </AppContainer>
