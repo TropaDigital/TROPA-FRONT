@@ -7,16 +7,21 @@ import Header from '../components/Layout/Header';
 import { ButtonDefault } from '../components/Form/styles';
 import Animate from '../components/Animation/Animate';
 import AcordionItems from '../components/AccordionItems';
-import { IconCube } from '../components/Svg';
+import { IconCube, IconGlobal } from '../components/Svg';
 import WhyTropa from '../components/WhyTropa/WhyTropa';
 import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
-import { LanguagesContainer } from '../assets/styles/HomeStyles';
+import { LanguagesContainer, PortfolioContainer } from '../assets/styles/HomeStyles';
 import { ContainerCenter } from '../components/Layout/styles';
 import MobileSection from '../components/MobileSection';
+import Carousel from 'react-elastic-carousel';
+import { useState } from 'react';
 
 const Aplicativos: NextPage = () => {
+    
     const router = useRouter();
+    const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
+
     return (
         <Layout>
             <AppContainer>
@@ -123,6 +128,43 @@ const Aplicativos: NextPage = () => {
                 </LanguagesContainer>
                 <WhyTropa />
                 <MobileSection />
+
+                <PortfolioContainer id="portfolio">
+                    <ContainerCenter className="head-portfolio">
+                        <Animate effect="fadeInUp" startAnimation={200}>
+                            <div className="title">
+                                <h2>Portfólio</h2>
+                                <IconGlobal className="effect-stroke light" />
+                            </div>
+                        </Animate>
+                    </ContainerCenter>
+
+                    <Animate effect="fadeInUp" startAnimation={200}>
+                        <Carousel
+                            itemsToShow={itemsToShowPortfolio}
+                            isRTL={false}
+                            className="cards"
+                            itemPadding={[0]}
+                            outerSpacing={0}
+                            showArrows={false}
+                            showEmptySlots={false}
+                        >
+                            {[0, 1, 2, 3, 4, 5].map((row, key) => (
+                                <div
+                                    className="card"
+                                    key={key}
+                                    style={{
+                                        backgroundImage: `url(/images/bannerHome.jpg)`,
+                                    }}
+                                >
+                                    <h4>Meat APP</h4>
+                                    <i>Website</i>
+                                </div>
+                            ))}
+                        </Carousel>
+                    </Animate>
+                </PortfolioContainer>
+
                 <Contact />
                 <Footer />
             </AppContainer>
