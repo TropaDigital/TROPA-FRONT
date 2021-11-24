@@ -38,47 +38,59 @@ export const Mobilecontainer = styled.div`
 `
 
 export const SliderDiv = styled.div`
-    width: 60%;
+    width: 55%;
     height: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    .slider {
-        display: flex;
-        gap: 100px;        
-        svg {
-            cursor: pointer;
-            transition: 300ms ease-in-out;
-            &:hover {
-                path {
-                    stroke: grey;
-                }                
-            }
-        }
-    }
+    margin-bottom: 30px;        
 `
 export const MobileDiv = styled.div`
     width: 60%;
     height: 75%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding-bottom: 20px;    
+    align-items: center;    
+    padding-bottom: 30px;     
+    .arrow {
+        background: transparent;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: all .2s;
+        width: 25px;
+        gap: 50px;
+        &:hover {
+          transform: scale(1.2);
+        }
+        svg {
+          width: 25px;
+          height: 59px;
+        }
+    } 
+    .rec-pagination {
+        display: none;
+    }  
     .mobile {
-        height: 500px;
-        width: 255px;
+        height: 550px;
+        width: 325px;
         display: flex;
         position: relative;
         cursor: pointer;
+        &:hover {
+            .project-image  {
+                opacity: 1;                
+            }
+        }                  
         img {
-            height: 500px;        
+            width: 325px;
+            height: 550px;        
             z-index: 20;
         }
         .back-image { 
             height: 94%;
-            width: 220px;
+            width: 280px;
             position: absolute;
             border-radius: 30px;
             top: 200px;
@@ -89,16 +101,30 @@ export const MobileDiv = styled.div`
             right: 0;
             top: 15px;
             z-index: 0;            
-            background: ${colors.primary}; 
-            img {
+            background: ${colors.primary};            
+            height: 94%;
+            background-size: cover;
+            background-position: center; 
+            img {                
                 border-radius: 30px;
                 width: 100%;
                 height: 100%;
-            }           
+            }        
+        }        
+        .project-image {            
+            position: absolute; 
+            top: 15px;
+            left: 20px;
+            width: 283px;
+            height: 94%;
+            border-radius: 30px;
+            background: ${colors.primary};                        
+            transition: .5s ease;
+            opacity:0;                 
             p {
                 position: absolute;
                 top: 220px;
-                left: 15px;
+                left: 40px;
                 font-family: ${fonts.chaney};
                 font-size: 20px;
                 font-weight: normal;
@@ -114,11 +140,11 @@ export const MobileDiv = styled.div`
                 width: 110px;
                 position: absolute;
                 top: 150px;
-                left: 75px;
+                left: 100px;
                 path {
                     fill: ${colors.primaryLight};
                 }
-            }
+            }     
         }
     }
 `

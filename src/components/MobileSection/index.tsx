@@ -1,10 +1,58 @@
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
+import Carousel from 'react-elastic-carousel';
 import Animate from '../Animation/Animate';
 import { IconArrow, IconArrowLeft, IconArrowRight, IconAstronaut } from '../Svg';
 import { Mobilecontainer, MobileDiv, SliderDiv } from './styles';
 
-const MobileSection: NextPage = () => {
+interface IProps {
+    itemsToShow?: number;
+}
+
+const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => { 
+
+    const [data, setData] = useState([
+        {
+            image: '/images/Meat.png',            
+        },
+        {
+            image: '/images/Alpha.png',            
+        },
+        {
+            image: '/images/Eyou.png',            
+        },
+        {
+            image: '/images/Meat.png',            
+        },
+        {
+            image: '/images/Alpha.png',            
+        },
+        {
+            image: '/images/Eyou.png',            
+        },
+        {
+            image: '/images/Meat.png',            
+        },
+        {
+            image: '/images/Alpha.png',            
+        },
+        {
+            image: '/images/Eyou.png',            
+        },
+    ]);
+
+    const myArrow = ({ type, onClick, isEdge }: any) => {
+        return (
+            <button
+                onClick={onClick}
+                className={`arrow ${isEdge ? 'inactive' : 'active'}`}
+            >
+                <Animate effect={'rubberBand'}>
+                    {type === 'PREV' ? <IconArrowLeft /> : <IconArrowRight />}
+                </Animate>
+            </button>
+        );
+    };
 
     return (
         <Mobilecontainer>
@@ -15,39 +63,36 @@ const MobileSection: NextPage = () => {
                         <h2>Nós Criamos</h2>
                         <IconAstronaut />
                     </div>
-                </Animate>                
-                <div className="slider">
-                    <IconArrowLeft />
-                    <IconArrowRight />
-                </div>
+                </Animate>                                
             </SliderDiv>
 
             <MobileDiv>
-                
-                <div className="mobile">
-                    <img src="/images/mobile.png" />
-                    <div className="back-image">
-                        <img src="/images/barca.jpg" alt="" />
-                    </div>
-                </div>
-                
-                <div className="mobile">
-                        <img src="/images/mobile.png" />
-                        <div className="back-image">
-                            <p>Ver este</p> <br /><p className='bottom'> projeto</p>
-                            <IconArrow />
-                        </div>                    
-                </div>
 
-                <div className="mobile">
-                    <img src="/images/mobile.png" />
-                    <div className="back-image">
-                        <img src="/images/hotdog.png" alt="" />
-                    </div>
-                </div>
+                <Carousel
+                    itemsToShow={itemsToShow}
+                    isRTL={false}
+                    className="cards"
+                    renderArrow={myArrow}
+                    itemPadding={[0, 15]}
+                >   
+                    {data.map((data, key) => (
+                        <div className="mobile">
+                            <img src="/images/mobile.png" />
+                            <div className="card" key={key}>
+                                <div className="back-image">
+                                    <img src={data.image} alt="" />
+                                </div>                                
+                                <div className="project-image">
+                                    <p>Ver este</p> <br /><p className='bottom'> projeto</p>
+                                    <IconArrow />
+                                </div>                                         
+                            </div>                        
+                        </div>                                                
+                    ))}                    
+                </Carousel>
                 
             </MobileDiv>
-
+              
         </Mobilecontainer>
     )
 }
