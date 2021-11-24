@@ -5,7 +5,7 @@ export const AccordionContainer = styled.div`
     display: flex;
     align-items: center;
     min-height: 100vh;
-    background-color: ${colors.primary};
+    background-color: ${colors.primary};    
     .center {
         display: flex;
         justify-content: space-between;
@@ -93,3 +93,4 @@ export const AccordionContainer = styled.div`
         }
     }
 `
+
