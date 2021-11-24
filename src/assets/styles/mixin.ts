@@ -1,7 +1,8 @@
 const colors = {
         primary:'#cc6138',
         primaryLight: '#CEBAA8',
-        primaryDark: '#24201A'
+        primaryDark: '#24201A',
+        primaryGrey: '#E3E3E3'
 }
 
 const fonts = {
