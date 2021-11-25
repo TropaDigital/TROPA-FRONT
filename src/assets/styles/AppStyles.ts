@@ -37,7 +37,7 @@ export const BannerApp = styled.div`
   height: 100%;
   display: flex;
   flex: 1;
-  max-height: 100%;
+  max-height: 100%;  
   .text {
     flex: 1;
     flex-direction: column;
