@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Carousel from 'react-elastic-carousel';
 import Animate from '../Animation/Animate';
 import { SliderDiv } from '../MobileSection/styles';
@@ -8,20 +8,20 @@ import { WebContainer, WebDiv } from './style';
 
 
 interface IProps {
-    itemsToShow?: number;
+    itemsToShow?: number;    
 }
 
-const WebSection: NextPage<IProps> = ({ itemsToShow = 1 }) => {
+const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
 
     const [data, setData] = useState([
         {
             image: '/images/MeatW.png',            
         },
         {
-            image: '/images/AlphaW.png',            
+            image: '/images/EyouW.png',            
         },
         {
-            image: '/images/EyouW.png',            
+            image: '/images/AlphaW.png',            
         },
         {
             image: '/images/MeatW.png',            
@@ -43,18 +43,7 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 1 }) => {
         },
     ]);
 
-    const myArrow = ({ type, onClick, isEdge }: any) => {
-        return (
-            <button
-                onClick={onClick}
-                className={`arrow ${isEdge ? 'inactive' : 'active'}`}
-            >
-                <Animate effect={'rubberBand'}>
-                    {type === 'PREV' ? <IconArrowLeft /> : <IconArrowRight />}
-                </Animate>
-            </button>
-        );
-    };
+    const slider = useRef(null)    
 
     return(
         <WebContainer>
@@ -65,16 +54,22 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 1 }) => {
                         <h2>Nós Criamos</h2>
                         <IconAstronaut />
                     </div>
-                </Animate>                                
+                </Animate>
+                <div className="buttons">
+                    <button onClick={() => slider.current.slidePrev()}><IconArrowLeft /></button>
+                    <button onClick={() => slider.current.slideNext()}><IconArrowRight /></button>
+                </div>                                
             </SliderDiv>
 
             <WebDiv>
                 <Carousel
                     itemsToShow={itemsToShow}
                     isRTL={false}
-                    className="cards"
-                    renderArrow={myArrow}
-                    itemPadding={[0, 15]}
+                    className="cards"                    
+                    pagination={false}
+                    itemPadding={[0, 5]} 
+                    showArrows={false}                   
+                    ref={slider}                    
                 >   
                     {data.map((data, key) => (
                         <div className="web">
@@ -83,14 +78,13 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 1 }) => {
                                 <div className="back-image">
                                     <img src={data.image} />
                                 </div>                                
-                                <div className="project-image">
+                                <div className="overlay">
                                     <p>Ver este</p> <br /><p className='bottom'> projeto</p>
                                     <IconArrow />
                                 </div>                                         
                             </div>                        
                         </div>                                                
-                    ))}
-                    
+                    ))}                    
                 </Carousel>
             </WebDiv>
 

@@ -38,82 +38,61 @@ export const WebContainer = styled.div`
 `
 
 export const WebDiv = styled.div`
-    width: 65%;
-    height: 75%;
+    width: 95%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;    
-    padding-bottom: 30px;     
+    padding-bottom: 30px;        
     .arrow {
-        background: transparent;
-        background: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        transition: all .2s;
-        width: 25px;
-        &:hover {
-          transform: scale(1.2);
-        }
-        svg {
-          width: 25px;
-          height: 59px;
-        }
-    } 
-    .rec-pagination {
-        display: none;
+        visibility: hidden;
     }
     .web {
-        height: 350px;
-        width: 450px;
+        height: 100%;
+        width: 95%;
         display: flex;
         position: relative;
         cursor: pointer;
         &:hover {
-            .project-image  {
+            .overlay  {
                 opacity: 1;                
             }
         }                  
         img {
-            width: 100%;
+            width: 580px;
             height: 100%;        
             z-index: 20;
         }
         .back-image { 
-            height: 85%;
-            width: 325px;
-            position: absolute;
-            border-radius: 15px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            left: 0;
+            height: 80%;
+            width: 422px;
+            position: absolute; 
+            left: 80px;
             right: 0;
-            top: 20px;
-            z-index: 0;            
-            background: ${colors.primary};                        
+            top: 25px;
+            z-index: 0;                        
             background-size: cover;
             background-position: center; 
-            img {                
-                border-radius: 20px;
+            img {
                 width: 100%;
                 height: 100%;
+                border-radius: 8px;                
             }        
         }        
-        .project-image {            
+        .overlay {            
             position: absolute; 
-            top: 15px;
-            left: 17px;
-            width: 222px;
-            height: 94%;
-            border-radius: 30px;
+            top: 25px;
+            left: 80px;
+            width: 422px;
+            height: 81%;
+            border-radius: 8px;
             background: ${colors.primary};                        
             transition: .5s ease;
             opacity:0;                 
             p {
                 position: absolute;
-                top: 220px;
-                left: 15px;
+                top: 90px;
+                left: 30%;
                 font-family: ${fonts.chaney};
                 font-size: 20px;
                 font-weight: normal;
@@ -123,17 +102,48 @@ export const WebDiv = styled.div`
                 z-index: 2;
             }  
             .bottom {
-                top: 250px;
+                top: 120px;
             }              
             svg {
-                width: 110px;
+                width: 85px;
                 position: absolute;
-                top: 150px;
-                left: 75px;
+                top: 20px;
+                left: 50%;
                 path {
                     fill: ${colors.primaryLight};
                 }
             }     
         }
-    }   
+    }
+    @media (max-width: 1400px) {
+        .web {    
+            height: 100%;
+            width: 100%;          
+            img {
+                width: 400px;
+            }
+            .back-image { 
+                height: 81%;
+                width: 290px;
+                left: 55px;
+                right: 0;
+                top: 17px;
+                z-index: 0;                        
+                background-size: cover;
+                background-position: center;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 8px;                
+                }                          
+            }        
+            .overlay {            
+                position: absolute; 
+                top: 17px;
+                left: 55px;
+                width: 290px;
+                height: 81%;                                              
+            }
+        }
+    }     
 `
