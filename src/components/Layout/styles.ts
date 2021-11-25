@@ -10,6 +10,31 @@ export const ContainerCenter = styled.div`
     width: 1140px;
     margin: 0px auto;
     max-width: 100%;
+    .slider {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .buttons {
+            width: 180px;
+            display: flex;
+            justify-content: space-between;
+            button {
+                background: transparent;                
+                border: none;
+                outline: none;
+                cursor: pointer;
+                transition: all .2s;
+                width: 25px;            
+                &:hover {
+                transform: scale(1.2);
+                }
+                svg {
+                width: 25px;
+                height: 59px;
+                }
+            }
+        }
+    }
     @media(max-width:1140px) {
         padding: 0px 30px;
     }
