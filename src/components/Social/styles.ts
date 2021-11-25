@@ -56,10 +56,7 @@ export const SocialContainerCarousel = styled.div`
           width: 25px;
           height: 59px;
         }
-    }
-    .rec-pagination {
-        display: none;
-    }
+    }    
     .card {
         background: ${colors.primaryDark};
         display: flex;

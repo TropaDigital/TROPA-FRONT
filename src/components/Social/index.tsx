@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Carousel from 'react-elastic-carousel';
 import Animate from '../Animation/Animate';
 import { ContainerCenter } from '../Layout/styles';
@@ -27,39 +27,35 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
             image: 'https://instagram.fcgh17-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/91136567_686247741914436_862729972517005629_n.jpg?_nc_ht=instagram.fcgh17-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=sJZjHYfkfsMAX9f4wrc&edm=AP_V10EBAAAA&ccb=7-4&oh=d4d6f8355915e29eb75a146cf0735a45&oe=619544D1&_nc_sid=4f375e',
             text: 'Diante dessa quarentena, a internet está sendo nossa grande aliada, né?! Estamos conseguindo nos comunicar com as pessoas que estamos com saudades, as aulas/cursos estão podendo ser assistidos, as vendas sendo realizadas, as informações podendo ser conferidas, enfim...mesmo longe um dos outros, ela está nos unindo! Como está sendo sua quarentena, conte para nós!? Ah....e lembrando que ficamos à disposição para te ajudar nesse mundo digital e não parar o seu ramo profissional, hein! E tomem cuidado com as Fakenews! 😉 https://tropa.digital/ contato@tropa.digital 11-96368-6361 #tropadigital #sites #desenvolvimentodesites #plataformas #ecommerce #digital #apps #coronavirus #quarentena #covid19 #conscientizacao',
         },
-    ]);
+    ]);    
 
-    const myArrow = ({ type, onClick, isEdge }: any) => {
-        return (
-            <button
-                onClick={onClick}
-                className={`arrow ${isEdge ? 'inactive' : 'active'}`}
-            >
-                <Animate effect={'rubberBand'}>
-                    {type === 'PREV' ? <IconArrowLeft /> : <IconArrowRight />}
-                </Animate>
-            </button>
-        );
-    };
+    const slider = useRef(null)
 
     return (
         <SocialContainer id="social">
             <ContainerCenter>
-                <Animate effect="fadeInLeft" startAnimation={100}>
-                    <div className="title">
-                        <h2>Tropa nas redes</h2>
-                        <IconFlag className="effect-stroke dark" />
-                    </div>
-                </Animate>
-
+                <div className="slider">
+                    <Animate effect="fadeInLeft" startAnimation={100}>
+                        <div className="title">
+                            <h2>Tropa nas redes</h2>
+                            <IconFlag className="effect-stroke dark" />
+                        </div>
+                    </Animate>
+                    <div className="buttons">
+                        <button onClick={() => slider.current.slidePrev()}><IconArrowLeft /></button>
+                        <button onClick={() => slider.current.slideNext()}><IconArrowRight /></button>
+                    </div>  
+                </div>
                 <SocialContainerCarousel>
                     <Animate startAnimation={200} effect="bounceInUp">
                         <Carousel
                             itemsToShow={itemsToShow}
                             isRTL={false}
                             className="cards"
-                            renderArrow={myArrow}
+                            showArrows={false}
+                            pagination={false}
                             itemPadding={[0, 15]}
+                            ref={slider}
                         >
                             {data.map((row, key) => (
                                 <div className="card" key={key}>
