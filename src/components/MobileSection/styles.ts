@@ -38,12 +38,35 @@ export const Mobilecontainer = styled.div`
 `
 
 export const SliderDiv = styled.div`
-    width: 55%;
+    width: 57%;
     height: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;        
+    margin-bottom: 30px;
+    .buttons {
+        width: 180px;
+        display: flex;
+        justify-content: space-between;
+        button {
+            background: transparent;            
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: all .2s;
+            width: 25px;            
+            &:hover {
+            transform: scale(1.2);
+            }
+            svg {
+            width: 25px;
+            height: 59px;
+            }
+        }
+    }
+    @media (max-width: 1400px) {
+        width: 70%;
+    }        
 `
 export const MobileDiv = styled.div`
     width: 60%;
@@ -74,17 +97,17 @@ export const MobileDiv = styled.div`
     }  
     .mobile {
         height: 550px;
-        width: 325px;
+        width: 100%;
         display: flex;
         position: relative;
         cursor: pointer;
         &:hover {
-            .project-image  {
+            .overlay  {
                 opacity: 1;                
             }
         }                  
         img {
-            width: 325px;
+            width: 100%;
             height: 550px;        
             z-index: 20;
         }
@@ -92,8 +115,7 @@ export const MobileDiv = styled.div`
             height: 94%;
             width: 280px;
             position: absolute;
-            border-radius: 30px;
-            top: 200px;
+            border-radius: 30px;            
             margin-left: auto;
             margin-right: auto;
             text-align: center;
@@ -101,8 +123,7 @@ export const MobileDiv = styled.div`
             right: 0;
             top: 15px;
             z-index: 0;            
-            background: ${colors.primary};            
-            height: 94%;
+            background: ${colors.primary};                        
             background-size: cover;
             background-position: center; 
             img {                
@@ -111,11 +132,11 @@ export const MobileDiv = styled.div`
                 height: 100%;
             }        
         }        
-        .project-image {            
+        .overlay {            
             position: absolute; 
             top: 15px;
-            left: 20px;
-            width: 283px;
+            left: 30px;
+            width: 282px;
             height: 94%;
             border-radius: 30px;
             background: ${colors.primary};                        
@@ -145,6 +166,52 @@ export const MobileDiv = styled.div`
                     fill: ${colors.primaryLight};
                 }
             }     
+        }
+    }
+    @media (max-width: 1400px) {
+        width: 80%;        
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        padding-bottom: 30px;             
+        .rec-pagination {
+            display: none;
+        }  
+        .mobile {
+            .back-image { 
+                height: 60%;
+                width: 270px;
+                position: absolute;
+                border-radius: 30px;
+                top: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                left: 0;
+                right: 0;
+                top: 15px;
+                z-index: 0;            
+                background: ${colors.primary};            
+                height: 94%;
+                background-size: cover;
+                background-position: center; 
+                img {                
+                    border-radius: 30px;
+                    width: 100%;
+                    height: 100%;
+                }        
+            }        
+            .overlay {            
+                position: absolute; 
+                top: 15px;
+                left: 26px;
+                width: 272px;
+                height: 94%;
+                border-radius: 30px;
+                background: ${colors.primary};                        
+                transition: .5s ease;
+                opacity:0;           
+            }
         }
     }
 `

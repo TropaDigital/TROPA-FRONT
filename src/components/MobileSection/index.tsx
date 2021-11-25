@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Carousel from 'react-elastic-carousel';
 import Animate from '../Animation/Animate';
 import { IconArrow, IconArrowLeft, IconArrowRight, IconAstronaut } from '../Svg';
@@ -41,18 +41,7 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
         },
     ]);
 
-    const myArrow = ({ type, onClick, isEdge }: any) => {
-        return (
-            <button
-                onClick={onClick}
-                className={`arrow ${isEdge ? 'inactive' : 'active'}`}
-            >
-                <Animate effect={'rubberBand'}>
-                    {type === 'PREV' ? <IconArrowLeft /> : <IconArrowRight />}
-                </Animate>
-            </button>
-        );
-    };
+    const slider = useRef(null)     
 
     return (
         <Mobilecontainer>
@@ -64,6 +53,10 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
                         <IconAstronaut />
                     </div>
                 </Animate>                                
+                    <div className="buttons">
+                        <button onClick={() => slider.current.slidePrev()}><IconArrowLeft /></button>
+                        <button onClick={() => slider.current.slideNext()}><IconArrowRight /></button>
+                    </div>  
             </SliderDiv>
 
             <MobileDiv>
@@ -72,8 +65,9 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
                     itemsToShow={itemsToShow}
                     isRTL={false}
                     className="cards"
-                    renderArrow={myArrow}
+                    showArrows={false}
                     itemPadding={[0, 15]}
+                    ref={slider}
                 >   
                     {data.map((data, key) => (
                         <div className="mobile">
@@ -82,7 +76,7 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
                                 <div className="back-image">
                                     <img src={data.image} alt="" />
                                 </div>                                
-                                <div className="project-image">
+                                <div className="overlay">
                                     <p>Ver este</p> <br /><p className='bottom'> projeto</p>
                                     <IconArrow />
                                 </div>                                         
