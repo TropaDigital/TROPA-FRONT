@@ -7,7 +7,7 @@ import Header from '../components/Layout/Header';
 import { ButtonDefault } from '../components/Form/styles';
 import Animate from '../components/Animation/Animate';
 import AcordionItems from '../components/AccordionItems';
-import { IconCube, IconGlobal } from '../components/Svg';
+import { IconArrowLeft, IconArrowRight, IconCube, IconGlobal } from '../components/Svg';
 import WhyTropa from '../components/WhyTropa/WhyTropa';
 import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
@@ -15,12 +15,14 @@ import { LanguagesContainer, PortfolioContainer } from '../assets/styles/HomeSty
 import { ContainerCenter } from '../components/Layout/styles';
 import MobileSection from '../components/MobileSection';
 import Carousel from 'react-elastic-carousel';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 const Aplicativos: NextPage = () => {
     
     const router = useRouter();
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
+
+    const slider = useRef(null)
 
     return (
         <Layout>
@@ -80,7 +82,7 @@ const Aplicativos: NextPage = () => {
                 <AcordionItems
                     title="Como fun-ciona?"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque suscipit nulla non vehicula."
-                    icon={<IconCube />}
+                    icon={<IconCube  className="effect-stroke light"/>}
                     items={[
                         {
                             title: 'Velocidade',
@@ -137,6 +139,10 @@ const Aplicativos: NextPage = () => {
                                 <IconGlobal className="effect-stroke light" />
                             </div>
                         </Animate>
+                        <div className="buttons">
+                            <button onClick={() => slider.current.slidePrev()}><IconArrowLeft /></button>
+                            <button onClick={() => slider.current.slideNext()}><IconArrowRight /></button>
+                        </div>  
                     </ContainerCenter>
 
                     <Animate effect="fadeInUp" startAnimation={200}>
@@ -146,8 +152,10 @@ const Aplicativos: NextPage = () => {
                             className="cards"
                             itemPadding={[0]}
                             outerSpacing={0}
+                            pagination={false}
                             showArrows={false}
                             showEmptySlots={false}
+                            ref={slider}
                         >
                             {[0, 1, 2, 3, 4, 5].map((row, key) => (
                                 <div

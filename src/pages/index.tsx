@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import type { NextPage } from 'next';
@@ -15,6 +15,8 @@ import {
     IconGlobal,
     IconDesktop,
     IconPhone,
+    IconArrowLeft,
+    IconArrowRight,
 } from '../components/Svg';
 import Animate from '../components/Animation/Animate';
 
@@ -79,6 +81,8 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
         documentElement.getElementById(el).scrollIntoView({});
         window.history.pushState({}, 'teste', '/home/' + el);
     }
+
+    const slider = useRef(null)
 
     return (
         <Layout>
@@ -223,6 +227,10 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                 <IconGlobal className="effect-stroke light" />
                             </div>
                         </Animate>
+                        <div className="buttons">
+                            <button onClick={() => slider.current.slidePrev()}><IconArrowLeft /></button>
+                            <button onClick={() => slider.current.slideNext()}><IconArrowRight /></button>
+                        </div>  
                     </ContainerCenter>
 
                     <Animate effect="fadeInUp" startAnimation={200}>
@@ -232,8 +240,10 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                             className="cards"
                             itemPadding={[0]}
                             outerSpacing={0}
+                            pagination={false}
                             showArrows={false}
                             showEmptySlots={false}
+                            ref={slider}
                         >
                             {[0, 1, 2, 3, 4, 5].map((row, key) => (
                                 <div

@@ -28,7 +28,7 @@ const Sites: NextPage = () => {
                     <link rel="icon" href="/favicon1.ico" />
                 </Head>
                 <Header
-                    className="bannerAppAnimation"
+                    className="bannerAppAnimation site"
                     menus={[
                         {
                             href: '/home/o-que-fazemos',
@@ -53,20 +53,28 @@ const Sites: NextPage = () => {
                     ]}
                 >
                     <BannerApp className="site-variant">
-                        <div className="text">
-                            <Animate effect="fadeInLeft">
+                        <div className="main">
+                            <Animate effect="fadeInLeft" className="title">
                                 <h1>
                                     Website                                   
                                 </h1>
+                            </Animate>
+                            <div className="title-transparent">
+                                <h1 className="transparent">
+                                    Website                                   
+                                </h1>
+                            </div>
+                            <Animate effect="fadeInUp" className="mac">
+                                <img src="/images/Mac.png" />
                             </Animate>                            
-                        </div>                        
+                        </div>                         
                     </BannerApp>
                 </Header>
                 
                 <StageItems
                     title="Todas etapas"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque suscipit nulla non vehicula."
-                    icon={<IconCube />}
+                    icon={<IconCube className="effect-stroke grey" />}
                     items={[
                         {
                             title: 'Velocidade',
