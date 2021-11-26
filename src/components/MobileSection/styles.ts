@@ -62,8 +62,11 @@ export const SliderDiv = styled.div`
             transform: scale(1.2);
             }
             svg {
-            width: 25px;
-            height: 59px;
+                width: 25px;
+                height: 59px;
+                path {
+                    stroke: ${colors.primaryDark};
+                }
             }
         }
     }

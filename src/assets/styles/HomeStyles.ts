@@ -268,6 +268,10 @@ export const PortfolioContainer = styled.div`
           svg {
             width: 25px;
             height: 59px;
+            path {
+              stroke: ${colors.primaryGrey};
+              stroke-width: 3;
+            }
           }
       }
   }
