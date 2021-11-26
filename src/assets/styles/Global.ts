@@ -122,6 +122,12 @@ export const GlobalStyles = createGlobalStyle`
             fill: ${colors.primaryDark};
         }
     }
+    @keyframes strokeEffectPrimaryGrey {
+        50% {
+            stroke-dashoffset: 0;
+            fill: ${colors.primaryGrey};
+        }
+    }
     .effect-stroke{
         fill: transparent;
         stroke-width: 1px;
@@ -139,6 +145,10 @@ export const GlobalStyles = createGlobalStyle`
         &.dark {
             stroke: ${colors.primaryDark};
             animation: strokeEffectPrimaryDark 2s linear infinite;
+        }
+        &.grey {
+            stroke: ${colors.primaryGrey};
+            animation: strokeEffectPrimaryGrey 2s linear infinite;
         }
     }
 `

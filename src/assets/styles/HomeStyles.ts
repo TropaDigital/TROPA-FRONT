@@ -228,6 +228,7 @@ export const PortfolioContainer = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: space-between;    
   }
   .title {
     margin: 70px 0px;
@@ -249,6 +250,26 @@ export const PortfolioContainer = styled.div`
       top: -20px;
       transform: rotate(20deg);
     }
+  }
+  .buttons {
+      width: 180px;
+      display: flex;
+      justify-content: space-between;
+      button {
+          background: transparent;            
+          border: none;
+          outline: none;
+          cursor: pointer;
+          transition: all .2s;
+          width: 25px;            
+          &:hover {
+          transform: scale(1.2);
+          }
+          svg {
+            width: 25px;
+            height: 59px;
+          }
+      }
   }
   .cards {
     display: flex;
@@ -308,9 +329,6 @@ export const PortfolioContainer = styled.div`
         position: relative;
         z-index: 1;
       }
-    }
-    .rec-pagination {
-      display: none;
     }
     .rec-carousel {
       .rec-slider-container {
