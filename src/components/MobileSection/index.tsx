@@ -50,7 +50,7 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
                 <Animate effect="fadeInLeft" startAnimation={100}>
                     <div className="title">
                         <h2>Nós Criamos</h2>
-                        <IconAstronaut />
+                        <IconAstronaut className="effect-stroke light"/>
                     </div>
                 </Animate>                                
                     <div className="buttons">
@@ -65,6 +65,7 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
                     itemsToShow={itemsToShow}
                     isRTL={false}
                     className="cards"
+                    pagination={false}
                     showArrows={false}
                     itemPadding={[0, 15]}
                     ref={slider}

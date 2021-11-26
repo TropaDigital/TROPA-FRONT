@@ -20,16 +20,19 @@ export const Mobilecontainer = styled.div`
         display: flex;
         width: 449px;
         h2 {
-        font-family: ${fonts.chaney};
-        font-size: 62px;
-        font-weight: normal;
-        line-height: 55px;
-        color: ${colors.primary};
+            font-family: ${fonts.chaney};
+            font-size: 62px;
+            font-weight: normal;
+            line-height: 55px;
+            color: ${colors.primary};
         }
         svg {
-        transform: rotate(15deg);
-        margin-top: -50px;
-        margin-left: -180px;
+            transform: rotate(15deg);
+            margin-top: -50px;
+            margin-left: -180px;
+            position: absolute;
+            left: 400px;
+            top: 25px;
             path {
                 fill: black;
             }
@@ -91,13 +94,10 @@ export const MobileDiv = styled.div`
           width: 25px;
           height: 59px;
         }
-    } 
-    .rec-pagination {
-        display: none;
-    }  
+    }     
     .mobile {
         height: 550px;
-        width: 100%;
+        width: 95%;
         display: flex;
         position: relative;
         cursor: pointer;
@@ -135,7 +135,7 @@ export const MobileDiv = styled.div`
         .overlay {            
             position: absolute; 
             top: 15px;
-            left: 30px;
+            left: 23px;
             width: 282px;
             height: 94%;
             border-radius: 30px;
@@ -169,30 +169,23 @@ export const MobileDiv = styled.div`
         }
     }
     @media (max-width: 1400px) {
-        width: 80%;        
+        width: 75%;        
         display: flex;
         justify-content: center;
         align-items: center;    
         padding-bottom: 30px;             
-        .rec-pagination {
-            display: none;
-        }  
         .mobile {
-            .back-image { 
-                height: 60%;
-                width: 270px;
+            width: 100%;
+            .back-image {                 
+                height: 95%;
+                width: 260px;
                 position: absolute;
-                border-radius: 30px;
-                top: 200px;
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
+                border-radius: 30px;                                                
                 left: 0;
                 right: 0;
                 top: 15px;
                 z-index: 0;            
                 background: ${colors.primary};            
-                height: 94%;
                 background-size: cover;
                 background-position: center; 
                 img {                
@@ -204,13 +197,64 @@ export const MobileDiv = styled.div`
             .overlay {            
                 position: absolute; 
                 top: 15px;
-                left: 26px;
-                width: 272px;
-                height: 94%;
+                left: 20px;
+                width: 260px;
+                height: 95%;
                 border-radius: 30px;
                 background: ${colors.primary};                        
                 transition: .5s ease;
                 opacity:0;           
+            }
+        }
+    }
+    @media (max-width: 1100px) {
+        width: 75%;        
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        padding-bottom: 30px;             
+        .mobile {
+            width: 100%;
+            height: 80%;
+            img {
+                height: 80%;
+            }
+            .back-image {                 
+                height: 94%;
+                width: 85%;
+                position: absolute;
+                border-radius: 30px;                                                
+                left: 0;
+                right: 0;
+                top: 15px;
+                z-index: 0;            
+                background: ${colors.primary};            
+                background-size: cover;
+                background-position: center; 
+                img {                
+                    border-radius: 30px;
+                    width: 100%;
+                    height: 100%;
+                }        
+            }        
+            .overlay {            
+                position: absolute; 
+                top: 10px;
+                left: 18px;
+                width: 85%;
+                height: 95%;
+                border-radius: 30px;
+                background: ${colors.primary};                        
+                transition: .5s ease;
+                opacity:0;
+                p {
+                    top: 220px;
+                    left: 20px;                
+                }                  
+                svg {
+                    top: 150px;
+                    left: 70px;
+                }                
             }
         }
     }
