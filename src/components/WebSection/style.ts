@@ -27,9 +27,12 @@ export const WebContainer = styled.div`
         color: ${colors.primary};
         }
         svg {
-        transform: rotate(15deg);
-        margin-top: -50px;
-        margin-left: -180px;
+            transform: rotate(15deg);
+            margin-top: -50px;
+            margin-left: -180px;
+            position: absolute;
+            left: 400px;
+            top: 25px;
             path {
                 fill: black;
             }
@@ -43,10 +46,7 @@ export const WebDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;    
-    padding-bottom: 30px;        
-    .arrow {
-        visibility: hidden;
-    }
+    padding-bottom: 30px;            
     .web {
         height: 100%;
         width: 95%;
@@ -145,5 +145,53 @@ export const WebDiv = styled.div`
                 height: 81%;                                              
             }
         }
-    }     
+    }
+    @media (max-width: 1100px) {
+        .web {    
+            height: 100%;
+            width: 100%;          
+            img {
+                width: 340px;
+            }
+            .back-image { 
+                height: 81%;
+                width: 75%;
+                left: 47px;
+                right: 0;
+                top: 15px;
+                z-index: 0;                        
+                background-size: cover;
+                background-position: center;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 8px;                
+                }                          
+            }        
+            .overlay {            
+                position: absolute; 
+                top: 15px;
+                left: 47px;
+                width: 75%;
+                height: 81%;
+                p {
+                    position: absolute;
+                    top: 60px;
+                    left: 20%;                    
+                }
+                .bottom {
+                    top: 90px;
+                }                                   
+                svg {
+                    width: 85px;
+                    position: absolute;
+                    top: -10px;
+                    left: 40%;
+                    path {
+                        fill: ${colors.primaryLight};
+                    }
+                }                                                   
+            }
+        }
+    }          
 `
