@@ -15,7 +15,9 @@ import { AppContainer, BannerApp } from '../assets/styles/AppStyles';
 import Layout from '../components/Layout/Layout';
 
 const Sites: NextPage = () => {
+    
     const router = useRouter();
+
     return (
         <Layout>
             <AppContainer>

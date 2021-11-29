@@ -37,7 +37,7 @@ export const Mobilecontainer = styled.div`
                 fill: black;
             }
         }
-    }
+    }    
 `
 
 export const SliderDiv = styled.div`
@@ -99,8 +99,8 @@ export const MobileDiv = styled.div`
         }
     }     
     .mobile {
-        height: 550px;
-        width: 95%;
+        height: 90%;
+        width: 90%;
         display: flex;
         position: relative;
         cursor: pointer;
@@ -111,12 +111,12 @@ export const MobileDiv = styled.div`
         }                  
         img {
             width: 100%;
-            height: 550px;        
+            height: 100%;        
             z-index: 20;
         }
         .back-image { 
-            height: 94%;
-            width: 280px;
+            height: 95%;
+            width: 266px;
             position: absolute;
             border-radius: 30px;            
             margin-left: auto;
@@ -138,9 +138,9 @@ export const MobileDiv = styled.div`
         .overlay {            
             position: absolute; 
             top: 15px;
-            left: 23px;
-            width: 282px;
-            height: 94%;
+            left: 21px;
+            width: 267px;
+            height: 95%;
             border-radius: 30px;
             background: ${colors.primary};                        
             transition: .5s ease;
@@ -180,8 +180,8 @@ export const MobileDiv = styled.div`
         .mobile {
             width: 100%;
             .back-image {                 
-                height: 95%;
-                width: 260px;
+                height: 94%;
+                width: 262px;
                 position: absolute;
                 border-radius: 30px;                                                
                 left: 0;
@@ -200,9 +200,9 @@ export const MobileDiv = styled.div`
             .overlay {            
                 position: absolute; 
                 top: 15px;
-                left: 20px;
-                width: 260px;
-                height: 95%;
+                left: 25px;
+                width: 264px;
+                height: 94%;
                 border-radius: 30px;
                 background: ${colors.primary};                        
                 transition: .5s ease;
@@ -211,20 +211,20 @@ export const MobileDiv = styled.div`
         }
     }
     @media (max-width: 1100px) {
-        width: 75%;        
+        width: 80%;        
         display: flex;
         justify-content: center;
         align-items: center;    
         padding-bottom: 30px;             
         .mobile {
             width: 100%;
-            height: 80%;
+            height: 90%;
             img {
-                height: 80%;
+                height: 500px;
             }
             .back-image {                 
                 height: 94%;
-                width: 85%;
+                width: 86%;
                 position: absolute;
                 border-radius: 30px;                                                
                 left: 0;
@@ -244,7 +244,7 @@ export const MobileDiv = styled.div`
                 position: absolute; 
                 top: 10px;
                 left: 18px;
-                width: 85%;
+                width: 86%;
                 height: 95%;
                 border-radius: 30px;
                 background: ${colors.primary};                        
