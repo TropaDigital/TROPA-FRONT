@@ -290,6 +290,9 @@ export const PortfolioContainer = styled.div`
       transition: all .2s;
       position: relative;
       cursor: pointer;
+      @media(max-height: 1400px) {
+        height: 640px;
+      }
       @media(max-height: 900px) {
         height: 580px;
       }
