@@ -99,7 +99,7 @@ export const MobileDiv = styled.div`
         }
     }     
     .mobile {
-        height: 90%;
+        height: 80%;
         width: 90%;
         display: flex;
         position: relative;
@@ -111,11 +111,11 @@ export const MobileDiv = styled.div`
         }                  
         img {
             width: 100%;
-            height: 100%;        
+            height: 540px;        
             z-index: 20;
         }
         .back-image { 
-            height: 95%;
+            height: 94%;
             width: 266px;
             position: absolute;
             border-radius: 30px;            
@@ -140,7 +140,7 @@ export const MobileDiv = styled.div`
             top: 15px;
             left: 21px;
             width: 267px;
-            height: 95%;
+            height: 94%;
             border-radius: 30px;
             background: ${colors.primary};                        
             transition: .5s ease;
@@ -200,7 +200,7 @@ export const MobileDiv = styled.div`
             .overlay {            
                 position: absolute; 
                 top: 15px;
-                left: 25px;
+                left: 19px;
                 width: 264px;
                 height: 94%;
                 border-radius: 30px;
