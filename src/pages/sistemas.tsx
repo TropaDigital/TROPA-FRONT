@@ -10,10 +10,11 @@ import Footer from '../components/Layout/Footer';
 import { BannerSystem, LanguagesContainer, SystemContainer } from '../assets/styles/SystemStyles';
 import { ContainerCenter } from '../components/Layout/styles';
 import WhatWeDo from '../components/WeDo';
-import { IconCash, IconChatbot, IconDisk, IconGlobal, IconMessage } from '../components/Svg';
+import { IconCash, IconChatbot, IconGlobal, IconMessage } from '../components/Svg';
 
 const Sistemas: NextPage = () => {
     const router = useRouter();
+
     return (
         <Layout>
             <SystemContainer>
@@ -54,7 +55,7 @@ const Sistemas: NextPage = () => {
                 >
                     <BannerSystem>
                         <div className="main">
-                            <Animate effect="fadeInLeft" className="title">
+                            <Animate effect="fadeInUp" className="title">
                                 <h1>
                                     Sistemas                                   
                                 </h1>
@@ -63,7 +64,7 @@ const Sistemas: NextPage = () => {
                                 </h1>
                             </Animate>                            
                             <button>Conheça</button>                            
-                            <Animate effect="fadeInUp" className="note">
+                            <Animate effect="fadeInLeft" className="note">
                                 <img src="/images/Notebook1.png" />
                             </Animate>
                         </div>                         
@@ -75,29 +76,9 @@ const Sistemas: NextPage = () => {
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque suscipit nulla non vehicula."
                     icon={<IconGlobal className="effect-stroke grey" />}
                     items={[
-                        {
-                            icon:<IconChatbot />,
-                            title: 'chatbot',
-                            description:
-                                'SIMULE AGORA MESMO.',
-                        },
-                        {   
-                            icon:<IconCash />,
-                            title: 'checkout transparente',
-                            description:
-                                'SIMULE AGORA MESMO.',
-                        },
-                        {   
-                            icon:<IconMessage />,
-                            title: 'Mensagerias',
-                            description:
-                                'SIMULE AGORA MESMO.',
-                        },                        
+                            
                     ]}
                 />
-
-               
-                
 
                 <LanguagesContainer>
                     <ContainerCenter className="center">
