@@ -233,14 +233,17 @@ export const BannerApp = styled.div`
         -webkit-text-fill-color: transparent; 
         -webkit-text-stroke: 1px #FFF;
         left: 95px;
-        top: 260px;
+        top: 306px;
       }
     }
     .mac {
       width: 95vw;
-      height: 100vh;
-      left: 0;
-      top: 0;      
+      height: 60vh;
+      top: 50px;
+      img {
+        width: 1200px;
+        height: 800px;
+      }      
     }
   }
 `
