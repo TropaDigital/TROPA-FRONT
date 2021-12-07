@@ -2,10 +2,16 @@ import styled from "styled-components";
 import { colors, fonts } from "../../assets/styles/mixin";
 
 export const WeDoContainer = styled.div`
-    display: flex;
-    align-items: center;
+    overflow: hidden;
+    width: 100%;
     min-height: 100vh;
-    background-color: ${colors.primary};    
+    background:${colors.primary};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0px;
+    box-sizing: border-box;
     .center {
         display: flex;
         flex-direction: column;
@@ -50,14 +56,26 @@ export const WeDoContainer = styled.div`
                     transition: all .2s;
                 }
             .item {
+                box-sizing: border-box;
                 padding: 35px 40px;
                 border-radius: 10px;
-                border: 2px solid ${colors.primary};
-                background: ${colors.primaryDark};
+                background: radial-gradient(130px 70px at 150px bottom, ${colors.primary}, ${colors.primaryDark});
                 margin: 15px 0px;
                 cursor: pointer;
-                width: 90%;
-                height: 120px;
+                width: 100%;
+                height: 110px;
+                z-index: 9;
+                transition: ease-in-out 550ms;
+                @media (max-width: 1100px) {
+                    width: 80%;
+                    margin-left: 90px;
+                }
+                &:hover {
+                    width: 85%;
+                    @media (max-width: 1100px) {
+                        width: 63%;                        
+                    }                  
+                }
                 .title {
                     display: flex;
                     align-items: center;
@@ -69,32 +87,55 @@ export const WeDoContainer = styled.div`
                         text-transform: uppercase;
                         font-size: 35px;
                         color: ${colors.primaryLight};
+                        @media (max-width: 1100px) {
+                            font-size: 1.5em;
+                        }
                     }
                     div > svg {
-                        width: 100px;
-                        height: 100px;
-                        transform: rotate(-20deg);                        
+                        position: relative;
+                        top: 30px;
+                        width: 140px;
+                        height: 140px;
+                        transform: rotate(-30deg);
                     }
                 }
                 .description {
-                    display: none;
-                    font-size: 12px;
-                    color: ${colors.primaryLight};
+                    box-sizing: border-box;
+                    padding: 30px 5px 40px 55px;
+                    position: relative;
+                    top: -75px;
+                    left: 900px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    height: 110px;
+                    width: 200px;
+                    background: ${colors.primaryLight};
+                    color: ${colors.primaryDark};
+                    border-radius: 0 10px 10px 0;
+                    z-index: -1;
+                    @media (max-width: 1100px) {
+                        left: 590px;
+                    }
                 }
-                &.active {
-                    background: ${colors.primaryDark};
+                &:hover {
                     .title {
-                        span {
-                            color: ${colors.primary};
-                        }
                         svg {
                             transform: rotate(360deg);
                         }
                     }
                     .description {
-                        display: block;
-                        padding-top: 20px;
-                        font-weight: normal;
+                        visibility: visible; 
+                        left: 900px;
+                        @media (max-width: 1100px) {
+                            left: 590px;
+                        }
+                    }
+                }
+                &.active {
+                    .title {
+                        span {
+                            color: ${colors.primary};
+                        }                        
                     }
                 }
             }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Animate from '../Animation/Animate';
 import { ContainerCenter } from '../Layout/styles';
+import { IconCash, IconChatbot, IconMessage } from '../Svg';
 import { WeDoContainer } from './styles';
 
 interface IProps {
@@ -22,7 +23,8 @@ const WhatWeDo: React.FC<IProps> = ({
     description,
     items = [],
 }) => {
-    const [selected, setSelected] = useState(null);
+    const [selected, setSelected] = useState<any>(null);
+
     return (
         <WeDoContainer>
             <ContainerCenter className="center">
@@ -36,29 +38,69 @@ const WhatWeDo: React.FC<IProps> = ({
                     <p>{description}</p>
                 </div>
                 <div className="stages">
-                    {items.map((row, key: any) => (
                         <Animate effect="zoomIn" startAnimation={200}>
                             <div
                                 className={`item ${
-                                    selected === key ? 'active' : 'inactive'
-                                }`}
-                                key={key}
+                                    selected === "bot" ? 'active' : 'inactive'
+                                }`}                                
                                 onClick={() =>
-                                    selected === key
-                                        ? setSelected(null)
-                                        : setSelected(key)
+                                    selected === "bot"
+                                        ? setSelected(true)
+                                        : setSelected(false)
                                 }
                             >
                                 <div className="title">
-                                    <div>{row.icon}</div>
-                                    <span>{row.title}</span>                                    
+                                    <div><IconChatbot /></div>
+                                    <span>Chatbot</span>                                    
                                 </div>
                                 <div className="description">
-                                    {row.description}
+                                    SIMULE AGORA MESMO.
                                 </div>
                             </div>
                         </Animate>
-                    ))}
+
+                        <Animate effect="zoomIn" startAnimation={200}>
+                            <div
+                                className={`item ${
+                                    selected === "cash" ? 'active' : 'inactive'
+                                }`}                                
+                                onClick={() =>
+                                    selected === "cash"
+                                        ? setSelected(true)
+                                        : setSelected(false)
+                                }
+                            >
+                                <div className="title">
+                                    <div><IconCash /></div>
+                                    <span>checkout transparente</span>                                    
+                                </div>
+                                <div className="description">
+                                    SIMULE AGORA MESMO.
+                                </div>
+                            </div>
+                        </Animate>
+
+                        <Animate effect="zoomIn" startAnimation={200}>
+                            <div
+                                className={`item ${
+                                    selected === "msg" ? 'active' : 'inactive'
+                                }`}                                
+                                onClick={() =>
+                                    selected === "msg"
+                                        ? setSelected(true)
+                                        : setSelected(false)
+                                }
+                            >
+                                <div className="title">
+                                    <div><IconMessage /></div>
+                                    <span>Mensagerias</span>                                    
+                                </div>
+                                <div className="description">
+                                    SIMULE AGORA MESMO.
+                                </div>
+                            </div>
+                        </Animate>
+                    
                 </div>
             </ContainerCenter>
         </WeDoContainer>
