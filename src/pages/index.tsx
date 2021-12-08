@@ -4,7 +4,6 @@ import Link from 'next/link';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Carousel from 'react-elastic-carousel';
-import Image from 'next/image';
 
 //components
 import Header from '../components/Layout/Header';
