@@ -1,15 +1,12 @@
-import { useRouter } from 'next/router';
 import type { NextPage } from 'next';
 import { Chat, ChatbotContainer, DivChat } from './styles';
-import { IconMessage } from '../Svg';
+import { IconAstroFill, IconChatbot, IconClose, IconMessage } from '../Svg';
 
 const Chatbot: NextPage = () => {
-    const router = useRouter();
-
+    
     return (
         <ChatbotContainer>
-            
-            <DivChat>
+                <DivChat>
                 
                 <div>
                     <h1>Com quem quer falar?</h1>
@@ -22,33 +19,43 @@ const Chatbot: NextPage = () => {
 
                 <Chat>
                     <div className="bot">
-                        <div>Imagem do bot</div>
-                        <div>
+                        <div className="icon">
+                            <IconChatbot />
+                        </div>
+                        <div className="chat">
                             <p>Astrobot</p>
                             <span>Oi, eu sou o BOT, como posso te ajudar?</span>
                         </div>
                     </div>
-                    <div>
-                        <div>Imagem do user</div>
-                        <div>
-                            <p>Nome do user</p>
+
+                    <div className="user">
+                        <div className="chat">
+                            <p>Você</p>
                             <span>Eu gostaria de testar um sistema</span>
                         </div>
+                        <div className="astro">
+                            <IconAstroFill />
+                        </div>
                     </div>
-                    <div>
-                        <input type="text" placeholder="Digite sua mensagem">
-                            <IconMessage />
-                        </input>
+
+                    <div className="send">
+                        <input type="text" placeholder="Digite sua mensagem" />
+                        <button>
+                            <IconMessage /> 
+                        </button>
                     </div>
                 </Chat>
 
                 <div className="personalized">
-                    <p>Quer um</p>
-                    <p className="primary">bot personalizado?</p>
+                    <p>Quer um </p>
+                    <p className="primary"> bot personalizado?</p>
                 </div>
 
-            </DivChat>            
+            </DivChat>           
 
+            <button className="close">
+               <IconClose />
+            </button>
         </ChatbotContainer>
     )
 }
