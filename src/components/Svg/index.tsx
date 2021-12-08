@@ -729,6 +729,45 @@ export const IconMessage: React.FC = ({
     )
 }
 
+export const IconAstroFill: React.FC = ({
+    width = 100,
+    height = 100,    
+}: any) => {
+    return (
+        <svg 
+            width="270" 
+            height="252" 
+            viewBox="0 0 270 252" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path d="M240.97 165.06L269.38 154.17V80.69L240.97 69.8C222.76 29.23 182.04 0.959961 134.69 0.959961C87.34 0.959961 46.62 29.23 28.41 69.8L0 80.69V154.16L28.41 165.05C35.08 179.91 44.78 193.11 56.71 203.89V211.73H35.56L21.59 253.52H247.79L233.82 211.73H212V204.5C224.24 193.62 234.17 180.19 240.97 165.06ZM103.65 36.52H165.73V52.13H103.65V36.52ZM204.87 157.02L183.45 178.44H85.43L63.84 156.85V86.9L85.4 65.34H183.78L204.86 86.42V157.02H204.87Z" fill="#000000"/>
+        </svg>
+
+    )
+}
+
+export const IconClose: React.FC = ({
+    width = 100,
+    height = 100,
+}: any) => {
+    return (
+        <svg 
+            width="167" 
+            height="167" 
+            viewBox="0 0 167 167" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path d="M83.64 165.28C128.729 165.28 165.28 128.729 165.28 83.64C165.28 38.5515 128.729 2 83.64 2C38.5515 2 2 38.5515 2 83.64C2 128.729 38.5515 165.28 83.64 165.28Z" stroke="#CC6237" stroke-width="3" stroke-miterlimit="10"/>
+            <path d="M46.352 120.928L120.928 46.352" stroke="#CC6237" stroke-width="3" stroke-miterlimit="10"/>
+            <path d="M120.928 120.928L46.352 46.352" stroke="#CC6237" stroke-width="3" stroke-miterlimit="10"/>
+        </svg>
+
+
+    )
+}
+
 
 
 
