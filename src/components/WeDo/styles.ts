@@ -96,7 +96,6 @@ export const WeDoContainer = styled.div`
                         top: 30px;
                         width: 140px;
                         height: 140px;
-                        transform: rotate(-30deg);
                     }
                 }
                 .description {
@@ -117,12 +116,7 @@ export const WeDoContainer = styled.div`
                         left: 590px;
                     }
                 }
-                &:hover {
-                    .title {
-                        svg {
-                            transform: rotate(360deg);
-                        }
-                    }
+                &:hover {                   
                     .description {
                         visibility: visible; 
                         left: 900px;
@@ -136,6 +130,36 @@ export const WeDoContainer = styled.div`
                         span {
                             color: ${colors.primary};
                         }                        
+                    }
+                }
+            }
+            .bot {
+                &:hover {
+                    svg {
+                        transition: all 1000ms;
+                        transform: scale(1.5);
+                    }
+                }
+            }
+            .cash {
+                &:hover {
+                    svg {
+                        transition: all 1000ms;
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+            .msg {
+                .title > div > svg {
+                    top: 60px;
+                    left: -80px;
+                }
+                &:hover {
+                    svg {
+                        top: 20px !important;
+                        left: -5px !important;
+
+                        transition: ease-in-out 1000ms;
                     }
                 }
             }

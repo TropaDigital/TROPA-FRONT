@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Animate from '../Animation/Animate';
 import { ContainerCenter } from '../Layout/styles';
 import { IconCash, IconChatbot, IconMessage } from '../Svg';
@@ -25,6 +26,8 @@ const WhatWeDo: React.FC<IProps> = ({
 }) => {
     const [selected, setSelected] = useState<any>(null);
 
+    const [modal, setModal] = useState<boolean>(false);
+
     return (
         <WeDoContainer>
             <ContainerCenter className="center">
@@ -37,68 +40,76 @@ const WhatWeDo: React.FC<IProps> = ({
                     </Animate>
                     <p>{description}</p>
                 </div>
+                
                 <div className="stages">
+
                         <Animate effect="zoomIn" startAnimation={200}>
-                            <div
-                                className={`item ${
-                                    selected === "bot" ? 'active' : 'inactive'
-                                }`}                                
-                                onClick={() =>
-                                    selected === "bot"
-                                        ? setSelected(true)
-                                        : setSelected(false)
-                                }
-                            >
-                                <div className="title">
-                                    <div><IconChatbot /></div>
-                                    <span>Chatbot</span>                                    
+                            <Link href="/chatbot">
+                                <div
+                                    className={`item ${
+                                        selected === 'bot' ? 'active bot' : 'inactive bot'
+                                    }`}                                
+                                    onClick={() =>
+                                        selected === 'bot'
+                                            ? setSelected(null)
+                                            : setSelected('bot')
+                                    }
+                                >
+                                    <div className="title" onClick={() => setModal(modal)}>
+                                        <div><IconChatbot /></div>
+                                        <span>Chatbot</span>                                    
+                                    </div>
+                                    <div className="description">
+                                        SIMULE AGORA MESMO.
+                                    </div>
                                 </div>
-                                <div className="description">
-                                    SIMULE AGORA MESMO.
-                                </div>
-                            </div>
+                            </Link>
                         </Animate>
 
                         <Animate effect="zoomIn" startAnimation={200}>
-                            <div
-                                className={`item ${
-                                    selected === "cash" ? 'active' : 'inactive'
-                                }`}                                
-                                onClick={() =>
-                                    selected === "cash"
-                                        ? setSelected(true)
-                                        : setSelected(false)
-                                }
-                            >
-                                <div className="title">
-                                    <div><IconCash /></div>
-                                    <span>checkout transparente</span>                                    
+                            <Link href="/checkout">
+                                <div
+                                    className={`item ${
+                                        selected === "cash" ? 'active cash' : 'inactive cash'
+                                    }`}                                
+                                    onClick={() =>
+                                        selected === "cash"
+                                            ? setSelected(null)
+                                            : setSelected('cash')
+                                    }
+                                >
+                                    <div className="title">
+                                        <div><IconCash /></div>
+                                        <span>checkout transparente</span>                                    
+                                    </div>
+                                    <div className="description">
+                                        SIMULE AGORA MESMO.
+                                    </div>
                                 </div>
-                                <div className="description">
-                                    SIMULE AGORA MESMO.
-                                </div>
-                            </div>
+                            </Link>
                         </Animate>
 
                         <Animate effect="zoomIn" startAnimation={200}>
-                            <div
-                                className={`item ${
-                                    selected === "msg" ? 'active' : 'inactive'
-                                }`}                                
-                                onClick={() =>
-                                    selected === "msg"
-                                        ? setSelected(true)
-                                        : setSelected(false)
-                                }
-                            >
-                                <div className="title">
-                                    <div><IconMessage /></div>
-                                    <span>Mensagerias</span>                                    
+                            <Link href="/mensagerias">
+                                <div
+                                    className={`item ${
+                                        selected === "msg" ? 'active msg' : 'inactive msg'
+                                    }`}                                
+                                    onClick={() =>
+                                        selected === "msg"
+                                            ? setSelected(null)
+                                            : setSelected('msg')
+                                    }
+                                >
+                                    <div className="title">
+                                        <div><IconMessage /></div>
+                                        <span>Mensagerias</span>                                    
+                                    </div>
+                                    <div className="description">
+                                        SIMULE AGORA MESMO.
+                                    </div>
                                 </div>
-                                <div className="description">
-                                    SIMULE AGORA MESMO.
-                                </div>
-                            </div>
+                            </Link>
                         </Animate>
                     
                 </div>
