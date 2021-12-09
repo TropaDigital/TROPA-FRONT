@@ -120,7 +120,7 @@ export const BannerApp = styled.div`
       font-weight: normal;
       position: absolute;
       left: -95px;
-      top: 436px;
+      top: 422px;
       z-index: 999;
     }
   }

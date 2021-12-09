@@ -163,7 +163,7 @@ export const Chat = styled.div`
         }
     }
     .send {
-        margin-top: 90%;
+        margin-top: 90px;
         display: flex;
         justify-content: space-between;
         padding: 20px;
