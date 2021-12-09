@@ -47,7 +47,7 @@ export const MainContainer = styled.div`
         }
     }
     .payment {
-        width: 60%;
+        width: 70%;
         height: 60px;
         border-radius: 16px;
         background: ${colors.primary};
@@ -56,7 +56,7 @@ export const MainContainer = styled.div`
     }
 `
 export const MainCard = styled.div`
-    width: 60%;
+    width: 70%;
     background: ${colors.primaryWhite};
     border-radius: 16px;
     padding: 40px;
@@ -76,10 +76,12 @@ export const MainCard = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
         svg {
             width: 15px;
             height: 15px;
             margin-left: 10px;
+            margin-bottom: 10px;
             path {
                 stroke: ${colors.primaryGrey};
                 stroke-width: 14px;
@@ -89,78 +91,7 @@ export const MainCard = styled.div`
     }
 `
 
-export const UserData = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    .user-card {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        gap: 25px;
-        @media (max-width: 1100px) {
-            margin-bottom: 70px;
-        }
-        .user {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 20px;
-            .card-number {
-                display: flex;
-                flex-direction: column;
-                span {
-                    margin-bottom: 10px;
-                }
-                input {
-                    height: 50px;
-                    border-radius: 16px;
-                    border: 2px solid ${colors.primaryGrey};
-                    color: ${colors.primary};
-                    padding: 20px;
-                    &:hover {
-                        border: 2px solid ${colors.primary};
-                        color: ${colors.primary};
-                    }
-                    &:focus {
-                        border: 2px solid ${colors.primary};
-                        color: ${colors.primary};
-                    }
-                }
-            }
-            .user-name {
-                display: flex;
-                flex-direction: column;
-                span {
-                    margin-bottom: 10px;
-                }
-                input {
-                    height: 50px;
-                    border-radius: 16px;
-                    border: 2px solid ${colors.primaryGrey};
-                    color: ${colors.primary};
-                    padding: 20px;
-                    &:hover {
-                        border: 2px solid ${colors.primary};
-                        
-                    }
-                }
-            }
-        }
-        .card {
-            width: 50%;
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-        @media (max-width: 1100px) {
-            width: 100%;
-            height: 160px;
-        }
-    }
-`
+
 
 export const DataCard = styled.div`
     display: flex;

@@ -15,7 +15,8 @@ import { useState } from 'react';
 import { WeDoContainer } from '../components/WeDo/styles';
 import { Chat, ChatbotContainer, DivChat } from '../components/Chatbot/styles';
 import { CardContainer, MessageContainer, Messages } from '../components/Mensagerias/styles';
-import { DataCard, MainCard, MainContainer, UserData } from '../components/CardCheckout/styles';
+import { MainCard, MainContainer } from '../components/CardCheckout/styles';
+import CreditCard from '../components/CreditCard';
 
 const Sistemas: NextPage = () => {
     const router = useRouter();
@@ -25,7 +26,7 @@ const Sistemas: NextPage = () => {
     const [modalBot, setModalBot] = useState<boolean>(false);
     const [modalMsg, setModalMsg] = useState<boolean>(false);
     const [modalCheck, setModalCheck] = useState<boolean>(false);
-
+    
     return (
     <>
         <Layout>
@@ -283,46 +284,8 @@ const Sistemas: NextPage = () => {
 
                         <MainCard>
 
-                            <UserData>
-                                <div className="user-card">
-                                    <div className="user">
-                                        <div className="card-number">
-                                            <span>NÚMERO DO CARTÃO</span>
-                                            <input type="text" />
-                                        </div>
+                            <CreditCard />   
 
-                                        <div className="user-name">
-                                            <span>NOME DO TÍTULAR</span>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-
-                                    <div className="card">
-                                        <img src="/images/CardElo.png" alt="" />
-                                    </div>
-                                </div>
-
-                                <DataCard>
-                                    
-                                    <div className="month">
-                                        <span>MÊS</span>
-                                        <input type="text" />
-                                    </div>
-                                    <div className="year">
-                                        <span>ANO</span>
-                                        <input type="text" />
-                                    </div>
-                                    <div className="security">
-                                        <span>CVV</span>
-                                        <input type="text" />
-                                    </div>
-
-                                </DataCard>
-                                
-                            </UserData>
-
-
-                            <button className="pay-now">Pagar agora <IconSimpleCheck /></button>
                         </MainCard>
 
                         <button className="payment">Quer integrar pagamento?</button>
