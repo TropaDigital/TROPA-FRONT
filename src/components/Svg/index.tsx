@@ -768,6 +768,23 @@ export const IconClose: React.FC = ({
     )
 }
 
+export const IconSimpleCheck: React.FC<any> = ({ className }: any) => {
+    return (
+        <svg
+            width="126"
+            height="120"
+            viewBox="0 0 126 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M37.89 119.39L0.73999 82.24L2.14999 80.83L37.89 116.57L123.85 30.61L125.26 32.02L37.89 119.39Z"
+                fill="#CC6237"
+                className={className}
+            />
+        </svg>
+    );
+};
 
 
 
