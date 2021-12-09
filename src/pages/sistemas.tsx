@@ -9,13 +9,13 @@ import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
 import { BannerSystem, LanguagesContainer, SystemContainer } from '../assets/styles/SystemStyles';
 import { ContainerCenter } from '../components/Layout/styles';
-import { IconAstroFill, IconCash, IconChatbot, IconClose, IconGlobal, IconMessage } from '../components/Svg';
+import { IconAstroFill, IconCash, IconChatbot, IconClose, IconGlobal, IconMessage, IconSimpleCheck } from '../components/Svg';
 import ModalDefault from '../components/Modal';
 import { useState } from 'react';
-import Chatbot from '../components/Chatbot/Chatbot';
 import { WeDoContainer } from '../components/WeDo/styles';
 import { Chat, ChatbotContainer, DivChat } from '../components/Chatbot/styles';
 import { CardContainer, MessageContainer, Messages } from '../components/Mensagerias/styles';
+import { DataCard, MainCard, MainContainer, UserData } from '../components/CardCheckout/styles';
 
 const Sistemas: NextPage = () => {
     const router = useRouter();
@@ -265,15 +265,89 @@ const Sistemas: NextPage = () => {
                 </ModalDefault>
             )}
 
+            { modalCheck && (
+                <ModalDefault
+                    id="overlayModal"
+                    onClose={() => setModalCheck(!modalCheck)}
+                    openModal={modalCheck}                
+                >
+                    <MainContainer>
+
+                        <div className="title">
+                            <h1>Simule um pagamento</h1>
+
+                            <button className="close" onClick={() => setModalCheck(false)}>
+                                <IconClose />
+                            </button>
+                        </div>
+
+                        <MainCard>
+
+                            <UserData>
+                                <div className="user-card">
+                                    <div className="user">
+                                        <div className="card-number">
+                                            <span>NÚMERO DO CARTÃO</span>
+                                            <input type="text" />
+                                        </div>
+
+                                        <div className="user-name">
+                                            <span>NOME DO TÍTULAR</span>
+                                            <input type="text" />
+                                        </div>
+                                    </div>
+
+                                    <div className="card">
+                                        <img src="/images/CardElo.png" alt="" />
+                                    </div>
+                                </div>
+
+                                <DataCard>
+                                    
+                                    <div className="month">
+                                        <span>MÊS</span>
+                                        <input type="text" />
+                                    </div>
+                                    <div className="year">
+                                        <span>ANO</span>
+                                        <input type="text" />
+                                    </div>
+                                    <div className="security">
+                                        <span>CVV</span>
+                                        <input type="text" />
+                                    </div>
+
+                                </DataCard>
+                                
+                            </UserData>
+
+
+                            <button className="pay-now">Pagar agora <IconSimpleCheck /></button>
+                        </MainCard>
+
+                        <button className="payment">Quer integrar pagamento?</button>
+                                
+                    </MainContainer>
+                </ModalDefault>
+            )}
+
+
             { modalMsg && (
                 <ModalDefault
                     id="overlayModal"
                     onClose={() => setModalMsg(!modalMsg)}
-                    openModal={modalBot}                
+                    openModal={modalMsg}                
                 >
                     <MessageContainer>
 
-                        <h3>Mensagerias</h3>
+                        <div className="title">
+                            <h1>Mensagerias</h1>
+
+                            <button className="close" onClick={() => setModalMsg(false)}>
+                                <IconClose />
+                            </button>
+                        </div>
+                        
 
                         <CardContainer>
             
@@ -296,7 +370,7 @@ const Sistemas: NextPage = () => {
             
                                 <div className="edit">
                                     <p>Edite a mensagem</p>
-                                    <input type="text" placeholder="Lorem Ipsum Stanley Ipkis" />
+                                    <textarea placeholder="Lorem Ipsum Stanley Ipkis" />
                                 </div>
                             </Messages>
             
@@ -305,6 +379,7 @@ const Sistemas: NextPage = () => {
                         </CardContainer>    
 
                         <div className="personalized">
+                    
                             <p>Quer um </p>
                             <p className="primary"> bot personalizado?</p>
                         </div>
@@ -313,9 +388,6 @@ const Sistemas: NextPage = () => {
                 </ModalDefault>
             )}
 
-            {/* { modalCheck && (
-
-            )} */}
             
 
         </Layout>
