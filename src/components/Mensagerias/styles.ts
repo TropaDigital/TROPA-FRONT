@@ -1,16 +1,51 @@
 import styled from "styled-components";
-import { colors, fonts } from "../../assets/styles/mixin";
+import { colors } from "../../assets/styles/mixin";
 
 export const MessageContainer = styled.div`
-    width: 100%;
+    width: 80%;
     background: ${colors.primary};
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    h3 {
-        margin-bottom: 15px;
+    @media (max-width: 1100px) {
+        width: 100%;
+    }
+    .title {
+        display: flex;
+        gap: 80%;
+        h1 {
+            margin-bottom: 30px;
+        }
+        .close {
+            cursor: pointer;
+            background: none;
+            border: none;
+            position: absolute;
+            top: 80px;
+            right: 280px;
+            box-sizing: border-box;
+            svg {
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                transition: all 500ms;
+                &:hover {
+                    transform: rotate(-180deg);
+                }
+                path {
+                    stroke: ${colors.primaryDark};
+                    stroke-width: 6px;
+                }
+            }
+        }
+        @media (max-width: 1100px) {
+            .close {
+                top: 85px;
+                right: 190px;
+            }   
+        }
     }
     .personalized {
         width: 80%;
@@ -20,7 +55,7 @@ export const MessageContainer = styled.div`
         justify-content: center;
         border-radius: 20px;
         padding: 40px;
-        background: radial-gradient(200px 80px at 300px bottom, ${colors.primary}, ${colors.primaryDark});
+        background: radial-gradient(200px 80px at 400px bottom, ${colors.primary}, ${colors.primaryDark});
         p {
             font-size: 1.3rem;
             color: ${colors.primaryLight};
@@ -28,6 +63,9 @@ export const MessageContainer = styled.div`
         }
         .primary {
             color: ${colors.primary};
+        }
+        @media (max-width: 1100px) {
+            background: radial-gradient(200px 80px at 300px bottom, ${colors.primary}, ${colors.primaryDark});
         }
     }
 `
@@ -41,6 +79,9 @@ export const CardContainer = styled.div`
     background: ${colors.primaryWhite};
     border-radius: 16px;
     margin-bottom: 20px;
+    @media (max-width: 1100px) {
+        height: 100%;
+    }
     .receiver {
         h3 {
             color: ${colors.primaryDark};
@@ -48,14 +89,19 @@ export const CardContainer = styled.div`
         .buttons {
             margin-top: 10px;
             margin-bottom: 30px;
+            @media (max-width: 1100px) {
+                margin-bottom: 10px;
+            }
             button {
                 margin: 0 10px;
-                padding: 5px 10px;
+                padding: 5px 20px;
                 border-radius: 16px;
                 background: ${colors.primaryWhite};
-                border: 1px solid ${colors.primary};
+                border: 2px solid ${colors.primary};
+                box-sizing: border-box;
                 color: ${colors.primary};
                 cursor: pointer;
+                transition: ease-in-out 250ms;
                 &:hover {
                     background: ${colors.primary};
                     color: ${colors.primaryWhite};
@@ -64,9 +110,19 @@ export const CardContainer = styled.div`
         }
     }
     button {
-        border-radius: 18px;
+        box-sizing: border-box;
+        border: 2px solid transparent;
+        border-radius: 40px;
         background: ${colors.primary};
-        color: ${colors.primaryLight};
+        color: ${colors.primaryWhite};
+        cursor: pointer;
+        padding: 20px;
+        transition: ease-in-out 250ms;
+        &:hover {
+            background: ${colors.primaryWhite};
+            border: 2px solid ${colors.primary};
+            color: ${colors.primary};
+        }
     }
 `
 
@@ -74,22 +130,36 @@ export const Messages = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+    @media (max-width: 1100px) {
+        height: 100%;
+        margin-bottom: 15px;
+    }
     .msg {
         display: flex;
         flex-direction: column;
+        @media (max-width: 1100px) {
+            width: 50%;
+        }
         h3 {
             color: ${colors.primaryDark};
         }
         button {
+            box-sizing: border-box;
             padding: 20px;
             margin-bottom: 10px;
             border-radius: 16px;
-            border: none;
+            border: 2px solid transparent;
             background: ${colors.primaryLight};
             color: ${colors.primaryDark};
+            @media (max-width: 1100px) {
+                padding: 20px 5px;
+                font-size: 12px;
+            }
             &:hover {
-                border: 1px solid ${colors.primary};
+                border: 2px solid ${colors.primary};
                 color: ${colors.primary};    
             }
         }
@@ -99,12 +169,23 @@ export const Messages = styled.div`
         }
     }
     .edit {
+        width: 50%;
         p {
             color: ${colors.primary};
+            margin-bottom: 10px;
         }
-        input {
+        textarea {
+            border-radius: 16px;
+            padding: 20px;
+            width: 350px;
+            height: 210px;
             border: 1px solid ${colors.primaryGrey};
             color: ${colors.primaryDark};
+            resize: none;
+            @media (max-width: 1100px) {
+                width: 100%;
+                height: 270px;
+            }
         }
     }
 `
