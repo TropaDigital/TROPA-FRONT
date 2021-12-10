@@ -9,6 +9,7 @@ export const StagesContainer = styled.div`
     .center {
         display: flex;
         justify-content: space-between;
+        height: 600px;
         .left {
             display: flex;
             flex-direction: column;
