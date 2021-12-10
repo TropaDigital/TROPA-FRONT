@@ -41,6 +41,7 @@ export const BannerSystem = styled.div`
         font-weight: normal;
         width: 650px;
         line-height: 65px;
+        margin-bottom: 10px;
         top: 350px;
         color: ${colors.primaryLight};            
         position: relative;
