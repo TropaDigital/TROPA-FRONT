@@ -25,10 +25,12 @@ export const Container = styled.div<Props>`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: ${colors.primary};
-    border-radius: 16px;
     width: 70%; 
     height: 85%;
+    @media (max-width: 1100px) {
+      height: 90%;
+      overflow: auto;
+    }
 `;
 
 export const Form = styled.form`
