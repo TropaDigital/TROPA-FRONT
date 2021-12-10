@@ -72,15 +72,19 @@ export const MainCard = styled.div`
     .pay-now {
         width: 100%;
         height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: ${colors.primaryDark};
         border-radius: 40px;
         border: none;
         color: ${colors.primaryGrey};
         text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        transition: all 200ms;
         cursor: pointer;
+        :hover {
+            background: ${colors.primary};
+        }
         svg {
             width: 15px;
             height: 15px;
