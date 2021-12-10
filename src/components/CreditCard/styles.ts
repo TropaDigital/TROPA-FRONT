@@ -13,14 +13,15 @@ flex-direction: column;
     gap: 25px;
     margin-bottom: 30px;
     @media (max-width: 1100px) {
-        margin-bottom: 70px;
+        margin: 50px 0;
     }
     form {
         .name,
         .number {
             margin-bottom: 20px;
         }
-        span {
+        span,
+        label {
             text-transform: uppercase;
         }
         input {

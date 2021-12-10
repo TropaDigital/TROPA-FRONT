@@ -38,7 +38,7 @@ const CreditCard: NextPage = () => {
                 <form onSubmit={handleSubmit}>
                     
                     <div className="number">
-                        <span>Número do cartão</span>
+                        <label>Número do cartão</label>
                         <input
                             type="number"
                             id="number"
@@ -48,11 +48,12 @@ const CreditCard: NextPage = () => {
                             onChange={handleChange}
                             onFocus={handleFocus}
                             // isValid={errors.cnumber}
+                            
                         />
                     </div>
 
                     <div className="name">
-                        <span>Nome do titular</span>
+                        <label>Nome do titular</label>
                         <input
                             type="text"
                             id="name"
@@ -66,7 +67,7 @@ const CreditCard: NextPage = () => {
                     </div>
 
                     <div className="expiration">
-                        <span>Data de expiração</span>
+                        <label>Data de expiração</label>
                         <input
                             type="string"
                             id="expiration"
