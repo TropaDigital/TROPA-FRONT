@@ -10,12 +10,15 @@ export const MainContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media (max-width: 1100px) {
+        height: 95%;
+    }
     .title {
         display: flex;
         gap: 80%;
         h1 {
             margin-bottom: 30px;
-            color: ${colors.primaryLight};
+            color: ${colors.primaryGrey};
         }
         .close {
             cursor: pointer;
@@ -35,13 +38,13 @@ export const MainContainer = styled.div`
                 }
                 path {
                     stroke: ${colors.primary};
-                    stroke-width: 6px;
+                    stroke-width: 8px;
                 }
             }
         }
         @media (max-width: 1100px) {
             .close {
-                top: 85px;
+                top: 95px;
                 right: 190px;
             }   
         }
@@ -53,6 +56,7 @@ export const MainContainer = styled.div`
         background: ${colors.primary};
         border: none;
         padding: 10px 0;
+        cursor: pointer;
     }
 `
 export const MainCard = styled.div`
@@ -87,45 +91,6 @@ export const MainCard = styled.div`
                 stroke-width: 14px;
                 fill: ${colors.primaryGrey};
             }
-        }
-    }
-`
-
-
-
-export const DataCard = styled.div`
-    display: flex;
-    margin-bottom: 30px;
-    .month,
-    .year,
-    .security {
-        display: flex;
-        flex-direction: column;
-        span {
-            
-        }
-        input {
-            width: 75px;
-            height: 50px;
-            border-radius: 16px;
-            border: 2px solid ${colors.primaryGrey};
-            color: ${colors.primary};
-            padding: 20px;
-            margin-right: 20px;
-            &:hover {
-                border: 2px solid ${colors.primary};
-                color: ${colors.primary};
-            }
-            &:focus {
-                border: 2px solid ${colors.primary};
-                color: ${colors.primary};
-            }
-        }
-    }
-    .security {
-        margin-left: 20px;
-        input {
-            width: 100px;
         }
     }
 `
