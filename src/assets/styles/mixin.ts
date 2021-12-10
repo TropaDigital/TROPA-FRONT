@@ -9,7 +9,9 @@ const colors = {
 const fonts = {
         bebasNeue: `'Bebas Neue', cursive`,
         poppins: `'Poppins', sans-serif`,
-        chaney: `'Chaney', sans-serif`
+        chaney: `'Chaney', sans-serif`,
+        gellix: `'Gellix', sans-serif`,
+        arto: `'Arto', sans-serif`
 }
    
 
