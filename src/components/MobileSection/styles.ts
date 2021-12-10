@@ -116,7 +116,7 @@ export const MobileDiv = styled.div`
         }
         .back-image { 
             height: 94%;
-            width: 266px;
+            width: 86%;
             position: absolute;
             border-radius: 30px;            
             margin-left: auto;
@@ -138,8 +138,8 @@ export const MobileDiv = styled.div`
         .overlay {            
             position: absolute; 
             top: 15px;
-            left: 21px;
-            width: 267px;
+            left: 19px;
+            width: 87%;
             height: 94%;
             border-radius: 30px;
             background: ${colors.primary};                        
