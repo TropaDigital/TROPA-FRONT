@@ -17,6 +17,8 @@ import { Chat, ChatbotContainer, DivChat } from '../components/Chatbot/styles';
 import { CardContainer, MessageContainer, Messages } from '../components/Mensagerias/styles';
 import { MainCard, MainContainer } from '../components/CardCheckout/styles';
 import CreditCard from '../components/CreditCard';
+import InputMask from "react-input-mask";
+
 
 const Sistemas: NextPage = () => {
     const router = useRouter();
@@ -241,6 +243,46 @@ const Sistemas: NextPage = () => {
                                     </div>
                                 </div>
 
+                                <div className="bot">
+                                    <div className="icon">
+                                        <IconChatbot />
+                                    </div>
+                                    <div className="chat">
+                                        <p>Astrobot</p>
+                                        <span>Certo, fale me mais sobre esse sistema.</span>
+                                    </div>
+                                </div>
+
+                                <div className="user">
+                                    <div className="chat">
+                                        <p>Você</p>
+                                        <span>Um sistema de chatbot simples</span>
+                                    </div>
+                                    <div className="astro">
+                                        <IconAstroFill />
+                                    </div>
+                                </div>
+
+                                <div className="bot">
+                                    <div className="icon">
+                                        <IconChatbot />
+                                    </div>
+                                    <div className="chat">
+                                        <p>Astrobot</p>
+                                        <span>Oi, eu sou o BOT, como posso te ajudar?</span>
+                                    </div>
+                                </div>
+
+                                <div className="user">
+                                    <div className="chat">
+                                        <p>Você</p>
+                                        <span>Eu gostaria de testar um sistema</span>
+                                    </div>
+                                    <div className="astro">
+                                        <IconAstroFill />
+                                    </div>
+                                </div>
+
                                 <div className="send">
                                     <input type="text" placeholder="Digite sua mensagem" />
                                     <button>
@@ -325,10 +367,11 @@ const Sistemas: NextPage = () => {
             
                             <Messages>
                                 <div className="msg">
-                                    <h3>Selecione uma mensagem:</h3>
-                                    <button>Olá, eu sou uma mensagem automática</button>
-                                    <button>Olá, eu sou uma mensagem automática</button>
-                                    <button>Olá, eu sou uma mensagem automática</button>
+                                    <h3>Digite seu número:</h3>
+                                    <InputMask 
+                                        mask="+55 (99) 99999-9999" 
+                                        placeholder='(11) 99999-9999' 
+                                    />
                                 </div>
             
                                 <div className="edit">
