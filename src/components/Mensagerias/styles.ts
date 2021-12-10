@@ -133,7 +133,7 @@ export const CardContainer = styled.div`
 export const Messages = styled.div`
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 30px;
@@ -151,7 +151,8 @@ export const Messages = styled.div`
             color: ${colors.primaryDark};
             margin-bottom: 10px;
         }
-        button {
+        input {
+            align-self: flex-start;
             box-sizing: border-box;
             padding: 20px;
             margin-bottom: 10px;
