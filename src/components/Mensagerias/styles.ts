@@ -3,6 +3,7 @@ import { colors } from "../../assets/styles/mixin";
 
 export const MessageContainer = styled.div`
     width: 80%;
+    height: 100%;
     background: ${colors.primary};
     border-radius: 16px;
     display: flex;
@@ -11,6 +12,7 @@ export const MessageContainer = styled.div`
     align-items: center;
     @media (max-width: 1100px) {
         width: 100%;
+        height: 95%;
     }
     .title {
         display: flex;
@@ -24,9 +26,10 @@ export const MessageContainer = styled.div`
             border: none;
             position: absolute;
             top: 80px;
-            right: 280px;
+            right: 400px;
             box-sizing: border-box;
             svg {
+                box-sizing: border-box;
                 width: 40px;
                 height: 40px;
                 cursor: pointer;
@@ -36,7 +39,7 @@ export const MessageContainer = styled.div`
                 }
                 path {
                     stroke: ${colors.primaryDark};
-                    stroke-width: 6px;
+                    stroke-width: 8px;
                 }
             }
         }
@@ -56,6 +59,7 @@ export const MessageContainer = styled.div`
         border-radius: 20px;
         padding: 40px;
         background: radial-gradient(200px 80px at 400px bottom, ${colors.primary}, ${colors.primaryDark});
+        cursor: pointer;
         p {
             font-size: 1.3rem;
             color: ${colors.primaryLight};
@@ -80,7 +84,7 @@ export const CardContainer = styled.div`
     border-radius: 16px;
     margin-bottom: 20px;
     @media (max-width: 1100px) {
-        height: 100%;
+        height: 70%;
     }
     .receiver {
         h3 {
@@ -145,6 +149,7 @@ export const Messages = styled.div`
         }
         h3 {
             color: ${colors.primaryDark};
+            margin-bottom: 10px;
         }
         button {
             box-sizing: border-box;
