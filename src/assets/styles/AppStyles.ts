@@ -217,14 +217,14 @@ export const BannerApp = styled.div`
   }
   @media (max-width: 1100px) {
     .title > h1 {
-      font-size: 10rem;
+      font-size: 11rem;
       width: 650px;
       left: 95px;
-      top: 171px;      
+      top: 255px;      
     }
     .title-transparent {
       .transparent {
-        font-size: 10rem;
+        font-size: 11rem;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100vw;
@@ -233,7 +233,7 @@ export const BannerApp = styled.div`
         -webkit-text-fill-color: transparent; 
         -webkit-text-stroke: 1px #FFF;
         left: 95px;
-        top: 306px;
+        top: 405px;
       }
     }
     .mac {

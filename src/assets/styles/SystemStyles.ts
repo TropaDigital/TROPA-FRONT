@@ -11,6 +11,9 @@ export const SystemContainer = styled.div`
         li {
           a {
             color: ${colors.primaryGrey};
+            &:hover {
+              color: ${colors.primary};
+            }
           }
         }
       }
