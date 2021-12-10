@@ -495,7 +495,7 @@ export const IconGlobal: React.FC<any> = ({ className }: any) => {
     );
 };
 
-export const IconClock: React.FC = ({ width = 298, height = 42 }: any) => {
+export const IconClock: React.FC =  ({ className }: any) => {
     return (
         <svg
             width="166"
@@ -747,10 +747,7 @@ export const IconAstroFill: React.FC = ({
     )
 }
 
-export const IconClose: React.FC = ({
-    width = 100,
-    height = 100,
-}: any) => {
+export const IconClose: React.FC<any> = ({ className }: any) => {
     return (
         <svg 
             width="167" 
@@ -759,9 +756,9 @@ export const IconClose: React.FC = ({
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
         >
-            <path d="M83.64 165.28C128.729 165.28 165.28 128.729 165.28 83.64C165.28 38.5515 128.729 2 83.64 2C38.5515 2 2 38.5515 2 83.64C2 128.729 38.5515 165.28 83.64 165.28Z" stroke="#CC6237" stroke-width="3" stroke-miterlimit="10"/>
-            <path d="M46.352 120.928L120.928 46.352" stroke="#CC6237" stroke-width="3" stroke-miterlimit="10"/>
-            <path d="M120.928 120.928L46.352 46.352" stroke="#CC6237" stroke-width="3" stroke-miterlimit="10"/>
+            <path d="M83.64 165.28C128.729 165.28 165.28 128.729 165.28 83.64C165.28 38.5515 128.729 2 83.64 2C38.5515 2 2 38.5515 2 83.64C2 128.729 38.5515 165.28 83.64 165.28Z" stroke="#CC6237" stroke-width="3" stroke-miterlimit="10" className={className}/>
+            <path d="M46.352 120.928L120.928 46.352" stroke="#CC6237" stroke-width="3" stroke-miterlimit="10" className={className}/>
+            <path d="M120.928 120.928L46.352 46.352" stroke="#CC6237" stroke-width="3" stroke-miterlimit="10" className={className}/>
         </svg>
 
 
