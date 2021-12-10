@@ -259,7 +259,7 @@ const Sistemas: NextPage = () => {
                         <button className="close" 
                             onClick={() => setModalBot(false)}
                         >
-                            <IconClose />
+                            <IconClose  className="effect-stroke light"/>
                         </button>
                     </ChatbotContainer>    
                     
@@ -278,7 +278,7 @@ const Sistemas: NextPage = () => {
                             <h1>Simule um pagamento</h1>
 
                             <button className="close" onClick={() => setModalCheck(false)}>
-                                <IconClose />
+                                <IconClose className="effect-stroke dark" />
                             </button>
                         </div>
 
@@ -307,7 +307,7 @@ const Sistemas: NextPage = () => {
                             <h1>Mensagerias</h1>
 
                             <button className="close" onClick={() => setModalMsg(false)}>
-                                <IconClose />
+                                <IconClose className="effect-stroke primary"/>
                             </button>
                         </div>
                         
