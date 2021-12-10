@@ -5,6 +5,7 @@ import 'react-credit-cards/es/styles-compiled.css';
 import { useState } from 'react';
 import { UserData } from './styles';
 import { IconSimpleCheck } from '../Svg';
+import InputMask from "react-input-mask";
 
 const CreditCard: NextPage = () => {
     const [values, setValues] = useState({
@@ -39,8 +40,8 @@ const CreditCard: NextPage = () => {
                     
                     <div className="number">
                         <label>Número do cartão</label>
-                        <input
-                            type="number"
+                        <InputMask
+                            mask="9999999999999999"
                             id="number"
                             name="number"
                             placeholder="Número do cartão"
@@ -68,8 +69,8 @@ const CreditCard: NextPage = () => {
 
                     <div className="expiration">
                         <label>Data de expiração</label>
-                        <input
-                            type="string"
+                        <InputMask
+                            mask="99/99"
                             id="expiration"
                             name="expiration"
                             placeholder="Data expiração"
@@ -93,8 +94,8 @@ const CreditCard: NextPage = () => {
 
                     <div className="date-code">
                         <span>Código de segurança</span>
-                        <input
-                            type="number"
+                        <InputMask
+                            mask="999"
                             id="cvc"
                             name="cvc"
                             placeholder="CVC/CVV"
