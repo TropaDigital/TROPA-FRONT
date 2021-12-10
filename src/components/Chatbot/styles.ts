@@ -97,11 +97,12 @@ export const Chat = styled.div`
     background: ${colors.primaryWhite};
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: auto;
     .bot {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        margin-bottom: 20px;
         .icon {
             display: flex;
             align-items: center;
@@ -126,7 +127,7 @@ export const Chat = styled.div`
             }
             span {
                 padding: 20px;
-                background: ${colors.primaryLight};
+                background: #cebaa8a6;
                 border-radius: 0 12px 12px 12px;
             }
         }
@@ -136,7 +137,7 @@ export const Chat = styled.div`
         align-items: center;
         justify-content: center;
         align-self: flex-end;
-        margin-top: 20px;
+        margin-bottom: 20px;
         .astro {
             background: ${colors.primary};
             border-radius: 50%;
@@ -161,18 +162,26 @@ export const Chat = styled.div`
             }
             span {
                 padding: 20px;
-                background: ${colors.primaryLight};
+                background: #cebaa8a6;
                 border-radius: 12px 0 12px 12px;
             }
         }
     }
     .send {
-        margin-top: 90px;
+        width: 680px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        margin-top: 90px;
         padding: 20px;
         background: ${colors.primaryGrey};
         border-radius: 16px;
+        position: fixed;
+        top: 490px;
+        @media (max-width: 1100px) {
+            width: 415px;
+            top: 550px;
+        }
         input {
             width: 90%;
             height: 100%;
