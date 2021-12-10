@@ -11,30 +11,33 @@ export const ChatbotContainer = styled.div`
     background: ${colors.primaryLight};
     border-radius: 16px;
     padding: 10px 0;
+    @media (max-width: 1100px) {
+        height: 90%;
+    }
     .close {
         cursor: pointer;
         background: none;
         border: none;
         position: absolute;
-        top: 100px;
+        top: 85px;
         right: 300px;
         box-sizing: border-box;
         svg {
             width: 40px;
             height: 40px;
-            stroke: ${colors.primary};
             transition: all 500ms;
+            path {
+                stroke: ${colors.primary};
+                stroke-width: 8px;
+            }
             &:hover {
                 transform: rotate(-180deg);
-            }
-            path {
-                stroke-width: 6px;
             }
         }
     }
     @media (max-width: 1100px) {
         .close {
-            top: 85px;
+            top: 110px;
             right: 185px;
         }   
     }
@@ -73,6 +76,7 @@ export const DivChat = styled.div`
         border-radius: 20px;
         padding: 40px;
         background: radial-gradient(200px 80px at 300px bottom, ${colors.primary}, ${colors.primaryDark});
+        cursor: pointer;
         p {
             font-size: 1.3rem;
             color: ${colors.primaryLight};
