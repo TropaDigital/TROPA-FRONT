@@ -52,7 +52,7 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
                 <Animate effect="fadeInLeft" startAnimation={100}>
                     <div className="title">
                         <h2>Nós Criamos</h2>
-                        <IconAstronaut className="effect-stroke grey"/>
+                        <IconAstronaut className="effect-stroke dark"/>
                     </div>
                 </Animate>
                 <div className="buttons">

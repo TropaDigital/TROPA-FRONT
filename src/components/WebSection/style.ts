@@ -34,7 +34,7 @@ export const WebContainer = styled.div`
             left: 400px;
             top: 25px;
             path {
-                fill: black;
+                fill: ${colors.primaryGrey};
             }
         }
     }
