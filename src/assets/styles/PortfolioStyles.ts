@@ -172,13 +172,13 @@ export const PortfolioBanner = styled.div`
 
 export const LandingPage = styled.div`
   width: 100vw;
-  height: 1600px;
+  height: 1550px;
   background: ${colors.primaryDark};
   padding: 80px;
   .title {
     position: relative;
-    top: 120px;
-    left: 150px;
+    top: 80px;
+    left: 200px;
     z-index: 0;
     h1 {
       width: 600px;
@@ -204,9 +204,9 @@ export const LandingPage = styled.div`
     justify-content: center;
     position: absolute;
     top: 1200px;
-    left: 450px;
+    left: 500px;
     img {
-      width: 800px;
+      width: 900px;
       height: 100%;
     }
   }
@@ -214,20 +214,27 @@ export const LandingPage = styled.div`
 
 export const Mobile = styled.div`
   width: 100vw;
-  height: 100%;
+  height: 3200px;
   background: ${colors.primaryDark};
   padding: 160px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(400px 300px at 50% bottom, ${colors.primary}, ${colors.primaryDark});
   .mobile-cube {
     position: relative;
-    right: 260px;
+    right: 210px;
     h1 {
       color: ${colors.primaryLight};
       font-family: ${fonts.bebasNeue};
-      font-size: 9rem;
+      font-size: 12rem;
     }
     p {
       width: 350px;
+      text-align: left;
+      position: relative;
+      left: 15px;
       color: ${colors.primaryLight};
     }
     svg {
@@ -237,8 +244,114 @@ export const Mobile = styled.div`
       transform: rotate(45deg);
     }
   }
+  .phones {
+    position: relative;
+    top: -500px;
+    left: 340px;
+    .phone {
+      width: 390px;
+      height: 700px;
+      position: absolute;
+      left: -500px;
+      .cel {
+        width: 390px;
+        height: 700px;
+        z-index: 1;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 390px;
+        img {
+          width: 390px;
+          height: 700px;
+        }
+      }
+      .back {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        background: url('/images/Customer.png');
+        border-radius: 60px;
+        img {
+          width: 350px;
+          height: 660px;
+          border-radius: 55px;
+          top: 23px;
+          position: absolute;
+          left: 20px;
+        }
+      }
+    }
+    .phone2 {
+      width: 390px;
+      height: 700px;
+      position: absolute;
+      top: 1200px;
+      left: 0;
+      .cel2 {
+        width: 390px;
+        height: 700px;
+        z-index: 1;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 390px;
+        img {
+          width: 390px;
+          height: 700px;
+        }  
+      }
+      .back2 {
+        z-index: 0;
+        background: url('/images/Customer.png');
+        border-radius: 60px;
+        img {
+          width: 350px;
+          height: 660px;
+          border-radius: 55px;
+          top: 23px;
+          position: absolute;
+          left: 20px;
+        }  
+      }
+    }
+    .phone3 {
+      width: 390px;
+      height: 700px;
+      position: absolute;
+      top: 1700px;
+      left: -500px;
+      .cel3 {
+        width: 390px;
+        height: 700px;
+        z-index: 1;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 390px;
+        img {
+          width: 390px;
+          height: 700px;
+        }  
+      }
+      .back3 {
+        z-index: 0;
+        background: url('/images/Customer.png');
+        border-radius: 60px;
+        img {
+          width: 350px;
+          height: 660px;
+          border-radius: 55px;
+          top: 23px;
+          position: absolute;
+          left: 20px;
+        }  
+      }
+    }
+  }
   .mobile-astro {
     position: relative;
+    top: -550px;
     left: 800px;
     h1 {
       color: ${colors.primary};
@@ -250,39 +363,47 @@ export const Mobile = styled.div`
       width: 140px;
       position: relative;
       top: -260px;
-      left: -40px;
+      left: -250px;
       transform: rotate(35deg);
     }
   }
-  .phones{
-
-  }
   .paper {
+    position: relative;
+    top: 900px;
     button {
-      width: 600px;
-      height: 120px;
+      width: 700px;
+      height: 130px;
       background: ${colors.primary};
-      border: none;
+      border: 2px solid transparent;
       border-radius: 64px;
       padding: 20px;
-      div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        background: ${colors.primaryDark};
+        border: 2px solid ${colors.primary};
         p {
-          color: ${colors.primaryDark}; 
-          font-size: 1.8rem;
-          font-weight: bold;
-          text-transform: uppercase;
+          color: ${colors.primary};
         }
-        img {
-          height: 100px;
-          position: relative;
-          top: 0;
-          left: 0;
-        }
+      }
+      p {
+        color: ${colors.primaryDark}; 
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        left: 100px;
+      }
+      img {
+        height: 100px;
+        position: relative;
+        top: -5px;
+        left: -80px;
       }
     }
   }
 `
+
 
