@@ -20,7 +20,7 @@ export const ChatbotContainer = styled.div`
         border: none;
         position: absolute;
         top: 85px;
-        right: 300px;
+        right: 310px;
         box-sizing: border-box;
         svg {
             width: 40px;
