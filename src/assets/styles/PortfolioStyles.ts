@@ -352,7 +352,7 @@ export const Mobile = styled.div`
   .mobile-astro {
     position: relative;
     top: -550px;
-    left: 800px;
+    left: 900px;
     h1 {
       color: ${colors.primary};
       font-family: ${fonts.bebasNeue};
