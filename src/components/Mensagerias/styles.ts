@@ -25,8 +25,8 @@ export const MessageContainer = styled.div`
             background: none;
             border: none;
             position: absolute;
-            top: 80px;
-            right: 400px;
+            top: 85px;
+            right: 440px;
             box-sizing: border-box;
             svg {
                 box-sizing: border-box;
