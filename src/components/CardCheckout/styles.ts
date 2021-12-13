@@ -25,8 +25,8 @@ export const MainContainer = styled.div`
             background: none;
             border: none;
             position: absolute;
-            top: 80px;
-            right: 280px;
+            top: 90px;
+            right: 320px;
             box-sizing: border-box;
             svg {
                 width: 40px;
