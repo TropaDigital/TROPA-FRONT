@@ -77,28 +77,53 @@ const Portfolio: NextPage<IPort> = ({
                 </div>
             </LandingPage>   
 
-            <Mobile>
+            <Mobile>                   
                 <div className='mobile-cube'>
                     <h1>Mobile</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis laudantium debitis laborum assumenda nesciunt explicabo dolore nisi! </p>
                     <IconCube className="effect-stroke primary"/>
                 </div>
 
+                <div className='phones'>
+                    <div className='mobile'>
+                        <img src="/images/TropaPhone.png" alt="Celular com logo da Tropa" />
+                    </div>
+                    <div className='phone'>                        
+                        <div className='cel'>
+                            <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                        </div>
+                        <div className='back'>
+                            <img src="/images/Customer.png" alt="" />
+                        </div>                        
+                    </div>
+                    <div className='phone2'>                        
+                        <div className='cel2'>
+                            <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                        </div>
+                        <div className='back2'>
+                            <img src="/images/Customer.png" alt="" />
+                        </div>                        
+                    </div>
+                    <div className='phone3'>                        
+                        <div className='cel3'>
+                            <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                        </div>
+                        <div className='back3'>
+                            <img src="/images/Customer.png" alt="" />
+                        </div>                        
+                    </div>
+                </div>     
+
                 <div className='mobile-astro'>
                     <h1>mobile</h1>
                     <IconAstronaut className="effect-stroke light"/>
                 </div>    
 
-                <div className='phones'>
-                    {mobile}
-                </div>        
 
                 <div className='paper'>
                     <button>
-                        <div>
-                            <p>Tire seu projeto do</p>
-                            <img src="/images/Paper.png" alt="Palavra papel circulada" />
-                        </div>
+                        <p>Tire seu projeto do</p>
+                        <img src="/images/Paper.png" alt="Palavra papel circulada" />
                     </button>
                 </div>    
 
