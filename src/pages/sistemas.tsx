@@ -24,6 +24,7 @@ const Sistemas: NextPage = () => {
     const router = useRouter();
     
     const [selected, setSelected] = useState<any>(null);
+    const [sendMode, setSendMode] = useState<any>(null);
 
     const [modalBot, setModalBot] = useState<boolean>(false);
     const [modalMsg, setModalMsg] = useState<boolean>(false);
@@ -360,8 +361,30 @@ const Sistemas: NextPage = () => {
                                 <h3>Por onde quer receber?</h3>
                                 
                                 <div className="buttons">
-                                    <button>Whatsapp</button>
-                                    <button>SMS</button>
+                                    <button
+                                        className={`item ${
+                                            sendMode === "zap" ? 'active zap' : 'inactive zap'
+                                        }`}                                
+                                        onClick={() =>
+                                        sendMode === "zap"
+                                        ? setSendMode(null)
+                                        : setSendMode('zap')
+                                        }
+                                    >
+                                        Whatsapp
+                                    </button>
+                                    <button
+                                        className={`item ${
+                                            sendMode === "sms" ? 'active sms' : 'inactive sms'
+                                        }`}                                
+                                        onClick={() =>
+                                        sendMode === "sms"
+                                        ? setSendMode(null)
+                                        : setSendMode('sms')
+                                        }
+                                    >
+                                        SMS
+                                    </button>
                                 </div>
                             </div>
             
