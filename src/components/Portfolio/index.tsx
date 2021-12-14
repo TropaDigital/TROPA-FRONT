@@ -8,17 +8,26 @@ import { IconAstronaut, IconCube, IconFlag } from '../Svg';
 
 interface IPort {
     title: string;
-    page?: any;
-    mobile: any;
+    mobile?: IMobile[];
+}
+
+interface IMobile {
+    title: string;
+    src: string;
 }
 
 const Portfolio: NextPage<IPort> = ({
     title,
-    page,
-    mobile,
+    mobile = [
+        { id: 1, src: '/images/Customer.png', title: 'Docket pagina principal' },
+        { id: 2, src: '/images/Alpha.png', title: 'Alpha FM pagina principal' },
+        { id: 3, src: '/images/Eyou.png', title: 'Eyou pagina principal' },
+        { id: 4, src: '/images/Meat.png', title: 'Meat Web Cooker pagina principal' },
+    ],
 }) => {
     const router = useRouter();
 
+   
     return (
         <PortfolioContainer>
             <Head>
@@ -73,7 +82,7 @@ const Portfolio: NextPage<IPort> = ({
                 </div>
 
                 <div className='page'>
-                    <img src="/images/DocketPort.png" alt="" />
+                    <img src="/images/DocketPort.png" alt="" />                    
                 </div>
             </LandingPage>   
 
@@ -88,38 +97,52 @@ const Portfolio: NextPage<IPort> = ({
                     <div className='mobile'>
                         <img src="/images/TropaPhone.png" alt="Celular com logo da Tropa" />
                     </div>
-                    <div className='phone'>                        
-                        <div className='cel'>
-                            <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                        </div>
-                        <div className='back'>
-                            <img src="/images/Customer.png" alt="" />
-                        </div>                        
-                    </div>
-                    <div className='phone2'>                        
-                        <div className='cel2'>
-                            <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                        </div>
-                        <div className='back2'>
-                            <img src="/images/Customer.png" alt="" />
-                        </div>                        
-                    </div>
-                    <div className='phone3'>                        
-                        <div className='cel3'>
-                            <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                        </div>
-                        <div className='back3'>
-                            <img src="/images/Customer.png" alt="" />
-                        </div>                        
-                    </div>
+                        {[0, 1, 2].map((row, key: any) => (
+                        <>
+                            <div className='phone'>                        
+                                <div className='cel'>
+                                    <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                </div>
+                                <div className='back' key={key}>
+                                        <img src="/images/Customer.png" alt="" />
+                                        {/*
+                                            <img src={row.src} alt={row.title} />                                          
+                                         */}
+                                </div>                        
+                            </div>
+                       
+                            <div className='phone2'>                        
+                                <div className='cel2'>
+                                    <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                </div>
+                                <div className='back2'>
+                                    <img src="/images/Customer.png" alt="" />
+                                    {/*
+                                        <img src={row.src} alt={row.title} />                                          
+                                    */}
+                                </div>                        
+                            </div>
+                       
+                            <div className='phone3'>                        
+                                <div className='cel3'>
+                                    <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                </div>
+                                <div className='back3'>
+                                    <img src="/images/Customer.png" alt="" />
+                                    {/*
+                                        <img src={row.src} alt={row.title} />                                          
+                                    */}
+                                </div>                        
+                            </div> 
+                        </>
+                        ))}
                 </div>     
 
                 <div className='mobile-astro'>
                     <h1>mobile</h1>
                     <IconAstronaut className="effect-stroke light"/>
-                </div>    
-
-
+                </div> 
+                
                 <div className='paper'>
                     <button>
                         <p>Tire seu projeto do</p>
