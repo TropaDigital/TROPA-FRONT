@@ -28,6 +28,12 @@ export const PortfolioContainer = styled.div`
   .main {
     width: 100%;
     height: 400px;
+    @media (max-width: 1100px) {
+      h1 {
+        font-size: 10rem !important;
+        text-align: center;
+      }
+    }
   }
 `
 
@@ -172,14 +178,22 @@ export const PortfolioBanner = styled.div`
 
 export const LandingPage = styled.div`
   width: 100vw;
-  height: 1550px;
+  height: 1650px;
   background: ${colors.primaryDark};
   padding: 80px;
+  @media (max-width: 1100px) {
+    width: 100%;
+    height: 1800px;
+  }
   .title {
     position: relative;
     top: 80px;
     left: 200px;
     z-index: 0;
+    @media (max-width: 1100px) {
+      left: 0;
+      top: 0;
+    }
     h1 {
       width: 600px;
       color: ${colors.primary};
@@ -205,9 +219,17 @@ export const LandingPage = styled.div`
     position: absolute;
     top: 1200px;
     left: 500px;
+    margin-bottom: 50px;
+    @media (max-width: 1100px) {
+      width: 98%;
+      left: 15px;
+    }
     img {
-      width: 900px;
+      width: 950px;
       height: 100%;
+      @media (max-width: 1100px) {
+        width: 80%;
+      }
     }
   }
 `
@@ -222,6 +244,11 @@ export const Mobile = styled.div`
   flex-direction: column;
   align-items: center;
   background: radial-gradient(400px 300px at 50% bottom, ${colors.primary}, ${colors.primaryDark});
+  @media (max-width: 1100px) {
+    width: 100%;
+    height: 2900px;
+    padding: 0 40px;
+  }
   .mobile-cube {
     position: relative;
     right: 210px;
@@ -248,11 +275,14 @@ export const Mobile = styled.div`
     position: relative;
     top: -500px;
     left: 340px;
+    @media (max-width: 1100px) {
+      left: 300px;
+    }
     .phone {
       width: 390px;
       height: 700px;
       position: absolute;
-      left: -500px;
+      left: -600px;
       .cel {
         width: 390px;
         height: 700px;
@@ -273,12 +303,12 @@ export const Mobile = styled.div`
         background: url('/images/Customer.png');
         border-radius: 60px;
         img {
-          width: 350px;
-          height: 660px;
-          border-radius: 55px;
-          top: 23px;
+          width: 345px;
+          height: 667px;
+          border-radius: 40px;
+          top: 16px;
           position: absolute;
-          left: 20px;
+          left: 22px;
         }
       }
     }
@@ -288,6 +318,9 @@ export const Mobile = styled.div`
       position: absolute;
       top: 1200px;
       left: 0;
+      @media (max-width: 1100px) {
+        z-index: 1;
+      }
       .cel2 {
         width: 390px;
         height: 700px;
@@ -306,12 +339,12 @@ export const Mobile = styled.div`
         background: url('/images/Customer.png');
         border-radius: 60px;
         img {
-          width: 350px;
-          height: 660px;
-          border-radius: 55px;
-          top: 23px;
+          width: 345px;
+          height: 667px;
+          border-radius: 40px;
+          top: 16px;
           position: absolute;
-          left: 20px;
+          left: 22px;
         }  
       }
     }
@@ -320,7 +353,7 @@ export const Mobile = styled.div`
       height: 700px;
       position: absolute;
       top: 1700px;
-      left: -500px;
+      left: -600px;
       .cel3 {
         width: 390px;
         height: 700px;
@@ -339,12 +372,12 @@ export const Mobile = styled.div`
         background: url('/images/Customer.png');
         border-radius: 60px;
         img {
-          width: 350px;
-          height: 660px;
-          border-radius: 55px;
-          top: 23px;
+          width: 345px;
+          height: 667px;
+          border-radius: 40px;
+          top: 16px;
           position: absolute;
-          left: 20px;
+          left: 22px;
         }  
       }
     }
@@ -353,6 +386,12 @@ export const Mobile = styled.div`
     position: relative;
     top: -550px;
     left: 900px;
+    @media (max-width: 1100px) {
+      left: 90px;
+      top: 200px;
+      overflow-x: hidden;
+      z-index: 0;
+    }
     h1 {
       color: ${colors.primary};
       font-family: ${fonts.bebasNeue};
@@ -380,6 +419,7 @@ export const Mobile = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: all 250ms;
       cursor: pointer;
       &:hover {
         background: ${colors.primaryDark};

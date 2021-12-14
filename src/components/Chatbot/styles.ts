@@ -46,7 +46,7 @@ export const ChatbotContainer = styled.div`
 export const DivChat = styled.div`
     width: 60%;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column; 
     div > h1 {
         color: ${colors.primaryDark};
     }
@@ -92,12 +92,18 @@ export const Chat = styled.div`
     width: 100%;
     height: 450px;
     margin-bottom: 20px;
+    padding-bottom: 50px;
     border-radius: 30px;
     padding: 25px;
+    padding-bottom: 80px;
     background: ${colors.primaryWhite};
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     overflow-y: auto;
+    @media (max-width: 1100px) {
+        width: 550px;
+    }
     .bot {
         display: flex;
         justify-content: flex-start;
@@ -168,19 +174,21 @@ export const Chat = styled.div`
         }
     }
     .send {
-        width: 680px;
+        width: 42%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 90px;
         padding: 20px;
         background: ${colors.primaryGrey};
-        border-radius: 16px;
-        position: fixed;
-        top: 490px;
+        border-radius: 30px;
+        position: absolute;
+        top: 553px;
+        left: 551px;
         @media (max-width: 1100px) {
-            width: 415px;
-            top: 550px;
+            width: 552px;
+            top: 565px;
+            left: 318px;
         }
         input {
             width: 90%;
