@@ -110,6 +110,10 @@ export const CardContainer = styled.div`
                     background: ${colors.primary};
                     color: ${colors.primaryWhite};
                 }
+                &.active {
+                    background: ${colors.primary};
+                    color: ${colors.primaryWhite};
+                }
             }
         }
     }
