@@ -38,6 +38,11 @@ export const ContainerCenter = styled.div`
     @media(max-width:1140px) {
         padding: 0px 30px;
     }
+    @media (max-width: 425px) {
+      width: 100%;
+      flex-direction: column;
+      padding: 0px 10px;
+    }   
 `
 
 export const HeaderContainer = styled.div`
@@ -51,6 +56,9 @@ export const HeaderContainer = styled.div`
     background-size: cover;
     position: relative;
     overflow: hidden;
+    @media (max-width: 425px) {
+      width: 100%;
+    }   
     .center-banner {
         height: 100%;
         display: flex;
@@ -66,6 +74,10 @@ export const HeaderContainer = styled.div`
         position: relative;
         z-index: 99;
         height: 67px;
+        @media (max-width: 425px) {
+            width: 100%;
+            flex-direction: column;
+        }  
         .logo {
             display: flex;
             align-items: center;
@@ -76,6 +88,9 @@ export const HeaderContainer = styled.div`
         .center {
             display: flex;
             justify-content: space-between;
+            @media (max-width: 425px) {
+                gap: 20px;
+            }  
         }
         .nav-fixed {
             position: fixed;
@@ -83,6 +98,9 @@ export const HeaderContainer = styled.div`
             padding: 70px 0px;
             top: 0px;
             transition: all .5s;
+            @media (max-width: 425px) {
+                width: 100%;
+            }  
             &.active {
                 position: fixed;
                 top: 0px;
@@ -111,6 +129,9 @@ export const HeaderContainer = styled.div`
             align-items: center;
             li {
                 margin-left: 35px;
+                @media (max-width: 425px) {
+                    margin-left: 15px;
+                }  
                 a {
                     text-decoration:none;
                     text-transform: uppercase;
@@ -160,6 +181,12 @@ export const FooterContainer = styled.div`
         width: 100%;
         justify-content: space-around;
         border-bottom: 1px solid ${colors.primary};
+        @media (max-width: 425px) {
+            height: 300px;
+            padding: 30px;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }   
         .item {
             display: flex;
             align-items: center;
@@ -184,6 +211,9 @@ export const FooterContainer = styled.div`
                 width: 62px;
                 height: 58px;
             }
+            @media (max-width: 425px) {
+                padding-bottom: 20px;
+            }   
         }
     }
     .powered {
@@ -193,6 +223,9 @@ export const FooterContainer = styled.div`
             color: ${colors.primaryLight};
             text-transform: uppercase;
             font-weight: 600;
+        }
+        @media (max-width: 425px) {
+            padding: 0 30px;
         }
     }
 `

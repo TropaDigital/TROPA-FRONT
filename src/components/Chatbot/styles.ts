@@ -14,6 +14,10 @@ export const ChatbotContainer = styled.div`
     @media (max-width: 1100px) {
         height: 90%;
     }
+    @media (max-width: 425px) {
+        height: 75%;
+        width: 100%;
+    }
     .close {
         cursor: pointer;
         background: none;
@@ -41,12 +45,24 @@ export const ChatbotContainer = styled.div`
             right: 185px;
         }   
     }
+    @media (max-width: 425px) {
+        .close {
+            top: 150px;
+            right: 55px;
+        }
+    }
 `
 
 export const DivChat = styled.div`
     width: 60%;
     display: flex;
     flex-direction: column; 
+    @media (max-width: 425px) {
+        width: 90%;
+        height: 100%;
+        margin-top: 80px;
+        align-items: center;
+    }
     div > h1 {
         color: ${colors.primaryDark};
     }
@@ -85,6 +101,9 @@ export const DivChat = styled.div`
         .primary {
             color: ${colors.primary};
         }
+        @media (max-width: 425px) {
+            width: 90%;
+        }
     }
 `
 
@@ -103,6 +122,11 @@ export const Chat = styled.div`
     overflow-y: auto;
     @media (max-width: 1100px) {
         width: 550px;
+    }
+    @media (max-width: 425px) {
+        height: 70%;
+        width: 90%;
+        align-items: center;
     }
     .bot {
         display: flex;
@@ -189,6 +213,11 @@ export const Chat = styled.div`
             width: 552px;
             top: 565px;
             left: 318px;
+        }
+        @media (max-width: 425px) {
+            width: 540px;
+            top: 800px;
+            left: 100px;
         }
         input {
             width: 90%;

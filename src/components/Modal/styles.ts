@@ -31,6 +31,11 @@ export const Container = styled.div<Props>`
       height: 90%;
       overflow: auto;
     }
+    @media (max-width: 425px) {
+        justify-content: flex-start;
+        margin-top: 120px;
+        width: 90%;
+    }
 `;
 
 export const Form = styled.form`

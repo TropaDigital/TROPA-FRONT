@@ -49,6 +49,12 @@ export const MessageContainer = styled.div`
                 right: 190px;
             }   
         }
+        @media (max-width: 425px) {
+            .close {
+                top: 155px;
+                right: 70px;
+            }
+        }
     }
     .personalized {
         width: 80%;
@@ -86,6 +92,9 @@ export const CardContainer = styled.div`
     @media (max-width: 1100px) {
         height: 70%;
     }
+    @media (max-width: 425px) {
+            height: 50%;
+        }
     .receiver {
         h3 {
             color: ${colors.primaryDark};
@@ -115,6 +124,9 @@ export const CardContainer = styled.div`
                     color: ${colors.primaryWhite};
                 }
             }
+        }
+        @media (max-width: 425px) {
+            margin-bottom: 50px;
         }
     }
     button {

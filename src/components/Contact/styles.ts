@@ -89,6 +89,14 @@ export const ContactContainer = styled.div`
                     margin-left: 10px;
                 }
             }
+            @media (max-width: 425px) {
+                .title {
+                    width: 400px;
+                }
+                .title > h2 {
+                    font-size: 75px;
+                }
+            }
         }
         form {
             display: flex;
@@ -127,6 +135,9 @@ export const ContactContainer = styled.div`
                     transform: scale(1.1);
                 }
             }
+        }
+        @media (max-width: 425px) {
+            padding: 20px;
         }
     }
 `

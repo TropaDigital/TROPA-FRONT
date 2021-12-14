@@ -48,6 +48,12 @@ export const MainContainer = styled.div`
                 right: 190px;
             }   
         }
+        @media (max-width: 425px) {
+            .close {
+                top: 155px;
+                right: 60px;
+            }
+        }
     }
     .payment {
         width: 70%;
@@ -57,6 +63,9 @@ export const MainContainer = styled.div`
         border: none;
         padding: 10px 0;
         cursor: pointer;
+        @media (max-width: 425px) {
+            width: 90%;
+        }
     }
 `
 export const MainCard = styled.div`
@@ -68,6 +77,10 @@ export const MainCard = styled.div`
     @media (max-width: 1100px) {
         width: 80%;
         height: 60%;
+    }
+    @media (max-width: 425px) {
+        width: 90%;
+        height: 45%;
     }
     .pay-now {
         width: 100%;
