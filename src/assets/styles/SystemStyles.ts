@@ -20,9 +20,13 @@ export const SystemContainer = styled.div`
     @media (max-width: 1100px) {
       width: 1100px !important;
     }
+    @media (max-width: 425px) {
+      width: 425px !important;
+      padding-top: 30px !important;
+    }
   } 
   .bannerSystemAnimation {
-    background-size: auto !important;    
+    
   }
 `
 
@@ -52,6 +56,13 @@ export const BannerSystem = styled.div`
         top: 230px
       }
     }
+    @media (max-width: 425px) {
+      .title > h1 {
+        left: 20px;
+        top: 180px;
+        font-size: 2.8rem;
+      }
+    }
     h1.primary {
         color: ${colors.primary};
     }
@@ -75,31 +86,48 @@ export const BannerSystem = styled.div`
             left: 270px;
           }
         }
+        @media (max-width: 425px) {
+          img {
+            width: 325px;
+            height: 325px;
+            top: -220px;
+            left: 200px;
+          }
+        }
     }
     button {
-        border: 2px solid ${colors.primary};
-        border-radius: 100px;
-        background: transparent;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: bold;
-        color: #FFF;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 20px;
-        position: relative;
-        z-index: 1;
-        top: 380px;
-        cursor: pointer;
-        transition: all .2s;
-        &:hover {
-            background: ${colors.primary};
-            transform: scale(1.1);
-        }
-        @media (max-width: 1100px) {
-          left: 100px;
-          top: 260px;
-        }    
+      border: 2px solid ${colors.primary};
+      border-radius: 100px;
+      background: transparent;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: bold;
+      color: #FFF;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+      top: 380px;
+      cursor: pointer;
+      transition: all .2s;
+      &:hover {
+          background: ${colors.primary};
+          transform: scale(1.1);
+      }
+      @media (max-width: 1100px) {
+        left: 100px;
+        top: 260px;
+      }
+      @media (max-width: 425px) {
+        left: 20px;
+        top: 180px;
+        background: ${colors.primaryLight};
+        color: ${colors.primary};
+      }    
+    }
+    @media (max-width: 425px) {
+      width: 90%;
     }
   } 
   .text {
@@ -176,6 +204,9 @@ export const LanguagesContainer = styled.div`
     img {
       margin: 0px 20px;
     }
+  }
+  @media (max-width: 425px) {
+    height: 350px;
   }
 `
 
