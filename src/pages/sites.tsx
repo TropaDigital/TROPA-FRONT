@@ -76,7 +76,7 @@ const Sites: NextPage = () => {
                 <StageItems
                     title="Todas etapas"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque suscipit nulla non vehicula."
-                    icon={<IconCube className="effect-stroke grey" />}
+                    icon={<IconCube className="effect-stroke dark" />}
                     items={[
                         {
                             title: 'Velocidade',
