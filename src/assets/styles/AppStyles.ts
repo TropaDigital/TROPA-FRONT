@@ -14,6 +14,10 @@ export const AppContainer = styled.div`
         }
       }
     }
+    @media (max-width: 425px) {
+      width: 425px !important;
+      padding-top: 30px !important;
+    }
   }
   .bannerAppAnimation {
     background-position: center center;
@@ -165,8 +169,17 @@ export const BannerApp = styled.div`
     }
     button {
       margin-top: 40px;
+      position: relative;
+      left: -25px;
     }
-
+    @media (max-width: 425px) {
+      width: 415px;
+      h1 {
+        width: 420px;
+        font-size: 35px;
+        margin-left: 20px;
+      }
+    }
   }
   .phone {
     width:50%;
@@ -180,6 +193,15 @@ export const BannerApp = styled.div`
     }
     img {
       height: calc(100vh - 210px);
+    }
+    @media (max-width: 425px) {
+      width: 25%;
+      margin-left: -110%;
+      align-items: flex-start;
+      img {
+        width: 365px;
+        height: 60%;
+      }
     }
   }
   @media (max-width: 1400px) {

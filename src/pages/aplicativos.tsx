@@ -24,6 +24,12 @@ const Aplicativos: NextPage = () => {
 
     const slider = useRef(null)
 
+    const breakpoints = ([
+        { width: 1, itemsToShow: 2 },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+        { width: 850, itemsToShow: 3 },        
+    ])
+
     return (
         <Layout>
             <AppContainer>
@@ -156,8 +162,9 @@ const Aplicativos: NextPage = () => {
                             showArrows={false}
                             showEmptySlots={false}
                             ref={slider}
+                            breakPoints={breakpoints}
                         >
-                            {[0, 1, 2, 3, 4, 5].map((row, key) => (
+                            {[0, 1, 2, 3, 4, 5 ].map((row, key) => (
                                 <div
                                     className="card"
                                     key={key}
