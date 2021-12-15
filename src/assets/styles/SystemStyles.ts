@@ -24,10 +24,7 @@ export const SystemContainer = styled.div`
       width: 425px !important;
       padding-top: 30px !important;
     }
-  } 
-  .bannerSystemAnimation {
-    
-  }
+  }   
 `
 
 export const BannerSystem = styled.div`
@@ -61,10 +58,15 @@ export const BannerSystem = styled.div`
         left: 20px;
         top: 180px;
         font-size: 2.8rem;
+        line-height: 30px;
+        margin-bottom: 15px;
       }
     }
     h1.primary {
         color: ${colors.primary};
+        @media (max-width: 425px) {
+          text-shadow: 5px 5px 5px #00000080;
+        }
     }
     .note {
         width: 100%;
@@ -90,7 +92,7 @@ export const BannerSystem = styled.div`
           img {
             width: 325px;
             height: 325px;
-            top: -220px;
+            top: -155px;
             left: 200px;
           }
         }
@@ -124,6 +126,11 @@ export const BannerSystem = styled.div`
         top: 180px;
         background: ${colors.primaryLight};
         color: ${colors.primary};
+        padding: 15px;
+        font-size: 14px;
+        &:hover {
+          color: ${colors.primaryGrey};
+        }
       }    
     }
     @media (max-width: 425px) {
