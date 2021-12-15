@@ -30,8 +30,18 @@ export const AccordionContainer = styled.div`
                     right: 10px;
                     width: 260px;
                     height: 260px;
-                    path {
-                        fill: ${colors.primaryLight};
+                }
+                @media (max-width: 425px) {
+                    width: 400px;
+                    h3 {
+                        font-size: 60px;
+                        line-height: 65px;
+                        margin-left: 30px;
+                    }
+                    svg {
+                        right: 70px;
+                        width: 140px;
+                        height: 140px;
                     }
                 }
             }
@@ -41,6 +51,11 @@ export const AccordionContainer = styled.div`
                 font-size: 18px;
                 margin-top: 40px;
                 font-weight:normal;
+            }
+            @media (max-width: 425px) {
+                p {
+                    margin-left: 30px;
+                }
             }
         }
         .accordion {
@@ -91,6 +106,13 @@ export const AccordionContainer = styled.div`
                 }
             }
         }
+        @media (max-width: 425px) {
+            align-items: center;
+            padding: 0;
+        }
+    }
+    @media (max-width: 425px) {
+        padding: 70px 0;
     }
 `
 
