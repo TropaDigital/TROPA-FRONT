@@ -20,6 +20,9 @@ export const MessageContainer = styled.div`
         h1 {
             margin-bottom: 30px;
         }
+        @media (max-width: 425px) {
+            font-size: 0.8rem;
+        }
         .close {
             cursor: pointer;
             background: none;
@@ -51,8 +54,11 @@ export const MessageContainer = styled.div`
         }
         @media (max-width: 425px) {
             .close {
-                top: 155px;
-                right: 70px;
+                top: 120px;
+                right: 40px;
+                svg {
+                    width: 30px;
+                }
             }
         }
     }
@@ -70,12 +76,20 @@ export const MessageContainer = styled.div`
             font-size: 1.3rem;
             color: ${colors.primaryLight};
             margin-right: 8px;
+            @media (max-width: 425px) {
+                font-size: 1rem;
+            }
         }
         .primary {
             color: ${colors.primary};
         }
         @media (max-width: 1100px) {
             background: radial-gradient(200px 80px at 300px bottom, ${colors.primary}, ${colors.primaryDark});
+        }
+        @media (max-width: 425px) {
+            background: radial-gradient(100px 60px at 150px bottom, ${colors.primary}, ${colors.primaryDark});
+            padding: 25px;
+            width: 90%;
         }
     }
 `
@@ -93,7 +107,8 @@ export const CardContainer = styled.div`
         height: 70%;
     }
     @media (max-width: 425px) {
-            height: 50%;
+            height: 65%;
+            width: 90%;
         }
     .receiver {
         h3 {
@@ -126,7 +141,7 @@ export const CardContainer = styled.div`
             }
         }
         @media (max-width: 425px) {
-            margin-bottom: 50px;
+            margin-bottom: 10px;
         }
     }
     button {
@@ -157,6 +172,11 @@ export const Messages = styled.div`
         height: 100%;
         margin-bottom: 15px;
     }
+    @media (max-width: 425px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
     .msg {
         display: flex;
         flex-direction: column;
@@ -166,6 +186,9 @@ export const Messages = styled.div`
         h3 {
             color: ${colors.primaryDark};
             margin-bottom: 10px;
+            @media (max-width: 425px) {
+                width: 250px;
+            }
         }
         input {
             align-self: flex-start;
@@ -195,6 +218,9 @@ export const Messages = styled.div`
         p {
             color: ${colors.primary};
             margin-bottom: 10px;
+            @media (max-width: 425px) {
+                width: 250px;
+            }
         }
         textarea {
             border-radius: 16px;
@@ -207,6 +233,10 @@ export const Messages = styled.div`
             @media (max-width: 1100px) {
                 width: 100%;
                 height: 270px;
+            }
+            @media (max-width: 425px) {
+                width: 280px;
+                height: 80%;
             }
         }
     }

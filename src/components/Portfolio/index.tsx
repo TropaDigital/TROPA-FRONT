@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Header from '../../components/Layout/Header';
 import Animate from '../../components/Animation/Animate';
 import { IconAstronaut, IconCube, IconFlag } from '../Svg';
+import { useState } from 'react';
 
 interface IPort {
     title: string;
@@ -18,16 +19,17 @@ interface IMobile {
 
 const Portfolio: NextPage<IPort> = ({
     title,
-    mobile = [
+    mobile,
+}) => {
+    const router = useRouter();
+
+    const [mobileImg, setMobileImg] = useState([
         { id: 1, src: '/images/Customer.png', title: 'Docket pagina principal' },
         { id: 2, src: '/images/Alpha.png', title: 'Alpha FM pagina principal' },
         { id: 3, src: '/images/Eyou.png', title: 'Eyou pagina principal' },
         { id: 4, src: '/images/Meat.png', title: 'Meat Web Cooker pagina principal' },
-    ],
-}) => {
-    const router = useRouter();
+    ])
 
-   
     return (
         <PortfolioContainer>
             <Head>
@@ -97,7 +99,7 @@ const Portfolio: NextPage<IPort> = ({
                     <div className='mobile'>
                         <img src="/images/TropaPhone.png" alt="Celular com logo da Tropa" />
                     </div>
-                        {[0, 1, 2].map((row, key: any) => (
+                        {mobileImg.map((row, key: any) => (
                         <>
                             <div className='phone'>                        
                                 <div className='cel'>

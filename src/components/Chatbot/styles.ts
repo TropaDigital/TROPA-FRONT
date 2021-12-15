@@ -15,7 +15,7 @@ export const ChatbotContainer = styled.div`
         height: 90%;
     }
     @media (max-width: 425px) {
-        height: 75%;
+        height: 90%;
         width: 100%;
     }
     .close {
@@ -47,8 +47,11 @@ export const ChatbotContainer = styled.div`
     }
     @media (max-width: 425px) {
         .close {
-            top: 150px;
-            right: 55px;
+            top: 110px;
+            right: 40px;
+            svg {
+                width: 30px;
+            }
         }
     }
 `
@@ -65,6 +68,9 @@ export const DivChat = styled.div`
     }
     div > h1 {
         color: ${colors.primaryDark};
+        @media (max-width: 425px) {
+            font-size: 25px;
+        }
     }
     .buttons {
         margin-top: 10px;
@@ -81,6 +87,9 @@ export const DivChat = styled.div`
                 background: ${colors.primary};
                 color: ${colors.primaryLight};
             }
+        }
+        @media (max-width: 425px) {
+            margin-bottom: 15px;
         }
     }
     .personalized {
@@ -102,7 +111,11 @@ export const DivChat = styled.div`
             color: ${colors.primary};
         }
         @media (max-width: 425px) {
-            width: 90%;
+            width: 100%;
+            padding: 30px;
+            p {
+                font-size: 1rem;
+            }
         }
     }
 `
@@ -125,8 +138,9 @@ export const Chat = styled.div`
     }
     @media (max-width: 425px) {
         height: 70%;
-        width: 90%;
+        width: 100%;
         align-items: center;
+        padding: 20px;
     }
     .bot {
         display: flex;
@@ -159,6 +173,11 @@ export const Chat = styled.div`
                 padding: 20px;
                 background: #cebaa8a6;
                 border-radius: 0 12px 12px 12px;
+                @media (max-width: 425px) {
+                    padding: 10px;
+                    font-size: 14px;
+                    width: 220px;
+                }
             }
         }
     }
@@ -194,6 +213,11 @@ export const Chat = styled.div`
                 padding: 20px;
                 background: #cebaa8a6;
                 border-radius: 12px 0 12px 12px;
+                @media (max-width: 425px) {
+                    padding: 10px;
+                    font-size: 14px;
+                    width: 220px;
+                }
             }
         }
     }
@@ -215,9 +239,9 @@ export const Chat = styled.div`
             left: 318px;
         }
         @media (max-width: 425px) {
-            width: 540px;
-            top: 800px;
-            left: 100px;
+            width: 345px;
+            top: 582px;
+            left: 40px;
         }
         input {
             width: 90%;

@@ -41,6 +41,7 @@ export const ContainerCenter = styled.div`
     @media (max-width: 425px) {
       width: 100%;
       flex-direction: column;
+      justify-content: space-evenly;
       padding: 0px 10px;
     }   
 `
@@ -58,6 +59,7 @@ export const HeaderContainer = styled.div`
     overflow: hidden;
     @media (max-width: 425px) {
       width: 100%;
+      background-size: auto;
     }   
     .center-banner {
         height: 100%;

@@ -10,13 +10,23 @@ export const StagesContainer = styled.div`
         display: flex;
         justify-content: space-between;
         height: 600px;
+        @media (max-width: 425px) {
+            height: 850px;
+            align-items: center;
+        }
         .left {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            @media (max-width: 425px) {
+                width: 400px;
+            }
             .title {
                 position: relative;
                 width: 590px;
+                @media (max-width: 425px) {
+                    width: 400px;
+                }
                 h3 {
                     font-size: 140px;
                     color: ${colors.primary};
@@ -24,6 +34,12 @@ export const StagesContainer = styled.div`
                     font-family: ${fonts.chaney};
                     font-weight: normal;
                     letter-spacing: -8px;
+                    @media (max-width: 425px) {
+                        font-size: 60px;
+                        width: 200px;
+                        line-height: 65px;
+                        margin-top: 30px;
+                    }
                 }
                 svg {
                     position: absolute;
@@ -31,8 +47,10 @@ export const StagesContainer = styled.div`
                     right: 10px;
                     width: 260px;
                     height: 260px;
-                    path {
-                        fill: ${colors.primaryDark};
+                    @media (max-width: 425px) {
+                        width: 120px;
+                        right: 120px;
+                        bottom: -100px;
                     }
                 }
             }

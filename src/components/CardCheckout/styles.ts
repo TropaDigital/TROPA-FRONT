@@ -13,12 +13,20 @@ export const MainContainer = styled.div`
     @media (max-width: 1100px) {
         height: 95%;
     }
+    @media (max-width: 425px) {
+        justify-content: flex-start;
+        padding-top: 40px;
+        height: 98%;
+    }
     .title {
         display: flex;
         gap: 80%;
         h1 {
             margin-bottom: 30px;
             color: ${colors.primaryGrey};
+            @media (max-width: 425px) {
+                font-size: 1.3rem;
+            }
         }
         .close {
             cursor: pointer;
@@ -50,8 +58,11 @@ export const MainContainer = styled.div`
         }
         @media (max-width: 425px) {
             .close {
-                top: 155px;
-                right: 60px;
+                top: 115px;
+                right: 40px;
+                svg {
+                    width: 30px;
+                }
             }
         }
     }
@@ -64,7 +75,7 @@ export const MainContainer = styled.div`
         padding: 10px 0;
         cursor: pointer;
         @media (max-width: 425px) {
-            width: 90%;
+            visibility: hidden;
         }
     }
 `
@@ -80,7 +91,8 @@ export const MainCard = styled.div`
     }
     @media (max-width: 425px) {
         width: 90%;
-        height: 45%;
+        height: 100%;
+        padding: 20px 40px 20px 30px;
     }
     .pay-now {
         width: 100%;

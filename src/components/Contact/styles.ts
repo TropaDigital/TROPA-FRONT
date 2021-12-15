@@ -92,9 +92,22 @@ export const ContactContainer = styled.div`
             @media (max-width: 425px) {
                 .title {
                     width: 400px;
+                    margin-left: 20px;
+                    > h2 {
+                        font-size: 75px;
+                    }
+                    svg {
+                        right: 60px;
+                        top: 10px;
+                        width: 170px;
+                        height: 170px;
+                    }
                 }
-                .title > h2 {
-                    font-size: 75px;
+                > p {
+                    margin-left: 20px;  
+                }
+                > a {
+                    margin-left: 20px;  
                 }
             }
         }
@@ -116,6 +129,10 @@ export const ContactContainer = styled.div`
                 &::placeholder {
                     color: ${colors.primaryLight};
                 }
+                @media (max-width: 425px) {
+                    width: 90%;
+                    margin-bottom: 25px;
+                }
             }
             textarea {
                 height: 120px;
@@ -134,6 +151,9 @@ export const ContactContainer = styled.div`
                 &:hover {
                     transform: scale(1.1);
                 }
+            }
+            @media (max-width: 425px) {
+                margin-left: 10%;
             }
         }
         @media (max-width: 425px) {
