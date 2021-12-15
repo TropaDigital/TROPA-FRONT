@@ -33,8 +33,16 @@ export const Mobilecontainer = styled.div`
             position: absolute;
             left: 400px;
             top: 25px;
-            path {
-                fill: black;
+        }
+        @media (max-width: 425px) {
+            width: 270px;
+            h2 {
+                font-size: 45px;
+            }
+            svg {
+                left: 300px;
+                width: 140px;
+                height: 140px;
             }
         }
     }    
@@ -70,8 +78,9 @@ export const SliderDiv = styled.div`
             }
         }
     }
-    @media (max-width: 1400px) {
+    @media (max-width: 425px) {
         width: 70%;
+        flex-direction: column;
     }        
 `
 export const MobileDiv = styled.div`
@@ -126,7 +135,6 @@ export const MobileDiv = styled.div`
             right: 0;
             top: 15px;
             z-index: 0;            
-            background: ${colors.primary};                        
             background-size: cover;
             background-position: center; 
             img {                
@@ -188,7 +196,6 @@ export const MobileDiv = styled.div`
                 right: 0;
                 top: 15px;
                 z-index: 0;            
-                background: ${colors.primary};            
                 background-size: cover;
                 background-position: center; 
                 img {                
@@ -231,9 +238,6 @@ export const MobileDiv = styled.div`
                 right: 0;
                 top: 15px;
                 z-index: 0;            
-                background: ${colors.primary};            
-                background-size: cover;
-                background-position: center; 
                 img {                
                     border-radius: 30px;
                     width: 100%;
@@ -247,7 +251,6 @@ export const MobileDiv = styled.div`
                 width: 86%;
                 height: 95%;
                 border-radius: 30px;
-                background: ${colors.primary};                        
                 transition: .5s ease;
                 opacity:0;
                 p {
@@ -260,6 +263,47 @@ export const MobileDiv = styled.div`
                 }                
             }
         }
+    }
+    @media (max-width: 425px) {
+        .mobile {
+            margin-left: 15px;
+            img {
+                width: 95%;
+                height: 450px;
+            }
+            .back-image {                 
+                height: 94%;
+                width: 80%;
+                left: -12px;
+                right: 0;
+                top: 15px;
+                z-index: 0;         
+                background-size: cover;
+                background-position: center; 
+                img {                
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 98%;
+                }        
+            }        
+            .overlay {            
+                top: 10px;
+                left: 17px;
+                width: 86%;
+                height: 94%;
+                border-radius: 20px;
+                transition: .5s ease;
+                opacity:0;
+                p {
+                    top: 220px;
+                    left: 20px;                
+                }                  
+                svg {
+                    top: 150px;
+                    left: 70px;
+                }                
+            }
+        }    
     }
 `
 

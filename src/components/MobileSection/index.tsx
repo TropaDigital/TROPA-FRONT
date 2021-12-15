@@ -7,6 +7,7 @@ import { Mobilecontainer, MobileDiv, SliderDiv } from './styles';
 
 interface IProps {
     itemsToShow?: number;
+    width?: number;
 }
 
 const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => { 
@@ -41,6 +42,15 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
         },
     ]);
 
+    const breakpoints = ([
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+        { width: 850, itemsToShow: 3 },
+        { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
+        { width: 1450, itemsToShow: 5 },
+        { width: 1750, itemsToShow: 6 }, 
+    ])
+
     const slider = useRef(null)     
 
     return (
@@ -50,7 +60,7 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
                 <Animate effect="fadeInLeft" startAnimation={100}>
                     <div className="title">
                         <h2>Nós Criamos</h2>
-                        <IconAstronaut className="effect-stroke light"/>
+                        <IconAstronaut className="effect-stroke dark"/>
                     </div>
                 </Animate>                                
                     <div className="buttons">
@@ -69,6 +79,7 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
                     showArrows={false}
                     itemPadding={[0, 15]}
                     ref={slider}
+                    breakPoints={breakpoints}
                 >   
                     {data.map((data, key) => (
                         <div className="mobile">
