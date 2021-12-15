@@ -213,6 +213,9 @@ export const LanguagesContainer = styled.div`
       margin: 0px 20px;
     }
   }
+  @media (max-width: 425px) {
+    height: 370px;
+  }
 `
 
 export const PortfolioContainer = styled.div`
@@ -224,11 +227,19 @@ export const PortfolioContainer = styled.div`
   min-height: 100vh;
   overflow: hidden;
   max-height: 100vh;
+  @media (max-width: 425px) {
+    height: 250px;
+    min-height: 80vh;
+  }
   .head-portfolio {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;    
+    justify-content: space-between;
+    @media (max-width: 425px) {
+      justify-content: space-evenly;
+      max-height: 200px;
+    }
   }
   .title {
     margin: 70px 0px;
@@ -250,30 +261,45 @@ export const PortfolioContainer = styled.div`
       top: -20px;
       transform: rotate(20deg);
     }
+    @media (max-width: 425px) {
+      margin: 25px 0;
+      h2 {
+        font-size: 40px;
+        margin-left: 20px;
+      }
+      svg {
+        top: -30px;
+        right: 80px;
+        width: 80px;
+      }
+    }
   }
   .buttons {
-      width: 180px;
-      display: flex;
-      justify-content: space-between;
-      button {
-          background: transparent;            
-          border: none;
-          outline: none;
-          cursor: pointer;
-          transition: all .2s;
-          width: 25px;            
-          &:hover {
-          transform: scale(1.2);
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    button {
+        background: transparent;            
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: all .2s;
+        width: 25px;            
+        &:hover {
+        transform: scale(1.2);
+        }
+        svg {
+          width: 25px;
+          height: 59px;
+          path {
+            stroke: ${colors.primaryGrey};
+            stroke-width: 3;
           }
-          svg {
-            width: 25px;
-            height: 59px;
-            path {
-              stroke: ${colors.primaryGrey};
-              stroke-width: 3;
-            }
-          }
-      }
+        }
+    }
+    @media (max-width: 425px) {
+      margin-bottom: 25px;
+    }
   }
   .cards {
     display: flex;
@@ -290,14 +316,18 @@ export const PortfolioContainer = styled.div`
       transition: all .2s;
       position: relative;
       cursor: pointer;
-      @media(max-height: 1400px) {
+      @media(max-width: 1400px) {
         height: 640px;
       }
-      @media(max-height: 900px) {
+      @media(max-width: 900px) {
         height: 580px;
       }
-      @media(max-height: 600px) {
+      @media(max-width: 600px) {
         height: 350px;
+      }
+      @media(max-width: 425px) {
+        height: 300px;
+        width: 250px;
       }
       &:after {
         width: 100%;
@@ -335,6 +365,11 @@ export const PortfolioContainer = styled.div`
         text-transform: uppercase;
         position: relative;
         z-index: 1;
+      }
+      @media(max-width: 425px) {
+        h4 {
+          font-size: 35px;
+        }
       }
     }
     .rec-carousel {
