@@ -33,8 +33,18 @@ export const WebContainer = styled.div`
             position: absolute;
             left: 400px;
             top: 25px;
-            path {
-                fill: ${colors.primaryGrey};
+        }
+    }
+    @media (max-width: 425px) {
+        padding: 25px;
+        .title {
+            width: 200px;
+            h2 {
+                font-size: 35px;
+            }
+            svg {
+                left: 280px;
+                width: 130px;
             }
         }
     }
@@ -169,13 +179,11 @@ export const WebDiv = styled.div`
                 }                          
             }        
             .overlay {            
-                position: absolute; 
                 top: 15px;
                 left: 47px;
                 width: 75%;
                 height: 81%;
                 p {
-                    position: absolute;
                     top: 60px;
                     left: 20%;                    
                 }
@@ -184,14 +192,26 @@ export const WebDiv = styled.div`
                 }                                   
                 svg {
                     width: 85px;
-                    position: absolute;
                     top: -10px;
                     left: 40%;
-                    path {
-                        fill: ${colors.primaryLight};
-                    }
                 }                                                   
             }
         }
     }          
+    @media (max-width: 425px) {
+        .web {    
+            img {
+                width: 330px;
+            }
+            .back-image { 
+                height: 81%;
+                width: 73%;
+                left: 46px;
+            }        
+            .overlay {            
+                left: 46px;
+                width: 73%;
+            }
+        }
+    }    
 `
