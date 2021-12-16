@@ -4,22 +4,27 @@ import 'animate.css';
 
 export const PortfolioContainer = styled.div`
   .nav-fixed {
-      &.active {
-        background: ${colors.primaryDark};        
-      }
-      ul {
-        li {
-          a {
-            color: ${colors.primaryGrey};
-            &:hover {
-              color: ${colors.primary};
-            }
+    width: 100vw;
+    &.active {
+      background: ${colors.primaryDark}; 
+      width: 100vw;       
+    }
+    ul {
+      li {
+        a {
+          color: ${colors.primaryGrey};
+          &:hover {
+            color: ${colors.primary};
           }
         }
       }
-    @media (max-width: 1100px) {
-      width: 1100px !important;
     }
+    @media (max-width: 1100px) {
+      width: 1100px;
+    }
+    @media (max-width: 425px) {
+      width: 425px;
+    }  
   } 
   .bannerSystemAnimation {
     background-color: ${colors.primaryDark};
@@ -177,17 +182,17 @@ export const PortfolioBanner = styled.div`
 `
 
 export const LandingPage = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 1650px;
   background: ${colors.primaryDark};
   padding: 80px;
   @media (max-width: 1100px) {
-    width: 100%;
     height: 1800px;
   }
   .title {
+    width: 600px;
     position: relative;
-    top: 80px;
+    top: 40px;
     left: 200px;
     z-index: 0;
     @media (max-width: 1100px) {
@@ -209,6 +214,13 @@ export const LandingPage = styled.div`
       path {
         stroke: ${colors.primaryGrey};
         fill: ${colors.primaryGrey};
+      }
+    }
+    @media (max-width: 425px) {
+      width: 400px;
+      h1 {
+        width: 400px;
+        font-size: 6rem;
       }
     }
   }
@@ -235,7 +247,7 @@ export const LandingPage = styled.div`
 `
 
 export const Mobile = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 3200px;
   background: ${colors.primaryDark};
   padding: 160px;
@@ -278,6 +290,11 @@ export const Mobile = styled.div`
     @media (max-width: 1100px) {
       left: 300px;
     }
+    .mobile {
+      @media (max-width: 425px) {
+        width: 300px;
+      }
+    }
     .phone {
       width: 390px;
       height: 700px;
@@ -310,6 +327,9 @@ export const Mobile = styled.div`
           position: absolute;
           left: 22px;
         }
+      }
+      @media (max-width: 425px) {
+        width: 300px;
       }
     }
     .phone2 {
@@ -347,6 +367,9 @@ export const Mobile = styled.div`
           left: 22px;
         }  
       }
+      @media (max-width: 425px) {
+        width: 300px;
+      }
     }
     .phone3 {
       width: 390px;
@@ -380,17 +403,22 @@ export const Mobile = styled.div`
           left: 22px;
         }  
       }
+      @media (max-width: 425px) {
+        width: 300px;
+      }
     }
   }
   .mobile-astro {
-    position: relative;
-    top: -550px;
-    left: 900px;
+    position: absolute;
+    top: 3680px;
+    left: 1530px;
     @media (max-width: 1100px) {
-      left: 90px;
-      top: 200px;
-      overflow-x: hidden;
-      z-index: 0;
+      left: 730px;
+      top: 3780px;
+    }
+    @media (max-width: 425px) {
+      left: 130px;
+      top: 3780px;
     }
     h1 {
       color: ${colors.primary};
@@ -402,13 +430,13 @@ export const Mobile = styled.div`
       width: 140px;
       position: relative;
       top: -260px;
-      left: -250px;
+      left: -50px;
       transform: rotate(35deg);
     }
   }
   .paper {
     position: relative;
-    top: 900px;
+    top: 1350px;
     button {
       width: 700px;
       height: 130px;

@@ -24,11 +24,23 @@ const Portfolio: NextPage<IPort> = ({
     const router = useRouter();
 
     const [mobileImg, setMobileImg] = useState([
-        { id: 1, src: '/images/Customer.png', title: 'Docket pagina principal' },
-        { id: 2, src: '/images/Alpha.png', title: 'Alpha FM pagina principal' },
-        { id: 3, src: '/images/Eyou.png', title: 'Eyou pagina principal' },
-        { id: 4, src: '/images/Meat.png', title: 'Meat Web Cooker pagina principal' },
-    ])
+        { 
+            src: '/images/Meat.png', 
+            title: 'Meat Web Cooker pagina principal' 
+        },
+        { 
+            src: '/images/Alpha.png', 
+            title: 'Alpha FM pagina principal' 
+        },
+        { 
+            src: '/images/Eyou.png', 
+            title: 'Eyou pagina principal' 
+        },
+        {
+             src: '/images/Customer.png', 
+             title: 'Docket pagina principal' 
+        },
+    ]);
 
     return (
         <PortfolioContainer>
@@ -99,49 +111,40 @@ const Portfolio: NextPage<IPort> = ({
                     <div className='mobile'>
                         <img src="/images/TropaPhone.png" alt="Celular com logo da Tropa" />
                     </div>
-                        {mobileImg.map((row, key: any) => (
+                        {mobileImg.map((data, key: any) => (
                         <>
                             <div className='phone'>                        
                                 <div className='cel'>
                                     <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                 </div>
                                 <div className='back' key={key}>
-                                        <img src="/images/Customer.png" alt="" />
-                                        {/*
-                                            <img src={row.src} alt={row.title} />                                          
-                                         */}
+                                    <img src={data.src} alt={data.title} />
                                 </div>                        
                             </div>
-                       
+                                    
                             <div className='phone2'>                        
                                 <div className='cel2'>
                                     <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                 </div>
-                                <div className='back2'>
-                                    <img src="/images/Customer.png" alt="" />
-                                    {/*
-                                        <img src={row.src} alt={row.title} />                                          
-                                    */}
+                                <div className='back2' key={key}>
+                                    <img src={data.src} alt={data.title} />
                                 </div>                        
                             </div>
-                       
+                        
                             <div className='phone3'>                        
                                 <div className='cel3'>
                                     <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                 </div>
-                                <div className='back3'>
-                                    <img src="/images/Customer.png" alt="" />
-                                    {/*
-                                        <img src={row.src} alt={row.title} />                                          
-                                    */}
+                                <div className='back3' key={key}>
+                                    <img src={data.src} alt={data.title} />
                                 </div>                        
                             </div> 
-                        </>
-                        ))}
+                        </>    
+                        ))} 
                 </div>     
 
                 <div className='mobile-astro'>
-                    <h1>mobile</h1>
+                    <h1>mob</h1>
                     <IconAstronaut className="effect-stroke light"/>
                 </div> 
                 
