@@ -45,6 +45,9 @@ export const HomeContainer = styled.div`
       animation: animationBanner linear 5s infinite;
       animation-delay: 1.3s;
     }
+    @media (max-width: 425px) {
+      
+    }
   }
 `
 
@@ -60,6 +63,9 @@ export const BannerHome = styled.div`
     font-family: ${fonts.chaney};
     font-weight: normal;
     letter-spacing: -5px;
+    @media (max-width: 425px) {
+      font-size: 70px;
+    }
   }
   .description {
     font-size: 33px;
@@ -67,6 +73,9 @@ export const BannerHome = styled.div`
     font-family: ${fonts.bebasNeue};
     font-weight: 400;
     letter-spacing: 20px;
+    @media (max-width: 425px) {
+      font-size: 22px;
+    }
   }
   button {
     height: 95px;
@@ -196,14 +205,41 @@ export const AboutContainer = styled.div`
           fill: ${colors.primaryDark};;
         }
       }
+      @media (max-width: 425px) {
+        .title {
+          font-size: 35px;
+        }
+      }
     }
   }
   @media (max-width: 425px) {
+    .products {
+      flex-direction: column;
+      .product {
+        width: 80%;
+        height: 250px;
+        padding: 20px;
+        p {
+          margin: 20px;
+        }
+      }
+      .product.mobile {
+        padding: 60px 40px 5px 40px;
+      }
+      .product-active {
+        width: 90%;
+        height: 400px; 
+        margin: -35px 0px; 
+        svg {
+          width: 100px;
+        }
+      }
+    }
     div.title {
       h2 {
         padding-left: 30px;
         width: 180px;
-        font-size: 31px;
+        font-size: 42px;
       }
       svg {
         right: 160px;
@@ -243,7 +279,7 @@ export const PortfolioContainer = styled.div`
   max-height: 100vh;
   @media (max-width: 425px) {
     height: 250px;
-    min-height: 80vh;
+    min-height: 65vh;
   }
   .head-portfolio {
     flex: 1;

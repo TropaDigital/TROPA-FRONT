@@ -180,7 +180,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                 startAnimation={50}
                                 delayAnimation={1.5}
                                 effect="fadeInLeft"
-                                className="product"
+                                className="product mobile"
                             >
                                 <Link href="/sites">
                                     <a>
