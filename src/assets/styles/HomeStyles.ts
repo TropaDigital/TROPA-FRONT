@@ -198,6 +198,20 @@ export const AboutContainer = styled.div`
       }
     }
   }
+  @media (max-width: 425px) {
+    div.title {
+      h2 {
+        padding-left: 30px;
+        width: 180px;
+        font-size: 31px;
+      }
+      svg {
+        right: 160px;
+        top: 0;
+        width: 100px;
+      }
+    }
+  }
 `
 
 export const LanguagesContainer = styled.div`
