@@ -96,12 +96,12 @@ export const HeaderContainer = styled.div`
         }
         .nav-fixed {
             position: fixed;
-            width: 100%;
+            width: 100vw;
             padding: 70px 0px;
             top: 0px;
             transition: all .5s;
             @media (max-width: 425px) {
-                width: 100%;
+                width: 100vw;
             }  
             &.active {
                 position: fixed;
