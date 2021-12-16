@@ -25,7 +25,8 @@ export const StagesContainer = styled.div`
                 position: relative;
                 width: 590px;
                 @media (max-width: 425px) {
-                    width: 400px;
+                    width: 385px;
+                    margin-left: 15px;
                 }
                 h3 {
                     font-size: 140px;
@@ -60,6 +61,9 @@ export const StagesContainer = styled.div`
                 font-size: 18px;
                 margin-top: 40px;
                 font-weight:normal;
+                @media (max-width: 425px) {
+                    margin-left: 15px;
+                }
             }
         }
         .stages {
