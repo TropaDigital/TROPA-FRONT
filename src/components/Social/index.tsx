@@ -29,6 +29,12 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
         },
     ]);    
 
+    const breakpoints = ([
+        { width: 1, itemsToShow: 1 },
+        { width: 450, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+        { width: 850, itemsToShow: 3 },        
+    ])
+
     const slider = useRef(null)
 
     return (
@@ -56,6 +62,7 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
                             pagination={false}
                             itemPadding={[0, 15]}
                             ref={slider}
+                            breakPoints={breakpoints}
                         >
                             {data.map((row, key) => (
                                 <div className="card" key={key}>

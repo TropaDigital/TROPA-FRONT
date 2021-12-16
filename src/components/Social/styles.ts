@@ -31,6 +31,22 @@ export const SocialContainer = styled.div`
       margin-left: -180px;
     }
   }
+  @media (max-width: 425px) {
+    .slider {
+      height: 220px;
+    }
+    .title{
+      width: 290px;
+      h2 {
+        font-size: 49px;
+      }
+      svg {
+        position: absolute;
+        width: 110px;
+        margin-left: 150px;
+      }
+    }
+  }
 `
 
 export const SocialContainerCarousel = styled.div`
