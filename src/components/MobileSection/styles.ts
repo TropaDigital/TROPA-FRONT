@@ -289,7 +289,7 @@ export const MobileDiv = styled.div`
             .overlay {            
                 top: 10px;
                 left: 17px;
-                width: 86%;
+                width: 82%;
                 height: 94%;
                 border-radius: 20px;
                 transition: .5s ease;
