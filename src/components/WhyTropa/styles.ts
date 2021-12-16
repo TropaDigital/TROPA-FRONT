@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../assets/styles/mixin";
 
 export const WhyTropaContainer = styled.div`
   height: 100vh;
@@ -29,12 +30,25 @@ export const WhyTropaContainer = styled.div`
       svg {
         transform: rotate(200deg);
       }
+      @media (max-width: 425px) {
+        margin-top: 100px;
+        margin-left: 25px;
+        svg {
+          width: 120px;
+        }
+      }
     }
     &.clock {
       margin-top: -190px;
       margin-left: 100px;
       svg {
         transform: rotate(0deg);
+      }
+      @media (max-width: 425px) {
+        margin-top: 140px;
+        svg {
+          width: 120px;
+        }
       }
     }
     &.global {
@@ -43,12 +57,25 @@ export const WhyTropaContainer = styled.div`
       svg {
         transform: rotate(50deg);
       }
+      @media (max-width: 425px) {
+        margin-left: 200px;
+        margin-top: 0vh;
+        svg {
+          width: 120px;
+        }
+      }
     }
     &.astronaut {
       margin-top: 0px;
       margin-left: -100px;
       svg {
         transform: rotate(30deg);
+      }
+      @media (max-width: 425px) {
+        margin-left: -50px;
+        svg {
+          width: 120px;
+        }
       }
     }
     &.flag {
@@ -57,11 +84,23 @@ export const WhyTropaContainer = styled.div`
       svg {
         transform: rotate(30deg);
       }
+      @media (max-width: 425px) {
+        margin-right: -40px;
+        svg {
+          width: 120px;
+        }
+      }
     }
     &.check {
       margin-top: -100px;
       svg {
         transform: rotate(30deg);
+      }
+      @media (max-width: 425px) {
+        margin-top: -90px;
+        svg {
+          width: 120px;
+        }
       }
     }
     &.cube {
@@ -70,6 +109,18 @@ export const WhyTropaContainer = styled.div`
       svg {
         transform: rotate(30deg);
       }
+      @media (max-width: 425px) {
+        margin-top: -90px;
+        margin-right: 40px;
+        svg {
+          width: 120px;
+        }
+      }
     }
+  }
+  @media (max-width: 425px) {
+    background-size: 1200px;
+    background-color: #22180f;
+    background-repeat: no-repeat;
   }
 `
