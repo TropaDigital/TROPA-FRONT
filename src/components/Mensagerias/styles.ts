@@ -22,6 +22,7 @@ export const MessageContainer = styled.div`
         }
         @media (max-width: 425px) {
             font-size: 0.8rem;
+            margin-bottom: 10px;
         }
         .close {
             cursor: pointer;
@@ -107,7 +108,7 @@ export const CardContainer = styled.div`
         height: 70%;
     }
     @media (max-width: 425px) {
-            height: 65%;
+            height: 75%;
             width: 90%;
         }
     .receiver {
