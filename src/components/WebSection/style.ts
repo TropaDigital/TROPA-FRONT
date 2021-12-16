@@ -200,17 +200,57 @@ export const WebDiv = styled.div`
     }          
     @media (max-width: 425px) {
         .web {    
+            align-items: center;
+            justify-content: center;
             img {
-                width: 330px;
+                width: 270px;
             }
             .back-image { 
-                height: 81%;
-                width: 73%;
-                left: 46px;
+                height: 125px;
+                width: 195px;
+                left: 68px;
+                top: 13px;
             }        
             .overlay {            
-                left: 46px;
-                width: 73%;
+                left: 40px;
+                width: 72%;
+                height: 79%;
+                top: 13px;
+                svg {
+                    width: 65px;
+                    top: -30px;
+                }
+                p {
+                    top: 45px;
+                }
+                .bottom {
+                    top: 70px;
+                }
+            }
+        }
+    }    
+    @media (max-width: 400px) {
+        .web {    
+            align-items: center;
+            justify-content: center;
+            .back-image { 
+                left: 52px;
+            }        
+            .overlay {            
+                left: 52px;
+                width: 67%;
+                height: 80%;
+                top: 13px;
+                svg {
+                    width: 65px;
+                    top: -30px;
+                }
+                p {
+                    top: 45px;
+                }
+                .bottom {
+                    top: 70px;
+                }
             }
         }
     }    
