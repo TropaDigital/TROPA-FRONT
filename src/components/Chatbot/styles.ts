@@ -15,7 +15,7 @@ export const ChatbotContainer = styled.div`
         height: 90%;
     }
     @media (max-width: 425px) {
-        height: 90%;
+        height: 95%;
         width: 100%;
     }
     .close {
@@ -63,7 +63,7 @@ export const DivChat = styled.div`
     @media (max-width: 425px) {
         width: 90%;
         height: 100%;
-        margin-top: 80px;
+        margin-top: 40px;
         align-items: center;
     }
     div > h1 {
@@ -240,7 +240,7 @@ export const Chat = styled.div`
         }
         @media (max-width: 425px) {
             width: 345px;
-            top: 582px;
+            top: 515px;
             left: 40px;
         }
         input {
