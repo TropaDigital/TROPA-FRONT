@@ -25,8 +25,8 @@ const Aplicativos: NextPage = () => {
     const slider = useRef(null)
 
     const breakpoints = ([
-        { width: 1, itemsToShow: 2 },
-        { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+        { width: 1, itemsToShow: 1, itemsToScroll: 1 },
+        { width: 450, itemsToShow: 2, itemsToScroll: 2, pagination: false },
         { width: 850, itemsToShow: 3 },        
     ])
 

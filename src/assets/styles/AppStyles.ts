@@ -92,7 +92,7 @@ export const BannerApp = styled.div`
     position: relative;    
   }
   .title > h1 {
-    font-size: 18rem;
+    font-size: 19rem;
     font-family: ${fonts.chaney};
     text-transform: uppercase;
     font-weight: normal;
@@ -101,13 +101,13 @@ export const BannerApp = styled.div`
     color: #FFF;
     font-weight: normal;
     position: absolute;
-    left: -95px;
-    top: 290px;
+    left: -200px;
+    top: 350px;
     z-index: 999;
   }
   .title-transparent {
     .transparent {
-      font-size: 18rem;
+      font-size: 19rem;
       font-family: ${fonts.chaney};
       text-transform: uppercase;
       font-weight: normal;
@@ -123,8 +123,8 @@ export const BannerApp = styled.div`
       -webkit-text-stroke: 1px #FFF;
       font-weight: normal;
       position: absolute;
-      left: -95px;
-      top: 435px;
+      left: -200px;
+      top: 495px;
       z-index: 999;
     }
   }
@@ -132,18 +132,17 @@ export const BannerApp = styled.div`
     width: 95vw;
     height: 100vh;
     position: absolute;        
-    left: -290px;
-    top: 0;
+    left: 110px;
+    top: 170px;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: -5%;  
     z-index: 0;
     img {
-      width: 100%;
-      height: 100vh;
+      width: 50%;
+      height: 75vh;
     }
-  }
-  
+  }  
   .text {
     flex: 1;
     flex-direction: column;
@@ -214,14 +213,6 @@ export const BannerApp = styled.div`
     .title-transparent {
       .transparent {
         font-size: 12rem;
-        width: 1000px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100vw;
-        height: 400px;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        -webkit-text-stroke: 1px #FFF;
         left: 55px;
         top: 290px;
       }
@@ -247,13 +238,7 @@ export const BannerApp = styled.div`
     .title-transparent {
       .transparent {
         font-size: 11rem;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100vw;
-        height: 400px;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        -webkit-text-stroke: 1px #FFF;
+        
         left: 95px;
         top: 405px;
       }
@@ -265,6 +250,31 @@ export const BannerApp = styled.div`
       img {
         width: 1200px;
         height: 800px;
+      }      
+    }
+  }
+  @media (max-width: 425px) {
+    .title > h1 {
+      font-size: 4.5rem;
+      width: 380px;
+      left: 10px;
+      top: 132px;      
+    }
+    .title-transparent {
+      .transparent {
+        font-size: 4.5rem;
+        left: 10px;
+        top: 249px;
+      }
+    }
+    .mac {
+      width: 25vw;
+      height: 60vh;
+      top: 150px;
+      left: 50px;
+      img {
+        width: 280px;
+        height: 250px;
       }      
     }
   }
