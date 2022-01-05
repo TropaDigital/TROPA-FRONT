@@ -75,6 +75,7 @@ export const BannerHome = styled.div`
     letter-spacing: 20px;
     @media (max-width: 425px) {
       font-size: 22px;
+      padding-left: 15px;
     }
   }
   button {

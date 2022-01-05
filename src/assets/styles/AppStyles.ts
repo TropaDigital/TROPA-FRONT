@@ -102,8 +102,8 @@ export const BannerApp = styled.div`
     font-weight: normal;
     position: absolute;
     left: -200px;
-    top: 350px;
-    z-index: 999;
+    top: 283px;
+    z-index: 998;
   }
   .title-transparent {
     .transparent {
@@ -111,7 +111,7 @@ export const BannerApp = styled.div`
       font-family: ${fonts.chaney};
       text-transform: uppercase;
       font-weight: normal;
-      width: 1000px;
+      width: 650px;
       line-height: 65px;
       color: transparent;      
       background-repeat: no-repeat;
@@ -120,11 +120,11 @@ export const BannerApp = styled.div`
       height: 400px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; 
-      -webkit-text-stroke: 1px #FFF;
+      -webkit-text-stroke: 2px #FFF;
       font-weight: normal;
       position: absolute;
       left: -200px;
-      top: 495px;
+      top: 425px;
       z-index: 999;
     }
   }
@@ -133,14 +133,14 @@ export const BannerApp = styled.div`
     height: 100vh;
     position: absolute;        
     left: 110px;
-    top: 170px;
+    top: 0;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: -5%;  
     z-index: 0;
     img {
-      width: 50%;
-      height: 75vh;
+      width: 950px;
+      height: 950px;
     }
   }  
   .text {
@@ -205,25 +205,25 @@ export const BannerApp = styled.div`
   }
   @media (max-width: 1400px) {
     .title > h1 {
-      font-size: 12rem;
+      font-size: 14rem;
       width: 650px;
-      left: 55px;
-      top: 190px;      
+      left: 15px;
+      top: 252px;      
     }
     .title-transparent {
       .transparent {
-        font-size: 12rem;
-        left: 55px;
-        top: 290px;
+        font-size: 14rem;
+        left: 15px;
+        top: 380px;
       }
     }
     .mac {
       width: 95vw;
       height: 100vh;
-      left: -90px;
+      left: 200px;
       top: 0;
       img {
-        width: 100%;
+        width: 60%;
         height: 100vh;
       }
     }
@@ -231,14 +231,12 @@ export const BannerApp = styled.div`
   @media (max-width: 1100px) {
     .title > h1 {
       font-size: 11rem;
-      width: 650px;
       left: 95px;
       top: 255px;      
     }
     .title-transparent {
       .transparent {
         font-size: 11rem;
-        
         left: 95px;
         top: 405px;
       }

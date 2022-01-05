@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import {FiMenu} from 'react-icons/fi'
+import {MdClose} from 'react-icons/md'
+
 
 import { ContainerCenter, HeaderContainer } from './styles';
 import { Logo } from '../Svg';
@@ -23,6 +26,8 @@ const Header: React.FC<IProps> = ({
 }) => {
     const [menuFixed, setMenuFixed] = useState<boolean>(false);
 
+    const [openMenu, setOpenMenu ] = useState(false)
+
     useEffect(() => {
         document.addEventListener('scroll', () => {
             if (window.scrollY > 30) {
@@ -37,6 +42,18 @@ const Header: React.FC<IProps> = ({
             });
     }, []);
 
+    const hamburguerIcon = <FiMenu 
+                                className="hamburguer" 
+                                size="35px" 
+                                onClick={() => setOpenMenu(!openMenu)}
+                            />
+                            
+    const closeIcon = <MdClose
+                        className="hamburguer" 
+                        size="35px" 
+                        onClick={() => setOpenMenu(!openMenu)}
+                      />
+
     return (
         <HeaderContainer
             className={className}
@@ -47,11 +64,14 @@ const Header: React.FC<IProps> = ({
                     className={`nav-fixed ${menuFixed ? 'active' : 'inactive'}`}
                 >
                     <ContainerCenter className="center">
+                        
                         <Link href="/">
                             <a className="logo">
                                 <Logo />
                             </a>
                         </Link>
+
+                        {openMenu ? closeIcon : hamburguerIcon}
 
                         <ul>
                             {menus.map((row, key) => (
@@ -62,6 +82,18 @@ const Header: React.FC<IProps> = ({
                                 </li>
                             ))}
                         </ul>
+                        
+                        {openMenu && 
+                            <ul className='hidden'>
+                                {menus.map((row, key) => (
+                                    <li key={key}>
+                                        <Link href={row.href}>
+                                            <a>{row.value}</a>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        }
                     </ContainerCenter>
                 </div>
             </nav>

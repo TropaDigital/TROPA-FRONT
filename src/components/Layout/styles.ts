@@ -107,10 +107,11 @@ export const HeaderContainer = styled.div`
                 position: fixed;
                 top: 0px;
                 padding: 10px 0px;
+                height: 50px;
                 .logo {
                     svg {
                         width: 126px;
-                        height: 20px;
+                        height: 30px;
                     }
                 }
                 .search {
@@ -160,6 +161,51 @@ export const HeaderContainer = styled.div`
                     transition: all .2s;
                 }
             }
+            @media (max-width: 425px) {
+                display: none;
+            }
+        }
+        .hidden {
+            display: flex;
+            flex-direction: column;
+            list-style:none;
+            padding: 10px;
+            margin: 0px;
+            border-radius: 16px;
+            align-items: center;
+            background-color: rgba(204, 97, 56, 0.8);
+            width: 100%;
+            /* height: 60px; */
+            position: relative;
+            top: -65px;
+            li {
+                margin-left: 35px;
+                @media (max-width: 425px) {
+                    margin-left: 15px;
+                }  
+                a {
+                    text-decoration:none;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-family: ${fonts.bebasNeue};
+                    letter-spacing: 2px;
+                    font-weight: 400;
+                    cursor: pointer;
+                    &:hover {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+        .hamburguer {
+            color: ${colors.primaryLight};
+            display: none;
+            @media (max-width: 425px) {
+                display: flex;
+                position: relative;
+                right: -330px;
+                top: -50px;
+            }  
         }
     }
     .content-banner {
