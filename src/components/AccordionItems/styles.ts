@@ -32,7 +32,7 @@ export const AccordionContainer = styled.div`
                     height: 260px;
                 }
                 @media (max-width: 425px) {
-                    width: 400px;
+                    width: 390px;
                     h3 {
                         font-size: 60px;
                         line-height: 65px;

@@ -14,9 +14,8 @@ export const AppContainer = styled.div`
         }
       }
     }
-    @media (max-width: 425px) {
-      width: 425px !important;
-      padding-top: 30px !important;
+    .hamburguer {
+      color: ${colors.primaryDark};
     }
   }
   .bannerAppAnimation {
@@ -60,7 +59,7 @@ export const AppContainer = styled.div`
           }
         }
         a {
-          color: ${colors.primary};
+          color: ${colors.primaryDark};
         }
       }
       ul {
