@@ -92,8 +92,8 @@ export const WeDoContainer = styled.div`
                     margin-left: 90px;
                 }
                 @media (max-width: 425px) {
-                    width: 380px;
-                    margin-left: 5px;
+                    width: 360px;
+                    margin-left: 0;
                 }
                 &:hover {
                     width: 85%;

@@ -33,7 +33,7 @@ export const Container = styled.div<Props>`
     }
     @media (max-width: 425px) {
         justify-content: flex-start;
-        margin-top: 120px;
+        margin-top: 80px;
         width: 90%;
     }
 `;

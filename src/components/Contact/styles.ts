@@ -92,7 +92,7 @@ export const ContactContainer = styled.div`
             @media (max-width: 425px) {
                 .title {
                     width: 400px;
-                    margin-left: 20px;
+                    margin-left: 35px;
                     > h2 {
                         font-size: 75px;
                     }
@@ -104,10 +104,10 @@ export const ContactContainer = styled.div`
                     }
                 }
                 > p {
-                    margin-left: 20px;  
+                    margin-left: 35px;  
                 }
                 > a {
-                    margin-left: 20px;  
+                    margin-left: 35px;  
                 }
             }
         }

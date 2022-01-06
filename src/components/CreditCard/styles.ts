@@ -86,6 +86,11 @@ export const UserData = styled.div`
                 margin-top: 10px;
             }
         }
+        .rccs__card {
+            @media (max-width: 425px) {
+                margin-left: -16px;
+            }
+        }
     }
     @media (max-width: 425px) {
         justify-content: flex-start;

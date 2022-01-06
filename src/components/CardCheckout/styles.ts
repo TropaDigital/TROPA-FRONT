@@ -25,7 +25,7 @@ export const MainContainer = styled.div`
             margin-bottom: 30px;
             color: ${colors.primaryGrey};
             @media (max-width: 425px) {
-                font-size: 1.3rem;
+                font-size: 20px;
             }
         }
         .close {
@@ -58,7 +58,6 @@ export const MainContainer = styled.div`
         }
         @media (max-width: 425px) {
             .close {
-                top: 115px;
                 right: 40px;
                 svg {
                     width: 30px;

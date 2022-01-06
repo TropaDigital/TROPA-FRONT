@@ -55,7 +55,7 @@ export const MessageContainer = styled.div`
         }
         @media (max-width: 425px) {
             .close {
-                top: 120px;
+                top: 95px;
                 right: 40px;
                 svg {
                     width: 30px;
@@ -88,9 +88,7 @@ export const MessageContainer = styled.div`
             background: radial-gradient(200px 80px at 300px bottom, ${colors.primary}, ${colors.primaryDark});
         }
         @media (max-width: 425px) {
-            background: radial-gradient(100px 60px at 150px bottom, ${colors.primary}, ${colors.primaryDark});
-            padding: 25px;
-            width: 90%;
+            display: none;
         }
     }
 `
@@ -236,7 +234,7 @@ export const Messages = styled.div`
                 height: 270px;
             }
             @media (max-width: 425px) {
-                width: 280px;
+                width: 230px;
                 height: 80%;
             }
         }

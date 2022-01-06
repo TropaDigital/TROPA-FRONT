@@ -9,9 +9,7 @@ export const StagesContainer = styled.div`
     .center {
         display: flex;
         justify-content: space-between;
-        height: 600px;
         @media (max-width: 425px) {
-            height: 850px;
             align-items: center;
         }
         .left {
@@ -115,6 +113,9 @@ export const StagesContainer = styled.div`
                 }
             }
         }
+    }
+    @media (max-width: 425px) {
+        padding: 70px 0;
     }
 `
 

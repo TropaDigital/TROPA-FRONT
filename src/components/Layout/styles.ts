@@ -190,6 +190,7 @@ export const HeaderContainer = styled.div`
                     font-family: ${fonts.bebasNeue};
                     letter-spacing: 2px;
                     font-weight: 400;
+                    color: #FFF !important;
                     cursor: pointer;
                     &:hover {
                         color: #FFF;
@@ -203,7 +204,7 @@ export const HeaderContainer = styled.div`
             @media (max-width: 425px) {
                 display: flex;
                 position: relative;
-                right: -330px;
+                left: 90%;
                 top: -50px;
             }  
         }

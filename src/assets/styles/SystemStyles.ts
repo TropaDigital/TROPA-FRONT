@@ -21,8 +21,7 @@ export const SystemContainer = styled.div`
       width: 1100px !important;
     }
     @media (max-width: 425px) {
-      width: 425px !important;
-      padding-top: 30px !important;
+      width: 100% !important;
     }
   }   
 `

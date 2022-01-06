@@ -47,7 +47,7 @@ export const ChatbotContainer = styled.div`
     }
     @media (max-width: 425px) {
         .close {
-            top: 110px;
+            top: 90px;
             right: 40px;
             svg {
                 width: 30px;
@@ -69,7 +69,7 @@ export const DivChat = styled.div`
     div > h1 {
         color: ${colors.primaryDark};
         @media (max-width: 425px) {
-            font-size: 25px;
+            font-size: 20px;
         }
     }
     .buttons {
@@ -86,6 +86,9 @@ export const DivChat = styled.div`
             &:hover {
                 background: ${colors.primary};
                 color: ${colors.primaryLight};
+            }
+            @media (max-width: 425px) {
+                padding: 5px 9px;
             }
         }
         @media (max-width: 425px) {
@@ -117,6 +120,9 @@ export const DivChat = styled.div`
                 font-size: 1rem;
             }
         }
+        @media (max-width: 425px) {
+            display: none;
+        }
     }
 `
 
@@ -137,7 +143,7 @@ export const Chat = styled.div`
         width: 550px;
     }
     @media (max-width: 425px) {
-        height: 70%;
+        height: 80%;
         width: 100%;
         align-items: center;
         padding: 20px;
@@ -176,7 +182,7 @@ export const Chat = styled.div`
                 @media (max-width: 425px) {
                     padding: 10px;
                     font-size: 14px;
-                    width: 220px;
+                    width: 200px;
                 }
             }
         }
@@ -216,7 +222,7 @@ export const Chat = styled.div`
                 @media (max-width: 425px) {
                     padding: 10px;
                     font-size: 14px;
-                    width: 220px;
+                    width: 200px;
                 }
             }
         }
@@ -239,9 +245,9 @@ export const Chat = styled.div`
             left: 318px;
         }
         @media (max-width: 425px) {
-            width: 345px;
-            top: 515px;
-            left: 40px;
+            width: 320px;
+            top: 565px;
+            left: 36px;
         }
         input {
             width: 90%;
