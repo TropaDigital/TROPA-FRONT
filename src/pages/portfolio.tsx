@@ -13,15 +13,7 @@ const Portfolios: NextPage = () => {
 
             <Portfolio
                 title='Docket'
-                mobile={[
-                    {
-                        title: 'Um, dois três, testando',
-                        src: '',
-                    }
-                ]}
-            >
-                
-            </Portfolio>
+            />
 
             <Footer />
             

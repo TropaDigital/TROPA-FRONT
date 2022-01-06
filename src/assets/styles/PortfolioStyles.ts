@@ -35,7 +35,7 @@ export const PortfolioContainer = styled.div`
     height: 400px;
     @media (max-width: 1100px) {
       h1 {
-        font-size: 10rem !important;
+        font-size: 10rem;
         text-align: center;
       }
     }
@@ -62,13 +62,14 @@ export const PortfolioBanner = styled.div`
         line-height: 65px;
         margin-bottom: 10px;
         color: ${colors.primaryLight}; 
+        @media (max-width: 1100px) {
+            font-size: 10rem;
+        }
+        @media (max-width: 425px) {
+            font-size: 6rem;
+            top: 230px;
+        }
     }  
-    @media (max-width: 1100px) {
-      .title > h1 {
-        font-size: 3.5rem;
-        top: 230px
-      }
-    }
     h1.primary {
         color: ${colors.primary};
     }
@@ -179,6 +180,9 @@ export const PortfolioBanner = styled.div`
       top: 0;      
     }
   }
+  @media (max-width: 425px) {
+    height: 35vh;
+  }
 `
 
 export const LandingPage = styled.div`
@@ -188,6 +192,9 @@ export const LandingPage = styled.div`
   padding: 80px;
   @media (max-width: 1100px) {
     height: 1800px;
+  }
+  @media (max-width: 425px) {
+    height: 925px;
   }
   .title {
     width: 600px;
@@ -217,10 +224,17 @@ export const LandingPage = styled.div`
       }
     }
     @media (max-width: 425px) {
-      width: 400px;
+      width: 200px;
+      height: 210px;
       h1 {
-        width: 400px;
+        width: 300px;
         font-size: 6rem;
+        line-height: 110px;
+      }
+      svg {
+        width: 70px;
+        left: 120px;
+        top: -140px;
       }
     }
   }
@@ -235,6 +249,10 @@ export const LandingPage = styled.div`
     @media (max-width: 1100px) {
       width: 98%;
       left: 15px;
+    }
+    @media (max-width: 425px) {
+      width: 96%;
+      top: 1150px;
     }
     img {
       width: 950px;
@@ -261,6 +279,9 @@ export const Mobile = styled.div`
     height: 2900px;
     padding: 0 40px;
   }
+  @media (max-width: 425px) {
+    height: 1400px;
+  }
   .mobile-cube {
     position: relative;
     right: 210px;
@@ -269,6 +290,12 @@ export const Mobile = styled.div`
       font-family: ${fonts.bebasNeue};
       font-size: 12rem;
     }
+    svg {
+      position: relative;
+      top: -335px;
+      left: 120px;
+      transform: rotate(45deg);
+    }
     p {
       width: 350px;
       text-align: left;
@@ -276,11 +303,22 @@ export const Mobile = styled.div`
       left: 15px;
       color: ${colors.primaryLight};
     }
-    svg {
-      position: relative;
-      top: -335px;
-      left: 120px;
-      transform: rotate(45deg);
+    @media (max-width: 425px) {
+      right: 90px;
+      top: 15px;
+      h1 {
+        font-size: 4rem;
+      }
+      svg {
+        top: -285px;
+        left: 60px;
+        width: 50px;
+      }
+      p {
+        width: 100px;
+        left: 0;
+        font-size: 10px;
+      }
     }
   }
   .phones {
@@ -290,9 +328,20 @@ export const Mobile = styled.div`
     @media (max-width: 1100px) {
       left: 300px;
     }
+    @media (max-width: 425px) {
+      top: -435px;
+      left: 5px;
+    }
     .mobile {
       @media (max-width: 425px) {
-        width: 300px;
+        width: 220px;
+        /* opacity: 0.1; */
+        position: relative;
+        left: 75px;
+        top: 125px;
+        img {
+          width: 70%;
+        }
       }
     }
     .phone {
@@ -311,25 +360,42 @@ export const Mobile = styled.div`
         img {
           width: 390px;
           height: 700px;
+          @media (max-width: 425px) {
+            width: 90%;
+            height: 80%;
+          }
         }
+        @media (max-width: 425px) {
+          width: 90%;
+          height: 100%;
+        } 
       }
       .back {
         z-index: 0;
         position: absolute;
         top: 0;
-        background: url('/images/Customer.png');
         border-radius: 60px;
+        top: 16px;
+        left: 22px;
         img {
           width: 345px;
           height: 667px;
           border-radius: 40px;
-          top: 16px;
-          position: absolute;
-          left: 22px;
+          @media (max-width: 425px) {
+            width: 140px;
+            height: 300px;
+            border-radius: 20px;
+          }
+        }
+        @media (max-width: 425px) {
+          top: 10px;
+          left: 20px;
         }
       }
       @media (max-width: 425px) {
-        width: 300px;
+        width: 200px;
+        height: 400px;
+        left: -75px;
       }
     }
     .phone2 {
@@ -352,23 +418,42 @@ export const Mobile = styled.div`
         img {
           width: 390px;
           height: 700px;
-        }  
+          @media (max-width: 425px) {
+            width: 90%;
+            height: 80%;
+          }
+        }
+        @media (max-width: 425px) {
+          width: 90%;
+          height: 100%;
+        } 
       }
       .back2 {
         z-index: 0;
-        background: url('/images/Customer.png');
         border-radius: 60px;
+        position: absolute;
+        top: 16px;
+        left: 22px;
         img {
           width: 345px;
           height: 667px;
           border-radius: 40px;
-          top: 16px;
-          position: absolute;
-          left: 22px;
+          @media (max-width: 425px) {
+            width: 140px;
+            height: 300px;
+            border-radius: 20px;
+          }
         }  
+        @media (max-width: 425px) {
+          left: 20px;
+          top: 10px;
+        }
       }
       @media (max-width: 425px) {
-        width: 300px;
+        width: 200px;
+        height: 400px;
+        left: 100px;
+        top: 650px;
       }
     }
     .phone3 {
@@ -388,23 +473,42 @@ export const Mobile = styled.div`
         img {
           width: 390px;
           height: 700px;
-        }  
+          @media (max-width: 425px) {
+            width: 90%;
+            height: 80%;
+          }
+        }
+        @media (max-width: 425px) {
+          width: 90%;
+          height: 100%;
+        }   
       }
       .back3 {
         z-index: 0;
-        background: url('/images/Customer.png');
         border-radius: 60px;
+        position: absolute;
+        top: 16px;
+        left: 22px;
         img {
           width: 345px;
           height: 667px;
           border-radius: 40px;
-          top: 16px;
-          position: absolute;
-          left: 22px;
+          @media (max-width: 425px) {
+            width: 140px;
+            height: 300px;
+            border-radius: 20px;
+          }
+        }
+        @media (max-width: 425px) {
+          left: 20px;
+          top: 10px;
         }  
       }
       @media (max-width: 425px) {
-        width: 300px;
+        width: 200px;
+        height: 400px;
+        top: 900px;
+        left: -75px;
       }
     }
   }
@@ -417,8 +521,7 @@ export const Mobile = styled.div`
       top: 3780px;
     }
     @media (max-width: 425px) {
-      left: 130px;
-      top: 3780px;
+      display: none;
     }
     h1 {
       color: ${colors.primary};
@@ -466,9 +569,28 @@ export const Mobile = styled.div`
       }
       img {
         height: 100px;
-        position: relative;
+        position: absolute;
         top: -5px;
-        left: -80px;
+        left: -40px;
+      }
+    }
+    @media (max-width: 425px) {
+      width: 95%;
+      top: 520px;
+      button {
+        width: 100%;
+        height: 80px;
+        padding: 0;
+        p {
+          width: 200px;
+          left: -45px;
+          font-size: 1rem;
+        }
+        img {
+          height: 50px;
+          left: 120px;
+          top: 15px;
+        }
       }
     }
   }

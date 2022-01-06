@@ -24,18 +24,6 @@ const Portfolio: NextPage<IPort> = ({
     const router = useRouter();
 
     const [mobileImg, setMobileImg] = useState([
-        { 
-            src: '/images/Meat.png', 
-            title: 'Meat Web Cooker pagina principal' 
-        },
-        { 
-            src: '/images/Alpha.png', 
-            title: 'Alpha FM pagina principal' 
-        },
-        { 
-            src: '/images/Eyou.png', 
-            title: 'Eyou pagina principal' 
-        },
         {
              src: '/images/Customer.png', 
              title: 'Docket pagina principal' 
