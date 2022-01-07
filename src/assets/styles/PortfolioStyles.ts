@@ -565,13 +565,13 @@ export const Mobile = styled.div`
         font-weight: bold;
         text-transform: uppercase;
         position: relative;
-        left: 100px;
+        left: 60px;
       }
       img {
         height: 100px;
-        position: absolute;
+        position: relative;
         top: -5px;
-        left: -40px;
+        left: -60px;
       }
     }
     @media (max-width: 425px) {
@@ -587,6 +587,7 @@ export const Mobile = styled.div`
           font-size: 1rem;
         }
         img {
+          position: absolute;
           height: 50px;
           left: 120px;
           top: 15px;

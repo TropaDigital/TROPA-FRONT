@@ -57,10 +57,6 @@ export const HeaderContainer = styled.div`
     background-size: cover;
     position: relative;
     overflow: hidden;
-    @media (max-width: 425px) {
-      width: 100%;
-      background-size: auto;
-    }   
     .center-banner {
         height: 100%;
         display: flex;
