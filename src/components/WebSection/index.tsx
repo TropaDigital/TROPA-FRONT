@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Carousel from 'react-elastic-carousel';
+import apiTropa from '../../pages/api/api';
 import Animate from '../Animation/Animate';
 import { SliderDiv } from '../MobileSection/styles';
 import { IconArrow, IconArrowLeft, IconArrowRight, IconAstronaut } from '../Svg';
@@ -13,35 +14,20 @@ interface IProps {
 
 const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
 
-    const [data, setData] = useState([
-        {
-            image: '/images/MeatW.png',            
-        },
-        {
-            image: '/images/EyouW.png',            
-        },
-        {
-            image: '/images/AlphaW.png',            
-        },
-        {
-            image: '/images/MeatW.png',            
-        },
-        {
-            image: '/images/AlphaW.png',            
-        },
-        {
-            image: '/images/EyouW.png',            
-        },
-        {
-            image: '/images/MeatW.png',            
-        },
-        {
-            image: '/images/AlphaW.png',            
-        },
-        {
-            image: '/images/EyouW.png',            
-        },
-    ]);
+    const [image, setImage] = useState([]);
+
+    useEffect(() => {
+        getImages();
+    }, []);
+
+    async function getImages() {
+        try{
+            let images = await apiTropa.get('/portifolio/?status=ativo');
+            setImage(images.data.result);
+        }catch(e){
+
+        }
+    }
 
     const breakpoints = ([
         { width: 1, itemsToShow: 1 },
@@ -49,7 +35,7 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
         { width: 850, itemsToShow: 3 },
     ]);
 
-    const slider = useRef(null)    
+    const slider: any = useRef(null)    
 
     return(
         <WebContainer>
@@ -78,12 +64,12 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
                     ref={slider} 
                     breakPoints={breakpoints}                   
                 >   
-                    {data.map((data, key) => (
+                    {image.map((data: any, key) => (
                         <div className="web">
                             <img src="/images/Notebook.png" />
                             <div className="card" key={key}>
                                 <div className="back-image">
-                                    <img src={data.image} />
+                                    <img src={data.imagem_tipo} />
                                 </div>                                
                                 <div className="overlay">
                                     <p>Ver este</p> <br /><p className='bottom'> projeto</p>
