@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Carousel from 'react-elastic-carousel';
+import apiTropa from '../../pages/api/api';
 import Animate from '../Animation/Animate';
 import { ContainerCenter } from '../Layout/styles';
 import { IconArrowLeft, IconArrowRight, IconFlag } from '../Svg';
@@ -10,6 +11,7 @@ interface IProps {
 }
 
 const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
+    const [socialMedia, setSocialMedia] = useState([])
     const [data, setData] = useState([
         {
             image: 'http://instagram.fcgh17-1.fna.fbcdn.net/v/t51.2885-15/e35/96286641_149876740000698_1508641614209261210_n.jpg?_nc_ht=instagram.fcgh17-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=-2YOVlhDWiMAX9R9JLT&tn=i2qYe6JJQZg2wtYV&edm=AP_V10EBAAAA&ccb=7-4&oh=963c2d8013a5e116e26f3523fa737010&oe=6195F977&_nc_sid=4f375e',
@@ -35,7 +37,20 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
         { width: 850, itemsToShow: 3 },        
     ])
 
-    const slider = useRef(null)
+    const slider: any = useRef(null)
+
+    useEffect(() => {
+        getSocial();
+    }, []);
+
+    async function getSocial() {
+        try{
+            let socials = await apiTropa.get('/instagram');
+            setSocialMedia(socials.data.result.data);
+        }catch(e){
+
+        }
+    }
 
     return (
         <SocialContainer id="social">
@@ -64,23 +79,23 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
                             ref={slider}
                             breakPoints={breakpoints}
                         >
-                            {data.map((row, key) => (
+                            {socialMedia.map((row: any, key: any) => (
                                 <div className="card" key={key}>
                                     <div
                                         className="image"
                                         style={{
-                                            backgroundImage: `url(http://localhost:3000/images/bannerWhyTropa.jpg)`,
+                                            backgroundImage: 'url('+row.media_url+')',
                                         }}
                                     />
                                     <div className="text">
                                         <a
-                                            href="https://www.instagram.com/tropadigitalagencia/"
+                                            href={row.permalink}
                                             target="_blank"
                                             rel="noreferrer"
                                         >
                                             @tropadigitalagencia
                                         </a>
-                                        <p>{row.text}</p>
+                                        <p>{row.caption}</p>
                                     </div>
                                 </div>
                             ))}
