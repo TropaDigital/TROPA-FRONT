@@ -32,6 +32,7 @@ import Social from '../components/Social';
 import WhyTropa from '../components/WhyTropa/WhyTropa';
 import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
+import apiTropa from './api/api';
 
 interface IProps {
     scrollTo?: string;
@@ -39,12 +40,28 @@ interface IProps {
 
 const Home: NextPage<IProps> = ({ scrollTo }) => {
     const router = useRouter();
+
+    const [portfoliosList, setPortfoliosList] = useState([])
     const [widthWindow, setWidthWindow] = useState(1920);
     const [itemsToShowSocial, setItemToShowSocial] = useState(3);
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
 
+
     useEffect(() => {
-        console.log(scrollTo);
+        getPortfolios();
+    }, []);
+
+    async function getPortfolios() {
+        try{
+            let portfolios = await apiTropa.get('/portifolio/?status=ativo');
+            setPortfoliosList(portfolios.data.result);
+        }catch(e){
+
+        }
+    }
+    
+
+    useEffect(() => {
         if (scrollTo) {
             handleScrollTo(scrollTo);
         }
@@ -75,13 +92,12 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
     }
 
     function handleScrollTo(el: any) {
-        console.log(el);
         const documentElement: any = document;
         documentElement.getElementById(el).scrollIntoView({});
         window.history.pushState({}, 'teste', '/home/' + el);
     }
 
-    const slider = useRef(null)
+    const slider:any = useRef(null)
 
     return (
         <Layout>
@@ -218,6 +234,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                 <WhyTropa />
 
                 <Social itemsToShow={itemsToShowSocial} />
+                
                 <PortfolioContainer id="portfolio">
                     <ContainerCenter className="head-portfolio">
                         <Animate effect="fadeInUp" startAnimation={200}>
@@ -244,16 +261,16 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                             showEmptySlots={false}
                             ref={slider}
                         >
-                            {[0, 1, 2, 3, 4, 5].map((row, key) => (
+                            {portfoliosList.map((row: any, key: any) => (
                                 <div
                                     className="card"
                                     key={key}
                                     style={{
-                                        backgroundImage: `url(/images/bannerHome.jpg)`,
+                                        backgroundImage: 'url('+row.imagem_tipo+')',
                                     }}
                                 >
-                                    <h4>Meat APP</h4>
-                                    <i>Website</i>
+                                    <h4>{row.titulo}</h4>
+                                    <i>{row.descricao}</i>
                                 </div>
                             ))}
                         </Carousel>
