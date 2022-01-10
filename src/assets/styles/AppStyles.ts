@@ -101,7 +101,7 @@ export const BannerApp = styled.div`
     font-weight: normal;
     position: absolute;
     left: -200px;
-    top: 283px;
+    top: 280px;
     z-index: 998;
   }
   .title-transparent {
