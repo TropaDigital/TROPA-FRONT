@@ -15,20 +15,36 @@ import { LanguagesContainer, PortfolioContainer } from '../assets/styles/HomeSty
 import { ContainerCenter } from '../components/Layout/styles';
 import MobileSection from '../components/MobileSection';
 import Carousel from 'react-elastic-carousel';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import apiTropa from './api/api';
 
 const Aplicativos: NextPage = () => {
     
     const router = useRouter();
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
 
-    const slider = useRef(null)
+    const slider: any = useRef(null)
 
     const breakpoints = ([
         { width: 1, itemsToShow: 1, itemsToScroll: 1 },
         { width: 450, itemsToShow: 2, itemsToScroll: 2, pagination: false },
         { width: 850, itemsToShow: 3 },        
     ])
+
+    const [portfoliosList, setPortfoliosList] = useState([])
+
+    useEffect(() => {
+        getPortfolios();
+    }, []);
+
+    async function getPortfolios() {
+        try{
+            let portfolios = await apiTropa.get('/portifolio/?status=ativo');
+            setPortfoliosList(portfolios.data.result);
+        }catch(e){
+
+        }
+    }
 
     return (
         <Layout>
@@ -164,16 +180,16 @@ const Aplicativos: NextPage = () => {
                             ref={slider}
                             breakPoints={breakpoints}
                         >
-                            {[0, 1, 2, 3, 4, 5 ].map((row, key) => (
+                            {portfoliosList.map((row: any, key) => (
                                 <div
                                     className="card"
                                     key={key}
                                     style={{
-                                        backgroundImage: `url(/images/bannerHome.jpg)`,
+                                        backgroundImage: 'url('+row.imagem_tipo+')',
                                     }}
                                 >
-                                    <h4>Meat APP</h4>
-                                    <i>Website</i>
+                                   <h4>{row.titulo}</h4>
+                                    <i>{row.descricao}</i>
                                 </div>
                             ))}
                         </Carousel>
