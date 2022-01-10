@@ -5,7 +5,8 @@ import Head from 'next/head';
 import Header from '../../components/Layout/Header';
 import Animate from '../../components/Animation/Animate';
 import { IconAstronaut, IconCube, IconFlag } from '../Svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import apiTropa from '../../pages/api/api';
 
 interface IPort {
     title: string;
@@ -22,13 +23,15 @@ const Portfolio: NextPage<IPort> = ({
     mobile,
 }) => {
     const router = useRouter();
-
+    
     const [mobileImg, setMobileImg] = useState([
         {
              src: '/images/Customer.png', 
              title: 'Docket pagina principal' 
         },
     ]);
+
+    
 
     return (
         <PortfolioContainer>
@@ -99,14 +102,15 @@ const Portfolio: NextPage<IPort> = ({
                     <div className='mobile'>
                         <img src="/images/TropaPhone.png" alt="Celular com logo da Tropa" />
                     </div>
-                        {mobileImg.map((data, key: any) => (
+                        {mobileImg.map((row, key: any) => (
                         <>
                             <div className='phone'>                        
                                 <div className='cel'>
                                     <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                 </div>
                                 <div className='back' key={key}>
-                                    <img src={data.src} alt={data.title} />
+                                    <img src={row.src} alt='Imagem do site' />
+                                    {/* <span>{row.titulo}</span> */}
                                 </div>                        
                             </div>
                                     
@@ -115,7 +119,7 @@ const Portfolio: NextPage<IPort> = ({
                                     <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                 </div>
                                 <div className='back2' key={key}>
-                                    <img src={data.src} alt={data.title} />
+                                    <img src={row.src} alt='Imagem do site' />
                                 </div>                        
                             </div>
                         
@@ -124,7 +128,7 @@ const Portfolio: NextPage<IPort> = ({
                                     <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                 </div>
                                 <div className='back3' key={key}>
-                                    <img src={data.src} alt={data.title} />
+                                    <img src={row.src} alt='Imagem do site' />
                                 </div>                        
                             </div> 
                         </>    
