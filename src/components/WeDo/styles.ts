@@ -30,7 +30,7 @@ export const WeDoContainer = styled.div`
             }
             .title {
                 position: relative;
-                width: 590px;
+                width: 390px;
                 h3 {
                     font-size: 60px;
                     color: ${colors.primaryDark};
@@ -44,9 +44,9 @@ export const WeDoContainer = styled.div`
                 }
                 svg {
                     position: absolute;
-                    right: 160px;
-                    top: 0;
-                    transform: rotate(30deg);
+                    right: 30px;
+                    top: 15px;
+                    transform: rotate(40deg);
                     @media (max-width: 425px) {
                         right: 240px;
                     }
