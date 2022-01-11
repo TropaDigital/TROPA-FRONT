@@ -51,7 +51,7 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
         { width: 1750, itemsToShow: 6 }, 
     ])
 
-    const slider = useRef(null)     
+    const slider: any = useRef(null)     
 
     return (
         <Mobilecontainer>

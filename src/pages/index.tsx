@@ -33,6 +33,9 @@ import WhyTropa from '../components/WhyTropa/WhyTropa';
 import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
 import apiTropa from './api/api';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+
 
 interface IProps {
     scrollTo?: string;
@@ -56,7 +59,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
             let portfolios = await apiTropa.get('/portifolio/?status=ativo');
             setPortfoliosList(portfolios.data.result);
         }catch(e){
-
+            console.log("Erro 999 - Não recebendo os dados dos portfólios.")
         }
     }
     
@@ -261,18 +264,45 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                             showEmptySlots={false}
                             ref={slider}
                         >
-                            {portfoliosList.map((row: any, key: any) => (
-                                <div
-                                    className="card"
-                                    key={key}
-                                    style={{
-                                        backgroundImage: 'url('+row.imagem_tipo+')',
-                                    }}
-                                >
-                                    <h4>{row.titulo}</h4>
-                                    <i>{row.descricao}</i>
-                                </div>
-                            ))}
+                            { portfoliosList.length > 0 
+                                ?
+                                portfoliosList.map((row: any, key: any) => (
+                                    <div
+                                        className="card"
+                                        key={key}
+                                        style={{
+                                            backgroundImage: 'url('+row.imagem_tipo+')',
+                                        }}
+                                    >
+                                        <h4>{row.titulo}</h4>
+                                        <i>{row.descricao}</i>
+                                    </div>
+                                ))
+                                :
+                                <>
+                                    <Skeleton
+                                        count={1}
+                                        height={500}
+                                        baseColor='#cc6138'
+                                        highlightColor='#CEBAA8'
+                                        className="skeletor"
+                                    />
+                                    <Skeleton
+                                        count={1}
+                                        height={500}
+                                        baseColor='#cc6138'
+                                        highlightColor='#CEBAA8'
+                                        className="skeletor"
+                                    />
+                                    <Skeleton
+                                        count={1}
+                                        height={500}
+                                        baseColor='#cc6138'
+                                        highlightColor='#CEBAA8'
+                                        className="skeletor"
+                                    />
+                                </>
+                            }
                         </Carousel>
                     </Animate>
                 </PortfolioContainer>
