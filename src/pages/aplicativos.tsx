@@ -17,11 +17,14 @@ import MobileSection from '../components/MobileSection';
 import Carousel from 'react-elastic-carousel';
 import { useEffect, useRef, useState } from 'react';
 import apiTropa from './api/api';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const Aplicativos: NextPage = () => {
     
     const router = useRouter();
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
+    const [loading, setLoading] = useState(false)
 
     const slider: any = useRef(null)
 
@@ -180,18 +183,46 @@ const Aplicativos: NextPage = () => {
                             ref={slider}
                             breakPoints={breakpoints}
                         >
-                            {portfoliosList.map((row: any, key) => (
-                                <div
-                                    className="card"
-                                    key={key}
-                                    style={{
-                                        backgroundImage: 'url('+row.imagem_tipo+')',
-                                    }}
-                                >
-                                   <h4>{row.titulo}</h4>
-                                    <i>{row.descricao}</i>
-                                </div>
-                            ))}
+                            {
+                                portfoliosList.length > 0 
+                                ?
+                                portfoliosList.map((row: any, key) => ( 
+                                    <div
+                                        className="card"
+                                        key={key}
+                                        style={{
+                                            backgroundImage: 'url('+row.imagem_tipo+')',
+                                        }}
+                                    >
+                                        <h4>{row.titulo}</h4>
+                                        <i>{row.descricao}</i>
+                                    </div>
+                                ))
+                                :
+                                <>
+                                    <Skeleton
+                                        count={1}
+                                        height={500}
+                                        baseColor='#cc6138'
+                                        highlightColor='#CEBAA8'
+                                        className="skeletor"
+                                    />
+                                    <Skeleton
+                                        count={1}
+                                        height={500}
+                                        baseColor='#cc6138'
+                                        highlightColor='#CEBAA8'
+                                        className="skeletor"
+                                    />
+                                    <Skeleton
+                                        count={1}
+                                        height={500}
+                                        baseColor='#cc6138'
+                                        highlightColor='#CEBAA8'
+                                        className="skeletor"
+                                    />
+                                </>
+                            }
                         </Carousel>
                     </Animate>
                 </PortfolioContainer>

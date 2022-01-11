@@ -429,4 +429,9 @@ export const PortfolioContainer = styled.div`
       }
     }
   }
+  .skeletor {
+    height: 100vh;
+    width: 33vw;
+    border-radius: 0;
+  }
 `
