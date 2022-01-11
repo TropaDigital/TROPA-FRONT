@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Animate from '../Animation/Animate';
 import { ContainerCenter } from '../Layout/styles';
 import { IconEvelope, IconEvelopeFull } from '../Svg';
-
 import { ContactContainer } from './styles';
+import apiTropa from '../../pages/api/api';
 
 const Contact: React.FC = () => {
     const [DTO, setDTO] = useState({
@@ -11,6 +11,30 @@ const Contact: React.FC = () => {
         email: '',
         mensagem: '',
     });
+
+    const sendContact = async() => {
+
+        try {
+            console.log(DTO);
+
+            const response = await apiTropa.post(
+                "/contato",
+                DTO
+            )
+
+            alert(response.data.message)
+        }
+        catch (e) {
+            alert(e.response.data.message)
+        }
+    }
+
+    const changeDTO = (key:string, value:string) => {
+
+        console.log(value);
+        DTO[key] = value;
+        setDTO({...DTO});
+    }
 
     return (
         <ContactContainer id="contato">
@@ -31,14 +55,16 @@ const Contact: React.FC = () => {
                         </a>
                     </div>
                 </Animate>
-                <form>
-                    <input placeholder="SEU NOME" defaultValue={DTO.nome} />
-                    <input placeholder="SEU E-MAIL" defaultValue={DTO.email} />
+                <form /* onSubmit={() => sendContact()} */ >
+                    <input placeholder="SEU NOME" name='nome' value={DTO.nome} onChange={(e) => changeDTO(e.target.name, e.target.value)} />
+                    <input placeholder="SEU E-MAIL" type={'email'} name='email' value={DTO.email} onChange={(e) => changeDTO(e.target.name, e.target.value)} />
                     <textarea
                         placeholder="DIGITE UMA MENSAGEM"
-                        defaultValue={DTO.mensagem}
+                        name='mensagem'
+                        value={DTO.mensagem}
+                        onChange={(e) => changeDTO(e.target.name, e.target.value)} 
                     />
-                    <button>Enviar</button>
+                    <button type='button' onClick={() => sendContact()}>Enviar</button>
                 </form>
             </ContainerCenter>
         </ContactContainer>
