@@ -26,7 +26,7 @@ const Portfolio: NextPage<IPort> = ({
     
     const [mobileImg, setMobileImg] = useState([
         {
-             src: '/images/Customer.png', 
+             src: '/images/EyouM.png', 
              title: 'Docket pagina principal' 
         },
     ]);
