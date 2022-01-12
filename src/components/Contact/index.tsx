@@ -4,14 +4,23 @@ import { ContainerCenter } from '../Layout/styles';
 import { IconEvelope, IconEvelopeFull } from '../Svg';
 import { ContactContainer } from './styles';
 import apiTropa from '../../pages/api/api';
+import { useRouter } from 'next/router';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact: React.FC = () => {
+    const router = useRouter();
+
+    // const [modalSucess, setModalSucess] = useState<boolean>(false);
+    // const [modalError, setModalError] = useState<boolean>(false);
+
     const [DTO, setDTO] = useState({
         nome: '',
         email: '',
         mensagem: '',
     });
 
+    
     const sendContact = async() => {
 
         try {
@@ -22,10 +31,16 @@ const Contact: React.FC = () => {
                 DTO
             )
 
-            alert(response.data.message)
+            toast.success(response.data.message, {
+                className: "toast-sucess",
+                theme: 'colored'
+            })
         }
         catch (e) {
-            alert(e.response.data.message)
+            toast.error(e.response.data.message, {
+                className: "toast-error",
+                theme: "colored"
+            })
         }
     }
 
@@ -35,6 +50,7 @@ const Contact: React.FC = () => {
         DTO[key] = value;
         setDTO({...DTO});
     }
+
 
     return (
         <ContactContainer id="contato">
@@ -55,9 +71,19 @@ const Contact: React.FC = () => {
                         </a>
                     </div>
                 </Animate>
-                <form /* onSubmit={() => sendContact()} */ >
-                    <input placeholder="SEU NOME" name='nome' value={DTO.nome} onChange={(e) => changeDTO(e.target.name, e.target.value)} />
-                    <input placeholder="SEU E-MAIL" type={'email'} name='email' value={DTO.email} onChange={(e) => changeDTO(e.target.name, e.target.value)} />
+                <form>
+                    <input 
+                        placeholder="SEU NOME" 
+                        name='nome' 
+                        value={DTO.nome} 
+                        onChange={(e) => changeDTO(e.target.name, e.target.value)} 
+                    />
+                    <input 
+                        placeholder="SEU E-MAIL" 
+                        type={'email'} name='email' 
+                        value={DTO.email} 
+                        onChange={(e) => changeDTO(e.target.name, e.target.value)} 
+                    />
                     <textarea
                         placeholder="DIGITE UMA MENSAGEM"
                         name='mensagem'
@@ -67,6 +93,9 @@ const Contact: React.FC = () => {
                     <button type='button' onClick={() => sendContact()}>Enviar</button>
                 </form>
             </ContainerCenter>
+            <ToastContainer
+                position='top-center'
+            />
         </ContactContainer>
     );
 };

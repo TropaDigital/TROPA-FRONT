@@ -160,4 +160,15 @@ export const ContactContainer = styled.div`
             padding: 20px;
         }
     }
+    /* .toast-error {
+        background-color: ${colors.primary};
+        div {
+            color: ${colors.primaryGrey};
+        }
+    }
+    .toast-sucess {
+        div {
+            color: black;
+        }
+    } */
 `
