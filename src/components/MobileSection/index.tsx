@@ -1,9 +1,11 @@
 import { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
+import apiTropa from '../../pages/api/api';
 import Carousel from 'react-elastic-carousel';
 import Animate from '../Animation/Animate';
 import { IconArrow, IconArrowLeft, IconArrowRight, IconAstronaut } from '../Svg';
 import { Mobilecontainer, MobileDiv, SliderDiv } from './styles';
+import PulseLoader from "react-spinners/PulseLoader";
 
 interface IProps {
     itemsToShow?: number;
@@ -12,35 +14,20 @@ interface IProps {
 
 const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => { 
 
-    const [data, setData] = useState([
-        {
-            image: '/images/Meat.png',            
-        },
-        {
-            image: '/images/Alpha.png',            
-        },
-        {
-            image: '/images/Eyou.png',            
-        },
-        {
-            image: '/images/Meat.png',            
-        },
-        {
-            image: '/images/Alpha.png',            
-        },
-        {
-            image: '/images/Eyou.png',            
-        },
-        {
-            image: '/images/Meat.png',            
-        },
-        {
-            image: '/images/Alpha.png',            
-        },
-        {
-            image: '/images/Eyou.png',            
-        },
-    ]);
+    const [image, setImage] = useState([]);
+
+    useEffect(() => {
+        getImages();
+    }, []);
+
+    async function getImages() {
+        try{
+            let images = await apiTropa.get('/portifolio/?status=ativo');
+            setImage(images.data.result);
+        }catch(e){
+
+        }
+    }
 
     const breakpoints = ([
         { width: 1, itemsToShow: 1 },
@@ -81,20 +68,38 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
                     ref={slider}
                     breakPoints={breakpoints}
                 >   
-                    {data.map((data, key) => (
-                        <div className="mobile">
-                            <img src="/images/mobile.png" />
-                            <div className="card" key={key}>
-                                <div className="back-image">
-                                    <img src={data.image} alt="" />
-                                </div>                                
-                                <div className="overlay">
-                                    <p>Ver este</p> <br /><p className='bottom'> projeto</p>
-                                    <IconArrow />
-                                </div>                                         
-                            </div>                        
-                        </div>                                                
-                    ))}                    
+                    {   
+                        image.length > 0
+                        ?
+                        image.map((data: any, key) => (
+                            <div className="mobile">
+                                <img src="/images/mobile.png" />
+                                <div className="card" key={key}>
+                                    <div className="back-image">
+                                        <img src={data.imagem_tipo} alt="" />
+                                    </div>                                
+                                    <div className="overlay">
+                                        <p>Ver este</p> <br /><p className='bottom'> projeto</p>
+                                        <IconArrow />
+                                    </div>                                         
+                                </div>                        
+                            </div>                                                
+                        ))
+                        :
+                        [1,2,3].map(() => (
+                            <div className="mobile">
+                                <img src="/images/mobile.png" />
+                                <div className="card">
+                                    <div className="loader">
+                                        <PulseLoader 
+                                            color="#cc6138"
+                                            size={30} 
+                                        />
+                                    </div>                                
+                                </div>                        
+                            </div>          
+                        ))
+                    }                    
                 </Carousel>
                 
             </MobileDiv>
