@@ -54,7 +54,7 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
     const slider: any = useRef(null)     
 
     return (
-        <Mobilecontainer>
+        <Mobilecontainer id="mobile-section">
             
             <SliderDiv>
                 <Animate effect="fadeInLeft" startAnimation={100}>

@@ -17,14 +17,13 @@ import MobileSection from '../components/MobileSection';
 import Carousel from 'react-elastic-carousel';
 import { useEffect, useRef, useState } from 'react';
 import apiTropa from './api/api';
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css';
+import PulseLoader from "react-spinners/PulseLoader";
 
 const Aplicativos: NextPage = () => {
     
     const router = useRouter();
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     const slider: any = useRef(null)
 
@@ -44,8 +43,8 @@ const Aplicativos: NextPage = () => {
         try{
             let portfolios = await apiTropa.get('/portifolio/?status=ativo');
             setPortfoliosList(portfolios.data.result);
-        }catch(e){
-
+        }catch(e:any){
+            console.log(e.response.data.message)
         }
     }
 
@@ -199,29 +198,20 @@ const Aplicativos: NextPage = () => {
                                     </div>
                                 ))
                                 :
-                                <>
-                                    <Skeleton
-                                        count={1}
-                                        height={500}
-                                        baseColor='#cc6138'
-                                        highlightColor='#CEBAA8'
-                                        className="skeletor"
-                                    />
-                                    <Skeleton
-                                        count={1}
-                                        height={500}
-                                        baseColor='#cc6138'
-                                        highlightColor='#CEBAA8'
-                                        className="skeletor"
-                                    />
-                                    <Skeleton
-                                        count={1}
-                                        height={500}
-                                        baseColor='#cc6138'
-                                        highlightColor='#CEBAA8'
-                                        className="skeletor"
-                                    />
-                                </>
+                                [1,2,3].map((row: any, key) => ( 
+                                    <div
+                                        className="loader"
+                                        key={key}
+                                        style={{
+                                            backgroundImage: 'url('+row.imagem_tipo+')',
+                                        }}
+                                    >
+                                        <PulseLoader 
+                                            color="#fff"
+                                            size={30} 
+                                        />
+                                    </div>
+                                ))  
                             }
                         </Carousel>
                     </Animate>
