@@ -6,7 +6,7 @@ import Animate from '../Animation/Animate';
 import { SliderDiv } from '../MobileSection/styles';
 import { IconArrow, IconArrowLeft, IconArrowRight, IconAstronaut } from '../Svg';
 import { WebContainer, WebDiv } from './style';
-
+import PulseLoader from "react-spinners/PulseLoader";
 
 interface IProps {
     itemsToShow?: number;    
@@ -64,20 +64,35 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
                     ref={slider} 
                     breakPoints={breakpoints}                   
                 >   
-                    {image.map((data: any, key) => (
-                        <div className="web">
-                            <img src="/images/Notebook.png" />
-                            <div className="card" key={key}>
-                                <div className="back-image">
-                                    <img src={data.imagem_tipo} />
-                                </div>                                
-                                <div className="overlay">
-                                    <p>Ver este</p> <br /><p className='bottom'> projeto</p>
-                                    <IconArrow />
-                                </div>                                         
-                            </div>                        
-                        </div>                                                
-                    ))}                    
+                    {   image.length > 0
+                        ?
+                        image.map((data: any, key) => (
+                            <div className="web">
+                                <img src="/images/Notebook.png" />
+                                <div className="card" key={key}>
+                                    <div className="back-image">
+                                        <img src={data.imagem_tipo} />
+                                    </div>                                
+                                    <div className="overlay">
+                                        <p>Ver este</p> <br /><p className='bottom'> projeto</p>
+                                        <IconArrow />
+                                    </div>                                         
+                                </div>                        
+                            </div>                                                
+                        ))
+                        :
+                        [1,2,3].map((data: any, key) => (
+                            <div className="web">
+                                <img src="/images/Notebook.png" />
+                                <div className="loader">
+                                    <PulseLoader 
+                                        color="#cc6138"
+                                        size={30} 
+                                    />
+                                </div>
+                            </div>                                                
+                        ))
+                    }                    
                 </Carousel>
             </WebDiv>
 

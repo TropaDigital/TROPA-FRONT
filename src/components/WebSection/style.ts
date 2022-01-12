@@ -61,6 +61,8 @@ export const WebDiv = styled.div`
         height: 100%;
         width: 95%;
         display: flex;
+        align-items: center;
+        justify-content: center;
         position: relative;
         cursor: pointer;
         &:hover {
@@ -77,8 +79,7 @@ export const WebDiv = styled.div`
             height: 80%;
             width: 422px;
             position: absolute; 
-            left: 80px;
-            right: 0;
+            left: 70px;
             top: 25px;
             z-index: 0;                        
             background-size: cover;
@@ -88,11 +89,17 @@ export const WebDiv = styled.div`
                 height: 100%;
                 border-radius: 8px;                
             }        
-        }        
+        }     
+        .loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }   
         .overlay {            
             position: absolute; 
             top: 25px;
-            left: 80px;
+            left: 70px;
             width: 422px;
             height: 81%;
             border-radius: 8px;
