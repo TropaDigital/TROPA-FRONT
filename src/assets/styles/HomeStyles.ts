@@ -396,13 +396,20 @@ export const PortfolioContainer = styled.div`
         &::after {
           opacity: 1;
         }
+        h4 {
+          opacity: 1;
+        }
+        i {
+          opacity: 1;
+        }
       }
       h4 {
         font-size: 46px;
-        color: ${colors.primaryLight};
+        color: ${colors.primaryGrey};
         text-transform: uppercase;
         position: relative;
         z-index: 1;
+        opacity: 0;
       }
       i {
         font-style: normal;
@@ -416,12 +423,40 @@ export const PortfolioContainer = styled.div`
         text-transform: uppercase;
         position: relative;
         z-index: 1;
+        /* background-color: rgba(0,0,0, .5); */
+        opacity: 0;
       }
       @media(max-width: 425px) {
         h4 {
           font-size: 35px;
         }
       }
+    }
+    .loader {
+      width: 100%;
+      height: 600px;
+      background-size: cover;
+      background-position: center;
+      padding: 10%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      transition: all .2s;
+      position: relative;
+      @media(max-width: 1400px) {
+        height: 640px;
+      }
+      @media(max-width: 900px) {
+        height: 580px;
+      }
+      @media(max-width: 600px) {
+        height: 350px;
+      }
+      @media(max-width: 425px) {
+        height: 300px;
+        width: 250px;
+      }      
     }
     .rec-carousel {
       .rec-slider-container {

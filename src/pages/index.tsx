@@ -33,8 +33,7 @@ import WhyTropa from '../components/WhyTropa/WhyTropa';
 import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
 import apiTropa from './api/api';
-import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
+import PulseLoader from "react-spinners/PulseLoader";
 
 
 interface IProps {
@@ -279,29 +278,20 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                     </div>
                                 ))
                                 :
-                                <>
-                                    <Skeleton
-                                        count={1}
-                                        height={500}
-                                        baseColor='#cc6138'
-                                        highlightColor='#CEBAA8'
-                                        className="skeletor"
-                                    />
-                                    <Skeleton
-                                        count={1}
-                                        height={500}
-                                        baseColor='#cc6138'
-                                        highlightColor='#CEBAA8'
-                                        className="skeletor"
-                                    />
-                                    <Skeleton
-                                        count={1}
-                                        height={500}
-                                        baseColor='#cc6138'
-                                        highlightColor='#CEBAA8'
-                                        className="skeletor"
-                                    />
-                                </>
+                                [1,2,3].map((row: any, key) => ( 
+                                    <div
+                                        className="loader"
+                                        key={key}
+                                        style={{
+                                            backgroundImage: 'url('+row.imagem_tipo+')',
+                                        }}
+                                    >
+                                         <PulseLoader 
+                                            color="#fff"
+                                            size={30} 
+                                        />
+                                    </div>
+                                ))  
                             }
                         </Carousel>
                     </Animate>
