@@ -44,7 +44,7 @@ const Aplicativos: NextPage = () => {
             let portfolios = await apiTropa.get('/portifolio/?status=ativo');
             setPortfoliosList(portfolios.data.result);
         }catch(e:any){
-            console.log(e.response.data.message)
+            
         }
     }
 
@@ -190,7 +190,7 @@ const Aplicativos: NextPage = () => {
                                         className="card"
                                         key={key}
                                         style={{
-                                            backgroundImage: 'url('+row.imagem_tipo+')',
+                                            backgroundImage: 'url('+row.imagem_principal+')',
                                         }}
                                     >
                                         <h4>{row.titulo}</h4>
@@ -203,7 +203,7 @@ const Aplicativos: NextPage = () => {
                                         className="loader"
                                         key={key}
                                         style={{
-                                            backgroundImage: 'url('+row.imagem_tipo+')',
+                                            backgroundImage: 'url('+row.imagem_principal+')',
                                         }}
                                     >
                                         <PulseLoader 

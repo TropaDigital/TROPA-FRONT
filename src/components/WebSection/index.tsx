@@ -71,7 +71,7 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
                                 <img src="/images/Notebook.png" />
                                 <div className="card" key={key}>
                                     <div className="back-image">
-                                        <img src={data.imagem_tipo} />
+                                        <img src={data.imagem_principal} />
                                     </div>                                
                                     <div className="overlay">
                                         <p>Ver este</p> <br /><p className='bottom'> projeto</p>
@@ -81,7 +81,7 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
                             </div>                                                
                         ))
                         :
-                        [1,2,3].map((data: any, key) => (
+                        [1,2,3].map(() => (
                             <div className="web">
                                 <img src="/images/Notebook.png" />
                                 <div className="loader">
