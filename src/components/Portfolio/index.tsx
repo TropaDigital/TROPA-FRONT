@@ -87,7 +87,7 @@ const Portfolio: NextPage<IPort> = ({
                 </div>
 
                 <div className='page'>
-                    <img src="/images/DocketPort.png" alt="" />                    
+                    <img src="/images/EyouW.png" alt="" />                    
                 </div>
             </LandingPage>   
 
@@ -141,7 +141,7 @@ const Portfolio: NextPage<IPort> = ({
                 </div> 
                 
                 <div className='paper'>
-                    <button>
+                    <button onClick={() => router.push('/home/contato')}>
                         <p>Tire seu projeto do</p>
                         <img src="/images/Paper.png" alt="Palavra papel circulada" />
                     </button>

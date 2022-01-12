@@ -187,7 +187,7 @@ export const PortfolioBanner = styled.div`
 
 export const LandingPage = styled.div`
   width: 100%;
-  height: 1650px;
+  height: 100vh;
   background: ${colors.primaryDark};
   padding: 80px;
   @media (max-width: 1100px) {
@@ -244,7 +244,7 @@ export const LandingPage = styled.div`
     justify-content: center;
     position: absolute;
     top: 1200px;
-    left: 500px;
+    left: 0;
     margin-bottom: 50px;
     @media (max-width: 1100px) {
       width: 98%;
@@ -255,7 +255,7 @@ export const LandingPage = styled.div`
       top: 1150px;
     }
     img {
-      width: 950px;
+      width: 60%;
       height: 100%;
       @media (max-width: 1100px) {
         width: 80%;
@@ -267,7 +267,6 @@ export const LandingPage = styled.div`
 export const Mobile = styled.div`
   width: 100%;
   height: 3200px;
-  background: ${colors.primaryDark};
   padding: 160px;
   text-align: center;
   display: flex;
