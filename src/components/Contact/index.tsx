@@ -11,9 +11,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const Contact: React.FC = () => {
     const router = useRouter();
 
-    // const [modalSucess, setModalSucess] = useState<boolean>(false);
-    // const [modalError, setModalError] = useState<boolean>(false);
-
     const [DTO, setDTO] = useState <any>({
         nome: '',
         email: '',
@@ -35,6 +32,7 @@ const Contact: React.FC = () => {
                 className: "toast-sucess",
                 theme: 'colored'
             })
+            router.push('/')
         }
         catch (e: any) {
             toast.error(e.response.data.message, {
