@@ -1,9 +1,6 @@
 import React from 'react';
 import {
     IconAstronautFull,
-    IconFacebook,
-    IconInstagram,
-    IconLocal,
 } from '../Svg';
 
 import { ContainerCenter, FooterContainer } from './styles';

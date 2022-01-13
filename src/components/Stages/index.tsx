@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Animate from '../Animation/Animate';
 import { ContainerCenter } from '../Layout/styles';
-import { IconArrow } from '../Svg';
 
 import { StagesContainer } from './styles';
 

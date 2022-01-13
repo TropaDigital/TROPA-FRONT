@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
     // const [modalSucess, setModalSucess] = useState<boolean>(false);
     // const [modalError, setModalError] = useState<boolean>(false);
 
-    const [DTO, setDTO] = useState({
+    const [DTO, setDTO] = useState <any>({
         nome: '',
         email: '',
         mensagem: '',
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
                 theme: 'colored'
             })
         }
-        catch (e) {
+        catch (e: any) {
             toast.error(e.response.data.message, {
                 className: "toast-error",
                 theme: "colored"

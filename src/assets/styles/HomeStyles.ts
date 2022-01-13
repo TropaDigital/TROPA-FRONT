@@ -46,7 +46,9 @@ export const HomeContainer = styled.div`
       animation-delay: 1.3s;
     }
     @media (max-width: 425px) {
-      
+      &:after {
+        background-position: 59%;
+      }
     }
   }
 `

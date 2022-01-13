@@ -24,6 +24,8 @@ const CreditCard: NextPage = () => {
         })
     }
     const handleFocus = (e:any) => {
+
+        console.log(e.target.name)
         setValues({
             ...values,
             focus: e.target.name

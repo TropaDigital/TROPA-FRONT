@@ -90,6 +90,9 @@ export const BannerApp = styled.div`
     justify-content: center; 
     position: relative;    
   }
+  .main {
+    position: relative;
+  }
   .title > h1 {
     font-size: 19rem;
     font-family: ${fonts.chaney};
@@ -105,6 +108,8 @@ export const BannerApp = styled.div`
     z-index: 998;
   }
   .title-transparent {
+    position: absolute;
+    top: 0;
     .transparent {
       font-size: 19rem;
       font-family: ${fonts.chaney};
@@ -123,7 +128,7 @@ export const BannerApp = styled.div`
       font-weight: normal;
       position: absolute;
       left: -200px;
-      top: 425px;
+      top: 280px;
       z-index: 999;
     }
   }
@@ -132,7 +137,7 @@ export const BannerApp = styled.div`
     height: 100vh;
     position: absolute;        
     left: 110px;
-    top: 0;
+    top: -110px;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: -5%;  
@@ -207,20 +212,20 @@ export const BannerApp = styled.div`
       font-size: 14rem;
       width: 650px;
       left: 15px;
-      top: 252px;      
+      top: 200px;      
     }
     .title-transparent {
       .transparent {
         font-size: 14rem;
         left: 15px;
-        top: 380px;
+        top: 200px;
       }
     }
     .mac {
       width: 95vw;
       height: 100vh;
       left: 200px;
-      top: 0;
+      top: -100px;
       img {
         width: 60%;
         height: 100vh;
@@ -230,22 +235,23 @@ export const BannerApp = styled.div`
   @media (max-width: 1100px) {
     .title > h1 {
       font-size: 11rem;
-      left: 95px;
+      left: 75px;
       top: 255px;      
     }
     .title-transparent {
       .transparent {
         font-size: 11rem;
-        left: 95px;
-        top: 405px;
+        left: 75px;
+        top: 255px;
       }
     }
     .mac {
       width: 95vw;
       height: 60vh;
-      top: 50px;
+      top: -100px;
+      left: 200px;
       img {
-        width: 1200px;
+        width: 65%;
         height: 800px;
       }      
     }
@@ -261,13 +267,14 @@ export const BannerApp = styled.div`
       .transparent {
         font-size: 4.5rem;
         left: 10px;
-        top: 249px;
+        top: 132px;
+        -webkit-text-stroke: 1px #FFF;
       }
     }
     .mac {
       width: 25vw;
       height: 60vh;
-      top: 150px;
+      top: 50px;
       left: 50px;
       img {
         width: 280px;

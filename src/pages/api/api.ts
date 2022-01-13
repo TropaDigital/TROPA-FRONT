@@ -4,9 +4,9 @@ import axios from 'axios'
 var baseUrl
 
 if(process.env.NODE_ENV === 'development') {
-    baseUrl =  'http://192.168.15.6:3333/'
+    baseUrl =  'https://backendtropa.labtropadigital.com.br/'
 } else {
-    baseUrl =  'http://192.168.15.6:3333/'
+    baseUrl =  'https://backendtropa.labtropadigital.com.br/'
 }
 
 const apiTropa = axios.create({

@@ -57,6 +57,9 @@ export const HeaderContainer = styled.div`
     background-size: cover;
     position: relative;
     overflow: hidden;
+    @media (max-width: 425px) {
+        background-position: 59%;
+    }
     .center-banner {
         height: 100%;
         display: flex;
@@ -164,14 +167,15 @@ export const HeaderContainer = styled.div`
         .hidden {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             list-style:none;
             padding: 10px;
             margin: 0px;
             border-radius: 16px;
             align-items: center;
-            background-color: rgba(204, 97, 56, 0.8);
+            background-color: ${colors.primaryDark};
             width: 100%;
-            /* height: 60px; */
+            height: 200px;
             position: relative;
             top: -65px;
             li {
@@ -182,7 +186,7 @@ export const HeaderContainer = styled.div`
                 a {
                     text-decoration:none;
                     text-transform: uppercase;
-                    font-size: 16px;
+                    font-size: 20px;
                     font-family: ${fonts.bebasNeue};
                     letter-spacing: 2px;
                     font-weight: 400;

@@ -7,9 +7,10 @@ import Animate from '../../components/Animation/Animate';
 import { IconAstronaut, IconCube, IconFlag } from '../Svg';
 import { useEffect, useState } from 'react';
 import apiTropa from '../../pages/api/api';
+import PulseLoader from "react-spinners/PulseLoader";
 
 interface IPort {
-    title: string;
+    title?: string;
     mobile?: IMobile[];
 }
 
@@ -23,6 +24,21 @@ const Portfolio: NextPage<IPort> = ({
     mobile,
 }) => {
     const router = useRouter();
+
+    const [portfoliosList, setPortfoliosList] = useState([])
+
+    useEffect(() => {
+        getPortfolios();
+    }, []);
+
+    async function getPortfolios() {
+        try{
+            let portfolios = await apiTropa.get('/portifolio/?status=ativo');
+            setPortfoliosList(portfolios.data.result);
+        }catch(e){
+            console.log("Erro 999 - Não recebendo os dados dos portfólios.")
+        }
+    }
     
     const [mobileImg, setMobileImg] = useState([
         {
@@ -73,7 +89,7 @@ const Portfolio: NextPage<IPort> = ({
                     <div className="main">
                         <Animate effect="fadeInLeft" className="title">
                             <h1>
-                                {title}
+                                Docket {/*  {title} */}
                             </h1>
                         </Animate>                                             
                     </div>                         
@@ -102,14 +118,16 @@ const Portfolio: NextPage<IPort> = ({
                     <div className='mobile'>
                         <img src="/images/TropaPhone.png" alt="Celular com logo da Tropa" />
                     </div>
-                        {mobileImg.map((row, key: any) => (
+                        {   portfoliosList.length > 0 
+                            ?
+                            portfoliosList.map((row: any, key: any) => (
                         <>
                             <div className='phone'>                        
                                 <div className='cel'>
                                     <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                 </div>
                                 <div className='back' key={key}>
-                                    <img src={row.src} alt='Imagem do site' />
+                                    <img src={row.imagem_tipo} alt='Imagem do site' />
                                     {/* <span>{row.titulo}</span> */}
                                 </div>                        
                             </div>
@@ -119,7 +137,7 @@ const Portfolio: NextPage<IPort> = ({
                                     <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                 </div>
                                 <div className='back2' key={key}>
-                                    <img src={row.src} alt='Imagem do site' />
+                                    <img src={row.imagem_tipo} alt='Imagem do site' />
                                 </div>                        
                             </div>
                         
@@ -128,11 +146,52 @@ const Portfolio: NextPage<IPort> = ({
                                     <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                 </div>
                                 <div className='back3' key={key}>
-                                    <img src={row.src} alt='Imagem do site' />
+                                    <img src={row.imagem_tipo} alt='Imagem do site' />
                                 </div>                        
                             </div> 
                         </>    
-                        ))} 
+                        ))
+                        : 
+                        [1,2,3].map(() => ( 
+                            <>
+                                <div className='phone'>                        
+                                    <div className='cel'>
+                                        <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                    </div>
+                                    <div className='back'>
+                                        <PulseLoader 
+                                            color="#fff"
+                                            size={30} 
+                                        />
+                                    </div>                        
+                                </div>
+                                        
+                                <div className='phone2'>                        
+                                    <div className='cel2'>
+                                        <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                    </div>
+                                    <div className='back2'>
+                                        <PulseLoader 
+                                            color="#fff"
+                                            size={30} 
+                                        />
+                                    </div>                        
+                                </div>
+                            
+                                <div className='phone3'>                        
+                                    <div className='cel3'>
+                                        <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                    </div>
+                                    <div className='back3'>
+                                        <PulseLoader 
+                                            color="#fff"
+                                            size={30} 
+                                        />
+                                    </div>                        
+                                </div> 
+                            </>    
+                        ))
+                        } 
                 </div>     
 
                 <div className='mobile-astro'>

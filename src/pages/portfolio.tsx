@@ -8,9 +8,7 @@ const Portfolios: NextPage = () => {
     return (
         <Layout>
 
-            <Portfolio
-                title='Docket'
-            />
+            <Portfolio/>
 
             <Footer />
             

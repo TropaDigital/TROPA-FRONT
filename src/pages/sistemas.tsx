@@ -9,7 +9,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
 import { BannerSystem, LanguagesContainer, SystemContainer } from '../assets/styles/SystemStyles';
 import { ContainerCenter } from '../components/Layout/styles';
-import { IconAstroFill, IconCash, IconChatbot, IconClose, IconGlobal, IconMessage, IconSimpleCheck } from '../components/Svg';
+import { IconAstroFill, IconCash, IconChatbot, IconClose, IconGlobal, IconMessage } from '../components/Svg';
 import ModalDefault from '../components/Modal';
 import { useState } from 'react';
 import { WeDoContainer } from '../components/WeDo/styles';
