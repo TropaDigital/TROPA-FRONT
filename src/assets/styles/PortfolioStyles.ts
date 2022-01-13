@@ -191,7 +191,7 @@ export const LandingPage = styled.div`
   background: ${colors.primaryDark};
   padding: 80px;
   @media (max-width: 1100px) {
-    height: 1800px;
+    height: 1100px;
   }
   @media (max-width: 425px) {
     height: 925px;
@@ -517,7 +517,7 @@ export const Mobile = styled.div`
     left: 1530px;
     @media (max-width: 1100px) {
       left: 730px;
-      top: 3780px;
+      top: 3900px;
     }
     @media (max-width: 425px) {
       display: none;

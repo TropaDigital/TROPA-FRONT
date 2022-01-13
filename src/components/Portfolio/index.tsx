@@ -11,17 +11,10 @@ import PulseLoader from "react-spinners/PulseLoader";
 
 interface IPort {
     title?: string;
-    mobile?: IMobile[];
-}
-
-interface IMobile {
-    title: string;
-    src: string;
 }
 
 const Portfolio: NextPage<IPort> = ({
     title,
-    mobile,
 }) => {
     const router = useRouter();
 
@@ -35,19 +28,11 @@ const Portfolio: NextPage<IPort> = ({
         try{
             let portfolios = await apiTropa.get('/portifolio/?status=ativo');
             setPortfoliosList(portfolios.data.result);
+            console.log(portfoliosList)
         }catch(e){
             console.log("Erro 999 - Não recebendo os dados dos portfólios.")
         }
     }
-    
-    const [mobileImg, setMobileImg] = useState([
-        {
-             src: '/images/EyouM.png', 
-             title: 'Docket pagina principal' 
-        },
-    ]);
-
-    
 
     return (
         <PortfolioContainer>
@@ -87,11 +72,11 @@ const Portfolio: NextPage<IPort> = ({
             >
                 <PortfolioBanner>
                     <div className="main">
-                        <Animate effect="fadeInLeft" className="title">
-                            <h1>
-                                Docket {/*  {title} */}
-                            </h1>
-                        </Animate>                                             
+                            <Animate effect="fadeInLeft" className="title">
+                                <h1>
+                                   Eyou 
+                                </h1>
+                            </Animate>                                             
                     </div>                         
                 </PortfolioBanner>
             </Header>
