@@ -23,8 +23,7 @@ const Aplicativos: NextPage = () => {
     
     const router = useRouter();
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
-    const [loading, setLoading] = useState(true)
-
+    
     const slider: any = useRef(null)
 
     const breakpoints = ([
@@ -93,7 +92,11 @@ const Aplicativos: NextPage = () => {
                                 </h1>
                             </Animate>
                             <Animate effect="fadeInLeft" delayAnimation={0.5}>
-                                <ButtonDefault>Conheça</ButtonDefault>
+                                <ButtonDefault
+                                    onClick={() => router.push('#mobile-section')}
+                                >
+                                    Conheça
+                                </ButtonDefault>
                             </Animate>
                         </div>
                         <div className="phone">

@@ -119,7 +119,7 @@ const Portfolio: NextPage<IPort> = ({
                                         </div>                        
                                     </div>
                                             
-                                    {/* <div className='phone2'>                        
+                                    <div className='phone2'>                        
                                         <div className='cel2'>
                                             <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                         </div>
@@ -135,7 +135,7 @@ const Portfolio: NextPage<IPort> = ({
                                         <div className='back3' >
                                             <img src={data.imagem_tipo} alt='Imagem do site' />
                                         </div>                        
-                                    </div>  */}
+                                    </div> 
                                 </>    
 
                             ))

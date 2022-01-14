@@ -105,7 +105,6 @@ export const MainCard = styled.div`
         color: ${colors.primaryGrey};
         text-transform: uppercase;
         transition: all 200ms;
-        cursor: pointer;
         :hover {
             background: ${colors.primary};
         }

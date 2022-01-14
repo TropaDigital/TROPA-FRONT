@@ -430,7 +430,10 @@ export const PortfolioContainer = styled.div`
       }
       @media(max-width: 425px) {
         h4 {
-          font-size: 35px;
+          font-size: 30px;
+        }
+        i {
+          font-size: 12px;
         }
       }
     }

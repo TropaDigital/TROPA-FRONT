@@ -29,6 +29,13 @@ const Sistemas: NextPage = () => {
     const [modalBot, setModalBot] = useState<boolean>(false);
     const [modalMsg, setModalMsg] = useState<boolean>(false);
     const [modalCheck, setModalCheck] = useState<boolean>(false);
+
+    function handleContacts() {
+        router.push('#contato')
+        setModalCheck(false)
+        setModalMsg(false)
+        setModalBot(false)
+    }
     
     return (
     <>
@@ -96,7 +103,7 @@ const Sistemas: NextPage = () => {
                                     <IconGlobal className="effect-stroke grey" />
                                 </div>
                             </Animate>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque suscipit nulla non vehicula.</p>
+                            
                         </div>
                         
                         <div className="stages">
@@ -292,7 +299,10 @@ const Sistemas: NextPage = () => {
                                 </div>
                             </Chat>
 
-                            <div className="personalized">
+                            <div 
+                                className="personalized"
+                                onClick={() => handleContacts()}
+                            >
                                 <p>Quer um </p>
                                 <p className="primary"> bot personalizado?</p>
                             </div>
@@ -331,7 +341,12 @@ const Sistemas: NextPage = () => {
 
                         </MainCard>
 
-                        <button className="payment">Quer integrar pagamento?</button>
+                        <button 
+                            className="payment"
+                            onClick={() => handleContacts()}
+                        >
+                            Quer integrar pagamento?
+                        </button>
                                 
                     </MainContainer>
                 </ModalDefault>
@@ -407,8 +422,10 @@ const Sistemas: NextPage = () => {
             
                         </CardContainer>    
 
-                        <div className="personalized">
-                    
+                        <div 
+                            className="personalized"
+                            onClick={() => handleContacts()}
+                        >
                             <p>Quer um </p>
                             <p className="primary"> bot personalizado?</p>
                         </div>

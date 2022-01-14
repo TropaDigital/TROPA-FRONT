@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import Carousel from 'react-elastic-carousel';
 import apiTropa from '../../pages/api/api';
 import Animate from '../Animation/Animate';
@@ -67,18 +68,20 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
                     {   image.length > 0
                         ?
                         image.map((data: any, key) => (
-                            <div className="web">
-                                <img src="/images/Notebook.png" />
-                                <div className="card" key={key}>
-                                    <div className="back-image">
-                                        <img src={data.imagem_principal} />
-                                    </div>                                
-                                    <div className="overlay">
-                                        <p>Ver este</p> <br /><p className='bottom'> projeto</p>
-                                        <IconArrow />
-                                    </div>                                         
-                                </div>                        
-                            </div>                                                
+                            <Link href={`/portfolio/${data.slug}`}>
+                                <div className="web">
+                                    <img src="/images/Notebook.png" />
+                                    <div className="card" key={key}>
+                                        <div className="back-image">
+                                            <img src={data.imagem_principal} />
+                                        </div>                                
+                                        <div className="overlay">
+                                            <p>Ver este</p> <br /><p className='bottom'> projeto</p>
+                                            <IconArrow />
+                                        </div>                                         
+                                    </div>                        
+                                </div>                                                
+                            </Link>
                         ))
                         :
                         [1,2,3].map(() => (

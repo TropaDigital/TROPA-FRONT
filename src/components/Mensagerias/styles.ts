@@ -149,7 +149,7 @@ export const CardContainer = styled.div`
         border-radius: 40px;
         background: ${colors.primary};
         color: ${colors.primaryWhite};
-        cursor: pointer;
+        font-size: 18px;
         padding: 20px;
         transition: ease-in-out 250ms;
         &:hover {

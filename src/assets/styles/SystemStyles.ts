@@ -62,10 +62,7 @@ export const BannerSystem = styled.div`
       }
     }
     h1.primary {
-        color: ${colors.primary};
-        @media (max-width: 425px) {
-          text-shadow: 5px 5px 5px #00000080;
-        }
+        color: ${colors.primaryLight};
     }
     .note {
         width: 100%;
@@ -97,9 +94,9 @@ export const BannerSystem = styled.div`
         }
     }
     button {
-      border: 2px solid ${colors.primary};
+      border: none;
       border-radius: 100px;
-      background: transparent;
+      background: ${colors.primary};
       font-size: 16px;
       font-style: normal;
       font-weight: bold;
@@ -113,8 +110,8 @@ export const BannerSystem = styled.div`
       cursor: pointer;
       transition: all .2s;
       &:hover {
-          background: ${colors.primary};
-          transform: scale(1.1);
+          background: ${colors.primaryLight};
+          transform: scale(1.2);
       }
       @media (max-width: 1100px) {
         left: 100px;
@@ -124,7 +121,7 @@ export const BannerSystem = styled.div`
         left: 20px;
         top: 180px;
         background: ${colors.primaryLight};
-        color: ${colors.primary};
+        color: ${colors.primaryGrey};
         padding: 15px;
         font-size: 14px;
         &:hover {

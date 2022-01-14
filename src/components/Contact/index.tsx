@@ -17,9 +17,12 @@ const Contact: React.FC = () => {
         mensagem: '',
     });
 
+    function handleSubmit(e: any) {
+        e.preventDefault()
+    }
     
     const sendContact = async() => {
-
+        
         try {
             console.log(DTO);
 
@@ -27,12 +30,13 @@ const Contact: React.FC = () => {
                 "/contato",
                 DTO
             )
-
+            
             toast.success(response.data.message, {
                 className: "toast-sucess",
                 theme: 'colored'
             })
             router.push('/')
+            
         }
         catch (e: any) {
             toast.error(e.response.data.message, {
@@ -69,7 +73,7 @@ const Contact: React.FC = () => {
                         </a>
                     </div>
                 </Animate>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input 
                         placeholder="SEU NOME" 
                         name='nome' 
@@ -88,7 +92,12 @@ const Contact: React.FC = () => {
                         value={DTO.mensagem}
                         onChange={(e) => changeDTO(e.target.name, e.target.value)} 
                     />
-                    <button type='button' onClick={() => sendContact()}>Enviar</button>
+                    <button 
+                        type='submit' 
+                        onClick={() => sendContact()} 
+                    >
+                        Enviar
+                    </button>
                 </form>
             </ContainerCenter>
             <ToastContainer

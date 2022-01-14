@@ -42,7 +42,7 @@ interface IProps {
 
 const Home: NextPage<IProps> = ({ scrollTo }) => {
     const router = useRouter();
-
+    
     // const { portfolios } = props;
 
     const [widthWindow, setWidthWindow] = useState(1920);
@@ -268,16 +268,18 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                             { portfoliosList.length > 0 
                                 ?
                                 portfoliosList.map((row: any, key: any) => (
-                                    <div
-                                        className="card"
-                                        key={key}
-                                        style={{
-                                            backgroundImage: 'url('+row.imagem_principal+')',
-                                        }}
-                                    >
-                                        <h4>{row.titulo}</h4>
-                                        <i>{row.descricao}</i>
-                                    </div>
+                                    <Link href={`/portfolio/${row.slug}`}>
+                                            <div
+                                                className="card"
+                                                key={key}
+                                                style={{
+                                                    backgroundImage: 'url('+row.imagem_principal+')',
+                                                }}
+                                            >
+                                                <h4>{row.titulo}</h4>
+                                                <i>{row.descricao}</i>
+                                            </div>
+                                    </Link>
                                 ))
                                 :
                                 [1,2,3].map((row: any, key) => ( 

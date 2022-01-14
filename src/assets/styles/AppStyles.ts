@@ -177,10 +177,15 @@ export const BannerApp = styled.div`
     }
     @media (max-width: 425px) {
       width: 415px;
+      top: -160px;
       h1 {
         width: 420px;
-        font-size: 35px;
-        margin-left: 20px;
+        font-size: 30px;
+        margin-left: 65px;
+      }
+      button {
+        margin-top: 20px;
+        left: -20px;
       }
     }
   }
@@ -199,8 +204,8 @@ export const BannerApp = styled.div`
     }
     @media (max-width: 425px) {
       width: 25%;
-      margin-left: -110%;
-      align-items: flex-start;
+      margin-left: -112%;
+      bottom: 0;
       img {
         width: 365px;
         height: 60%;

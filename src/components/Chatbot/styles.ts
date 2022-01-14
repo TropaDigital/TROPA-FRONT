@@ -60,6 +60,8 @@ export const DivChat = styled.div`
     width: 60%;
     display: flex;
     flex-direction: column; 
+    align-items: center;
+    position: relative;
     @media (max-width: 425px) {
         width: 90%;
         height: 100%;
@@ -228,7 +230,7 @@ export const Chat = styled.div`
         }
     }
     .send {
-        width: 42%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -237,17 +239,16 @@ export const Chat = styled.div`
         background: ${colors.primaryGrey};
         border-radius: 30px;
         position: absolute;
-        top: 553px;
-        left: 551px;
+        top: 405px;
+        left: 0;
         @media (max-width: 1100px) {
             width: 552px;
-            top: 565px;
-            left: 318px;
+            left: -45px;
         }
         @media (max-width: 425px) {
-            width: 320px;
-            top: 565px;
-            left: 36px;
+            width: 100%;
+            top: 482px;
+            left: 0;
         }
         input {
             width: 90%;
