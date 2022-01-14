@@ -121,7 +121,53 @@ export const HeaderContainer = styled.div`
                         height: 15px;
                     }
                 }
+                .hidden-menu {
+                    top: 50px;
+                }
             }
+        }
+        .hidden-menu {
+            position: absolute;
+            border-radius: 2px solid ${colors.primary};
+            background-color: ${colors.primary};
+            width: 150px;
+            top: 0;
+            left: 0;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            line-height: 40px;
+            .app {
+                border-radius: 8px 8px 0 0 ;
+            }
+            .web {
+                border-radius: 0 0 8px 8px;
+            }
+            .app,
+            .system,
+            .web {
+                font-family: ${fonts.bebasNeue};
+                font-size: 16px;
+                font-weight: 400;
+                cursor: pointer;
+                &:hover {
+                    background-color: ${colors.primaryLight};
+                }
+            }
+            ::after{
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                left:0;
+                right: 0;
+                margin: auto;
+                height: 30px;
+                background: none;
+            }
+        }
+        .hidden-menu.app {
+            background-color: ${colors.primaryLight};    
+            color: ${colors.primaryDark};
         }
         ul {
             display: flex;
@@ -129,6 +175,11 @@ export const HeaderContainer = styled.div`
             padding: 0px;
             margin: 0px;
             align-items: center;
+            position: relative;
+            li:first-child {
+                
+            }
+            
             li {
                 margin-left: 35px;
                 @media (max-width: 425px) {
@@ -145,20 +196,7 @@ export const HeaderContainer = styled.div`
                     &:hover {
                         color: #FFF;
                     }
-                }
-                button.search {
-                    width: 67px;
-                    height: 67px;
-                    border-radius: 100px;
-                    background: ${colors.primary};
-                    outline: none;
-                    border: none;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                    transition: all .2s;
-                }
+                }                
             }
             @media (max-width: 425px) {
                 display: none;
@@ -195,6 +233,7 @@ export const HeaderContainer = styled.div`
                     &:hover {
                         color: #FFF;
                     }
+
                 }
             }
         }

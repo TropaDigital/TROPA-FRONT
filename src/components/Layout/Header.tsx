@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {FiMenu} from 'react-icons/fi'
@@ -24,9 +25,17 @@ const Header: React.FC<IProps> = ({
     className,
     menus,
 }) => {
+    const router = useRouter();
+
     const [menuFixed, setMenuFixed] = useState<boolean>(false);
 
     const [openMenu, setOpenMenu ] = useState(false)
+
+    const [mostraSubmenu, setMostraSubmenu] = useState(true);
+
+    function handleMouseEnter() {
+        setTimeout(() =>  setMostraSubmenu(false), 2200);
+    }
 
     useEffect(() => {
         document.addEventListener('scroll', () => {
@@ -35,6 +44,7 @@ const Header: React.FC<IProps> = ({
             } else if (window.scrollY === 0) {
                 setMenuFixed(false);
             }
+
         });
         return () =>
             document.removeEventListener('scroll', () => {
@@ -75,10 +85,36 @@ const Header: React.FC<IProps> = ({
 
                         <ul>
                             {menus.map((row, key) => (
-                                <li key={key}>
+                                <li key={key} 
+                                onMouseEnter={row.value === "O que fazemos"? () => setMostraSubmenu(true) : () => setMostraSubmenu(false)}
+                                onMouseLeave={ () => setMostraSubmenu(false)} >
                                     <Link href={row.href}>
                                         <a>{row.value}</a>
                                     </Link>
+                                    {row.value === "O que fazemos" && mostraSubmenu?
+                                    
+                                        <div className='hidden-menu app web'>
+                                            <div
+                                                className='app'
+                                                onClick={() => router.push('/aplicativos')}
+                                            >
+                                                Aplicativos
+                                            </div>
+                                            <div
+                                                className='system'
+                                                onClick={() => router.push('/sistemas')}
+                                            >
+                                                Sistemas
+                                            </div>
+                                            <div
+                                                className='web'
+                                                onClick={() => router.push('/sites')}
+                                            >
+                                                Sites
+                                            </div>
+                                        </div>
+                                    
+                                    : ''}
                                 </li>
                             ))}
                         </ul>
@@ -94,6 +130,11 @@ const Header: React.FC<IProps> = ({
                                 ))}
                             </ul>
                         }
+
+                        
+                        
+
+                        
                     </ContainerCenter>
                 </div>
             </nav>

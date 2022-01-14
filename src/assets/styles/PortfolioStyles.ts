@@ -291,7 +291,7 @@ export const Mobile = styled.div`
     }
     svg {
       position: relative;
-      top: -335px;
+      top: -250px;
       left: 120px;
       transform: rotate(45deg);
     }
@@ -348,6 +348,13 @@ export const Mobile = styled.div`
       height: 700px;
       position: absolute;
       left: -600px;
+      .backLoader {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+        position: absolute;
+      }
       .cel {
         width: 390px;
         height: 700px;
@@ -454,6 +461,16 @@ export const Mobile = styled.div`
         left: 100px;
         top: 650px;
       }
+      .backLoader2 {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+        position: absolute;
+      }
     }
     .phone3 {
       width: 390px;
@@ -508,6 +525,16 @@ export const Mobile = styled.div`
         height: 400px;
         top: 900px;
         left: -75px;
+      }
+      .backLoader3 {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+        position: absolute;
       }
     }
   }
