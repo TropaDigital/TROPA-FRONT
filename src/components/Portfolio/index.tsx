@@ -10,17 +10,18 @@ import apiTropa from '../../pages/api/api';
 import PulseLoader from "react-spinners/PulseLoader";
 
 interface IPort {
-    title?: string;
+    portfolioSelected: object |any ;
 }
 
 const Portfolio: NextPage<IPort> = ({
-    title,
+    portfolioSelected,
 }) => {
     const router = useRouter();
 
     const [portfoliosList, setPortfoliosList] = useState([])
 
     useEffect(() => {
+        
         getPortfolios();
     }, []);
 
@@ -33,6 +34,8 @@ const Portfolio: NextPage<IPort> = ({
             console.log("Erro 999 - Não recebendo os dados dos portfólios.")
         }
     }
+
+    
 
     return (
         <PortfolioContainer>
@@ -74,7 +77,7 @@ const Portfolio: NextPage<IPort> = ({
                     <div className="main">
                             <Animate effect="fadeInLeft" className="title">
                                 <h1>
-                                   Eyou 
+                                   {portfolioSelected.titulo} 
                                 </h1>
                             </Animate>                                             
                     </div>                         
@@ -88,7 +91,7 @@ const Portfolio: NextPage<IPort> = ({
                 </div>
 
                 <div className='page'>
-                    <img src="/images/EyouW.png" alt="" />                    
+                    <img src={portfolioSelected.imagem_principal} alt="" />                    
                 </div>
             </LandingPage>   
 
@@ -103,39 +106,39 @@ const Portfolio: NextPage<IPort> = ({
                     <div className='mobile'>
                         <img src="/images/TropaPhone.png" alt="Celular com logo da Tropa" />
                     </div>
-                        {   portfoliosList.length > 0 
+                        {   portfolioSelected.length < 0 
                             ?
-                            portfoliosList.map((row: any, key: any) => (
-                        <>
-                            <div className='phone'>                        
-                                <div className='cel'>
-                                    <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                                </div>
-                                <div className='back' key={key}>
-                                    <img src={row.imagem_tipo} alt='Imagem do site' />
-                                    {/* <span>{row.titulo}</span> */}
-                                </div>                        
-                            </div>
-                                    
-                            <div className='phone2'>                        
-                                <div className='cel2'>
-                                    <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                                </div>
-                                <div className='back2' key={key}>
-                                    <img src={row.imagem_tipo} alt='Imagem do site' />
-                                </div>                        
-                            </div>
-                        
-                            <div className='phone3'>                        
-                                <div className='cel3'>
-                                    <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                                </div>
-                                <div className='back3' key={key}>
-                                    <img src={row.imagem_tipo} alt='Imagem do site' />
-                                </div>                        
-                            </div> 
-                        </>    
-                        ))
+                            portfolioSelected.map((data: any, key: any) => (
+                                <>
+                                    <div className='phone'>                        
+                                        <div className='cel'>
+                                            <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                        </div>
+                                        <div className='back' >
+                                            <img src={data.imagem_tipo} alt='Imagem do site' />
+                                        </div>                        
+                                    </div>
+                                            
+                                    {/* <div className='phone2'>                        
+                                        <div className='cel2'>
+                                            <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                        </div>
+                                        <div className='back2' >
+                                            <img src={data.imagem_tipo} alt='Imagem do site' />
+                                        </div>                        
+                                    </div>
+                                
+                                    <div className='phone3'>                        
+                                        <div className='cel3'>
+                                            <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                        </div>
+                                        <div className='back3' >
+                                            <img src={data.imagem_tipo} alt='Imagem do site' />
+                                        </div>                        
+                                    </div>  */}
+                                </>    
+
+                            ))
                         : 
                         [1,2,3].map(() => ( 
                             <>

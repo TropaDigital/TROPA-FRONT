@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Carousel from 'react-elastic-carousel';
 
@@ -43,10 +43,12 @@ interface IProps {
 const Home: NextPage<IProps> = ({ scrollTo }) => {
     const router = useRouter();
 
-    const [portfoliosList, setPortfoliosList] = useState([])
+    // const { portfolios } = props;
+
     const [widthWindow, setWidthWindow] = useState(1920);
     const [itemsToShowSocial, setItemToShowSocial] = useState(3);
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
+    const [portfoliosList, setPortfoliosList] = useState([])
 
 
     useEffect(() => {
