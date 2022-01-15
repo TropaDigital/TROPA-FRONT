@@ -16,28 +16,28 @@ export const GlobalStyles = createGlobalStyle`
     //chaney
     @font-face {
         font-family: "Chaney";
-        src: url("/fonts/Chaney/Chaney-UltraExtended.ttf");
+        src: url("/fonts/Chaney/CHANEY-UltraExtended.ttf");
         font-style: normal;
         font-weight: 600;
         font-display: swap;
     }
     @font-face {
         font-family: "Chaney";
-        src: url("/fonts/Chaney/Chaney-Extended.ttf");
+        src: url("/fonts/Chaney/CHANEY-Extended.ttf");
         font-style: normal;
         font-weight: 500;
         font-display: swap;
     }
     @font-face {
         font-family: "Chaney";
-        src: url("/fonts/Chaney/Chaney-Regular.ttf");
+        src: url("/fonts/Chaney/CHANEY-Regular.ttf");
         font-style: normal;
         font-weight: 400;
         font-display: swap;
     }
     @font-face {
         font-family: "Chaney";
-        src: url("/fonts/Chaney/Chaney-Wide.ttf");
+        src: url("/fonts/Chaney/CHANEY-Wide.ttf");
         font-style: normal;
         font-weight: 300;
         font-display: swap;

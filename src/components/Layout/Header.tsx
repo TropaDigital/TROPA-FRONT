@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import {FiMenu} from 'react-icons/fi'
-import {MdClose} from 'react-icons/md'
-
+import { FiMenu } from 'react-icons/fi';
+import { MdClose } from 'react-icons/md';
 
 import { ContainerCenter, HeaderContainer } from './styles';
 import { Logo } from '../Svg';
@@ -29,9 +28,9 @@ const Header: React.FC<IProps> = ({
 
     const [menuFixed, setMenuFixed] = useState<boolean>(false);
 
-    const [openMenu, setOpenMenu ] = useState(false)
+    const [openMenu, setOpenMenu] = useState(false);
 
-    const [mostraSubmenu, setMostraSubmenu] = useState(true);
+    const [mostraSubmenu, setMostraSubmenu] = useState(false);
 
     useEffect(() => {
         document.addEventListener('scroll', () => {
@@ -40,7 +39,6 @@ const Header: React.FC<IProps> = ({
             } else if (window.scrollY === 0) {
                 setMenuFixed(false);
             }
-
         });
         return () =>
             document.removeEventListener('scroll', () => {
@@ -48,17 +46,21 @@ const Header: React.FC<IProps> = ({
             });
     }, []);
 
-    const hamburguerIcon = <FiMenu 
-                                className="hamburguer" 
-                                size="35px" 
-                                onClick={() => setOpenMenu(!openMenu)}
-                            />
-                            
-    const closeIcon = <MdClose
-                        className="hamburguer" 
-                        size="35px" 
-                        onClick={() => setOpenMenu(!openMenu)}
-                      />
+    const hamburguerIcon = (
+        <FiMenu
+            className="hamburguer"
+            size="35px"
+            onClick={() => setOpenMenu(!openMenu)}
+        />
+    );
+
+    const closeIcon = (
+        <MdClose
+            className="hamburguer"
+            size="35px"
+            onClick={() => setOpenMenu(!openMenu)}
+        />
+    );
 
     return (
         <HeaderContainer
@@ -70,7 +72,6 @@ const Header: React.FC<IProps> = ({
                     className={`nav-fixed ${menuFixed ? 'active' : 'inactive'}`}
                 >
                     <ContainerCenter className="center">
-                        
                         <Link href="/">
                             <a className="logo">
                                 <Logo />
@@ -81,42 +82,55 @@ const Header: React.FC<IProps> = ({
 
                         <ul>
                             {menus.map((row, key) => (
-                                <li key={key} 
-                                onMouseEnter={row.value === "O que fazemos"? () => setMostraSubmenu(true) : () => setMostraSubmenu(false)}
-                                onMouseLeave={ () => setMostraSubmenu(false)} >
+                                <li
+                                    key={key}
+                                    onMouseEnter={
+                                        row.value === 'O que fazemos'
+                                            ? () => setMostraSubmenu(true)
+                                            : () => setMostraSubmenu(false)
+                                    }
+                                    onMouseLeave={() => setMostraSubmenu(false)}
+                                >
                                     <Link href={row.href}>
                                         <a>{row.value}</a>
                                     </Link>
-                                    {row.value === "O que fazemos" && mostraSubmenu?
-                                    
-                                        <div className='hidden-menu aplicative website'>
+                                    {row.value === 'O que fazemos' &&
+                                    mostraSubmenu ? (
+                                        <div className="hidden-menu aplicative website">
                                             <div
-                                                className='app'
-                                                onClick={() => router.push('/aplicativos')}
+                                                className="app"
+                                                onClick={() =>
+                                                    router.push('/aplicativos')
+                                                }
                                             >
                                                 Aplicativos
                                             </div>
                                             <div
-                                                className='system'
-                                                onClick={() => router.push('/sistemas')}
+                                                className="system"
+                                                onClick={() =>
+                                                    router.push('/sistemas')
+                                                }
                                             >
                                                 Sistemas
                                             </div>
                                             <div
-                                                className='web'
-                                                onClick={() => router.push('/sites')}
+                                                className="web"
+                                                onClick={() =>
+                                                    router.push('/sites')
+                                                }
                                             >
                                                 Sites
                                             </div>
                                         </div>
-                                    
-                                    : ''}
+                                    ) : (
+                                        ''
+                                    )}
                                 </li>
                             ))}
                         </ul>
-                        
-                        {openMenu && 
-                            <ul className='hidden'>
+
+                        {openMenu && (
+                            <ul className="hidden">
                                 {menus.map((row, key) => (
                                     <li key={key}>
                                         <Link href={row.href}>
@@ -125,12 +139,7 @@ const Header: React.FC<IProps> = ({
                                     </li>
                                 ))}
                             </ul>
-                        }
-
-                        
-                        
-
-                        
+                        )}
                     </ContainerCenter>
                 </div>
             </nav>

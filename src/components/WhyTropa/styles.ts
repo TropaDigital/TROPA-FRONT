@@ -5,7 +5,7 @@ export const WhyTropaContainer = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
-  background-image: url('/images/bannerWhyTropa.jpg');
+  background-image: url('/images/BannerWhyTropa.jpg');
   background-position: center;
   background-size: cover;
   overflow: hidden;
