@@ -122,32 +122,37 @@ export const HeaderContainer = styled.div`
                     }
                 }
                 .hidden-menu {
-                    top: 50px;
+                    top: 40px;
                 }
             }
         }
         .hidden-menu {
             position: absolute;
-            border-radius: 2px solid ${colors.primary};
             background-color: ${colors.primary};
             width: 150px;
-            top: 0;
+            top: 50px;
             left: 0;
             color: white;
             text-align: center;
             border-radius: 8px;
             line-height: 40px;
             .app {
-                border-radius: 8px 8px 0 0 ;
+                border-radius: 8px 8px 0 0;
+                border-bottom: 2px solid ${colors.primaryLight};
             }
             .web {
                 border-radius: 0 0 8px 8px;
             }
+            .system {
+                border-bottom: 2px solid ${colors.primaryLight};
+            }
             .app,
             .system,
             .web {
-                font-family: ${fonts.bebasNeue};
+                text-transform: uppercase;
                 font-size: 16px;
+                font-family: ${fonts.bebasNeue};
+                letter-spacing: 2px;
                 font-weight: 400;
                 cursor: pointer;
                 &:hover {
@@ -164,10 +169,6 @@ export const HeaderContainer = styled.div`
                 height: 30px;
                 background: none;
             }
-        }
-        .hidden-menu.app {
-            background-color: ${colors.primaryLight};    
-            color: ${colors.primaryDark};
         }
         ul {
             display: flex;

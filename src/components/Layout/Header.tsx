@@ -33,10 +33,6 @@ const Header: React.FC<IProps> = ({
 
     const [mostraSubmenu, setMostraSubmenu] = useState(true);
 
-    function handleMouseEnter() {
-        setTimeout(() =>  setMostraSubmenu(false), 2200);
-    }
-
     useEffect(() => {
         document.addEventListener('scroll', () => {
             if (window.scrollY > 30) {
@@ -93,7 +89,7 @@ const Header: React.FC<IProps> = ({
                                     </Link>
                                     {row.value === "O que fazemos" && mostraSubmenu?
                                     
-                                        <div className='hidden-menu app web'>
+                                        <div className='hidden-menu aplicative website'>
                                             <div
                                                 className='app'
                                                 onClick={() => router.push('/aplicativos')}
