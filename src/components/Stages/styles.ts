@@ -27,7 +27,7 @@ export const StagesContainer = styled.div`
                     margin-left: 15px;
                 }
                 h3 {
-                    font-size: 140px;
+                    font-size: 130px;
                     color: ${colors.primary};
                     line-height: 120px;
                     font-family: ${fonts.chaney};
@@ -109,6 +109,7 @@ export const StagesContainer = styled.div`
                         display: block;
                         padding-top: 20px;
                         font-weight: normal;
+                        font-size: 18px;
                     }
                 }
             }
