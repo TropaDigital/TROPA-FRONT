@@ -102,6 +102,7 @@ export const AccordionContainer = styled.div`
                         display: block;
                         padding-top: 20px;
                         font-weight: normal;
+                        font-size: 18px;
                     }
                 }
             }
