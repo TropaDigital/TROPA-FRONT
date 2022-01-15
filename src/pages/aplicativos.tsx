@@ -108,28 +108,29 @@ const Aplicativos: NextPage = () => {
                 </Header>
                 <AcordionItems
                     title="Como fun-ciona?"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque suscipit nulla non vehicula."
+                    description="Ajudamos você a tirar sua ideia do papel, desenvolvemos soluções de
+                    aplicativos para potencializar os negócios da sua empresa."
                     icon={<IconCube  className="effect-stroke light"/>}
                     items={[
                         {
-                            title: 'Velocidade',
+                            title: 'Análise',
                             description:
-                                'Lorem ipsum dolor sit amat, consectur apsdifja. Present pallange sucipt nulla nan vehicula.',
+                                'Essa é uma das etapas principais, antes mesmo de iniciar o projeto, por meio de reuniões analisamos cada característica, para identificar qual a melhor estrutura e estratégia a ser aplicada.',
                         },
                         {
-                            title: 'Facilidade',
+                            title: 'Escopo',
                             description:
-                                'Lorem ipsum dolor sit amat, consectur apsdifja. Present pallange sucipt nulla nan vehicula.',
+                                'Depois de tudo ser esclarecido, temos as ideias principais, é nessa etapa que construímos o que chamamos de “wireframe”, que vai auxiliar na produção.',
                         },
                         {
-                            title: 'Atendimento',
+                            title: 'Produção',
                             description:
-                                'Lorem ipsum dolor sit amat, consectur apsdifja. Present pallange sucipt nulla nan vehicula.',
+                                'Nessa etapa, A TROPA inicia a criação do projeto através do design, seguindo com a programação (funcionamento do app) e por fim realiza a entrega.',
                         },
                         {
-                            title: 'Design',
+                            title: 'Suporte',
                             description:
-                                'Lorem ipsum dolor sit amat, consectur apsdifja. Present pallange sucipt nulla nan vehicula.',
+                                'Antes mesmo da entrega do projeto/aplicativo, faremos uma reunião para fornecer ao cliente todo o suporte necessário.',
                         },
                     ]}
                 />
