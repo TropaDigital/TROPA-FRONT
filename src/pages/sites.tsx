@@ -74,29 +74,31 @@ const Sites: NextPage = () => {
                 </Header>
                 
                 <StageItems
-                    title="Todas etapas"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque suscipit nulla non vehicula."
+                    title="O QUE FAZEMOS?"
+                    description="Conheça um pouco do nosso trabalho e saiba quais as vantagens de contratar
+                    um site da TROPA.
+                    "
                     icon={<IconCube className="effect-stroke dark" />}
                     items={[
                         {
-                            title: 'Velocidade',
+                            title: 'Responsivo',
                             description:
-                                'Lorem ipsum dolor sit amat, consectur apsdifja. Present pallange sucipt nulla nan vehicula.',
+                                'Somos especializados em desenvolver sites responsivos, que são aqueles que se adaptam em todos dispositivos móveis e desktop, um ótimo diferencial que auxilia nas vendas e na divulgação do seu negócio',
                         },
                         {
-                            title: 'Facilidade',
+                            title: 'Registro',
                             description:
-                                'Lorem ipsum dolor sit amat, consectur apsdifja. Present pallange sucipt nulla nan vehicula.',
+                                'Não se preocupe com a burocracia de ter o seu site no ar, faremos tudo isso pra você. Nós registramos o domínio do seu site e você só paga após 1 ano de uso.',
                         },
                         {
-                            title: 'Atendimento',
+                            title: 'SEO',
                             description:
-                                'Lorem ipsum dolor sit amat, consectur apsdifja. Present pallange sucipt nulla nan vehicula.',
+                                'Nossa metodologia de criação atende a todos os requisitos para que seu site seja listado nas buscas do Google e outros buscadores do mercado.',
                         },
                         {
-                            title: 'Design',
+                            title: '100% GERENCIÁVEL',
                             description:
-                                'Lorem ipsum dolor sit amat, consectur apsdifja. Present pallange sucipt nulla nan vehicula.',
+                                'Um site pra chamar de seu, você terá total autonomia para administra-lo. Lembrando que o treinamento para gerenciar cada etapa é por nossa conta.',
                         },
                     ]}
                 />
