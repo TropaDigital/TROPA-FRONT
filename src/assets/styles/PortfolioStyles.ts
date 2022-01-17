@@ -244,7 +244,8 @@ export const LandingPage = styled.div`
     justify-content: center;
     position: absolute;
     top: 1200px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     margin-bottom: 50px;
     @media (max-width: 1100px) {
       width: 98%;
@@ -255,7 +256,7 @@ export const LandingPage = styled.div`
       top: 1150px;
     }
     img {
-      width: 60%;
+      width: 1150px;
       height: 100%;
       @media (max-width: 1100px) {
         width: 80%;
