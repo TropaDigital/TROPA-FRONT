@@ -32,6 +32,11 @@ export const AppContainer = styled.div`
         fill: ${colors.primary}
       }
     }
+    .aplicative {
+      background-color: ${colors.primaryLight};
+      color: ${colors.primaryDark};
+      /* border: 2px solid ${colors.primaryDark}; */
+    }
   }
   .bannerAppAnimation.site {
     background-position: center center;
@@ -46,6 +51,9 @@ export const AppContainer = styled.div`
       .digital {
         fill: ${colors.primaryLight}
       }
+    }
+    .website {
+      background-color: ${colors.primaryGrey};
     }
     .nav-fixed {
       &.active {
