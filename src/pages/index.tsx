@@ -253,7 +253,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                         </div>  
                     </ContainerCenter>
 
-                    <Animate effect="fadeInUp" startAnimation={200}>
+                    <Animate effect="fadeInUp" startAnimation={0}>
                         <Carousel
                             itemsToShow={itemsToShowPortfolio}
                             isRTL={false}
