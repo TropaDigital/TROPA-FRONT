@@ -249,7 +249,6 @@ export const LandingPage = styled.div`
     margin-bottom: 50px;
     @media (max-width: 1100px) {
       width: 98%;
-      left: 15px;
     }
     @media (max-width: 425px) {
       width: 96%;
@@ -260,6 +259,9 @@ export const LandingPage = styled.div`
       height: 100%;
       @media (max-width: 1100px) {
         width: 80%;
+      }
+      @media (max-width: 425px) {
+        width: 340px;
       }
     }
   }
@@ -310,7 +312,7 @@ export const Mobile = styled.div`
         font-size: 4rem;
       }
       svg {
-        top: -285px;
+        top: -145px;
         left: 60px;
         width: 50px;
       }
@@ -355,6 +357,11 @@ export const Mobile = styled.div`
         transform: translateX(-50%);
         z-index: 0;
         position: absolute;
+        @media (max-width: 425px) {
+          width: 160px;
+          top: 35%;
+          left: 45%;
+        }
       }
       .cel {
         width: 390px;
@@ -460,17 +467,19 @@ export const Mobile = styled.div`
         width: 200px;
         height: 400px;
         left: 100px;
-        top: 650px;
+        top: 600px;
       }
       .backLoader2 {
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
         z-index: 0;
         position: absolute;
+        @media (max-width: 425px) {
+          width: 160px;
+          top: 35%;
+          left: 45%;
+        }
       }
     }
     .phone3 {
@@ -531,11 +540,13 @@ export const Mobile = styled.div`
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
         z-index: 0;
         position: absolute;
+        @media (max-width: 425px) {
+          width: 160px;
+          top: 35%;
+          left: 45%;
+        }
       }
     }
   }
