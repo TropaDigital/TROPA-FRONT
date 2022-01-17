@@ -106,7 +106,7 @@ export const CardContainer = styled.div`
         height: 70%;
     }
     @media (max-width: 425px) {
-            height: 75%;
+            height: 80%;
             width: 90%;
         }
     .receiver {
@@ -137,10 +137,10 @@ export const CardContainer = styled.div`
                     background: ${colors.primary};
                     color: ${colors.primaryWhite};
                 }
+                @media (max-width: 425px) {
+                    margin-bottom: 5px;
+                }
             }
-        }
-        @media (max-width: 425px) {
-            margin-bottom: 10px;
         }
     }
     button {
