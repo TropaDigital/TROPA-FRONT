@@ -66,7 +66,7 @@ export const PortfolioBanner = styled.div`
             font-size: 10rem;
         }
         @media (max-width: 425px) {
-            font-size: 6rem;
+            font-size: 4rem;
             top: 230px;
         }
     }  
