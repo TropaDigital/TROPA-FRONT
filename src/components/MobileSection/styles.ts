@@ -213,7 +213,7 @@ export const MobileDiv = styled.div`
             .overlay {            
                 position: absolute; 
                 top: 15px;
-                left: 19px;
+                left: 25px;
                 width: 264px;
                 height: 94%;
                 border-radius: 30px;

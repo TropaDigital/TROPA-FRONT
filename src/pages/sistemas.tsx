@@ -18,10 +18,17 @@ import { CardContainer, MessageContainer, Messages } from '../components/Mensage
 import { MainCard, MainContainer } from '../components/CardCheckout/styles';
 import CreditCard from '../components/CreditCard';
 import InputMask from "react-input-mask";
+import apiTropa from '../pages/api/api';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Sistemas: NextPage = () => {
     const router = useRouter();
+
+    const [DTO, setDTO] = useState <any>({
+        destinatarios: [],
+        mensagem: '',
+    });
     
     const [selected, setSelected] = useState<any>(null);
     const [sendMode, setSendMode] = useState<any>(null);
@@ -36,7 +43,72 @@ const Sistemas: NextPage = () => {
         setModalMsg(false)
         setModalBot(false)
     }
+
+    function handleSubmit(e: any) {
+        e.preventDefault()
+    }
+
+    const sendWhats = async() => {
+        try {
+            console.log(DTO);
+            
+            const response = await apiTropa.post(
+                "/mensageria/whats",
+                DTO
+                )
+                
+                toast.success(response.data.message, {
+                    className: "toast-sucess",
+                    theme: 'colored'
+                })
+                router.push('/')
+                console.log('Enviado contato via whatsapp!!')
+            
+        }
+        catch (e: any) {
+            toast.error(e.response.data.message, {
+                className: "toast-error",
+                theme: "colored"
+            })
+        }
+    }
+    const sendMessage = async() => {
+        try {
+            console.log(DTO);
+            
+            const response = await apiTropa.post(
+                "/mensageria/sms",
+                DTO
+                )
+                
+                toast.success(response.data.message, {
+                    className: "toast-sucess",
+                    theme: 'colored'
+                })
+                router.push('/')
+                console.log('Enviado contato via messageria!!')
+            
+        }
+        catch (e: any) {
+            toast.error(e.response.data.message, {
+                className: "toast-error",
+                theme: "colored"
+            })
+        }
+    }
     
+    const changeDTO = (key:string, value:string) => {
+        console.log(DTO)
+        DTO[key] = value;
+        setDTO({...DTO});
+    }
+
+    const setNumero = (key:string,value:string) => {
+        DTO.destinatarios[0] = value;
+
+        setDTO({...DTO});
+    }
+
     return (
     <>
         <Layout>
@@ -86,7 +158,11 @@ const Sistemas: NextPage = () => {
                                     Web                                   
                                 </h1>
                             </Animate>                            
-                            <button>Conheça</button>                            
+                            <button
+                                onClick={() => router.push('#fazemos')}
+                            >
+                                Conheça
+                            </button>                            
                             <Animate effect="fadeInLeft" className="note">
                                 <img src="/images/Notebook1.png" />
                             </Animate>
@@ -94,7 +170,7 @@ const Sistemas: NextPage = () => {
                     </BannerSystem>
                 </Header>
 
-                <WeDoContainer>
+                <WeDoContainer id="fazemos">
                     <ContainerCenter className="center">
                         <div className="left">
                             <Animate effect="fadeInLeft" startAnimation={200}>
@@ -371,6 +447,11 @@ const Sistemas: NextPage = () => {
                         
 
                         <CardContainer>
+
+                            <div className='instructions'>
+                                <p>Faça um teste - Envie um SMS ou uma mensagem no seu Whatsapp</p>
+                                <hr />
+                            </div>
             
                             <div className="receiver">
                                 <h3>Por onde quer receber?</h3>
@@ -404,21 +485,47 @@ const Sistemas: NextPage = () => {
                             </div>
             
                             <Messages>
-                                <div className="msg">
-                                    <h3>Digite seu número:</h3>
-                                    <InputMask 
-                                        mask="+55 (99) 99999-9999" 
-                                        placeholder='(11) 99999-9999' 
-                                    />
-                                </div>
-            
-                                <div className="edit">
-                                    <p>Edite a mensagem</p>
-                                    <textarea placeholder="Lorem Ipsum Stanley Ipkis" />
-                                </div>
+                                <form onSubmit={handleSubmit}>
+                                    <div className="msg">
+                                        <h3>Digite seu número:</h3>
+                                        <InputMask 
+                                            mask="99999999999" 
+                                            placeholder='(11) 99999-9999' 
+                                            name='numero' 
+                                            value={DTO.nome} 
+                                            onChange={(e) => setNumero(e.target.name, e.target.value)} 
+                                            />
+                                    </div>
+                
+                                    <div className="edit">
+                                        <p>Edite a mensagem</p>
+                                        <textarea 
+                                            placeholder="Lorem Ipsum Stanley Ipkis" 
+                                            name='mensagem' 
+                                            value={DTO.nome} 
+                                            onChange={(e) => changeDTO(e.target.name, e.target.value)} 
+                                        />
+                                    </div>
+                                </form>
                             </Messages>
             
-                            <button>Enviar mensagem</button>
+                            { sendMode === 'sms' &&
+                                <button
+                                    type='submit' 
+                                    onClick={() => sendMessage()} 
+                                >
+                                    Enviar mensagem
+                                </button>
+                            }
+
+                            { sendMode === 'zap' &&
+                                <button
+                                    type='submit' 
+                                    onClick={() => sendWhats()} 
+                                >
+                                    Enviar mensagem
+                                </button>
+                            }
             
                         </CardContainer>    
 
