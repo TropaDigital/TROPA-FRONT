@@ -380,7 +380,7 @@ export const PortfolioContainer = styled.div`
       }
       @media(max-width: 425px) {
         height: 300px;
-        width: 250px;
+        width: 330px;
       }
       &:after {
         width: 100%;
