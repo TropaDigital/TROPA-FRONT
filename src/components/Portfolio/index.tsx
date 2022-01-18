@@ -89,12 +89,7 @@ const Portfolio: NextPage<IPort> = ({
 
                         <div className='phone'>                        
                             <div className='cel'>
-                                <Image
-                                    src="/images/MobileBlack.png"
-                                    alt="Celular com imagem do site"
-                                    width={390}
-                                    height={700}
-                                />                                           
+                                <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />                                
                             </div>
                             <div className='back' >
                                 <img src={portfolioSelected.imagem_tipo} alt='Imagem do site' />
