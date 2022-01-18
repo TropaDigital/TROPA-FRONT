@@ -225,22 +225,22 @@ export const BannerApp = styled.div`
       font-size: 14rem;
       width: 650px;
       left: 15px;
-      top: 200px;      
+      top: 325px;      
     }
     .title-transparent {
       .transparent {
         font-size: 14rem;
         left: 15px;
-        top: 200px;
+        top: 325px;
       }
     }
     .mac {
       width: 95vw;
       height: 100vh;
-      left: 200px;
-      top: -100px;
+      left: 135px;
+      top: -135px;
       img {
-        width: 60%;
+        width: 70%;
         height: 100vh;
       }
     }
