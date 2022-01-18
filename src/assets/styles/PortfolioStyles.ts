@@ -54,6 +54,8 @@ export const PortfolioBanner = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: -80px;
     .title > h1 {
         font-size: 12rem;
         font-family: ${fonts.bebasNeue};
@@ -62,8 +64,15 @@ export const PortfolioBanner = styled.div`
         line-height: 65px;
         margin-bottom: 10px;
         color: ${colors.primaryLight}; 
+        @media (max-width: 1400px) {
+            font-size: 9rem;
+            width: 100vw;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
         @media (max-width: 1100px) {
-            font-size: 10rem;
+            font-size: 7rem;
         }
         @media (max-width: 425px) {
             font-size: 4rem;
@@ -190,6 +199,9 @@ export const LandingPage = styled.div`
   height: 100vh;
   background: ${colors.primaryDark};
   padding: 80px;
+  @media (max-width: 1400px) {
+    height: 1100px;
+  }
   @media (max-width: 1100px) {
     height: 1100px;
   }
@@ -202,6 +214,9 @@ export const LandingPage = styled.div`
     top: 40px;
     left: 200px;
     z-index: 0;
+    @media (max-width: 1400px) {
+      left: 115px;
+    }
     @media (max-width: 1100px) {
       left: 0;
       top: 0;
@@ -228,8 +243,8 @@ export const LandingPage = styled.div`
       height: 210px;
       h1 {
         width: 300px;
-        font-size: 6rem;
-        line-height: 110px;
+        font-size: 5rem;
+        line-height: 90px;
       }
       svg {
         width: 70px;
@@ -243,7 +258,7 @@ export const LandingPage = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 1200px;
+    top: 480px;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 50px;
@@ -252,11 +267,14 @@ export const LandingPage = styled.div`
     }
     @media (max-width: 425px) {
       width: 96%;
-      top: 1150px;
+      top: 340px;
     }
     img {
       width: 1150px;
       height: 100%;
+      @media (max-width: 1400px) {
+        width: 1000px;
+      }
       @media (max-width: 1100px) {
         width: 80%;
       }
@@ -265,11 +283,40 @@ export const LandingPage = styled.div`
       }
     }
   }
+  .text {
+    width: 65vw;
+    color: ${colors.primaryLight};
+    font-size: 22px;
+    margin-left: 200px;
+    line-height: 40px;
+    text-align: justify;
+    .link {
+      a {
+        text-decoration: none;
+        color: ${colors.primary};
+        font-size: 26px;
+        &:active {
+        }
+      }
+    }
+    @media (max-width: 1400px) {
+      margin-left: 120px;
+    }
+    @media (max-width: 1100px) {
+      width: 80%;
+      margin-left: 80px;
+    }
+    @media (max-width: 425px) {
+      width: 310px;
+      font-size: 14px;
+      margin-left: -45px;
+    } 
+  }
 `
 
 export const Mobile = styled.div`
   width: 100%;
-  height: 3200px;
+  height: 2600px;
   padding: 160px;
   text-align: center;
   display: flex;
@@ -278,15 +325,15 @@ export const Mobile = styled.div`
   background: radial-gradient(400px 300px at 50% bottom, ${colors.primary}, ${colors.primaryDark});
   @media (max-width: 1100px) {
     width: 100%;
-    height: 2900px;
+    height: 2300px;
     padding: 0 40px;
   }
   @media (max-width: 425px) {
-    height: 1400px;
+    height: 1050px;
   }
   .mobile-cube {
     position: relative;
-    right: 210px;
+    right: 400px;
     h1 {
       color: ${colors.primaryLight};
       font-family: ${fonts.bebasNeue};
@@ -304,6 +351,10 @@ export const Mobile = styled.div`
       position: relative;
       left: 15px;
       color: ${colors.primaryLight};
+    }
+    @media (max-width: 1100px) {
+      right: 220px;
+      top: 15px;
     }
     @media (max-width: 425px) {
       right: 90px;
@@ -334,23 +385,12 @@ export const Mobile = styled.div`
       top: -435px;
       left: 5px;
     }
-    .mobile {
-      @media (max-width: 425px) {
-        width: 220px;
-        /* opacity: 0.1; */
-        position: relative;
-        left: 75px;
-        top: 125px;
-        img {
-          width: 70%;
-        }
-      }
-    }
     .phone {
       width: 390px;
       height: 700px;
       position: absolute;
-      left: -600px;
+      left: -200px;
+      z-index: 55;
       .backLoader {
         top: 50%;
         left: 50%;
@@ -409,17 +449,19 @@ export const Mobile = styled.div`
       @media (max-width: 425px) {
         width: 200px;
         height: 400px;
-        left: -75px;
+        left: 0;
+        top: 80px;
       }
     }
     .phone2 {
       width: 390px;
       height: 700px;
       position: absolute;
-      top: 1200px;
-      left: 0;
+      top: 550px;
+      left: -950px;
       @media (max-width: 1100px) {
         z-index: 1;
+        left: -750px;
       }
       .cel2 {
         width: 390px;
@@ -466,8 +508,8 @@ export const Mobile = styled.div`
       @media (max-width: 425px) {
         width: 200px;
         height: 400px;
-        left: 100px;
-        top: 600px;
+        left: -200px;
+        top: 350px;
       }
       .backLoader2 {
         top: 50%;
@@ -486,8 +528,9 @@ export const Mobile = styled.div`
       width: 390px;
       height: 700px;
       position: absolute;
-      top: 1700px;
-      left: -600px;
+      top: 1100px;
+      left: -200px;
+      z-index: 55;
       .cel3 {
         width: 390px;
         height: 700px;
@@ -533,8 +576,8 @@ export const Mobile = styled.div`
       @media (max-width: 425px) {
         width: 200px;
         height: 400px;
-        top: 900px;
-        left: -75px;
+        top: 600px;
+        left: 0;
       }
       .backLoader3 {
         top: 50%;
@@ -552,11 +595,16 @@ export const Mobile = styled.div`
   }
   .mobile-astro {
     position: absolute;
-    top: 3680px;
+    top: 2890px;
     left: 1530px;
+    z-index: 0;
+    @media (max-width: 1400px) {
+      left: 1045px;
+      top: 3000px;
+    }
     @media (max-width: 1100px) {
       left: 730px;
-      top: 3900px;
+      top: 2600px;
     }
     @media (max-width: 425px) {
       display: none;
@@ -577,7 +625,7 @@ export const Mobile = styled.div`
   }
   .paper {
     position: relative;
-    top: 1350px;
+    top: 1650px;
     button {
       width: 700px;
       height: 130px;
@@ -612,9 +660,12 @@ export const Mobile = styled.div`
         left: -60px;
       }
     }
+    @media (max-width: 1100px) {
+      top: 1500px;
+    }
     @media (max-width: 425px) {
       width: 95%;
-      top: 520px;
+      top: 600px;
       button {
         width: 100%;
         height: 80px;

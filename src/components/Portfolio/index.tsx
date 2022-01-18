@@ -5,7 +5,6 @@ import Head from 'next/head';
 import Header from '../../components/Layout/Header';
 import Animate from '../../components/Animation/Animate';
 import { IconAstronaut, IconCube, IconFlag } from '../Svg';
-import Image from 'next/image'
 import PulseLoader from "react-spinners/PulseLoader";
 
 interface IPort {
@@ -73,6 +72,20 @@ const Portfolio: NextPage<IPort> = ({
                 <div className='page'>
                     <img src={portfolioSelected.imagem_principal} alt="Imagem principal do site" />                    
                 </div>
+
+                {/* <div className='text'>
+                    <p>
+                        EYOU é uma plataforma online com diversas soluções utilizando SMS, Whatsapp, Telefonia e muito mais.
+                    </p>
+                    
+                    <p>    
+                        A Tropa foi escolhida para o desenvolvimento do site institucional 100% responsivo, e também para o desenvolvimento de uma landpage para captação de novos clientes.
+                    </p>
+                    
+                    <p className='link'>
+                        Veja nosso trabalho acessando: <a href="https://eyou.com.br" target='_blank'>EYOU</a>. 
+                    </p>
+                </div> */}
             </LandingPage>   
 
             <Mobile>                   
@@ -83,10 +96,6 @@ const Portfolio: NextPage<IPort> = ({
                 </div>
 
                     <div className='phones'>
-                        <div className='mobile'>
-                            <img src="/images/TropaPhone.png" alt="Celular com logo da Tropa" />
-                        </div>
-
                         <div className='phone'>                        
                             <div className='cel'>
                                 <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />                                
