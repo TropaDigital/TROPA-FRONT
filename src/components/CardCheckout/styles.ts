@@ -102,6 +102,7 @@ export const MainCard = styled.div`
         width: 90%;
         height: 100%;
         padding: 20px 40px 20px 30px;
+        overflow-y: auto;
     }
     .pay-now {
         width: 100%;

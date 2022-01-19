@@ -210,13 +210,13 @@ export const WebDiv = styled.div`
             align-items: center;
             justify-content: center;
             img {
-                width: 270px;
+                width: 315px;
             }
             .back-image { 
-                height: 125px;
-                width: 195px;
+                height: 145px;
+                width: 225px;
                 left: 68px;
-                top: 13px;
+                top: 15px;
             }        
             .overlay {            
                 left: 40px;
@@ -241,13 +241,13 @@ export const WebDiv = styled.div`
             align-items: center;
             justify-content: center;
             .back-image { 
-                left: 52px;
+                left: 40px;
             }        
             .overlay {            
-                left: 52px;
-                width: 67%;
+                left: 40px;
+                width: 75%;
                 height: 80%;
-                top: 13px;
+                top: 15px;
                 svg {
                     width: 65px;
                     top: -30px;
