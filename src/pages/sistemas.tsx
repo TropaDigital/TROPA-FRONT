@@ -62,7 +62,7 @@ const Sistemas: NextPage = () => {
                     theme: 'colored'
                 })
                 router.push('/')
-                console.log('Enviado contato via whatsapp!!')
+                console.log('Contato enviado com sucesso via whatsapp!!')
             
         }
         catch (e: any) {
@@ -70,6 +70,7 @@ const Sistemas: NextPage = () => {
                 className: "toast-error",
                 theme: "colored"
             })
+            console.log(e.response.data.message)
         }
     }
     const sendMessage = async() => {
@@ -86,7 +87,7 @@ const Sistemas: NextPage = () => {
                     theme: 'colored'
                 })
                 router.push('/')
-                console.log('Enviado contato via messageria!!')
+                console.log('Contato enviado com sucesso via sms!')
             
         }
         catch (e: any) {
@@ -94,6 +95,7 @@ const Sistemas: NextPage = () => {
                 className: "toast-error",
                 theme: "colored"
             })
+            console.log(e.response.data.message)
         }
     }
     
@@ -542,7 +544,9 @@ const Sistemas: NextPage = () => {
             )}
 
             
-
+            <ToastContainer
+                position='top-center'
+            />
         </Layout>
 
     </>

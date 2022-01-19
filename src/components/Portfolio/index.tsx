@@ -54,11 +54,11 @@ const Portfolio: NextPage<IPort> = ({
             >
                 <PortfolioBanner>
                     <div className="main">
-                            <Animate effect="fadeInLeft" className="title">
-                                <h1>
-                                   {portfolioSelected.titulo} 
-                                </h1>
-                            </Animate>                                             
+                        <Animate effect="fadeInLeft" className="title">
+                            <h1>
+                                {portfolioSelected.titulo} 
+                            </h1>
+                        </Animate>                                             
                     </div>                         
                 </PortfolioBanner>
             </Header>
@@ -70,19 +70,24 @@ const Portfolio: NextPage<IPort> = ({
                 </div>
 
                 <div className='page'>
-                    <img src={portfolioSelected.imagem_principal} alt="Imagem principal do site" />                    
+                    {
+                        portfolioSelected.imagem_principal !== undefined
+                        ?
+                        <img src={portfolioSelected.imagem_principal} alt="Imagem principal do site" />                    
+                        :
+                        <PulseLoader 
+                            color="#fff"
+                            size={30} 
+                        />
+                    }
                 </div>
 
                 {/* <div className='text'>
                     <p>
                         EYOU é uma plataforma online com diversas soluções utilizando SMS, Whatsapp, Telefonia e muito mais.
-                    </p>
-                    
-                    <p>    
-                        A Tropa foi escolhida para o desenvolvimento do site institucional 100% responsivo, e também para o desenvolvimento de uma landpage para captação de novos clientes.
-                    </p>
-                    
-                    <p className='link'>
+                        <br />   
+                        A Tropa foi escolhida para o desenvolvimento do site institucional 100% responsivo, e também para o desenvolvimento de uma "Landing Page" para captação de novos clientes.
+                        <br />
                         Veja nosso trabalho acessando: <a href="https://eyou.com.br" target='_blank'>EYOU</a>. 
                     </p>
                 </div> */}
@@ -91,7 +96,7 @@ const Portfolio: NextPage<IPort> = ({
             <Mobile>                   
                 <div className='mobile-cube'>
                     <h1>Mobile</h1>
-                    <p></p>
+                    <p>Versão responsiva desenvolvida para celulares</p>
                     <IconCube className="effect-stroke primary"/>
                 </div>
 
@@ -100,18 +105,40 @@ const Portfolio: NextPage<IPort> = ({
                             <div className='cel'>
                                 <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />                                
                             </div>
-                            <div className='back' >
-                                <img src={portfolioSelected.imagem_tipo} alt='Imagem do site' />
-                            </div>                                                    
+                            {
+                                portfolioSelected.imagem_tipo !== undefined
+                                ?
+                                <div className='back' >
+                                    <img src={portfolioSelected.imagem_tipo} alt='Imagem do site' />
+                                </div>                        
+                                :
+                                <div className='backLoader'>
+                                    <PulseLoader 
+                                        color="#fff"
+                                        size={30} 
+                                    />
+                                </div>     
+                            }                                                  
                         </div>
                                 
                         <div className='phone2'>                        
                             <div className='cel2'>
                                 <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                             </div>
-                            <div className='back2' >
-                                <img src={portfolioSelected.imagem_tipo} alt='Imagem do site' />
-                            </div>                        
+                            {
+                                portfolioSelected.imagem_tipo !== undefined
+                                ?
+                                <div className='back2' >
+                                    <img src={portfolioSelected.imagem_tipo} alt='Imagem do site' />
+                                </div>                        
+                                :
+                                <div className='backLoader2'>
+                                    <PulseLoader 
+                                        color="#fff"
+                                        size={30} 
+                                    />
+                                </div>     
+                            }                      
                         </div>
                     
                         <div className='phone3'>                        
@@ -119,7 +146,7 @@ const Portfolio: NextPage<IPort> = ({
                                 <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                             </div>
                             {
-                                portfolioSelected !== ''
+                                portfolioSelected.imagem_tipo !== undefined
                                 ?
                                 <div className='back3' >
                                     <img src={portfolioSelected.imagem_tipo} alt='Imagem do site' />
@@ -134,46 +161,6 @@ const Portfolio: NextPage<IPort> = ({
                             }
                         </div> 
                     </div>     
-
-                    {/* [1].map(() => ( 
-                        <>
-                            <div className='phone'>                        
-                                <div className='cel'>
-                                    <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                                </div>
-                                <div className='backLoader'>
-                                    <PulseLoader 
-                                        color="#fff"
-                                        size={30} 
-                                    />
-                                </div>                        
-                            </div>
-                                    
-                            <div className='phone2'>                        
-                                <div className='cel2'>
-                                    <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                                </div>
-                                <div className='backLoader2'>
-                                    <PulseLoader 
-                                        color="#fff"
-                                        size={30} 
-                                    />
-                                </div>                        
-                            </div>
-                        
-                            <div className='phone3'>                        
-                                <div className='cel3'>
-                                    <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                                </div>
-                                <div className='backLoader3'>
-                                    <PulseLoader 
-                                        color="#fff"
-                                        size={30} 
-                                    />
-                                </div>                        
-                            </div> 
-                        </>    
-                    )) */}
 
                 <div className='mobile-astro'>
                     <h1>mob</h1>

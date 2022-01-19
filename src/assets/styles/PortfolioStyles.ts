@@ -196,7 +196,7 @@ export const PortfolioBanner = styled.div`
 
 export const LandingPage = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   background: ${colors.primaryDark};
   padding: 80px;
   @media (max-width: 1400px) {
@@ -287,16 +287,16 @@ export const LandingPage = styled.div`
     width: 65vw;
     color: ${colors.primaryLight};
     font-size: 22px;
-    margin-left: 200px;
+    margin-left: 300px;
     line-height: 40px;
-    text-align: justify;
-    .link {
-      a {
-        text-decoration: none;
-        color: ${colors.primary};
-        font-size: 26px;
-        &:active {
-        }
+    text-align: left;
+    a {
+      text-decoration: none;
+      color: ${colors.primary};
+      font-size: 26px;
+      transition: all 800ms;
+      &:hover {
+        color: ${colors.primaryGrey};
       }
     }
     @media (max-width: 1400px) {
@@ -595,7 +595,7 @@ export const Mobile = styled.div`
   }
   .mobile-astro {
     position: absolute;
-    top: 2890px;
+    top: 2650px;
     left: 1530px;
     z-index: 0;
     @media (max-width: 1400px) {
@@ -656,7 +656,7 @@ export const Mobile = styled.div`
       img {
         height: 100px;
         position: relative;
-        top: -5px;
+        top: 0;
         left: -60px;
       }
     }
