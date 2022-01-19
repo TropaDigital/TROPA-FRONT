@@ -55,7 +55,7 @@ export const PortfolioBanner = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -80px;
+    top: 100px;
     .title > h1 {
         font-size: 12rem;
         font-family: ${fonts.bebasNeue};
@@ -211,8 +211,8 @@ export const LandingPage = styled.div`
   .title {
     width: 600px;
     position: relative;
-    top: 40px;
-    left: 200px;
+    top: 300px;
+    left: 100px;
     z-index: 0;
     @media (max-width: 1400px) {
       left: 115px;
@@ -258,7 +258,7 @@ export const LandingPage = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 480px;
+    top: 780px;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 50px;
@@ -289,12 +289,14 @@ export const LandingPage = styled.div`
     font-size: 22px;
     margin-left: 300px;
     line-height: 40px;
+    right: 50px;
     text-align: left;
+    position: absolute;
     a {
       text-decoration: none;
       color: ${colors.primary};
       font-size: 26px;
-      transition: all 800ms;
+      transition: all 500ms;
       &:hover {
         color: ${colors.primaryGrey};
       }
@@ -351,6 +353,7 @@ export const Mobile = styled.div`
       position: relative;
       left: 15px;
       color: ${colors.primaryLight};
+      font-size: 20px;
     }
     @media (max-width: 1100px) {
       right: 220px;
@@ -427,20 +430,13 @@ export const Mobile = styled.div`
       .back {
         z-index: 0;
         position: absolute;
-        top: 0;
-        border-radius: 60px;
+        border-radius: 40px;
         top: 16px;
-        left: 22px;
-        img {
-          width: 345px;
-          height: 667px;
-          border-radius: 40px;
-          @media (max-width: 425px) {
-            width: 140px;
-            height: 300px;
-            border-radius: 20px;
-          }
-        }
+        left: 25px;
+        width: 340px;
+        height: 95%;
+        background-position: top center;
+        background-size: cover;
         @media (max-width: 425px) {
           top: 10px;
           left: 20px;
@@ -486,20 +482,14 @@ export const Mobile = styled.div`
       }
       .back2 {
         z-index: 0;
-        border-radius: 60px;
         position: absolute;
+        border-radius: 40px;
         top: 16px;
-        left: 22px;
-        img {
-          width: 345px;
-          height: 667px;
-          border-radius: 40px;
-          @media (max-width: 425px) {
-            width: 140px;
-            height: 300px;
-            border-radius: 20px;
-          }
-        }  
+        left: 25px;
+        width: 340px;
+        height: 95%;
+        background-position: top center;
+        background-size: cover;
         @media (max-width: 425px) {
           left: 20px;
           top: 10px;
@@ -554,20 +544,14 @@ export const Mobile = styled.div`
       }
       .back3 {
         z-index: 0;
-        border-radius: 60px;
         position: absolute;
+        border-radius: 40px;
         top: 16px;
-        left: 22px;
-        img {
-          width: 345px;
-          height: 667px;
-          border-radius: 40px;
-          @media (max-width: 425px) {
-            width: 140px;
-            height: 300px;
-            border-radius: 20px;
-          }
-        }
+        left: 25px;
+        width: 340px;
+        height: 95%;
+        background-position: top center;
+        background-size: cover;
         @media (max-width: 425px) {
           left: 20px;
           top: 10px;

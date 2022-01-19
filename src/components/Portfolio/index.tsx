@@ -6,6 +6,7 @@ import Header from '../../components/Layout/Header';
 import Animate from '../../components/Animation/Animate';
 import { IconAstronaut, IconCube, IconFlag } from '../Svg';
 import PulseLoader from "react-spinners/PulseLoader";
+import Image from 'next/image'
 
 interface IPort {
     portfolioSelected: object | any ;
@@ -15,6 +16,8 @@ const Portfolio: NextPage<IPort> = ({
     portfolioSelected,
 }) => {
     const router = useRouter();
+
+    const imageBack = portfolioSelected.imagem_tipo;
 
     return (
         <PortfolioContainer>
@@ -82,7 +85,7 @@ const Portfolio: NextPage<IPort> = ({
                     }
                 </div>
 
-                {/* <div className='text'>
+                <div className='text'>
                     <p>
                         EYOU é uma plataforma online com diversas soluções utilizando SMS, Whatsapp, Telefonia e muito mais.
                         <br />   
@@ -90,7 +93,7 @@ const Portfolio: NextPage<IPort> = ({
                         <br />
                         Veja nosso trabalho acessando: <a href="https://eyou.com.br" target='_blank'>EYOU</a>. 
                     </p>
-                </div> */}
+                </div>
             </LandingPage>   
 
             <Mobile>                   
@@ -108,9 +111,10 @@ const Portfolio: NextPage<IPort> = ({
                             {
                                 portfolioSelected.imagem_tipo !== undefined
                                 ?
-                                <div className='back' >
-                                    <img src={portfolioSelected.imagem_tipo} alt='Imagem do site' />
-                                </div>                        
+                                <div 
+                                    className='back'
+                                    style={{backgroundImage: `url(${imageBack})`}}
+                                />   
                                 :
                                 <div className='backLoader'>
                                     <PulseLoader 
@@ -128,9 +132,10 @@ const Portfolio: NextPage<IPort> = ({
                             {
                                 portfolioSelected.imagem_tipo !== undefined
                                 ?
-                                <div className='back2' >
-                                    <img src={portfolioSelected.imagem_tipo} alt='Imagem do site' />
-                                </div>                        
+                                <div 
+                                    className='back2'     
+                                    style={{backgroundImage: `url(${imageBack})`}}
+                                />        
                                 :
                                 <div className='backLoader2'>
                                     <PulseLoader 
@@ -148,9 +153,10 @@ const Portfolio: NextPage<IPort> = ({
                             {
                                 portfolioSelected.imagem_tipo !== undefined
                                 ?
-                                <div className='back3' >
-                                    <img src={portfolioSelected.imagem_tipo} alt='Imagem do site' />
-                                </div>                        
+                                <div 
+                                    className='back3'     
+                                    style={{backgroundImage: `url(${imageBack})`}}
+                                />                          
                                 :
                                 <div className='backLoader3'>
                                     <PulseLoader 
