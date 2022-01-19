@@ -33,6 +33,9 @@ export const StagesContainer = styled.div`
                     font-family: ${fonts.chaney};
                     font-weight: normal;
                     letter-spacing: -8px;
+                    @media (max-width: 1100px) {
+                        font-size: 110px;
+                    }
                     @media (max-width: 425px) {
                         font-size: 60px;
                         width: 200px;
