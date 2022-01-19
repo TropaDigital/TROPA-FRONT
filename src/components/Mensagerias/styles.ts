@@ -122,6 +122,7 @@ export const CardContainer = styled.div`
     @media (max-width: 425px) {
         height: 80%;
         width: 90%;
+        overflow-y: auto;
     }
     .instructions {
         width: 100%;
