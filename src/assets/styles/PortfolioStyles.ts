@@ -206,7 +206,7 @@ export const LandingPage = styled.div`
     height: 1100px;
   }
   @media (max-width: 425px) {
-    height: 925px;
+    height: 800px;
   }
   .title {
     width: 600px;
