@@ -165,7 +165,7 @@ export const BannerSystem = styled.div`
     .title > h1 {
       font-size: 12rem;
       width: 650px;
-      left: 55px;
+      left: 0;
       top: 190px;      
     }
     .note {

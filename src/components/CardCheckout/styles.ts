@@ -50,6 +50,12 @@ export const MainContainer = styled.div`
                 }
             }
         }
+        @media (max-width: 1400px) {
+            .close {
+                top: 95px;
+                right: 240px;
+            }   
+        }
         @media (max-width: 1100px) {
             .close {
                 top: 95px;
@@ -73,6 +79,10 @@ export const MainContainer = styled.div`
         border: none;
         padding: 10px 0;
         cursor: pointer;
+        font-size: 18px;
+        @media (max-width: 1400px) {
+            font-size: 16px;
+        }
         @media (max-width: 425px) {
             visibility: hidden;
         }

@@ -39,6 +39,12 @@ export const ChatbotContainer = styled.div`
             }
         }
     }
+    @media (max-width: 1400px) {
+        .close {
+            top: 95px;
+            right: 240px;
+        }   
+    }
     @media (max-width: 1100px) {
         .close {
             top: 110px;
@@ -256,6 +262,7 @@ export const Chat = styled.div`
             background: transparent;
             border: none;
             padding-left: 20px;
+            font-size: 16px;
         }
         svg {
             width: 30px;

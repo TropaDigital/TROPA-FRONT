@@ -148,7 +148,11 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                             <p className="description">Possibilidades</p>
                         </Animate>
                         <Animate effect="backInUp" delayAnimation={0.4}>
-                            <button>Inicie seu projeto</button>
+                            <button
+                                onClick={() => router.push('#o-que-fazemos')}
+                            >
+                                Inicie seu projeto
+                            </button>
                         </Animate>
                     </BannerHome>
                 </Header>
@@ -269,16 +273,16 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                 ?
                                 portfoliosList.map((row: any, key: any) => (
                                     <Link href={`/portfolio/${row.slug}`}>
-                                            <div
-                                                className="card"
-                                                key={key}
-                                                style={{
-                                                    backgroundImage: 'url('+row.imagem_principal+')',
-                                                }}
-                                            >
-                                                <h4>{row.titulo}</h4>
-                                                <i>{row.descricao}</i>
-                                            </div>
+                                        <div
+                                            className="card"
+                                            key={key}
+                                            style={{
+                                                backgroundImage: 'url('+row.imagem_principal+')',
+                                            }}
+                                        >
+                                            <h4>{row.titulo}</h4>
+                                            <i>{row.descricao}</i>
+                                        </div>
                                     </Link>
                                 ))
                                 :
