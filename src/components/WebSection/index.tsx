@@ -84,8 +84,8 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 3, }) => {
                             </Link>
                         ))
                         :
-                        [1,2,3].map(() => (
-                            <div className="web">
+                        [1,2,3].map((key: any) => (
+                            <div className="web" key={key}> 
                                 <img src="/images/Notebook.png" />
                                 <div className="loader">
                                     <PulseLoader 

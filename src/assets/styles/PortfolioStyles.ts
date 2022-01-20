@@ -56,6 +56,9 @@ export const PortfolioBanner = styled.div`
     justify-content: center;
     position: absolute;
     top: 100px;
+    @media (max-width: 425px) {
+      top: -50px;
+    }
     .title > h1 {
         font-size: 12rem;
         font-family: ${fonts.bebasNeue};
@@ -76,6 +79,7 @@ export const PortfolioBanner = styled.div`
         }
         @media (max-width: 425px) {
             font-size: 4rem;
+            line-height: 7rem;
             top: 230px;
         }
     }  
@@ -196,14 +200,14 @@ export const PortfolioBanner = styled.div`
 
 export const LandingPage = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   background: ${colors.primaryDark};
   padding: 80px;
   @media (max-width: 1400px) {
     height: 1100px;
   }
   @media (max-width: 1100px) {
-    height: 1100px;
+    height: 1000px;
   }
   @media (max-width: 425px) {
     height: 800px;
@@ -257,17 +261,17 @@ export const LandingPage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 780px;
+    position: relative;
+    top: -750px;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 50px;
     @media (max-width: 1100px) {
-      width: 98%;
+      width: 100%;
     }
     @media (max-width: 425px) {
       width: 96%;
-      top: 340px;
+      top: -380px;
     }
     img {
       width: 1150px;
@@ -284,14 +288,15 @@ export const LandingPage = styled.div`
     }
   }
   .text {
-    width: 65vw;
+    width: 50vw;
     color: ${colors.primaryLight};
     font-size: 22px;
     margin-left: 300px;
     line-height: 40px;
-    right: 50px;
     text-align: left;
-    position: absolute;
+    position: relative;
+    top: -600px;
+    left: 150px;
     a {
       text-decoration: none;
       color: ${colors.primary};
@@ -302,16 +307,24 @@ export const LandingPage = styled.div`
       }
     }
     @media (max-width: 1400px) {
-      margin-left: 120px;
+      left: 180px;
     }
     @media (max-width: 1100px) {
       width: 80%;
-      margin-left: 80px;
+      margin-left: 0;
+      top: -500px;
+      left: 50px;
     }
     @media (max-width: 425px) {
       width: 310px;
       font-size: 14px;
-      margin-left: -45px;
+      margin-left: 0;
+      top: -200px;
+      left: -25px;
+      line-height: 35px;
+      a {
+        font-size: 20px;
+      }
     } 
   }
 `
@@ -423,7 +436,7 @@ export const Mobile = styled.div`
           }
         }
         @media (max-width: 425px) {
-          width: 90%;
+          width: 100%;
           height: 100%;
         } 
       }
@@ -440,10 +453,13 @@ export const Mobile = styled.div`
         @media (max-width: 425px) {
           top: 10px;
           left: 20px;
+          width: 140px;
+          height: 300px;
+          border-radius: 18px;
         }
       }
       @media (max-width: 425px) {
-        width: 200px;
+        width: 180px;
         height: 400px;
         left: 0;
         top: 80px;
@@ -493,6 +509,9 @@ export const Mobile = styled.div`
         @media (max-width: 425px) {
           left: 20px;
           top: 10px;
+          width: 140px;
+          height: 300px;
+          border-radius: 18px;
         }
       }
       @media (max-width: 425px) {
@@ -528,7 +547,6 @@ export const Mobile = styled.div`
         position: relative;
         top: 0;
         left: 0;
-        width: 390px;
         img {
           width: 390px;
           height: 700px;
@@ -538,7 +556,7 @@ export const Mobile = styled.div`
           }
         }
         @media (max-width: 425px) {
-          width: 90%;
+          width: 100%;
           height: 100%;
         }   
       }
@@ -553,12 +571,15 @@ export const Mobile = styled.div`
         background-position: top center;
         background-size: cover;
         @media (max-width: 425px) {
-          left: 20px;
           top: 10px;
+          left: 20px;
+          width: 140px;
+          height: 300px;
+          border-radius: 18px;
         }  
       }
       @media (max-width: 425px) {
-        width: 200px;
+        width: 180px;
         height: 400px;
         top: 600px;
         left: 0;
@@ -584,7 +605,7 @@ export const Mobile = styled.div`
     z-index: 0;
     @media (max-width: 1400px) {
       left: 1045px;
-      top: 3000px;
+      top: 3050px;
     }
     @media (max-width: 1100px) {
       left: 730px;
