@@ -43,8 +43,6 @@ interface IProps {
 const Home: NextPage<IProps> = ({ scrollTo }) => {
     const router = useRouter();
     
-    // const { portfolios } = props;
-
     const [widthWindow, setWidthWindow] = useState(1920);
     const [itemsToShowSocial, setItemToShowSocial] = useState(3);
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
@@ -60,7 +58,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
             let portfolios = await apiTropa.get('/portifolio/?status=ativo');
             setPortfoliosList(portfolios.data.result);
         }catch(e){
-            console.log("Erro 999 - Não recebendo os dados dos portfólios.")
+            console.log("Erro - Não recebendo os dados dos portfólios.")
         }
     }
     
