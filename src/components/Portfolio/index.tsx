@@ -6,7 +6,6 @@ import Header from '../../components/Layout/Header';
 import Animate from '../../components/Animation/Animate';
 import { IconAstronaut, IconCube, IconFlag } from '../Svg';
 import PulseLoader from "react-spinners/PulseLoader";
-import Image from 'next/image'
 
 interface IPort {
     portfolioSelected: object | any ;
