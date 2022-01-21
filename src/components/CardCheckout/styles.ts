@@ -10,9 +10,6 @@ export const MainContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @media (max-width: 1100px) {
-        height: 95%;
-    }
     @media (max-width: 425px) {
         justify-content: flex-start;
         padding-top: 40px;
@@ -58,13 +55,14 @@ export const MainContainer = styled.div`
         }
         @media (max-width: 1100px) {
             .close {
-                top: 95px;
+                top: 65px;
                 right: 190px;
             }   
         }
         @media (max-width: 425px) {
             .close {
                 right: 40px;
+                top: 85px;
                 svg {
                     width: 30px;
                 }
@@ -83,6 +81,9 @@ export const MainContainer = styled.div`
         @media (max-width: 1400px) {
             font-size: 16px;
         }
+        @media (max-width: 1100px) {
+            width: 80%;
+        }
         @media (max-width: 425px) {
             visibility: hidden;
         }
@@ -97,6 +98,7 @@ export const MainCard = styled.div`
     @media (max-width: 1100px) {
         width: 80%;
         height: 60%;
+        margin-bottom: 40px;
     }
     @media (max-width: 425px) {
         width: 90%;
@@ -129,6 +131,9 @@ export const MainCard = styled.div`
                 stroke-width: 14px;
                 fill: ${colors.primaryGrey};
             }
+        }
+        @media (max-width: 1100px) {
+            display: none;
         }
     }
 `

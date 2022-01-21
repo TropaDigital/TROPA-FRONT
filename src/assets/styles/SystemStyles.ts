@@ -110,7 +110,6 @@ export const BannerSystem = styled.div`
       cursor: pointer;
       transition: all .2s;
       &:hover {
-          background: ${colors.primaryLight};
           transform: scale(1.2);
       }
       @media (max-width: 1100px) {

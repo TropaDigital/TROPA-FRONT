@@ -12,7 +12,7 @@ export const ChatbotContainer = styled.div`
     border-radius: 16px;
     padding: 10px 0;
     @media (max-width: 1100px) {
-        height: 90%;
+        height: 98%;
     }
     @media (max-width: 425px) {
         height: 95%;
@@ -47,8 +47,8 @@ export const ChatbotContainer = styled.div`
     }
     @media (max-width: 1100px) {
         .close {
-            top: 110px;
-            right: 185px;
+            top: 65px;
+            right: 190px;
         }   
     }
     @media (max-width: 425px) {
@@ -253,7 +253,7 @@ export const Chat = styled.div`
         }
         @media (max-width: 425px) {
             width: 100%;
-            top: 482px;
+            top: 432px;
             left: 0;
         }
         input {

@@ -16,7 +16,7 @@ export const MessageContainer = styled.div`
     }
     @media (max-width: 1100px) {
         width: 100%;
-        height: 95%;
+        height: 100%;
     }
     .title {
         display: flex;
@@ -59,7 +59,7 @@ export const MessageContainer = styled.div`
         }
         @media (max-width: 1100px) {
             .close {
-                top: 85px;
+                top: 60px;
                 right: 190px;
             }   
         }
@@ -112,12 +112,14 @@ export const CardContainer = styled.div`
     background: ${colors.primaryWhite};
     border-radius: 16px;
     margin-bottom: 20px;
+    border-bottom: 1px solid ${colors.primaryWhite};
     @media (max-width: 1400px) {
         width: 90%;
         padding: 20px 40px;
     }
     @media (max-width: 1100px) {
         height: 70%;
+        overflow-y: auto;
     }
     @media (max-width: 425px) {
         height: 80%;
