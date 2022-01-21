@@ -183,10 +183,6 @@ export const HeaderContainer = styled.div`
             margin: 0px;
             align-items: center;
             position: relative;
-            li:first-child {
-                
-            }
-            
             li {
                 margin-left: 35px;
                 @media (max-width: 425px) {
@@ -247,7 +243,6 @@ export const HeaderContainer = styled.div`
                     &:hover {
                         color: #FFF;
                     }
-
                 }
             }
         }
