@@ -35,7 +35,6 @@ export const AppContainer = styled.div`
     .aplicative {
       background-color: ${colors.primaryLight};
       color: ${colors.primaryDark};
-      /* border: 2px solid ${colors.primaryDark}; */
     }
   }
   .bannerAppAnimation.site {
@@ -182,6 +181,7 @@ export const BannerApp = styled.div`
       margin-top: 40px;
       position: relative;
       left: -25px;
+      height: 75px;
     }
     @media (max-width: 425px) {
       width: 415px;

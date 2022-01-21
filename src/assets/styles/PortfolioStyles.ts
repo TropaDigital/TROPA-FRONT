@@ -299,6 +299,7 @@ export const LandingPage = styled.div`
     left: 150px;
     a {
       text-decoration: none;
+      text-transform: uppercase;
       color: ${colors.primary};
       font-size: 26px;
       transition: all 500ms;

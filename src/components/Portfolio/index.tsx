@@ -87,11 +87,13 @@ const Portfolio: NextPage<IPort> = ({
 
                 <div className='text'>
                     <p>
-                        EYOU é uma plataforma online com diversas soluções utilizando SMS, Whatsapp, Telefonia e muito mais.
-                        <br />   
-                        A Tropa foi escolhida para o desenvolvimento do site institucional 100% responsivo, e também para o desenvolvimento de uma &quot;Landing Page&quot; para captação de novos clientes.
-                        <br />
-                        Veja nosso trabalho acessando: <a href="https://eyou.com.br" target='_blank' rel="noreferrer" >EYOU</a>. 
+                        EYOU é uma plataforma online com diversas soluções utilizando SMS, Whatsapp, Telefonia e muito mais. A Tropa foi escolhida para o desenvolvimento do site institucional 100% responsivo, e também para o desenvolvimento de uma &quot;Landing Page&quot; para captação de novos clientes. 
+                    </p>
+                    <p> 
+                        Veja nosso trabalho acessando -&gt; &nbsp; 
+                        <a href={portfolioSelected.link} target='_blank' rel="noreferrer">
+                            {portfolioSelected.titulo}
+                        </a> 
                     </p>
                 </div>
             </LandingPage>   
@@ -99,7 +101,7 @@ const Portfolio: NextPage<IPort> = ({
             <Mobile>                   
                 <div className='mobile-cube'>
                     <h1>Mobile</h1>
-                    <p>Versão responsiva desenvolvida para celulares</p>
+                    <p>Versão responsiva desenvolvida para celulares.</p>
                     <IconCube className="effect-stroke primary"/>
                 </div>
 
