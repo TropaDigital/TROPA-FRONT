@@ -48,7 +48,7 @@ export const WeDoContainer = styled.div`
                     top: 15px;
                     transform: rotate(40deg);
                     @media (max-width: 425px) {
-                        right: 240px;
+                        right: 60px;
                     }
                     path {
                         fill: ${colors.primary};

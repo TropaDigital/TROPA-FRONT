@@ -173,7 +173,7 @@ export const WebDiv = styled.div`
             .back-image { 
                 height: 81%;
                 width: 75%;
-                left: 47px;
+                left: 42px;
                 right: 0;
                 top: 15px;
                 z-index: 0;                        
@@ -187,7 +187,7 @@ export const WebDiv = styled.div`
             }        
             .overlay {            
                 top: 15px;
-                left: 47px;
+                left: 42px;
                 width: 75%;
                 height: 81%;
                 p {
