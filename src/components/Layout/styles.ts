@@ -258,7 +258,7 @@ export const HeaderContainer = styled.div`
                 display: flex;
                 position: relative;
                 left: 90%;
-                top: -50px;
+                top: -53px;
             }  
         }
     }
