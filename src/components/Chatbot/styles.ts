@@ -95,6 +95,10 @@ export const DivChat = styled.div`
                 background: ${colors.primary};
                 color: ${colors.primaryLight};
             }
+            &:focus {
+                background: ${colors.primary};
+                color: ${colors.primaryLight};
+            }
             @media (max-width: 425px) {
                 padding: 5px 9px;
             }
@@ -138,29 +142,31 @@ export const Chat = styled.div`
     width: 100%;
     height: 450px;
     margin-bottom: 20px;
-    padding-bottom: 50px;
     border-radius: 30px;
-    padding: 25px;
-    padding-bottom: 80px;
     background: ${colors.primaryWhite};
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     overflow-y: auto;
+    position: relative;
     @media (max-width: 1100px) {
         width: 550px;
     }
     @media (max-width: 425px) {
         height: 80%;
         width: 100%;
-        align-items: center;
-        padding: 20px;
+        align-items: center;       
     }
     .bot {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         margin-bottom: 20px;
+        margin-left: 20px;
+        @media (max-width: 425px) {
+            margin-left: -15px;
+        }
         .icon {
             display: flex;
             align-items: center;
@@ -201,6 +207,7 @@ export const Chat = styled.div`
         justify-content: center;
         align-self: flex-end;
         margin-bottom: 20px;
+        margin-right: 20px;
         .astro {
             background: ${colors.primary};
             border-radius: 50%;
@@ -240,22 +247,14 @@ export const Chat = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 90px;
         padding: 20px;
         background: ${colors.primaryGrey};
         border-radius: 30px;
-        position: absolute;
-        top: 405px;
-        left: 0;
-        @media (max-width: 1100px) {
-            width: 552px;
-            left: -45px;
-        }
-        @media (max-width: 425px) {
-            width: 100%;
-            top: 432px;
-            left: 0;
-        }
+        position: sticky;
+        position: -webkit-sticky;
+        bottom: 0;
+        left: -35px;
+        right: 0;
         input {
             width: 90%;
             height: 100%;
