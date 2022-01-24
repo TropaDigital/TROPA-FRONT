@@ -303,6 +303,7 @@ export const LandingPage = styled.div`
       color: ${colors.primary};
       font-size: 26px;
       transition: all 500ms;
+      cursor: pointer;
       &:hover {
         color: ${colors.primaryGrey};
       }
