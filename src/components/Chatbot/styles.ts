@@ -158,6 +158,21 @@ export const Chat = styled.div`
         width: 100%;
         align-items: center;       
     }
+    ::-webkit-scrollbar {
+        width: 20px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: ${colors.primaryLight};
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: ${colors.primary};
+    }
     .bot {
         display: flex;
         justify-content: flex-start;
