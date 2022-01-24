@@ -37,7 +37,6 @@ export const WeDoContainer = styled.div`
                     line-height: 80px;
                     font-family: ${fonts.chaney};
                     font-weight: normal;
-                    letter-spacing: -8px;
                     @media (max-width: 425px) {
                         width: 70%;
                     }
