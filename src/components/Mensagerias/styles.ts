@@ -114,6 +114,7 @@ export const CardContainer = styled.div`
     margin-bottom: 20px;
     border-bottom: 1px solid ${colors.primaryWhite};
     @media (max-width: 1400px) {
+        overflow-y: auto;
         width: 90%;
         padding: 20px 40px;
     }
