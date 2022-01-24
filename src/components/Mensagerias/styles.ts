@@ -180,7 +180,7 @@ export const CardContainer = styled.div`
                     color: ${colors.primaryWhite};
                 }
                 @media (max-width: 425px) {
-                    margin-bottom: 5px;
+                    margin: 0 10px 5px 0;
                 }
             }
         }
