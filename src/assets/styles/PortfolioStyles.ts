@@ -601,16 +601,16 @@ export const Mobile = styled.div`
   }
   .mobile-astro {
     position: absolute;
-    top: 2650px;
+    top: 2900px;
     left: 1530px;
     z-index: 0;
     @media (max-width: 1400px) {
       left: 1045px;
-      top: 3050px;
+      top: 2950px;
     }
     @media (max-width: 1100px) {
       left: 730px;
-      top: 2600px;
+      top: 2650px;
     }
     @media (max-width: 425px) {
       display: none;
