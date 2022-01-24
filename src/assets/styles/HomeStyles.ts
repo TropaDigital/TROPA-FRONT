@@ -191,11 +191,14 @@ export const AboutContainer = styled.div`
         line-height: 55px;
       }
       .description {
-        font-size: 12px;
+        font-size: 16px;
         color: ${colors.primaryLight};
         width: 170px;
         line-height: 23px;
         margin-top: 20px;
+        @media (max-width: 425px) {
+          font-size: 12px;
+        }
       }
       svg {
         width: 170px;
@@ -235,6 +238,7 @@ export const AboutContainer = styled.div`
         margin: -35px 0px; 
         svg {
           width: 100px;
+          bottom: -30px;
         }
       }
     }
