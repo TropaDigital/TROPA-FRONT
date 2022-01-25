@@ -101,6 +101,9 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
 
     const slider:any = useRef(null)
 
+    const [selected, setSelected] = useState('');
+    console.log(selected)
+
     return (
         <Layout>
             <HomeContainer>
@@ -164,37 +167,35 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                         </Animate>
 
                         <div className="products">
-                            <Animate
-                                startAnimation={50}
-                                delayAnimation={1.5}
-                                effect="fadeInRight"
-                                className="product"
-                            >
-                                <Link href="/aplicativos">
-                                    <a>
-                                        <IconPhone />
-                                        <p>Desenvolvimento de aplicativo</p>
-                                    </a>
-                                </Link>
-                            </Animate>
+                                <Animate
+                                    startAnimation={50}
+                                    delayAnimation={1.5}
+                                    effect="fadeInRight"
+                                    className="product app"
+                                >
+                                    <Link href="/aplicativos">
+                                        <a>
+                                            <IconPhone />
+                                            <p>aplicativos</p>
+                                        </a>
+                                    </Link>
+                                </Animate>
                             <Animate
                                 startAnimation={50}
                                 delayAnimation={1}
                                 effect="fadeInUp"
-                                className="product-active"
+                                className="product sys"
                             >
                                 <Link href="/sistemas">
                                     <a>
+                                        <IconCode />
                                         <p className="title">
-                                            dev.
-                                            <br />
-                                            Siste-mas
+                                            Sistemas
                                         </p>
-                                        <p className="description">
+                                        {/* <p className="description">
                                             Criado para atender as demandas e
                                             métodos específicos da sua empresa.
-                                        </p>
-                                        <IconCode />
+                                        </p> */}
                                     </a>
                                 </Link>
                             </Animate>
@@ -202,12 +203,12 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                 startAnimation={50}
                                 delayAnimation={1.5}
                                 effect="fadeInLeft"
-                                className="product mobile"
+                                className="product web"
                             >
                                 <Link href="/sites">
                                     <a>
                                         <IconDesktop />
-                                        <p>Desenvolvimento de sites</p>
+                                        <p>sites</p>
                                     </a>
                                 </Link>
                             </Animate>
