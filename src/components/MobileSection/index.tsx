@@ -30,6 +30,8 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
         }
     }
 
+    console.log(image)
+
     const breakpoints = ([
         { width: 1, itemsToShow: 1 },
         { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
