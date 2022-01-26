@@ -192,10 +192,10 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                         <p className="title">
                                             Sistemas
                                         </p>
-                                        {/* <p className="description">
-                                            Criado para atender as demandas e
+                                        <p className="description">
+                                            Criados para atender as demandas e
                                             métodos específicos da sua empresa.
-                                        </p> */}
+                                        </p>
                                     </a>
                                 </Link>
                             </Animate>

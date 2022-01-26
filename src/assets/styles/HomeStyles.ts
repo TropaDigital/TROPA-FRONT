@@ -163,18 +163,7 @@ export const AboutContainer = styled.div`
         text-align:center;
         text-transform: uppercase;
         margin-top: 80px;
-      }
-      /* .description {
-        font-size: 16px;
-        color: ${colors.primaryLight};
-        width: 170px;
-        line-height: 23px;
-        margin-top: 20px;
-        opacity: 0;
-        @media (max-width: 425px) {
-          font-size: 12px;
-        }
-      } */
+      }      
       svg {
         width: 90%;
       }
@@ -254,6 +243,19 @@ export const AboutContainer = styled.div`
       }
     }
     .product.sys {
+      .description {
+        font-size: 16px;
+        font-family: ${fonts.poppins};
+        color: ${colors.primaryLight};
+        width: 170px;
+        line-height: 23px;
+        margin-top: 20px;
+        display: none;
+        @media (max-width: 425px) {
+          font-size: 12px;
+          width: 250px;
+        }
+      }
       svg {
         width: 80%;
       }
@@ -294,30 +296,7 @@ export const AboutContainer = styled.div`
       }
     }
   }
-  /* @media (max-width: 425px) {
-    .products {
-      flex-direction: column;
-      .product {
-        width: 80%;
-        height: 250px;
-        padding: 20px;
-        p {
-          margin: 20px;
-        }
-      }
-      .product.mobile {
-        padding: 60px 40px 5px 40px;
-      }
-      .product-active {
-        width: 90%;
-        height: 400px; 
-        margin: -35px 0px; 
-        svg {
-          width: 100px;
-          bottom: -30px;
-        }
-      }
-    }
+  @media (max-width: 425px) {
     div.title {
       h2 {
         padding-left: 30px;
@@ -330,7 +309,84 @@ export const AboutContainer = styled.div`
         width: 100px;
       }
     }
-  } */
+    .products {
+      flex-direction: column;
+      .product {
+        width: 80%;
+        height: 200px;
+        padding: 20px;
+        p {
+          margin: 0;
+          font-size: 18px;
+        }
+      }
+      .product.sys {
+        width: 90%;
+        height: 400px; 
+        margin: -35px 0px; 
+        background-color: ${colors.primary};
+        z-index: 1;
+        svg {
+          stroke: ${colors.primaryDark};
+          path {
+            fill: ${colors.primaryDark};
+          }
+          width: 120px;
+          bottom: -30px;
+        }
+        p {
+          font-size: 35px;
+          color: ${colors.primaryDark};
+          font-family: ${fonts.chaney};
+          line-height: 55px;
+          font-weight: normal;
+        }
+        .description {
+          display: block;
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+      .product.app {
+        &:hover {
+          z-index: 0;
+          svg {
+          rect,
+          ellipse,
+          line {
+            stroke: ${colors.primary};
+          }
+        }
+        }
+      }
+      .product.web {
+        &:hover {
+          z-index: 0;
+          padding: 20px;
+          svg {
+            margin-top: 22px; 
+            fill: ${colors.primaryDark};
+            path {
+              stroke: ${colors.primary};
+            }
+          }
+        }
+      }
+      .product.app,
+      .product.web {
+        &:hover {
+          width: 80%;
+          height: 200px;
+          background: ${colors.primaryDark};
+          padding: 20px;
+          p {
+            color: ${colors.primaryLight};
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
 `
 
 export const LanguagesContainer = styled.div`
