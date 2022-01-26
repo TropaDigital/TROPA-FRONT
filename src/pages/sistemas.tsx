@@ -50,8 +50,6 @@ const Sistemas: NextPage = () => {
 
     const sendWhats = async() => {
         try {
-            console.log(DTO);
-            
             const response = await apiTropa.post(
                 "/mensageria/whats",
                 DTO
@@ -61,9 +59,8 @@ const Sistemas: NextPage = () => {
                     className: "toast-sucess",
                     theme: 'colored'
                 })
-                router.push('/')
+                setModalMsg(false)
                 console.log('Contato enviado com sucesso via whatsapp!!')
-            
         }
         catch (e: any) {
             toast.error(e.response.data.message, {
@@ -75,8 +72,6 @@ const Sistemas: NextPage = () => {
     }
     const sendMessage = async() => {
         try {
-            console.log(DTO);
-            
             const response = await apiTropa.post(
                 "/mensageria/sms",
                 DTO
@@ -86,9 +81,8 @@ const Sistemas: NextPage = () => {
                     className: "toast-sucess",
                     theme: 'colored'
                 })
-                router.push('/')
+                setModalMsg(false)
                 console.log('Contato enviado com sucesso via sms!')
-            
         }
         catch (e: any) {
             toast.error(e.response.data.message, {
