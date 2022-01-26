@@ -89,8 +89,8 @@ const MobileSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
                             </Link>
                         ))
                         :
-                        [1,2,3].map(() => (
-                            <div className="mobile">
+                        [1,2,3].map((key: any) => (
+                            <div className="mobile" key={key}>
                                 <img src="/images/mobile.png" />
                                 <div className="card">
                                     <div className="loader">

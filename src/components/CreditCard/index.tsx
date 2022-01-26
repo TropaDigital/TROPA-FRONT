@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import type { NextPage } from 'next';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';

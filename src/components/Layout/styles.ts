@@ -128,23 +128,28 @@ export const HeaderContainer = styled.div`
         }
         .hidden-menu {
             position: absolute;
-            background-color: ${colors.primary};
+            background-color: ${colors.primaryDark};
+            border: 2px solid ${colors.primary};
+            padding: 10px;
             width: 150px;
             top: 50px;
-            left: 0;
-            color: white;
+            left: 10px;
+            color: ${colors.primaryLight};
             text-align: center;
             border-radius: 8px;
             line-height: 40px;
             .app {
                 border-radius: 8px 8px 0 0;
-                border-bottom: 2px solid ${colors.primaryLight};
+                border: 2px solid ${colors.primary};
+                margin-bottom: 10px;
+            }
+            .system {
+                border: 2px solid ${colors.primary};
+                margin-bottom: 10px;
             }
             .web {
                 border-radius: 0 0 8px 8px;
-            }
-            .system {
-                border-bottom: 2px solid ${colors.primaryLight};
+                border: 2px solid ${colors.primary};
             }
             .app,
             .system,
@@ -156,7 +161,8 @@ export const HeaderContainer = styled.div`
                 font-weight: 400;
                 cursor: pointer;
                 &:hover {
-                    background-color: ${colors.primaryLight};
+                    background-color: ${colors.primary};
+                    color: ${colors.primaryWhite};
                 }
             }
             ::after{
@@ -177,10 +183,6 @@ export const HeaderContainer = styled.div`
             margin: 0px;
             align-items: center;
             position: relative;
-            li:first-child {
-                
-            }
-            
             li {
                 margin-left: 35px;
                 @media (max-width: 425px) {
@@ -213,14 +215,21 @@ export const HeaderContainer = styled.div`
             border-radius: 16px;
             align-items: center;
             background-color: ${colors.primaryDark};
+            border: 2px solid ${colors.primary};
             width: 100%;
-            height: 200px;
+            height: 275px;
             position: relative;
             top: -65px;
+            text-align: center;
             li {
+                width: 98%;
                 margin-left: 35px;
                 @media (max-width: 425px) {
-                    margin-left: 15px;
+                    margin-left: 0;
+                    padding: 5px;
+                    border-radius: 8px;
+                    border: 2px solid #cc6138;
+                    margin: 5px 0;
                 }  
                 a {
                     text-decoration:none;
@@ -229,12 +238,11 @@ export const HeaderContainer = styled.div`
                     font-family: ${fonts.bebasNeue};
                     letter-spacing: 2px;
                     font-weight: 400;
-                    color: #FFF !important;
+                    color: ${colors.primaryLight} !important;
                     cursor: pointer;
                     &:hover {
                         color: #FFF;
                     }
-
                 }
             }
         }
@@ -245,7 +253,7 @@ export const HeaderContainer = styled.div`
                 display: flex;
                 position: relative;
                 left: 90%;
-                top: -50px;
+                top: -53px;
             }  
         }
     }

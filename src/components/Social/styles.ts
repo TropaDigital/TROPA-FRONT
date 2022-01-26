@@ -78,6 +78,7 @@ export const SocialContainerCarousel = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 500px;
     position: relative;
     margin-bottom: 15px;
     transition: all .2s;
@@ -97,7 +98,7 @@ export const SocialContainerCarousel = styled.div`
     }
     .image {
         width: 100%;
-        height: 255px;
+        height: 385px;
         background-size: cover;
         background-position: center;
     }

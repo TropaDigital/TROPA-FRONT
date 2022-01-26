@@ -25,8 +25,8 @@ const Portfolios: NextPage = () => {
                 let portfolios = await apiTropa.get('/portifolio-slug/'+slug);
                 setPortfolioSelected(portfolios.data.result);
                 
-            }catch(e){
-                console.log("Erro 999 - Não recebendo os dados dos portfólios.")
+            }catch(e: any){
+                console.log(e.response.data.message)
             }
         }
 

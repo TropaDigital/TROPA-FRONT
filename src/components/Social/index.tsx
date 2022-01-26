@@ -85,8 +85,8 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
                                     </div>
                                 ))
                                 :
-                                [1, 2, 3].map(() => (
-                                    <div className='loader'>
+                                [1, 2, 3].map((key: any) => (
+                                    <div className='loader' key={key}>
                                         <PulseLoader 
                                             color="#cc6138"
                                             size={30} 

@@ -10,9 +10,13 @@ export const MessageContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media (max-width: 1400px) {
+        width: 90%;
+        height: 100%;
+    }
     @media (max-width: 1100px) {
         width: 100%;
-        height: 95%;
+        height: 100%;
     }
     .title {
         display: flex;
@@ -47,9 +51,15 @@ export const MessageContainer = styled.div`
                 }
             }
         }
+        @media (max-width: 1400px) {
+            .close {
+                top: 95px;
+                right: 285px;
+            }   
+        }
         @media (max-width: 1100px) {
             .close {
-                top: 85px;
+                top: 60px;
                 right: 190px;
             }   
         }
@@ -102,13 +112,46 @@ export const CardContainer = styled.div`
     background: ${colors.primaryWhite};
     border-radius: 16px;
     margin-bottom: 20px;
+    border-bottom: 1px solid ${colors.primaryWhite};
+    @media (max-width: 1400px) {
+        overflow-y: auto;
+        width: 90%;
+        padding: 20px 40px;
+    }
     @media (max-width: 1100px) {
         height: 70%;
+        overflow-y: auto;
     }
     @media (max-width: 425px) {
-            height: 75%;
+        height: 80%;
+        width: 90%;
+        overflow-y: auto;
+    }
+    .instructions {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 20px;
+        margin-bottom: 15px;
+        @media (max-width: 1400px) {
+            font-size: 20px;
+        }
+        @media (max-width: 1100px) {
+            font-size: 17px;
+        }
+        @media (max-width: 425px) {
+            height: 80%;
             width: 90%;
         }
+        hr {
+            margin-top: 10px;
+            border-bottom: 2px ridge ${colors.primary};
+            width: 100%;
+        }
+    }
     .receiver {
         h3 {
             color: ${colors.primaryDark};
@@ -137,9 +180,12 @@ export const CardContainer = styled.div`
                     background: ${colors.primary};
                     color: ${colors.primaryWhite};
                 }
+                @media (max-width: 425px) {
+                    margin: 0 10px 5px 0;
+                }
             }
         }
-        @media (max-width: 425px) {
+        @media (max-width: 1100px) {
             margin-bottom: 10px;
         }
     }
@@ -152,6 +198,7 @@ export const CardContainer = styled.div`
         font-size: 18px;
         padding: 20px;
         transition: ease-in-out 250ms;
+        cursor: pointer;
         &:hover {
             background: ${colors.primaryWhite};
             border: 2px solid ${colors.primary};
@@ -167,6 +214,10 @@ export const Messages = styled.div`
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 30px;
+    @media (max-width: 1400px) {
+        width: 95%;
+        margin-bottom: 45px;
+    }
     @media (max-width: 1100px) {
         height: 100%;
         margin-bottom: 15px;
@@ -175,6 +226,18 @@ export const Messages = styled.div`
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 30px;
+    }
+    form {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @media (max-width: 1400px) {
+            justify-content: flex-start;
+            gap: 30px;
+        }
+        @media (max-width: 425px) {
+            flex-direction: column;
+        }
     }
     .msg {
         display: flex;
@@ -198,6 +261,9 @@ export const Messages = styled.div`
             border: 2px solid transparent;
             background: ${colors.primaryLight};
             color: ${colors.primaryDark};
+            @media (max-width: 1400px) {
+                font-size: 16px;
+            }
             @media (max-width: 1100px) {
                 padding: 20px 5px;
                 font-size: 12px;
@@ -228,10 +294,15 @@ export const Messages = styled.div`
             height: 210px;
             border: 1px solid ${colors.primaryGrey};
             color: ${colors.primaryDark};
+            font-size: 16px;
             resize: none;
+            @media (max-width: 1400px) {
+                width: 415px;
+                height: 150px;
+            }
             @media (max-width: 1100px) {
-                width: 100%;
-                height: 270px;
+                width: 300px;
+                height: 230px;
             }
             @media (max-width: 425px) {
                 width: 230px;

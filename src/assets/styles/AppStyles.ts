@@ -32,6 +32,10 @@ export const AppContainer = styled.div`
         fill: ${colors.primary}
       }
     }
+    .aplicative {
+      background-color: ${colors.primaryLight};
+      color: ${colors.primaryDark};
+    }
   }
   .bannerAppAnimation.site {
     background-position: center center;
@@ -46,6 +50,9 @@ export const AppContainer = styled.div`
       .digital {
         fill: ${colors.primaryLight}
       }
+    }
+    .website {
+      background-color: ${colors.primaryGrey};
     }
     .nav-fixed {
       &.active {
@@ -174,6 +181,7 @@ export const BannerApp = styled.div`
       margin-top: 40px;
       position: relative;
       left: -25px;
+      height: 75px;
     }
     @media (max-width: 425px) {
       width: 415px;
@@ -217,22 +225,22 @@ export const BannerApp = styled.div`
       font-size: 14rem;
       width: 650px;
       left: 15px;
-      top: 200px;      
+      top: 325px;      
     }
     .title-transparent {
       .transparent {
         font-size: 14rem;
         left: 15px;
-        top: 200px;
+        top: 325px;
       }
     }
     .mac {
       width: 95vw;
       height: 100vh;
-      left: 200px;
-      top: -100px;
+      left: 135px;
+      top: -135px;
       img {
-        width: 60%;
+        width: 70%;
         height: 100vh;
       }
     }

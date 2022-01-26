@@ -43,8 +43,6 @@ interface IProps {
 const Home: NextPage<IProps> = ({ scrollTo }) => {
     const router = useRouter();
     
-    // const { portfolios } = props;
-
     const [widthWindow, setWidthWindow] = useState(1920);
     const [itemsToShowSocial, setItemToShowSocial] = useState(3);
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
@@ -60,7 +58,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
             let portfolios = await apiTropa.get('/portifolio/?status=ativo');
             setPortfoliosList(portfolios.data.result);
         }catch(e){
-            console.log("Erro 999 - Não recebendo os dados dos portfólios.")
+            console.log("Erro - Não recebendo os dados dos portfólios.")
         }
     }
     
@@ -102,6 +100,9 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
     }
 
     const slider:any = useRef(null)
+
+    const [selected, setSelected] = useState('');
+    console.log(selected)
 
     return (
         <Layout>
@@ -148,7 +149,11 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                             <p className="description">Possibilidades</p>
                         </Animate>
                         <Animate effect="backInUp" delayAnimation={0.4}>
-                            <button>Inicie seu projeto</button>
+                            <button
+                                onClick={() => router.push('#o-que-fazemos')}
+                            >
+                                Inicie seu projeto
+                            </button>
                         </Animate>
                     </BannerHome>
                 </Header>
@@ -162,37 +167,35 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                         </Animate>
 
                         <div className="products">
-                            <Animate
-                                startAnimation={50}
-                                delayAnimation={1.5}
-                                effect="fadeInRight"
-                                className="product"
-                            >
-                                <Link href="/aplicativos">
-                                    <a>
-                                        <IconPhone />
-                                        <p>Desenvolvimento de aplicativo</p>
-                                    </a>
-                                </Link>
-                            </Animate>
+                                <Animate
+                                    startAnimation={50}
+                                    delayAnimation={1.5}
+                                    effect="fadeInRight"
+                                    className="product app"
+                                >
+                                    <Link href="/aplicativos">
+                                        <a>
+                                            <IconPhone />
+                                            <p>aplicativos</p>
+                                        </a>
+                                    </Link>
+                                </Animate>
                             <Animate
                                 startAnimation={50}
                                 delayAnimation={1}
                                 effect="fadeInUp"
-                                className="product-active"
+                                className="product sys"
                             >
                                 <Link href="/sistemas">
                                     <a>
+                                        <IconCode />
                                         <p className="title">
-                                            dev.
-                                            <br />
-                                            Siste-mas
+                                            Sistemas
                                         </p>
                                         <p className="description">
-                                            Criado para atender as demandas e
+                                            Criados para atender as demandas e
                                             métodos específicos da sua empresa.
                                         </p>
-                                        <IconCode />
                                     </a>
                                 </Link>
                             </Animate>
@@ -200,12 +203,12 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                 startAnimation={50}
                                 delayAnimation={1.5}
                                 effect="fadeInLeft"
-                                className="product mobile"
+                                className="product web"
                             >
                                 <Link href="/sites">
                                     <a>
                                         <IconDesktop />
-                                        <p>Desenvolvimento de sites</p>
+                                        <p>sites</p>
                                     </a>
                                 </Link>
                             </Animate>
@@ -253,7 +256,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                         </div>  
                     </ContainerCenter>
 
-                    <Animate effect="fadeInUp" startAnimation={200}>
+                    <Animate effect="fadeInUp" startAnimation={0}>
                         <Carousel
                             itemsToShow={itemsToShowPortfolio}
                             isRTL={false}
@@ -269,16 +272,16 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                 ?
                                 portfoliosList.map((row: any, key: any) => (
                                     <Link href={`/portfolio/${row.slug}`}>
-                                            <div
-                                                className="card"
-                                                key={key}
-                                                style={{
-                                                    backgroundImage: 'url('+row.imagem_principal+')',
-                                                }}
-                                            >
-                                                <h4>{row.titulo}</h4>
-                                                <i>{row.descricao}</i>
-                                            </div>
+                                        <div
+                                            className="card"
+                                            key={key}
+                                            style={{
+                                                backgroundImage: 'url('+row.imagem_principal+')',
+                                            }}
+                                        >
+                                            <h4>{row.titulo}</h4>
+                                            <i>{row.descricao}</i>
+                                        </div>
                                     </Link>
                                 ))
                                 :

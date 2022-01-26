@@ -133,7 +133,9 @@ export const AboutContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
     margin-top: 20px;
+    height: 585px;
     .product {
       border: 3px solid ${colors.primary};
       border-radius: 20px;
@@ -146,98 +148,155 @@ export const AboutContainer = styled.div`
       text-decoration: none;
       box-sizing: border-box;
       padding: 0px 80px;
+      transition: ease-in 400ms;
       a {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         flex-direction: column;
         text-decoration: none;
+        height: 250px;
       }
       p {
-        font-size: 19px;
+        font-size: 30px;
         color: ${colors.primaryLight};
         text-align:center;
         text-transform: uppercase;
         margin-top: 80px;
+      }      
+      svg {
+        width: 90%;
       }
     }
-    .product-active {
-      width: 38%;
-      height: 585px;
-      border: 3px solid ${colors.primary};
-      background: ${colors.primary};
-      border-radius: 20px;
-      margin: 0px -40px;
-      z-index: 2;
-      position: relative;
-      text-decoration: none;
-      box-sizing: border-box;
-      padding: 50px;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-      position: relative;
-      a {
-        display: flex;
-        flex-direction: column;
+    .product.web {
+      &:hover {
+        width: 38%;
+        height: 585px;
+        border: 3px solid ${colors.primary};
+        background: ${colors.primary};
+        background-size: 50% auto;
+        border-radius: 20px;
+        margin: 0px -40px;
+        z-index: 2;
+        position: relative;
         text-decoration: none;
+        box-sizing: border-box;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        a {
+          height: 100%;
+          justify-content: center;
+        }
+        svg {
+          fill: transparent;
+          path {
+            stroke: ${colors.primaryDark};
+          }
+        }
+        p {
+          font-size: 45px;
+          color: ${colors.primaryDark};
+          font-family: ${fonts.chaney};
+          font-weight: normal;
+          line-height: 55px;
+        }
       }
-      .title {
-        font-size: 57px;
-        color: ${colors.primaryDark};
-        font-family: ${fonts.chaney};
-        font-weight: normal;
-        width: 210px;
-        line-height: 55px;
+    }
+    .product.app {
+      &:hover {
+        width: 38%;
+        height: 585px;
+        border: 3px solid ${colors.primary};
+        background: ${colors.primary};
+        border-radius: 20px;
+        margin: 0px -40px;
+        z-index: 2;
+        position: relative;
+        text-decoration: none;
+        box-sizing: border-box;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        a {
+          height: 100%;
+          justify-content: center;
+        }
+        svg {
+          rect,
+          ellipse,
+          line {
+            stroke: ${colors.primaryDark};
+          }
+        }
+        p {
+          font-size: 45px;
+          color: ${colors.primaryDark};
+          font-family: ${fonts.chaney};
+          font-weight: normal;
+          line-height: 55px;
+        }
       }
+    }
+    .product.sys {
       .description {
-        font-size: 12px;
+        font-size: 16px;
+        font-family: ${fonts.poppins};
         color: ${colors.primaryLight};
         width: 170px;
         line-height: 23px;
         margin-top: 20px;
-      }
-      svg {
-        width: 170px;
-        height: 170px;
-        right: 0px;
-        bottom: 0px;
-        margin: 30px;
-        position: absolute;
-        * { 
-          fill: ${colors.primaryDark};;
+        display: none;
+        @media (max-width: 425px) {
+          font-size: 12px;
+          width: 250px;
         }
       }
-      @media (max-width: 425px) {
-        .title {
-          font-size: 35px;
+      svg {
+        width: 80%;
+      }
+      &:hover {
+        width: 38%;
+        height: 585px;
+        border: 3px solid ${colors.primary};
+        background: ${colors.primary};
+        border-radius: 20px;
+        margin: 0px -40px;
+        z-index: 2;
+        position: relative;
+        text-decoration: none;
+        box-sizing: border-box;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        a {
+          height: 100%;
+          justify-content: center;
+        }
+        svg {
+          /* stroke: ${colors.primaryDark}; */
+          path {
+            fill: ${colors.primaryDark};
+          }
+        }
+        p {
+          font-size: 45px;
+          color: ${colors.primaryDark};
+          font-family: ${fonts.chaney};
+          font-weight: normal;
+          line-height: 55px;
+          text-align: center;
         }
       }
     }
   }
   @media (max-width: 425px) {
-    .products {
-      flex-direction: column;
-      .product {
-        width: 80%;
-        height: 250px;
-        padding: 20px;
-        p {
-          margin: 20px;
-        }
-      }
-      .product.mobile {
-        padding: 60px 40px 5px 40px;
-      }
-      .product-active {
-        width: 90%;
-        height: 400px; 
-        margin: -35px 0px; 
-        svg {
-          width: 100px;
-        }
-      }
-    }
     div.title {
       h2 {
         padding-left: 30px;
@@ -248,6 +307,83 @@ export const AboutContainer = styled.div`
         right: 160px;
         top: 0;
         width: 100px;
+      }
+    }
+    .products {
+      flex-direction: column;
+      .product {
+        width: 80%;
+        height: 200px;
+        padding: 20px;
+        p {
+          margin: 0;
+          font-size: 18px;
+        }
+      }
+      .product.sys {
+        width: 90%;
+        height: 400px; 
+        margin: -35px 0px; 
+        background-color: ${colors.primary};
+        z-index: 1;
+        svg {
+          stroke: ${colors.primaryDark};
+          path {
+            fill: ${colors.primaryDark};
+          }
+          width: 120px;
+          bottom: -30px;
+        }
+        p {
+          font-size: 35px;
+          color: ${colors.primaryDark};
+          font-family: ${fonts.chaney};
+          line-height: 55px;
+          font-weight: normal;
+        }
+        .description {
+          display: block;
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+      .product.app {
+        &:hover {
+          z-index: 0;
+          svg {
+          rect,
+          ellipse,
+          line {
+            stroke: ${colors.primary};
+          }
+        }
+        }
+      }
+      .product.web {
+        &:hover {
+          z-index: 0;
+          padding: 20px;
+          svg {
+            margin-top: 22px; 
+            fill: ${colors.primaryDark};
+            path {
+              stroke: ${colors.primary};
+            }
+          }
+        }
+      }
+      .product.app,
+      .product.web {
+        &:hover {
+          width: 80%;
+          height: 200px;
+          background: ${colors.primaryDark};
+          padding: 20px;
+          p {
+            color: ${colors.primaryLight};
+            font-size: 18px;
+          }
+        }
       }
     }
   }
@@ -380,7 +516,7 @@ export const PortfolioContainer = styled.div`
       }
       @media(max-width: 425px) {
         height: 300px;
-        width: 250px;
+        width: 330px;
       }
       &:after {
         width: 100%;

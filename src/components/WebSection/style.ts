@@ -142,7 +142,7 @@ export const WebDiv = styled.div`
             .back-image { 
                 height: 81%;
                 width: 290px;
-                left: 55px;
+                left: 70px;
                 right: 0;
                 top: 17px;
                 z-index: 0;                        
@@ -157,7 +157,7 @@ export const WebDiv = styled.div`
             .overlay {            
                 position: absolute; 
                 top: 17px;
-                left: 55px;
+                left: 70px;
                 width: 290px;
                 height: 81%;                                              
             }
@@ -173,7 +173,7 @@ export const WebDiv = styled.div`
             .back-image { 
                 height: 81%;
                 width: 75%;
-                left: 47px;
+                left: 42px;
                 right: 0;
                 top: 15px;
                 z-index: 0;                        
@@ -187,7 +187,7 @@ export const WebDiv = styled.div`
             }        
             .overlay {            
                 top: 15px;
-                left: 47px;
+                left: 42px;
                 width: 75%;
                 height: 81%;
                 p {
@@ -210,13 +210,13 @@ export const WebDiv = styled.div`
             align-items: center;
             justify-content: center;
             img {
-                width: 270px;
+                width: 315px;
             }
             .back-image { 
-                height: 125px;
-                width: 195px;
+                height: 145px;
+                width: 225px;
                 left: 68px;
-                top: 13px;
+                top: 15px;
             }        
             .overlay {            
                 left: 40px;
@@ -241,13 +241,13 @@ export const WebDiv = styled.div`
             align-items: center;
             justify-content: center;
             .back-image { 
-                left: 52px;
+                left: 40px;
             }        
             .overlay {            
-                left: 52px;
-                width: 67%;
+                left: 40px;
+                width: 75%;
                 height: 80%;
-                top: 13px;
+                top: 15px;
                 svg {
                     width: 65px;
                     top: -30px;

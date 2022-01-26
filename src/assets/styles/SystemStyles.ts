@@ -110,7 +110,6 @@ export const BannerSystem = styled.div`
       cursor: pointer;
       transition: all .2s;
       &:hover {
-          background: ${colors.primaryLight};
           transform: scale(1.2);
       }
       @media (max-width: 1100px) {
@@ -165,7 +164,7 @@ export const BannerSystem = styled.div`
     .title > h1 {
       font-size: 12rem;
       width: 650px;
-      left: 55px;
+      left: 0;
       top: 190px;      
     }
     .note {

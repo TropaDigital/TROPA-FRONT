@@ -54,6 +54,11 @@ export const PortfolioBanner = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 100px;
+    @media (max-width: 425px) {
+      top: -50px;
+    }
     .title > h1 {
         font-size: 12rem;
         font-family: ${fonts.bebasNeue};
@@ -62,11 +67,19 @@ export const PortfolioBanner = styled.div`
         line-height: 65px;
         margin-bottom: 10px;
         color: ${colors.primaryLight}; 
+        @media (max-width: 1400px) {
+            font-size: 9rem;
+            width: 100vw;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
         @media (max-width: 1100px) {
-            font-size: 10rem;
+            font-size: 7rem;
         }
         @media (max-width: 425px) {
-            font-size: 6rem;
+            font-size: 4rem;
+            line-height: 7rem;
             top: 230px;
         }
     }  
@@ -190,18 +203,24 @@ export const LandingPage = styled.div`
   height: 100vh;
   background: ${colors.primaryDark};
   padding: 80px;
-  @media (max-width: 1100px) {
+  @media (max-width: 1400px) {
     height: 1100px;
   }
+  @media (max-width: 1100px) {
+    height: 1000px;
+  }
   @media (max-width: 425px) {
-    height: 925px;
+    height: 800px;
   }
   .title {
     width: 600px;
     position: relative;
-    top: 40px;
-    left: 200px;
+    top: 300px;
+    left: 100px;
     z-index: 0;
+    @media (max-width: 1400px) {
+      left: 115px;
+    }
     @media (max-width: 1100px) {
       left: 0;
       top: 0;
@@ -228,8 +247,8 @@ export const LandingPage = styled.div`
       height: 210px;
       h1 {
         width: 300px;
-        font-size: 6rem;
-        line-height: 110px;
+        font-size: 5rem;
+        line-height: 90px;
       }
       svg {
         width: 70px;
@@ -242,31 +261,79 @@ export const LandingPage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 1200px;
-    left: 0;
+    position: relative;
+    top: -750px;
+    left: 50%;
+    transform: translateX(-50%);
     margin-bottom: 50px;
     @media (max-width: 1100px) {
-      width: 98%;
-      left: 15px;
+      width: 100%;
     }
     @media (max-width: 425px) {
       width: 96%;
-      top: 1150px;
+      top: -380px;
     }
     img {
-      width: 60%;
+      width: 1150px;
       height: 100%;
+      @media (max-width: 1400px) {
+        width: 1000px;
+      }
       @media (max-width: 1100px) {
         width: 80%;
       }
+      @media (max-width: 425px) {
+        width: 340px;
+      }
     }
+  }
+  .text {
+    width: 50vw;
+    color: ${colors.primaryLight};
+    font-size: 22px;
+    margin-left: 300px;
+    line-height: 40px;
+    text-align: left;
+    position: relative;
+    top: -600px;
+    left: 150px;
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: ${colors.primary};
+      font-size: 26px;
+      transition: all 500ms;
+      cursor: pointer;
+      &:hover {
+        color: ${colors.primaryGrey};
+      }
+    }
+    @media (max-width: 1400px) {
+      left: 180px;
+    }
+    @media (max-width: 1100px) {
+      width: 80%;
+      margin-left: 0;
+      top: -500px;
+      left: 50px;
+    }
+    @media (max-width: 425px) {
+      width: 310px;
+      font-size: 14px;
+      margin-left: 0;
+      top: -200px;
+      left: -25px;
+      line-height: 35px;
+      a {
+        font-size: 20px;
+      }
+    } 
   }
 `
 
 export const Mobile = styled.div`
   width: 100%;
-  height: 3200px;
+  height: 2600px;
   padding: 160px;
   text-align: center;
   display: flex;
@@ -275,15 +342,15 @@ export const Mobile = styled.div`
   background: radial-gradient(400px 300px at 50% bottom, ${colors.primary}, ${colors.primaryDark});
   @media (max-width: 1100px) {
     width: 100%;
-    height: 2900px;
+    height: 2300px;
     padding: 0 40px;
   }
   @media (max-width: 425px) {
-    height: 1400px;
+    height: 1050px;
   }
   .mobile-cube {
     position: relative;
-    right: 210px;
+    right: 400px;
     h1 {
       color: ${colors.primaryLight};
       font-family: ${fonts.bebasNeue};
@@ -301,6 +368,11 @@ export const Mobile = styled.div`
       position: relative;
       left: 15px;
       color: ${colors.primaryLight};
+      font-size: 20px;
+    }
+    @media (max-width: 1100px) {
+      right: 220px;
+      top: 15px;
     }
     @media (max-width: 425px) {
       right: 90px;
@@ -309,7 +381,7 @@ export const Mobile = styled.div`
         font-size: 4rem;
       }
       svg {
-        top: -285px;
+        top: -145px;
         left: 60px;
         width: 50px;
       }
@@ -331,29 +403,23 @@ export const Mobile = styled.div`
       top: -435px;
       left: 5px;
     }
-    .mobile {
-      @media (max-width: 425px) {
-        width: 220px;
-        /* opacity: 0.1; */
-        position: relative;
-        left: 75px;
-        top: 125px;
-        img {
-          width: 70%;
-        }
-      }
-    }
     .phone {
       width: 390px;
       height: 700px;
       position: absolute;
-      left: -600px;
+      left: -200px;
+      z-index: 55;
       .backLoader {
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
         z-index: 0;
         position: absolute;
+        @media (max-width: 425px) {
+          width: 160px;
+          top: 35%;
+          left: 45%;
+        }
       }
       .cel {
         width: 390px;
@@ -372,46 +438,44 @@ export const Mobile = styled.div`
           }
         }
         @media (max-width: 425px) {
-          width: 90%;
+          width: 100%;
           height: 100%;
         } 
       }
       .back {
         z-index: 0;
         position: absolute;
-        top: 0;
-        border-radius: 60px;
+        border-radius: 40px;
         top: 16px;
-        left: 22px;
-        img {
-          width: 345px;
-          height: 667px;
-          border-radius: 40px;
-          @media (max-width: 425px) {
-            width: 140px;
-            height: 300px;
-            border-radius: 20px;
-          }
-        }
+        left: 25px;
+        width: 340px;
+        height: 95%;
+        background-position: top center;
+        background-size: cover;
         @media (max-width: 425px) {
           top: 10px;
           left: 20px;
+          width: 140px;
+          height: 300px;
+          border-radius: 18px;
         }
       }
       @media (max-width: 425px) {
-        width: 200px;
+        width: 180px;
         height: 400px;
-        left: -75px;
+        left: 0;
+        top: 80px;
       }
     }
     .phone2 {
       width: 390px;
       height: 700px;
       position: absolute;
-      top: 1200px;
-      left: 0;
+      top: 550px;
+      left: -950px;
       @media (max-width: 1100px) {
         z-index: 1;
+        left: -750px;
       }
       .cel2 {
         width: 390px;
@@ -436,48 +500,48 @@ export const Mobile = styled.div`
       }
       .back2 {
         z-index: 0;
-        border-radius: 60px;
         position: absolute;
+        border-radius: 40px;
         top: 16px;
-        left: 22px;
-        img {
-          width: 345px;
-          height: 667px;
-          border-radius: 40px;
-          @media (max-width: 425px) {
-            width: 140px;
-            height: 300px;
-            border-radius: 20px;
-          }
-        }  
+        left: 25px;
+        width: 340px;
+        height: 95%;
+        background-position: top center;
+        background-size: cover;
         @media (max-width: 425px) {
           left: 20px;
           top: 10px;
+          width: 140px;
+          height: 300px;
+          border-radius: 18px;
         }
       }
       @media (max-width: 425px) {
         width: 200px;
         height: 400px;
-        left: 100px;
-        top: 650px;
+        left: -200px;
+        top: 350px;
       }
       .backLoader2 {
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
         z-index: 0;
         position: absolute;
+        @media (max-width: 425px) {
+          width: 160px;
+          top: 35%;
+          left: 45%;
+        }
       }
     }
     .phone3 {
       width: 390px;
       height: 700px;
       position: absolute;
-      top: 1700px;
-      left: -600px;
+      top: 1100px;
+      left: -200px;
+      z-index: 55;
       .cel3 {
         width: 390px;
         height: 700px;
@@ -485,7 +549,6 @@ export const Mobile = styled.div`
         position: relative;
         top: 0;
         left: 0;
-        width: 390px;
         img {
           width: 390px;
           height: 700px;
@@ -495,56 +558,60 @@ export const Mobile = styled.div`
           }
         }
         @media (max-width: 425px) {
-          width: 90%;
+          width: 100%;
           height: 100%;
         }   
       }
       .back3 {
         z-index: 0;
-        border-radius: 60px;
         position: absolute;
+        border-radius: 40px;
         top: 16px;
-        left: 22px;
-        img {
-          width: 345px;
-          height: 667px;
-          border-radius: 40px;
-          @media (max-width: 425px) {
-            width: 140px;
-            height: 300px;
-            border-radius: 20px;
-          }
-        }
+        left: 25px;
+        width: 340px;
+        height: 95%;
+        background-position: top center;
+        background-size: cover;
         @media (max-width: 425px) {
-          left: 20px;
           top: 10px;
+          left: 20px;
+          width: 140px;
+          height: 300px;
+          border-radius: 18px;
         }  
       }
       @media (max-width: 425px) {
-        width: 200px;
+        width: 180px;
         height: 400px;
-        top: 900px;
-        left: -75px;
+        top: 600px;
+        left: 0;
       }
       .backLoader3 {
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
         z-index: 0;
         position: absolute;
+        @media (max-width: 425px) {
+          width: 160px;
+          top: 35%;
+          left: 45%;
+        }
       }
     }
   }
   .mobile-astro {
     position: absolute;
-    top: 3680px;
+    top: 2900px;
     left: 1530px;
+    z-index: 0;
+    @media (max-width: 1400px) {
+      left: 1045px;
+      top: 2950px;
+    }
     @media (max-width: 1100px) {
       left: 730px;
-      top: 3900px;
+      top: 2650px;
     }
     @media (max-width: 425px) {
       display: none;
@@ -565,7 +632,7 @@ export const Mobile = styled.div`
   }
   .paper {
     position: relative;
-    top: 1350px;
+    top: 1650px;
     button {
       width: 700px;
       height: 130px;
@@ -596,13 +663,16 @@ export const Mobile = styled.div`
       img {
         height: 100px;
         position: relative;
-        top: -5px;
+        top: 0;
         left: -60px;
       }
     }
+    @media (max-width: 1100px) {
+      top: 1500px;
+    }
     @media (max-width: 425px) {
       width: 95%;
-      top: 520px;
+      top: 600px;
       button {
         width: 100%;
         height: 80px;

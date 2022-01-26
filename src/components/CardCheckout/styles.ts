@@ -10,9 +10,6 @@ export const MainContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @media (max-width: 1100px) {
-        height: 95%;
-    }
     @media (max-width: 425px) {
         justify-content: flex-start;
         padding-top: 40px;
@@ -50,15 +47,22 @@ export const MainContainer = styled.div`
                 }
             }
         }
-        @media (max-width: 1100px) {
+        @media (max-width: 1400px) {
             .close {
                 top: 95px;
+                right: 240px;
+            }   
+        }
+        @media (max-width: 1100px) {
+            .close {
+                top: 65px;
                 right: 190px;
             }   
         }
         @media (max-width: 425px) {
             .close {
                 right: 40px;
+                top: 85px;
                 svg {
                     width: 30px;
                 }
@@ -73,6 +77,13 @@ export const MainContainer = styled.div`
         border: none;
         padding: 10px 0;
         cursor: pointer;
+        font-size: 18px;
+        @media (max-width: 1400px) {
+            font-size: 16px;
+        }
+        @media (max-width: 1100px) {
+            width: 80%;
+        }
         @media (max-width: 425px) {
             visibility: hidden;
         }
@@ -87,11 +98,13 @@ export const MainCard = styled.div`
     @media (max-width: 1100px) {
         width: 80%;
         height: 60%;
+        margin-bottom: 40px;
     }
     @media (max-width: 425px) {
         width: 90%;
         height: 100%;
         padding: 20px 40px 20px 30px;
+        overflow-y: auto;
     }
     .pay-now {
         width: 100%;
@@ -118,6 +131,9 @@ export const MainCard = styled.div`
                 stroke-width: 14px;
                 fill: ${colors.primaryGrey};
             }
+        }
+        @media (max-width: 1100px) {
+            display: none;
         }
     }
 `

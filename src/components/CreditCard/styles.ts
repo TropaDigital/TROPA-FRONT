@@ -56,6 +56,9 @@ export const UserData = styled.div`
                 width: 100%;
                 input {
                     width: 50%;
+                    @media (max-width: 425px) {
+                        width: 60%;
+                    }
                 }
             }
         }
