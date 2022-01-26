@@ -98,9 +98,14 @@ export const SocialContainerCarousel = styled.div`
     }
     .image {
         width: 100%;
-        height: 385px;
+        height: 500px;
         background-size: cover;
         background-position: center;
+    }
+    .video {
+      video {
+        width: -webkit-fill-available;
+      }
     }
     .text {
       height: 120px;
@@ -108,7 +113,6 @@ export const SocialContainerCarousel = styled.div`
       box-sizing: border-box;
       width: 100%;
       display: flex;
-      overflow: auto;
       flex-direction: column;
       align-items: flex-start;
       background-color: ${colors.primaryDark};
@@ -123,7 +127,7 @@ export const SocialContainerCarousel = styled.div`
           padding: 10px 20px;
           font-family: ${fonts.poppins};
           font-weight: bold;
-          margin-bottom: 10px;
+          margin: 10px 0;
       }
       p {
         color: ${colors.primaryLight};
@@ -138,8 +142,8 @@ export const SocialContainerCarousel = styled.div`
     }
     &:hover {
       .text {
-        margin-top: -255px;
-        height: 375px;
+        margin-top: -518px;
+        height: 518px;
         opacity: .8;
         p {
             white-space: unset;

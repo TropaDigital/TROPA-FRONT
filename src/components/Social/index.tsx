@@ -33,7 +33,7 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
         }catch(e){
 
         }
-    }
+    }    
 
     return (
         <SocialContainer id="social">
@@ -66,12 +66,25 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
                                 ?
                                 socialMedia.map((row: any, key: any) => (
                                     <div className="card" key={key}>
-                                        <div
-                                            className="image"
-                                            style={{
-                                                backgroundImage: 'url('+row.media_url+')',
-                                            }}
-                                        />
+                                        {   
+                                            row.media_type !== "VIDEO"
+                                            ?
+                                            <div
+                                                className="image"
+                                                style={{
+                                                    backgroundImage: 'url('+row.media_url+')',
+                                                }}
+                                            />
+                                            :
+                                            <div className="image video">
+                                                <video loop autoPlay>
+                                                    <source
+                                                    src={row.media_url}
+                                                    type="video/mp4"
+                                                    />
+                                                </video>
+                                            </div>
+                                        }
                                         <div className="text">
                                             <a
                                                 href={row.permalink}
