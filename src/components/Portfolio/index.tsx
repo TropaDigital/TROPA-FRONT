@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import type { NextPage } from 'next';
-import { LandingPage, Mobile, PortfolioBanner, PortfolioContainer } from '../../assets/styles/PortfolioStyles';
+import { LandingPage, LandingPageTwo, Mobile, PortfolioBanner, PortfolioContainer } from '../../assets/styles/PortfolioStyles';
 import Head from 'next/head';
 import Header from '../../components/Layout/Header';
 import Animate from '../../components/Animation/Animate';
@@ -15,8 +15,6 @@ const Portfolio: NextPage<IPort> = ({
     portfolioSelected,
 }) => {
     const router = useRouter();
-
-    const imageBack = portfolioSelected.imagem_tipo;
 
     return (
         <PortfolioContainer>
@@ -86,7 +84,15 @@ const Portfolio: NextPage<IPort> = ({
 
                 <div className='text'>
                     <p>
-                        EYOU é uma plataforma online com diversas soluções utilizando SMS, Whatsapp, Telefonia e muito mais. A Tropa foi escolhida para o desenvolvimento do site institucional 100% responsivo, e também para o desenvolvimento de uma &quot;Landing Page&quot; para captação de novos clientes. 
+                        {
+                            portfolioSelected.landing  
+                            ? portfolioSelected.landing.texto
+                            : 
+                            <PulseLoader 
+                                color="#fff"
+                                size={20} 
+                            /> 
+                        }
                     </p>
                     <p> 
                         Veja nosso trabalho acessando -&gt; &nbsp; 
@@ -97,91 +103,122 @@ const Portfolio: NextPage<IPort> = ({
                 </div>
             </LandingPage>   
 
-            <Mobile>                   
-                <div className='mobile-cube'>
-                    <h1>Mobile</h1>
-                    <p>Versão responsiva desenvolvida para celulares.</p>
-                    <IconCube className="effect-stroke primary"/>
-                </div>
+            {
+                portfolioSelected.mobile &&
+                portfolioSelected.mobile.imagens !== undefined
+                ?
+                    <Mobile>                   
+                        <div className='mobile-cube'>
+                            <h1>Mobile</h1>
+                            <p>Versão responsiva desenvolvida para celulares.</p>
+                            <IconCube className="effect-stroke primary"/>
+                        </div>
 
-                    <div className='phones'>
-                        <div className='phone'>                        
-                            <div className='cel'>
-                                <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />                                
-                            </div>
-                            {
-                                portfolioSelected.imagem_tipo !== undefined
-                                ?
-                                <div 
-                                    className='back'
-                                    style={{backgroundImage: `url(${imageBack})`}}
-                                />   
-                                :
-                                <div className='backLoader'>
-                                    <PulseLoader 
-                                        color="#fff"
-                                        size={30} 
-                                    />
-                                </div>     
-                            }                                                  
-                        </div>
-                                
-                        <div className='phone2'>                        
-                            <div className='cel2'>
-                                <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                            </div>
-                            {
-                                portfolioSelected.imagem_tipo !== undefined
-                                ?
-                                <div 
-                                    className='back2'     
-                                    style={{backgroundImage: `url(${imageBack})`}}
-                                />        
-                                :
-                                <div className='backLoader2'>
-                                    <PulseLoader 
-                                        color="#fff"
-                                        size={30} 
-                                    />
-                                </div>     
-                            }                      
-                        </div>
-                    
-                        <div className='phone3'>                        
-                            <div className='cel3'>
-                                <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
-                            </div>
-                            {
-                                portfolioSelected.imagem_tipo !== undefined
-                                ?
-                                <div 
-                                    className='back3'     
-                                    style={{backgroundImage: `url(${imageBack})`}}
-                                />                          
-                                :
-                                <div className='backLoader3'>
-                                    <PulseLoader 
-                                        color="#fff"
-                                        size={30} 
-                                    />
-                                </div>     
-                            }
+                            <div className='phones'>
+                                <div className='phone'>                        
+                                    <div className='cel'>
+                                        <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />                                
+                                    </div>
+                                    {
+                                        portfolioSelected.mobile
+                                        ?
+                                        <div 
+                                            className='back'
+                                            style={{backgroundImage: `url(${portfolioSelected.mobile.imagens[0]})`}}
+                                        />   
+                                        :
+                                        <div className='backLoader'>
+                                            <PulseLoader 
+                                                color="#fff"
+                                                size={30} 
+                                            />
+                                        </div>     
+                                    }                                                  
+                                </div>
+                                        
+                                <div className='phone2'>                        
+                                    <div className='cel2'>
+                                        <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                    </div>
+                                    {
+                                        portfolioSelected.mobile
+                                        ?
+                                        <div 
+                                            className='back2'     
+                                            style={{backgroundImage: `url(${portfolioSelected.mobile.imagens[1]})`}}
+                                        />        
+                                        :
+                                        <div className='backLoader2'>
+                                            <PulseLoader 
+                                                color="#fff"
+                                                size={30} 
+                                            />
+                                        </div>     
+                                    }                      
+                                </div>
+                            
+                                <div className='phone3'>                        
+                                    <div className='cel3'>
+                                        <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
+                                    </div>
+                                    {
+                                        portfolioSelected.mobile
+                                        ?
+                                        <div 
+                                            className='back3'     
+                                            style={{backgroundImage: `url(${portfolioSelected.mobile.imagens[2]})`}}
+                                        />                          
+                                        :
+                                        <div className='backLoader3'>
+                                            <PulseLoader 
+                                                color="#fff"
+                                                size={30} 
+                                            />
+                                        </div>     
+                                    }
+                                </div> 
+                            </div>     
+
+                        <div className='mobile-astro'>
+                            <h1>mob</h1>
+                            <IconAstronaut className="effect-stroke light"/>
                         </div> 
-                    </div>     
+                        
+                        <div className='paper'>
+                            <button onClick={() => router.push('/home/contato')}>
+                                <p>Tire seu projeto do</p>
+                                <img src="/images/Paper.png" alt="Palavra papel circulada" />
+                            </button>
+                        </div>    
 
-                <div className='mobile-astro'>
-                    <h1>mob</h1>
-                    <IconAstronaut className="effect-stroke light"/>
-                </div> 
+                    </Mobile>
+                :
+                <LandingPageTwo>
+                    <div className='page-two'>
+                    {
+                        portfolioSelected.landing &&
+                        portfolioSelected.landing.imagem2 !== ""
+                        ?
+                            <img src={portfolioSelected.landing.imagem2} alt="Segunda imagem do website" />                    
+                        :
+                            <PulseLoader 
+                                color="#fff"
+                                size={30} 
+                            />
+                    }
+                    </div>
+                    
+                    <div className='paper'>
+                        <button onClick={() => router.push('/home/contato')}>
+                            <p>Tire seu projeto do</p>
+                            <img src="/images/Paper.png" alt="Palavra papel circulada" />
+                        </button>
+                    </div> 
+                    
+                </LandingPageTwo>
+            }
                 
-                <div className='paper'>
-                    <button onClick={() => router.push('/home/contato')}>
-                        <p>Tire seu projeto do</p>
-                        <img src="/images/Paper.png" alt="Palavra papel circulada" />
-                    </button>
-                </div>    
-
-            </Mobile>
+           
             
         </PortfolioContainer>
     )

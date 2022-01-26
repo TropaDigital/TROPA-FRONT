@@ -330,6 +330,99 @@ export const LandingPage = styled.div`
     } 
   }
 `
+export const LandingPageTwo = styled.div`
+  background: ${colors.primaryDark};
+  padding-top: 50px;
+  .page-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    img {
+      width: 1150px;
+      height: 100%;
+      @media (max-width: 1400px) {
+        width: 1000px;
+      }
+      @media (max-width: 1100px) {
+        width: 80%;
+      }
+      @media (max-width: 425px) {
+        width: 340px;
+      }
+    }
+  }
+  .paper {
+    position: relative;
+    top: 0;
+    margin-top: 80px;
+    padding-bottom: 50px;
+    background: ${colors.primaryDark};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      width: 700px;
+      height: 130px;
+      background: ${colors.primary};
+      border: 2px solid transparent;
+      border-radius: 64px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 250ms;
+      cursor: pointer;
+      &:hover {
+        background: ${colors.primaryDark};
+        border: 2px solid ${colors.primary};
+        p {
+          color: ${colors.primary};
+        }
+      }
+      p {
+        color: ${colors.primaryDark}; 
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        left: 60px;
+      }
+      img {
+        height: 100px;
+        position: relative;
+        top: 0;
+        left: -60px;
+      }
+    }
+    @media (max-width: 1100px) {
+      top: 1500px;
+    }
+    @media (max-width: 425px) {
+      width: 90%;
+      top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      button {
+        width: 100%;
+        height: 80px;
+        padding: 0;
+        p {
+          width: 200px;
+          left: -45px;
+          font-size: 1rem;
+        }
+        img {
+          position: absolute;
+          height: 50px;
+          left: 120px;
+          top: 15px;
+        }
+      }
+    }
+  }
+`
 
 export const Mobile = styled.div`
   width: 100%;
