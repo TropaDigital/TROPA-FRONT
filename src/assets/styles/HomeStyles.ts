@@ -326,6 +326,25 @@ export const AboutContainer = styled.div`
         margin: -35px 0px; 
         background-color: ${colors.primary};
         z-index: 1;
+        &:hover {
+          width: 90%;
+          padding: 20px;
+          margin: -35px 0px; 
+          p {
+            font-size: 35px;
+            color: #24201A;
+            line-height: 55px;
+            font-weight: normal;
+          }
+          .description {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Poppins',sans-serif;
+            line-height: 23px;
+            color: ${colors.primaryLight};
+          }
+        }
         svg {
           stroke: ${colors.primaryDark};
           path {
@@ -381,7 +400,9 @@ export const AboutContainer = styled.div`
           padding: 20px;
           p {
             color: ${colors.primaryLight};
+            font-family: ${fonts.poppins};
             font-size: 18px;
+            font-weight: 600;
           }
         }
       }
