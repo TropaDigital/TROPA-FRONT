@@ -18,7 +18,12 @@ const Contact: React.FC = () => {
     });
 
     function handleSubmit(e: any) {
-        e.preventDefault()
+        e.preventDefault();
+        setDTO({
+            nome: '',
+            email: '',
+            mensagem: '', 
+        })
     }
     
     const sendContact = async() => {
@@ -35,7 +40,7 @@ const Contact: React.FC = () => {
                 className: "toast-sucess",
                 theme: 'colored'
             })
-            router.push('/')
+            
             
         }
         catch (e: any) {
