@@ -80,50 +80,28 @@ const Header: React.FC<IProps> = ({
 
                         {openMenu ? closeIcon : hamburguerIcon}
 
-                        <ul>
+                        <ul className={`menu-site`}>
                             {menus.map((row, key) => (
-                                <li
-                                    key={key}
-                                    onMouseEnter={
-                                        row.value === 'O que fazemos'
-                                            ? () => setMostraSubmenu(true)
-                                            : () => setMostraSubmenu(false)
-                                    }
-                                    onMouseLeave={() => setMostraSubmenu(false)}
-                                >
+                                <li key={key}>
                                     <Link href={row.href}>
                                         <a>{row.value}</a>
                                     </Link>
-                                    {row.value === 'O que fazemos' &&
-                                    mostraSubmenu ? (
-                                        <div className="hidden-menu aplicative website">
-                                            <div
-                                                className="app"
-                                                onClick={() =>
-                                                    router.push('/aplicativos')
-                                                }
-                                            >
-                                                Aplicativos
-                                            </div>
-                                            <div
-                                                className="system"
-                                                onClick={() =>
-                                                    router.push('/sistemas')
-                                                }
-                                            >
-                                                Sistemas
-                                            </div>
-                                            <div
-                                                className="web"
-                                                onClick={() =>
-                                                    router.push('/sites')
-                                                }
-                                            >
-                                                Sites
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        ''
+                                    {row.value === 'O que fazemos' && (
+                                        <ul>
+                                            <li>
+                                                <Link href="/aplicativos">
+                                                    Aplicativos
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/sistemas">
+                                                    Sistemas
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/sites">Sites</Link>
+                                            </li>
+                                        </ul>
                                     )}
                                 </li>
                             ))}

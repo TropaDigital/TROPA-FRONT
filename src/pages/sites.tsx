@@ -15,7 +15,6 @@ import { AppContainer, BannerApp } from '../assets/styles/AppStyles';
 import Layout from '../components/Layout/Layout';
 
 const Sites: NextPage = () => {
-    
     const router = useRouter();
 
     return (
@@ -57,22 +56,18 @@ const Sites: NextPage = () => {
                     <BannerApp className="site-variant">
                         <div className="main">
                             <Animate effect="fadeInLeft" className="title">
-                                <h1>
-                                    Website                                   
-                                </h1>
+                                <h1>Website</h1>
                             </Animate>
                             <div className="title-transparent">
-                                <h1 className="transparent">
-                                    Website                                   
-                                </h1>
+                                <h1 className="transparent">Website</h1>
                             </div>
                             <Animate effect="fadeInUp" className="mac">
                                 <img src="/images/Mac.png" />
-                            </Animate>                            
-                        </div>                         
+                            </Animate>
+                        </div>
                     </BannerApp>
                 </Header>
-                
+
                 <StageItems
                     title="O QUE FAZEMOS?"
                     description="Conheça um pouco do nosso trabalho e saiba quais as vantagens de contratar
@@ -102,8 +97,7 @@ const Sites: NextPage = () => {
                         },
                     ]}
                 />
-                
-                
+
                 <LanguagesContainer>
                     <ContainerCenter className="center">
                         <Animate effect="zoomIn">
@@ -132,12 +126,11 @@ const Sites: NextPage = () => {
                 <WebSection />
 
                 <Contact />
-                
-                <Footer />
 
+                <Footer />
             </AppContainer>
         </Layout>
-    )
+    );
 };
 
 export default Sites;

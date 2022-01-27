@@ -47,7 +47,7 @@ const Animate: React.FC<IProps> = ({
     return (
         <div
             ref={refElement}
-            className={`animate__animated animate__${animateClassName} ${className}`}
+            className={`animate__animated_off animate__${animateClassName}_off ${className}`}
             style={{ animationDelay: delayAnimation + 's' }}
         >
             {children}

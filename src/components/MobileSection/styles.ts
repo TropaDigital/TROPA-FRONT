@@ -49,7 +49,7 @@ export const Mobilecontainer = styled.div`
 `
 
 export const SliderDiv = styled.div`
-    width: 57%;
+    width: 100%;
     height: 25%;
     display: flex;
     justify-content: space-between;
@@ -84,7 +84,7 @@ export const SliderDiv = styled.div`
     }        
 `
 export const MobileDiv = styled.div`
-    width: 60%;
+    width: 100%;
     height: 75%;
     display: flex;
     justify-content: center;
@@ -106,7 +106,80 @@ export const MobileDiv = styled.div`
           width: 25px;
           height: 59px;
         }
-    }     
+    }
+    .cards {
+        width: 102%;
+    }
+    .client {
+        width: 356px;
+        height: 698px;
+        box-sizing: border-box;
+        padding: 45px 19px 20px 22px;
+        position: relative;
+        &:after {
+            background: url('/images/phone-case.png');
+            content: '';
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+        }
+        .image {
+            width: 100%;
+            border-radius: 35px;
+            height: 100%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            .overlay {
+                background: ${colors.primary};
+                width: 100%;
+                height: 50%;
+                display: flex;
+                border-radius: 35px;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                box-sizing: border-box;
+                transition: all .2s;
+                opacity: 0;
+                svg {
+                    width: 110px;
+                    * {
+                        fill: ${colors.primaryLight}
+                    }
+                }
+                h4 {
+                    text-transform: uppercase;
+                    font-size: 25px;
+                    margin-bottom: 30px;
+                    color: ${colors.primaryDark};
+                    width: 100%;
+                    text-align: center;
+                    font-family: ${fonts.chaney};
+                    font-weight: normal;
+                }
+                p {
+                    text-transform: uppercase;
+                    text-decoration: underline;
+                    width: 120px;
+                    font-size: 20px;
+                    font-family: ${fonts.chaney};
+                    font-weight: normal;
+                    margin-left: -60px;
+                    margin-top: -60px;
+                }
+            }
+        }
+        &:hover {
+            cursor: pointer;
+            .overlay {
+                opacity: .98;
+                height: 100%;
+            }
+        }
+    }
     .mobile {
         height: 80%;
         width: 90%;
@@ -185,8 +258,7 @@ export const MobileDiv = styled.div`
             }     
         }
     }
-    @media (max-width: 1400px) {
-        width: 75%;        
+    @media (max-width: 1400px) {    
         display: flex;
         justify-content: center;
         align-items: center;    

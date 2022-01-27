@@ -133,12 +133,11 @@ export const AboutContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 0px;
     margin-top: 20px;
     height: 585px;
     .product {
       border: 3px solid ${colors.primary};
-      border-radius: 20px;
       height: 450px;
       width: 31%;
       display: flex;
@@ -148,7 +147,25 @@ export const AboutContainer = styled.div`
       text-decoration: none;
       box-sizing: border-box;
       padding: 0px 80px;
-      transition: ease-in 400ms;
+      border-radius:20px;
+      transition: .2s;
+      &:nth-child(1) {
+        border-radius:20px 0px 0px 20px;
+      }
+      &:nth-child(2) {
+        border-radius:0px;
+        margin-left: -3px;
+        margin-right: -3px;
+        svg {
+          * {
+            stroke-width: 3px;
+            stroke: ${colors.primary}
+          }
+        }
+      }
+      &:nth-child(3) {
+        border-radius:0px 20px 20px 0px;
+      }
       a {
         display: flex;
         align-items: center;
@@ -163,247 +180,37 @@ export const AboutContainer = styled.div`
         text-align:center;
         text-transform: uppercase;
         margin-top: 80px;
+        transition: all .2s;
       }      
       svg {
         width: 90%;
       }
-    }
-    .product.web {
       &:hover {
-        width: 38%;
-        height: 585px;
-        border: 3px solid ${colors.primary};
         background: ${colors.primary};
-        background-size: 50% auto;
+        transform: scale(1.2);
         border-radius: 20px;
-        margin: 0px -40px;
-        z-index: 2;
-        position: relative;
-        text-decoration: none;
-        box-sizing: border-box;
-        padding: 50px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        a {
-          height: 100%;
-          justify-content: center;
-        }
         svg {
-          fill: transparent;
-          path {
-            stroke: ${colors.primaryDark};
+          * {
+            stroke: ${colors.primaryLight};
           }
         }
         p {
-          font-size: 45px;
-          color: ${colors.primaryDark};
-          font-family: ${fonts.chaney};
-          font-weight: normal;
-          line-height: 55px;
+          font-size: 40px;
         }
       }
     }
-    .product.app {
-      &:hover {
-        width: 38%;
-        height: 585px;
-        border: 3px solid ${colors.primary};
-        background: ${colors.primary};
-        border-radius: 20px;
-        margin: 0px -40px;
-        z-index: 2;
-        position: relative;
-        text-decoration: none;
-        box-sizing: border-box;
-        padding: 50px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        a {
-          height: 100%;
-          justify-content: center;
-        }
-        svg {
-          rect,
-          ellipse,
-          line {
-            stroke: ${colors.primaryDark};
-          }
-        }
-        p {
-          font-size: 45px;
-          color: ${colors.primaryDark};
-          font-family: ${fonts.chaney};
-          font-weight: normal;
-          line-height: 55px;
-        }
-      }
-    }
-    .product.sys {
-      .description {
-        font-size: 16px;
-        font-family: ${fonts.poppins};
-        color: ${colors.primaryLight};
-        width: 170px;
-        line-height: 23px;
-        margin-top: 20px;
-        display: none;
-        @media (max-width: 425px) {
-          font-size: 12px;
-          width: 250px;
-        }
-      }
-      svg {
-        width: 80%;
-      }
-      &:hover {
-        width: 38%;
-        height: 585px;
-        border: 3px solid ${colors.primary};
-        background: ${colors.primary};
-        border-radius: 20px;
-        margin: 0px -40px;
-        z-index: 2;
-        position: relative;
-        text-decoration: none;
-        box-sizing: border-box;
-        padding: 50px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        a {
-          height: 100%;
-          justify-content: center;
-        }
-        svg {
-          /* stroke: ${colors.primaryDark}; */
-          path {
-            fill: ${colors.primaryDark};
-          }
-        }
-        p {
-          font-size: 45px;
-          color: ${colors.primaryDark};
-          font-family: ${fonts.chaney};
-          font-weight: normal;
-          line-height: 55px;
-          text-align: center;
-        }
-      }
-    }
-  }
   @media (max-width: 425px) {
-    div.title {
-      h2 {
-        padding-left: 30px;
-        width: 180px;
-        font-size: 42px;
-      }
-      svg {
-        right: 160px;
-        top: 0;
-        width: 100px;
-      }
-    }
-    .products {
-      flex-direction: column;
-      .product {
-        width: 80%;
-        height: 200px;
-        padding: 20px;
+    flex-direction: column;
+    .product {
+      width: 100%;
+      border-radius:20px !important;
+      border-width: 0px;
+      height: 300px !important;
+      margin: 40px 0px;
+      a {
+        height: auto !important;
         p {
-          margin: 0;
-          font-size: 18px;
-        }
-      }
-      .product.sys {
-        width: 90%;
-        height: 400px; 
-        margin: -35px 0px; 
-        background-color: ${colors.primary};
-        z-index: 1;
-        &:hover {
-          width: 90%;
-          padding: 20px;
-          margin: -35px 0px; 
-          p {
-            font-size: 35px;
-            color: #24201A;
-            line-height: 55px;
-            font-weight: normal;
-          }
-          .description {
-            display: block;
-            font-size: 12px;
-            font-weight: 600;
-            font-family: 'Poppins',sans-serif;
-            line-height: 23px;
-            color: ${colors.primaryLight};
-          }
-        }
-        svg {
-          stroke: ${colors.primaryDark};
-          path {
-            fill: ${colors.primaryDark};
-          }
-          width: 120px;
-          bottom: -30px;
-        }
-        p {
-          font-size: 35px;
-          color: ${colors.primaryDark};
-          font-family: ${fonts.chaney};
-          line-height: 55px;
-          font-weight: normal;
-        }
-        .description {
-          display: block;
-          font-size: 12px;
-          font-weight: 600;
-        }
-      }
-      .product.app {
-        &:hover {
-          z-index: 0;
-          svg {
-          rect,
-          ellipse,
-          line {
-            stroke: ${colors.primary};
-          }
-        }
-        }
-      }
-      .product.web {
-        &:hover {
-          z-index: 0;
-          padding: 20px;
-          svg {
-            margin-top: 22px; 
-            fill: ${colors.primaryDark};
-            path {
-              stroke: ${colors.primary};
-            }
-          }
-        }
-      }
-      .product.app,
-      .product.web {
-        &:hover {
-          width: 80%;
-          height: 200px;
-          background: ${colors.primaryDark};
-          padding: 20px;
-          p {
-            color: ${colors.primaryLight};
-            font-family: ${fonts.poppins};
-            font-size: 18px;
-            font-weight: 600;
-          }
+          margin-top: 20px;
         }
       }
     }
@@ -572,17 +379,14 @@ export const PortfolioContainer = styled.div`
       }
       i {
         font-style: normal;
-        border: 2px solid ${colors.primary};
-        border-radius: 100px;
         text-decoration: none;
-        padding: 10px 15px;
+        padding: 0px 0px;
         font-size: 16px;
         color: #FFF;
         font-weight: bold;
         text-transform: uppercase;
         position: relative;
         z-index: 1;
-        /* background-color: rgba(0,0,0, .5); */
         opacity: 0;
       }
       @media(max-width: 425px) {

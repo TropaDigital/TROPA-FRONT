@@ -33,8 +33,7 @@ import WhyTropa from '../components/WhyTropa/WhyTropa';
 import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
 import apiTropa from './api/api';
-import PulseLoader from "react-spinners/PulseLoader";
-
+import PulseLoader from 'react-spinners/PulseLoader';
 
 interface IProps {
     scrollTo?: string;
@@ -42,26 +41,24 @@ interface IProps {
 
 const Home: NextPage<IProps> = ({ scrollTo }) => {
     const router = useRouter();
-    
+
     const [widthWindow, setWidthWindow] = useState(1920);
     const [itemsToShowSocial, setItemToShowSocial] = useState(3);
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
-    const [portfoliosList, setPortfoliosList] = useState([])
-
+    const [portfoliosList, setPortfoliosList] = useState([]);
 
     useEffect(() => {
         getPortfolios();
     }, []);
 
     async function getPortfolios() {
-        try{
+        try {
             let portfolios = await apiTropa.get('/portifolio/?status=ativo');
             setPortfoliosList(portfolios.data.result);
-        }catch(e){
-            console.log("Erro - Não recebendo os dados dos portfólios.")
+        } catch (e) {
+            console.log('Erro - Não recebendo os dados dos portfólios.');
         }
     }
-    
 
     useEffect(() => {
         if (scrollTo) {
@@ -99,10 +96,10 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
         window.history.pushState({}, 'teste', '/home/' + el);
     }
 
-    const slider:any = useRef(null)
+    const slider: any = useRef(null);
 
     const [selected, setSelected] = useState('');
-    console.log(selected)
+    console.log(selected);
 
     return (
         <Layout>
@@ -167,19 +164,19 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                         </Animate>
 
                         <div className="products">
-                                <Animate
-                                    startAnimation={50}
-                                    delayAnimation={1.5}
-                                    effect="fadeInRight"
-                                    className="product app"
-                                >
-                                    <Link href="/aplicativos">
-                                        <a>
-                                            <IconPhone />
-                                            <p>aplicativos</p>
-                                        </a>
-                                    </Link>
-                                </Animate>
+                            <Animate
+                                startAnimation={50}
+                                delayAnimation={1.5}
+                                effect="fadeInRight"
+                                className="product app"
+                            >
+                                <Link href="/aplicativos">
+                                    <a>
+                                        <IconPhone />
+                                        <p>aplicativos</p>
+                                    </a>
+                                </Link>
+                            </Animate>
                             <Animate
                                 startAnimation={50}
                                 delayAnimation={1}
@@ -189,13 +186,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                 <Link href="/sistemas">
                                     <a>
                                         <IconCode />
-                                        <p className="title">
-                                            Sistemas
-                                        </p>
-                                        <p className="description">
-                                            Criados para atender as demandas e
-                                            métodos específicos da sua empresa.
-                                        </p>
+                                        <p className="title">Sistemas</p>
                                     </a>
                                 </Link>
                             </Animate>
@@ -241,7 +232,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                 <WhyTropa />
 
                 <Social itemsToShow={itemsToShowSocial} />
-                
+
                 <PortfolioContainer id="portfolio">
                     <ContainerCenter className="head-portfolio">
                         <Animate effect="fadeInUp" startAnimation={200}>
@@ -251,9 +242,13 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                             </div>
                         </Animate>
                         <div className="buttons">
-                            <button onClick={() => slider.current.slidePrev()}><IconArrowLeft /></button>
-                            <button onClick={() => slider.current.slideNext()}><IconArrowRight /></button>
-                        </div>  
+                            <button onClick={() => slider.current.slidePrev()}>
+                                <IconArrowLeft />
+                            </button>
+                            <button onClick={() => slider.current.slideNext()}>
+                                <IconArrowRight />
+                            </button>
+                        </div>
                     </ContainerCenter>
 
                     <Animate effect="fadeInUp" startAnimation={0}>
@@ -268,38 +263,38 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                             showEmptySlots={false}
                             ref={slider}
                         >
-                            { portfoliosList.length > 0 
-                                ?
-                                portfoliosList.map((row: any, key: any) => (
-                                    <Link href={`/portfolio/${row.slug}`}>
-                                        <div
-                                            className="card"
-                                            key={key}
-                                            style={{
-                                                backgroundImage: 'url('+row.imagem_principal+')',
-                                            }}
-                                        >
-                                            <h4>{row.titulo}</h4>
-                                            <i>{row.descricao}</i>
-                                        </div>
-                                    </Link>
-                                ))
-                                :
-                                [1,2,3].map((row: any, key) => ( 
-                                    <div
-                                        className="loader"
-                                        key={key}
-                                        style={{
-                                            backgroundImage: 'url('+row.imagem_principal+')',
-                                        }}
-                                    >
-                                        <PulseLoader 
-                                            color="#fff"
-                                            size={30} 
-                                        />
-                                    </div>
-                                ))  
-                            }
+                            {portfoliosList.length > 0
+                                ? portfoliosList.map((row: any, key: any) => (
+                                      <Link href={`/portfolio/${row.slug}`}>
+                                          <div
+                                              className="card"
+                                              key={key}
+                                              style={{
+                                                  backgroundImage:
+                                                      'url(' +
+                                                      row.imagem_principal +
+                                                      ')',
+                                              }}
+                                          >
+                                              <h4>{row.titulo}</h4>
+                                              <i>{row.descricao}</i>
+                                          </div>
+                                      </Link>
+                                  ))
+                                : [1, 2, 3].map((row: any, key) => (
+                                      <div
+                                          className="loader"
+                                          key={key}
+                                          style={{
+                                              backgroundImage:
+                                                  'url(' +
+                                                  row.imagem_principal +
+                                                  ')',
+                                          }}
+                                      >
+                                          <PulseLoader color="#fff" size={30} />
+                                      </div>
+                                  ))}
                         </Carousel>
                     </Animate>
                 </PortfolioContainer>

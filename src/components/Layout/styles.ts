@@ -105,7 +105,7 @@ export const HeaderContainer = styled.div`
             &.active {
                 position: fixed;
                 top: 0px;
-                padding: 10px 0px;
+                padding: 0px 0px;
                 height: 50px;
                 .logo {
                     svg {
@@ -121,70 +121,18 @@ export const HeaderContainer = styled.div`
                         height: 15px;
                     }
                 }
-                .hidden-menu {
-                    top: 40px;
-                }
             }
         }
-        .hidden-menu {
-            position: absolute;
-            background-color: ${colors.primaryDark};
-            border: 2px solid ${colors.primary};
-            padding: 10px;
-            width: 150px;
-            top: 50px;
-            left: 10px;
-            color: ${colors.primaryLight};
-            text-align: center;
-            border-radius: 8px;
-            line-height: 40px;
-            .app {
-                border-radius: 8px 8px 0 0;
-                border: 2px solid ${colors.primary};
-                margin-bottom: 10px;
-            }
-            .system {
-                border: 2px solid ${colors.primary};
-                margin-bottom: 10px;
-            }
-            .web {
-                border-radius: 0 0 8px 8px;
-                border: 2px solid ${colors.primary};
-            }
-            .app,
-            .system,
-            .web {
-                text-transform: uppercase;
-                font-size: 16px;
-                font-family: ${fonts.bebasNeue};
-                letter-spacing: 2px;
-                font-weight: 400;
-                cursor: pointer;
-                &:hover {
-                    background-color: ${colors.primary};
-                    color: ${colors.primaryWhite};
-                }
-            }
-            ::after{
-                content: "";
-                position: absolute;
-                bottom: 100%;
-                left:0;
-                right: 0;
-                margin: auto;
-                height: 30px;
-                background: none;
-            }
-        }
-        ul {
+        ul.menu-site {
             display: flex;
             list-style:none;
-            padding: 0px;
+            padding: 12.5px 0px;
             margin: 0px;
             align-items: center;
             position: relative;
-            li {
+            > li {
                 margin-left: 35px;
+                box-sizing:border-box;
                 @media (max-width: 425px) {
                     margin-left: 15px;
                 }  
@@ -199,7 +147,27 @@ export const HeaderContainer = styled.div`
                     &:hover {
                         color: #FFF;
                     }
-                }                
+                }         
+                > ul {
+                    position: absolute;
+                    list-style: none;
+                    background: ${colors.primary};
+                    opacity: 0;
+                    visibility: hidden;
+                    margin-top:0px;
+                    padding: 20px;
+                    transition: all .2s;
+                    li {
+                        padding: 3px 0px;
+                    }
+                }      
+                &:hover {
+                    ul {
+                        opacity: 1;
+                        visibility: visible;
+                        margin-top:12px;
+                    }
+                } 
             }
             @media (max-width: 425px) {
                 display: none;

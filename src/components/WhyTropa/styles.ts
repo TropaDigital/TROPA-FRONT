@@ -39,10 +39,10 @@ export const WhyTropaContainer = styled.div`
       }
     }
     &.clock {
-      margin-top: -190px;
+      margin-top: -100px;
       margin-left: 100px;
       svg {
-        transform: rotate(0deg);
+        transform: rotate(180deg);
       }
       @media (max-width: 425px) {
         margin-top: 140px;
@@ -104,7 +104,7 @@ export const WhyTropaContainer = styled.div`
       }
     }
     &.cube {
-      margin-top: 80px;
+      margin-top: 50px;
       margin-right: 100px;
       svg {
         transform: rotate(30deg);

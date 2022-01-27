@@ -22,9 +22,9 @@ const WhyTropa: React.FC = () => {
                         delayAnimation={0.8}
                         startAnimation={500}
                         className="icon code"
-                        effect="fadeInUp"
+                        effect="effect-stroke light"
                     >
-                        <IconCode />
+                        <IconCode className="effect-stroke primary" />
                     </Animate>
                     <Animate
                         delayAnimation={0.5}
@@ -32,7 +32,7 @@ const WhyTropa: React.FC = () => {
                         className="icon clock"
                         effect="fadeInUp"
                     >
-                        <IconClock />
+                        <IconClock className="effect-stroke primary" />
                     </Animate>
                     <Animate
                         delayAnimation={0.4}
@@ -40,7 +40,7 @@ const WhyTropa: React.FC = () => {
                         className="icon global"
                         effect="fadeInUp"
                     >
-                        <IconGlobal />
+                        <IconGlobal className="effect-stroke primary" />
                     </Animate>
                 </div>
 
@@ -51,7 +51,7 @@ const WhyTropa: React.FC = () => {
                         effect="fadeInUp"
                         startAnimation={300}
                     >
-                        <IconAstronaut />
+                        <IconAstronaut className="effect-stroke primary" />
                     </Animate>
                     <Animate
                         delayAnimation={0.8}
@@ -59,7 +59,7 @@ const WhyTropa: React.FC = () => {
                         effect="fadeInUp"
                         startAnimation={300}
                     >
-                        <IconFlag />
+                        <IconFlag className="effect-stroke primary" />
                     </Animate>
                 </div>
 
@@ -69,14 +69,14 @@ const WhyTropa: React.FC = () => {
                         className="icon check"
                         effect="fadeInUp"
                     >
-                        <IconCheck />
+                        <IconCheck className="effect-stroke primary" />
                     </Animate>
                     <Animate
                         delayAnimation={0.5}
                         className="icon cube"
                         effect="fadeInUp"
                     >
-                        <IconCube />
+                        <IconCube className="effect-stroke primary" />
                     </Animate>
                 </div>
             </ContainerCenter>
