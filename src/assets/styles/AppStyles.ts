@@ -89,6 +89,7 @@ export const BannerApp = styled.div`
   display: flex;
   flex: 1;
   max-height: 100%;
+  overflow: hidden;
   .site-variant {
     width: 100vw;
     background: ${colors.primary};
@@ -190,6 +191,7 @@ export const BannerApp = styled.div`
         width: 420px;
         font-size: 30px;
         margin-left: 65px;
+        line-height: 30px;
       }
       button {
         margin-top: 20px;

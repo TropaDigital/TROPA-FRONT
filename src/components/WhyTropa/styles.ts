@@ -6,7 +6,7 @@ export const WhyTropaContainer = styled.div`
   width: 100%;
   display: flex;
   background-image: url('/images/BannerWhyTropa.jpg');
-  background-position: center;
+  background-position: center bottom;
   background-size: cover;
   overflow: hidden;
   .center {

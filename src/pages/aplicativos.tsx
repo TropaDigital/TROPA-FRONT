@@ -7,45 +7,50 @@ import Header from '../components/Layout/Header';
 import { ButtonDefault } from '../components/Form/styles';
 import Animate from '../components/Animation/Animate';
 import AcordionItems from '../components/AccordionItems';
-import { IconArrowLeft, IconArrowRight, IconCube, IconGlobal } from '../components/Svg';
+import {
+    IconArrowLeft,
+    IconArrowRight,
+    IconCube,
+    IconGlobal,
+} from '../components/Svg';
 import WhyTropa from '../components/WhyTropa/WhyTropa';
 import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
-import { LanguagesContainer, PortfolioContainer } from '../assets/styles/HomeStyles';
+import {
+    LanguagesContainer,
+    PortfolioContainer,
+} from '../assets/styles/HomeStyles';
 import { ContainerCenter } from '../components/Layout/styles';
 import MobileSection from '../components/MobileSection';
 import Carousel from 'react-elastic-carousel';
 import { useEffect, useRef, useState } from 'react';
 import apiTropa from './api/api';
-import PulseLoader from "react-spinners/PulseLoader";
+import PulseLoader from 'react-spinners/PulseLoader';
 import Link from 'next/link';
 
 const Aplicativos: NextPage = () => {
-    
     const router = useRouter();
     const [itemsToShowPortfolio, setItemsToShowPortfolio] = useState(3);
-    
-    const slider: any = useRef(null)
 
-    const breakpoints = ([
+    const slider: any = useRef(null);
+
+    const breakpoints = [
         { width: 1, itemsToShow: 1, itemsToScroll: 1 },
         { width: 450, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-        { width: 850, itemsToShow: 3 },        
-    ])
+        { width: 850, itemsToShow: 3 },
+    ];
 
-    const [portfoliosList, setPortfoliosList] = useState([])
+    const [portfoliosList, setPortfoliosList] = useState([]);
 
     useEffect(() => {
         getPortfolios();
     }, []);
 
     async function getPortfolios() {
-        try{
+        try {
             let portfolios = await apiTropa.get('/portifolio/?status=ativo');
             setPortfoliosList(portfolios.data.result);
-        }catch(e:any){
-            
-        }
+        } catch (e: any) {}
     }
 
     return (
@@ -94,7 +99,9 @@ const Aplicativos: NextPage = () => {
                             </Animate>
                             <Animate effect="fadeInLeft" delayAnimation={0.5}>
                                 <ButtonDefault
-                                    onClick={() => router.push('#mobile-section')}
+                                    onClick={() =>
+                                        router.push('#mobile-section')
+                                    }
                                 >
                                     Conheça
                                 </ButtonDefault>
@@ -111,7 +118,7 @@ const Aplicativos: NextPage = () => {
                     title="Como fun-ciona?"
                     description="Ajudamos você a tirar sua ideia do papel, desenvolvemos soluções de
                     aplicativos para potencializar os negócios da sua empresa."
-                    icon={<IconCube  className="effect-stroke light"/>}
+                    icon={<IconCube className="effect-stroke light" />}
                     items={[
                         {
                             title: 'Análise',
@@ -169,59 +176,60 @@ const Aplicativos: NextPage = () => {
                             </div>
                         </Animate>
                         <div className="buttons">
-                            <button onClick={() => slider.current.slidePrev()}><IconArrowLeft /></button>
-                            <button onClick={() => slider.current.slideNext()}><IconArrowRight /></button>
-                        </div>  
+                            <button onClick={() => slider.current.slidePrev()}>
+                                <IconArrowLeft />
+                            </button>
+                            <button onClick={() => slider.current.slideNext()}>
+                                <IconArrowRight />
+                            </button>
+                        </div>
                     </ContainerCenter>
 
-                    <Animate effect="fadeInUp" startAnimation={200}>
-                        <Carousel
-                            itemsToShow={itemsToShowPortfolio}
-                            isRTL={false}
-                            className="cards"
-                            itemPadding={[0]}
-                            outerSpacing={0}
-                            pagination={false}
-                            showArrows={false}
-                            showEmptySlots={false}
-                            ref={slider}
-                            breakPoints={breakpoints}
-                        >
-                            {
-                                portfoliosList.length > 0 
-                                ?
-                                portfoliosList.map((row: any, key) => ( 
-                                    <Link href={`/portfolio/${row.slug}`}>
-                                        <div
-                                            className="card"
-                                            key={key}
-                                            style={{
-                                                backgroundImage: 'url('+row.imagem_principal+')',
-                                            }}
-                                        >
-                                            <h4>{row.titulo}</h4>
-                                            <i>{row.descricao}</i>
-                                        </div>
-                                    </Link>
-                                ))
-                                :
-                                [1,2,3].map((row: any, key) => ( 
-                                    <div
-                                        className="loader"
-                                        key={key}
-                                        style={{
-                                            backgroundImage: 'url('+row.imagem_principal+')',
-                                        }}
-                                    >
-                                        <PulseLoader 
-                                            color="#fff"
-                                            size={30} 
-                                        />
-                                    </div>
-                                ))  
-                            }
-                        </Carousel>
-                    </Animate>
+                    <Carousel
+                        itemsToShow={itemsToShowPortfolio}
+                        isRTL={false}
+                        className="cards"
+                        itemPadding={[0]}
+                        outerSpacing={0}
+                        pagination={false}
+                        showArrows={false}
+                        showEmptySlots={false}
+                        ref={slider}
+                        breakPoints={breakpoints}
+                    >
+                        {portfoliosList.length > 0
+                            ? portfoliosList.map((row: any, key) => (
+                                  <Link href={`/portfolio/${row.slug}`}>
+                                      <div
+                                          className="card"
+                                          key={key}
+                                          style={{
+                                              backgroundImage:
+                                                  'url(' +
+                                                  row.imagem_principal +
+                                                  ')',
+                                          }}
+                                      >
+                                          <h4>{row.titulo}</h4>
+                                          <i>{row.descricao}</i>
+                                      </div>
+                                  </Link>
+                              ))
+                            : [1, 2, 3].map((row: any, key) => (
+                                  <div
+                                      className="loader"
+                                      key={key}
+                                      style={{
+                                          backgroundImage:
+                                              'url(' +
+                                              row.imagem_principal +
+                                              ')',
+                                      }}
+                                  >
+                                      <PulseLoader color="#fff" size={30} />
+                                  </div>
+                              ))}
+                    </Carousel>
                 </PortfolioContainer>
 
                 <Contact />

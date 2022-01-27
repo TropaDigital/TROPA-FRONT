@@ -96,7 +96,7 @@ export const SocialContainerCarousel = styled.div`
         position: relative;
         z-index: 1;
     }
-    .image {
+    .image, .video {
         width: 100%;
         height: 500px;
         background-size: cover;
@@ -105,10 +105,11 @@ export const SocialContainerCarousel = styled.div`
     .video {
       video {
         width: -webkit-fill-available;
+        height: 100%;
       }
     }
     .text {
-      height: 120px;
+      height: 130px;
       padding: 20px 30px;
       box-sizing: border-box;
       width: 100%;
@@ -117,6 +118,7 @@ export const SocialContainerCarousel = styled.div`
       align-items: flex-start;
       background-color: ${colors.primaryDark};
       transition: all .2s;
+      margin-top: -10px;
       > a {
           border-radius: 100px;
           border: 2px solid ${colors.primary};
@@ -146,6 +148,7 @@ export const SocialContainerCarousel = styled.div`
         height: 518px;
         opacity: .8;
         p {
+          overflow: auto;
             white-space: unset;
         }
       }

@@ -164,45 +164,30 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                         </Animate>
 
                         <div className="products">
-                            <Animate
-                                startAnimation={50}
-                                delayAnimation={1.5}
-                                effect="fadeInRight"
-                                className="product app"
-                            >
+                            <div className="product app">
                                 <Link href="/aplicativos">
                                     <a>
                                         <IconPhone />
                                         <p>aplicativos</p>
                                     </a>
                                 </Link>
-                            </Animate>
-                            <Animate
-                                startAnimation={50}
-                                delayAnimation={1}
-                                effect="fadeInUp"
-                                className="product sys"
-                            >
+                            </div>
+                            <div className="product sys">
                                 <Link href="/sistemas">
                                     <a>
                                         <IconCode />
                                         <p className="title">Sistemas</p>
                                     </a>
                                 </Link>
-                            </Animate>
-                            <Animate
-                                startAnimation={50}
-                                delayAnimation={1.5}
-                                effect="fadeInLeft"
-                                className="product web"
-                            >
+                            </div>
+                            <div className="product web">
                                 <Link href="/sites">
                                     <a>
                                         <IconDesktop />
                                         <p>sites</p>
                                     </a>
                                 </Link>
-                            </Animate>
+                            </div>
                         </div>
                     </ContainerCenter>
                 </AboutContainer>
@@ -251,39 +236,22 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                         </div>
                     </ContainerCenter>
 
-                    <Animate effect="fadeInUp" startAnimation={0}>
-                        <Carousel
-                            itemsToShow={itemsToShowPortfolio}
-                            isRTL={false}
-                            className="cards"
-                            itemPadding={[0]}
-                            outerSpacing={0}
-                            pagination={false}
-                            showArrows={false}
-                            showEmptySlots={false}
-                            ref={slider}
-                        >
-                            {portfoliosList.length > 0
-                                ? portfoliosList.map((row: any, key: any) => (
-                                      <Link href={`/portfolio/${row.slug}`}>
-                                          <div
-                                              className="card"
-                                              key={key}
-                                              style={{
-                                                  backgroundImage:
-                                                      'url(' +
-                                                      row.imagem_principal +
-                                                      ')',
-                                              }}
-                                          >
-                                              <h4>{row.titulo}</h4>
-                                              <i>{row.descricao}</i>
-                                          </div>
-                                      </Link>
-                                  ))
-                                : [1, 2, 3].map((row: any, key) => (
+                    <Carousel
+                        itemsToShow={itemsToShowPortfolio}
+                        isRTL={false}
+                        className="cards"
+                        itemPadding={[0]}
+                        outerSpacing={0}
+                        pagination={false}
+                        showArrows={false}
+                        showEmptySlots={false}
+                        ref={slider}
+                    >
+                        {portfoliosList.length > 0
+                            ? portfoliosList.map((row: any, key: any) => (
+                                  <Link href={`/portfolio/${row.slug}`}>
                                       <div
-                                          className="loader"
+                                          className="card"
                                           key={key}
                                           style={{
                                               backgroundImage:
@@ -292,11 +260,26 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                                                   ')',
                                           }}
                                       >
-                                          <PulseLoader color="#fff" size={30} />
+                                          <h4>{row.titulo}</h4>
+                                          <i>{row.descricao}</i>
                                       </div>
-                                  ))}
-                        </Carousel>
-                    </Animate>
+                                  </Link>
+                              ))
+                            : [1, 2, 3].map((row: any, key) => (
+                                  <div
+                                      className="loader"
+                                      key={key}
+                                      style={{
+                                          backgroundImage:
+                                              'url(' +
+                                              row.imagem_principal +
+                                              ')',
+                                      }}
+                                  >
+                                      <PulseLoader color="#fff" size={30} />
+                                  </div>
+                              ))}
+                    </Carousel>
                 </PortfolioContainer>
                 <Contact />
                 <Footer />

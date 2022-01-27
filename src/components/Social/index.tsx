@@ -5,35 +5,33 @@ import Animate from '../Animation/Animate';
 import { ContainerCenter } from '../Layout/styles';
 import { IconArrowLeft, IconArrowRight, IconFlag } from '../Svg';
 import { SocialContainer, SocialContainerCarousel } from './styles';
-import PulseLoader from "react-spinners/PulseLoader";
+import PulseLoader from 'react-spinners/PulseLoader';
 
 interface IProps {
     itemsToShow?: number;
 }
 
 const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
-    const [socialMedia, setSocialMedia] = useState([])
-    
-    const breakpoints = ([
+    const [socialMedia, setSocialMedia] = useState([]);
+
+    const breakpoints = [
         { width: 1, itemsToShow: 1 },
         { width: 450, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-        { width: 850, itemsToShow: 3 },        
-    ])
+        { width: 850, itemsToShow: 3 },
+    ];
 
-    const slider: any = useRef(null)
+    const slider: any = useRef(null);
 
     useEffect(() => {
         getSocial();
     }, []);
 
     async function getSocial() {
-        try{
+        try {
             let socials = await apiTropa.get('/instagram');
             setSocialMedia(socials.data.result.data);
-        }catch(e){
-
-        }
-    }    
+        } catch (e) {}
+    }
 
     return (
         <SocialContainer id="social">
@@ -46,9 +44,13 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
                         </div>
                     </Animate>
                     <div className="buttons">
-                        <button onClick={() => slider.current.slidePrev()}><IconArrowLeft /></button>
-                        <button onClick={() => slider.current.slideNext()}><IconArrowRight /></button>
-                    </div>  
+                        <button onClick={() => slider.current.slidePrev()}>
+                            <IconArrowLeft />
+                        </button>
+                        <button onClick={() => slider.current.slideNext()}>
+                            <IconArrowRight />
+                        </button>
+                    </div>
                 </div>
                 <SocialContainerCarousel>
                     <Animate startAnimation={200} effect="bounceInUp">
@@ -62,51 +64,53 @@ const Social: React.FC<IProps> = ({ itemsToShow = 3 }) => {
                             ref={slider}
                             breakPoints={breakpoints}
                         >
-                            {   socialMedia.length > 0 
-                                ?
-                                socialMedia.map((row: any, key: any) => (
-                                    <div className="card" key={key}>
-                                        {   
-                                            row.media_type !== "VIDEO"
-                                            ?
-                                            <div
-                                                className="image"
-                                                style={{
-                                                    backgroundImage: 'url('+row.media_url+')',
-                                                }}
-                                            />
-                                            :
-                                            <div className="image video">
-                                                <video loop autoPlay>
-                                                    <source
-                                                    src={row.media_url}
-                                                    type="video/mp4"
-                                                    />
-                                                </video>
-                                            </div>
-                                        }
-                                        <div className="text">
-                                            <a
-                                                href={row.permalink}
-                                                target="_blank"
-                                                rel="noreferrer"
-                                            >
-                                                @tropadigitalagencia
-                                            </a>
-                                            <p>{row.caption}</p>
-                                        </div>
-                                    </div>
-                                ))
-                                :
-                                [1, 2, 3].map((key: any) => (
-                                    <div className='loader' key={key}>
-                                        <PulseLoader 
-                                            color="#cc6138"
-                                            size={30} 
-                                        />
-                                    </div>
-                                ))   
-                            }
+                            {socialMedia.length > 0
+                                ? socialMedia.map((row: any, key: any) => (
+                                      <div className="card" key={key}>
+                                          {row.media_type !== 'VIDEO' ? (
+                                              <div
+                                                  className="image"
+                                                  style={{
+                                                      backgroundImage:
+                                                          'url(' +
+                                                          row.media_url +
+                                                          ')',
+                                                  }}
+                                              />
+                                          ) : (
+                                              <div className="image video">
+                                                  <video
+                                                      loop
+                                                      autoPlay
+                                                      controls={false}
+                                                  >
+                                                      <source
+                                                          src={row.media_url}
+                                                          type="video/mp4"
+                                                      />
+                                                  </video>
+                                              </div>
+                                          )}
+                                          <div className="text">
+                                              <a
+                                                  href={row.permalink}
+                                                  target="_blank"
+                                                  rel="noreferrer"
+                                              >
+                                                  @tropadigitalagencia
+                                              </a>
+                                              <p>{row.caption}</p>
+                                          </div>
+                                      </div>
+                                  ))
+                                : [1, 2, 3].map((key: any) => (
+                                      <div className="loader" key={key}>
+                                          <PulseLoader
+                                              color="#cc6138"
+                                              size={30}
+                                          />
+                                      </div>
+                                  ))}
                         </Carousel>
                     </Animate>
                 </SocialContainerCarousel>

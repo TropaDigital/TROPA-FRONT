@@ -109,10 +109,15 @@ export const MobileDiv = styled.div`
     }
     .cards {
         width: 102%;
+        @media(max-width:475px) {
+            margin-left: -4%;
+            width: 110%;
+        }
     }
     .client {
         width: 356px;
         height: 698px;
+        max-width: 100%;
         box-sizing: border-box;
         padding: 45px 19px 20px 22px;
         position: relative;
@@ -296,7 +301,7 @@ export const MobileDiv = styled.div`
         }
     }
     @media (max-width: 1100px) {
-        width: 80%;        
+        width: 100%;        
         display: flex;
         justify-content: center;
         align-items: center;    

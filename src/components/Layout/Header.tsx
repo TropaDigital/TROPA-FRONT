@@ -63,10 +63,11 @@ const Header: React.FC<IProps> = ({
     );
 
     return (
-        <HeaderContainer
-            className={className}
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-        >
+        <HeaderContainer className={className}>
+            <div
+                className={`img-over`}
+                style={{ backgroundImage: `url(${backgroundImage})` }}
+            ></div>
             <nav>
                 <div
                     className={`nav-fixed ${menuFixed ? 'active' : 'inactive'}`}
@@ -78,7 +79,7 @@ const Header: React.FC<IProps> = ({
                             </a>
                         </Link>
 
-                        {openMenu ? closeIcon : hamburguerIcon}
+                        {hamburguerIcon}
 
                         <ul className={`menu-site`}>
                             {menus.map((row, key) => (
@@ -109,6 +110,7 @@ const Header: React.FC<IProps> = ({
 
                         {openMenu && (
                             <ul className="hidden">
+                                {closeIcon}
                                 {menus.map((row, key) => (
                                     <Link href={row.href}>
                                         <li key={key}>

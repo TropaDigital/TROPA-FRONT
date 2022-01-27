@@ -4,6 +4,7 @@ import { colors, fonts } from "../../assets/styles/mixin";
 export const LayoutContainer = styled.div`
     display: flex;
     flex-direction: column;
+    overflow-x:hidden;
 `
 
 export const ContainerCenter = styled.div`
@@ -56,7 +57,17 @@ export const HeaderContainer = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    overflow: hidden;
+    .img-over {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow:hidden;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0px;
+        left: 0px;
+    }
     @media (max-width: 425px) {
         background-position: 59%;
     }
@@ -66,6 +77,8 @@ export const HeaderContainer = styled.div`
         align-items: center;
         flex-direction: column;
         flex: 1;
+        overflow: hidden;
+        max-width: 100%;
     }
     nav {
         display: flex;
@@ -88,10 +101,11 @@ export const HeaderContainer = styled.div`
         }
         .center {
             display: flex;
-            justify-content: space-between;
-            @media (max-width: 425px) {
-                gap: 20px;
-            }  
+            justify-content: space-between !important;
+            align-items: center;
+            flex-direction: row;
+            height: 100%;
+            overflow: hidden;
         }
         .nav-fixed {
             position: fixed;
@@ -99,6 +113,7 @@ export const HeaderContainer = styled.div`
             padding: 70px 0px;
             top: 0px;
             transition: all .5s;
+            z-index: 99999;
             @media (max-width: 425px) {
                 width: 100vw;
             }  
@@ -176,29 +191,25 @@ export const HeaderContainer = styled.div`
         .hidden {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            list-style:none;
-            padding: 10px;
-            margin: 0px;
-            border-radius: 16px;
-            align-items: center;
-            background-color: ${colors.primaryDark};
-            border: 2px solid ${colors.primary};
+            align-items: flex-end;
             width: 100%;
-            height: 275px;
-            position: relative;
-            top: -65px;
-            text-align: center;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: rgba(0,0,0,.9);
+            box-sizing:border-box;
+            padding: 9px 10px;
+            animation: fadeInRight .2s;
+            list-style: none;
+            svg {
+                margin-bottom: 15px;
+                color: ${colors.primaryLight} !important;
+            }
             li {
-                width: 98%;
-                margin-left: 35px;
-                @media (max-width: 425px) {
-                    margin-left: 0;
-                    padding: 5px;
-                    border-radius: 8px;
-                    border: 2px solid #cc6138;
-                    margin: 5px 0;
-                }  
+                width: 100%;
+                text-align: right;
+                padding: 15px 15px 0px 0px;
                 a {
                     text-decoration:none;
                     text-transform: uppercase;
@@ -208,6 +219,7 @@ export const HeaderContainer = styled.div`
                     font-weight: 400;
                     color: ${colors.primaryLight} !important;
                     cursor: pointer;
+                    
                     &:hover {
                         color: #FFF;
                     }
@@ -220,8 +232,6 @@ export const HeaderContainer = styled.div`
             @media (max-width: 425px) {
                 display: flex;
                 position: relative;
-                left: 90%;
-                top: -53px;
             }  
         }
     }

@@ -15,7 +15,7 @@ export const HomeContainer = styled.div`
         }
       }
   }
-  .bannerHomeAnimation {
+  .img-over {
     @keyframes animationBanner {
       0% {
         filter:blur(0px);
@@ -45,11 +45,6 @@ export const HomeContainer = styled.div`
       animation: animationBanner linear 5s infinite;
       animation-delay: 1.3s;
     }
-    @media (max-width: 425px) {
-      &:after {
-        background-position: 59%;
-      }
-    }
   }
 `
 
@@ -76,8 +71,9 @@ export const BannerHome = styled.div`
     font-weight: 400;
     letter-spacing: 20px;
     @media (max-width: 425px) {
-      font-size: 22px;
+      font-size: 20px;
       padding-left: 15px;
+      letter-spacing: 10px;
     }
   }
   button {
@@ -109,6 +105,9 @@ export const AboutContainer = styled.div`
   justify-content: center;
   padding: 70px 0px;
   overflow: hidden;
+  @media(max-width: 440px) {
+    padding: 70px 0 0 0;
+  }
   div.title {
     position: relative;
     display: flex;
@@ -128,6 +127,15 @@ export const AboutContainer = styled.div`
       right: 0px;
       top: 0px;
     }
+    @media(max-width: 425px) {
+      h2 {
+        font-size: 50px;
+        padding-left: 20px;
+      }
+        svg {
+          right: 30px
+        }
+      }
   }
   .products {
     display: flex;
@@ -135,7 +143,7 @@ export const AboutContainer = styled.div`
     justify-content: center;
     gap: 0px;
     margin-top: 20px;
-    height: 585px;
+    min-height: 585px;
     .product {
       border: 3px solid ${colors.primary};
       height: 450px;
@@ -195,7 +203,7 @@ export const AboutContainer = styled.div`
           }
         }
         p {
-          font-size: 40px;
+          color: ${colors.primaryDark};
         }
       }
     }
@@ -205,8 +213,12 @@ export const AboutContainer = styled.div`
       width: 100%;
       border-radius:20px !important;
       border-width: 0px;
-      height: 300px !important;
-      margin: 40px 0px;
+      height: 230px !important;
+      margin: 0px 0px;
+      &:hover {
+        transform: none;
+        border-radius: 0px !important;
+      } 
       a {
         height: auto !important;
         p {
@@ -245,8 +257,8 @@ export const PortfolioContainer = styled.div`
   overflow: hidden;
   max-height: 100vh;
   @media (max-width: 425px) {
-    height: 250px;
-    min-height: 65vh;
+    min-height:unset;
+    padding-bottom: 30px;
   }
   .head-portfolio {
     flex: 1;
@@ -323,6 +335,9 @@ export const PortfolioContainer = styled.div`
     .card {
       width: 100%;
       height: 670px;
+      @media(max-width: 475px) {
+        border-radius: 20px;
+      }
       background-size: cover;
       background-position: center;
       padding: 10%;
@@ -350,6 +365,7 @@ export const PortfolioContainer = styled.div`
         width: 100%;
         height: 100%;
         background: rgba(0,0,0,.8);
+        border-radius: 20px;
         content: '';
         position: absolute;
         top: 0;
