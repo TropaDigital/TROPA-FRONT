@@ -77,7 +77,6 @@ export const HeaderContainer = styled.div`
         align-items: center;
         flex-direction: column;
         flex: 1;
-        overflow: hidden;
         max-width: 100%;
     }
     nav {
@@ -164,7 +163,7 @@ export const HeaderContainer = styled.div`
                     }
                 }         
                 > ul {
-                    position: absolute;
+                    position: fixed;
                     list-style: none;
                     background: ${colors.primary};
                     opacity: 0;
