@@ -365,7 +365,9 @@ export const PortfolioContainer = styled.div`
         width: 100%;
         height: 100%;
         background: rgba(0,0,0,.8);
-        border-radius: 20px;
+        @media(max-width: 475px) {
+          border-radius: 20px;
+        }
         content: '';
         position: absolute;
         top: 0;
