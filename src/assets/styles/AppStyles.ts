@@ -89,7 +89,6 @@ export const BannerApp = styled.div`
   display: flex;
   flex: 1;
   max-height: 100%;
-  overflow: hidden;
   .site-variant {
     width: 100vw;
     background: ${colors.primary};

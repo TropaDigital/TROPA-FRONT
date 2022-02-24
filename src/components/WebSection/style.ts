@@ -56,31 +56,40 @@ export const WebDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;    
-    padding-bottom: 30px;            
+    padding-bottom: 30px;       
+    position: relative;
+    .center {
+        .cards {
+            width: 120% !important;
+            margin-left: -10% !important;
+        }
+    }
     .web {
-        height: 100%;
-        width: 95%;
+        width: 400px;
+        min-width: 400px;
+        height: 233px;
+        background: url('/images/Notebook.png');
+        background-size: cover;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         cursor: pointer;
+        box-sizing: border-box;
+        padding: 15px 50px 25px 53px;
+        position: relative;
+        .card {
+            width: 100%;
+            height: 100%;
+        }
         &:hover {
             .overlay  {
                 opacity: 1;                
             }
         }                  
-        img {
-            width: 580px;
-            height: 100%;        
-            z-index: 20;
-        }
         .back-image { 
-            height: 80%;
-            width: 422px;
-            position: absolute; 
-            left: 70px;
-            top: 25px;
+            height: 100%;
+            width: 100%;
             z-index: 0;                        
             background-size: cover;
             background-position: center; 
@@ -98,10 +107,10 @@ export const WebDiv = styled.div`
         }   
         .overlay {            
             position: absolute; 
-            top: 25px;
-            left: 70px;
-            width: 422px;
-            height: 81%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border-radius: 8px;
             background: ${colors.primary};                        
             transition: .5s ease;
@@ -132,133 +141,5 @@ export const WebDiv = styled.div`
             }     
         }
     }
-    @media (max-width: 1400px) {
-        .web {    
-            height: 100%;
-            width: 100%;          
-            img {
-                width: 400px;
-            }
-            .back-image { 
-                height: 81%;
-                width: 290px;
-                left: 70px;
-                right: 0;
-                top: 17px;
-                z-index: 0;                        
-                background-size: cover;
-                background-position: center;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 8px;                
-                }                          
-            }        
-            .overlay {            
-                position: absolute; 
-                top: 17px;
-                left: 70px;
-                width: 290px;
-                height: 81%;                                              
-            }
-        }
-    }
-    @media (max-width: 1100px) {
-        .web {    
-            height: 100%;
-            width: 100%;          
-            img {
-                width: 340px;
-            }
-            .back-image { 
-                height: 81%;
-                width: 75%;
-                left: 42px;
-                right: 0;
-                top: 15px;
-                z-index: 0;                        
-                background-size: cover;
-                background-position: center;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 8px;                
-                }                          
-            }        
-            .overlay {            
-                top: 15px;
-                left: 42px;
-                width: 75%;
-                height: 81%;
-                p {
-                    top: 60px;
-                    left: 20%;                    
-                }
-                .bottom {
-                    top: 90px;
-                }                                   
-                svg {
-                    width: 85px;
-                    top: -10px;
-                    left: 40%;
-                }                                                   
-            }
-        }
-    }          
-    @media (max-width: 425px) {
-        .web {    
-            align-items: center;
-            justify-content: center;
-            img {
-                width: 315px;
-            }
-            .back-image { 
-                height: 145px;
-                width: 225px;
-                left: 68px;
-                top: 15px;
-            }        
-            .overlay {            
-                left: 40px;
-                width: 72%;
-                height: 79%;
-                top: 13px;
-                svg {
-                    width: 65px;
-                    top: -30px;
-                }
-                p {
-                    top: 45px;
-                }
-                .bottom {
-                    top: 70px;
-                }
-            }
-        }
-    }    
-    @media (max-width: 400px) {
-        .web {    
-            align-items: center;
-            justify-content: center;
-            .back-image { 
-                left: 40px;
-            }        
-            .overlay {            
-                left: 40px;
-                width: 75%;
-                height: 80%;
-                top: 15px;
-                svg {
-                    width: 65px;
-                    top: -30px;
-                }
-                p {
-                    top: 45px;
-                }
-                .bottom {
-                    top: 70px;
-                }
-            }
-        }
-    }    
+   
 `

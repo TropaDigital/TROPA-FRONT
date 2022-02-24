@@ -63,45 +63,53 @@ const WebSection: NextPage<IProps> = ({ itemsToShow = 3 }) => {
             </ContainerCenter>
 
             <WebDiv>
-                <Carousel
-                    itemsToShow={itemsToShow}
-                    isRTL={false}
-                    className="cards"
-                    pagination={false}
-                    itemPadding={[0, 5]}
-                    showArrows={false}
-                    ref={slider}
-                    breakPoints={breakpoints}
-                >
-                    {image.length > 0
-                        ? image.map((data: any, key) => (
-                              <Link href={`/portfolio/${data.slug}`}>
-                                  <div className="web">
-                                      <img src="/images/Notebook.png" />
-                                      <div className="card" key={key}>
-                                          <div className="back-image">
-                                              <img
-                                                  src={data.imagem_principal}
-                                              />
-                                          </div>
-                                          <div className="overlay">
-                                              <p>Ver este</p> <br />
-                                              <p className="bottom"> projeto</p>
-                                              <IconArrow />
+                <ContainerCenter className="center">
+                    <Carousel
+                        itemsToShow={itemsToShow}
+                        isRTL={false}
+                        className="cards"
+                        pagination={false}
+                        itemPadding={[0, 5]}
+                        showArrows={false}
+                        ref={slider}
+                        breakPoints={breakpoints}
+                    >
+                        {image.length > 0
+                            ? image.map((data: any, key) => (
+                                  <Link href={`/portfolio/${data.slug}`}>
+                                      <div className="web">
+                                          <div className="card" key={key}>
+                                              <div className="back-image">
+                                                  <img
+                                                      src={
+                                                          data.imagem_principal
+                                                      }
+                                                  />
+                                              </div>
+                                              <div className="overlay">
+                                                  <p>Ver este</p> <br />
+                                                  <p className="bottom">
+                                                      {' '}
+                                                      projeto
+                                                  </p>
+                                                  <IconArrow />
+                                              </div>
                                           </div>
                                       </div>
+                                  </Link>
+                              ))
+                            : [1, 2, 3].map((key: any) => (
+                                  <div className="web" key={key}>
+                                      <div className="loader">
+                                          <PulseLoader
+                                              color="#cc6138"
+                                              size={30}
+                                          />
+                                      </div>
                                   </div>
-                              </Link>
-                          ))
-                        : [1, 2, 3].map((key: any) => (
-                              <div className="web" key={key}>
-                                  <img src="/images/Notebook.png" />
-                                  <div className="loader">
-                                      <PulseLoader color="#cc6138" size={30} />
-                                  </div>
-                              </div>
-                          ))}
-                </Carousel>
+                              ))}
+                    </Carousel>
+                </ContainerCenter>
             </WebDiv>
         </WebContainer>
     );
