@@ -695,7 +695,7 @@ export const Mobile = styled.div`
   }
   .mobile-astro {
     position: absolute;
-    top: 2900px;
+    top: 3130px;
     left: 1530px;
     z-index: 0;
     @media (max-width: 1800px) {
