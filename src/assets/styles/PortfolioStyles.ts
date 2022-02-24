@@ -698,6 +698,10 @@ export const Mobile = styled.div`
     top: 2900px;
     left: 1530px;
     z-index: 0;
+    @media (max-width: 1800px) {
+      left: 1295px;
+      top: 3100px;
+    }
     @media (max-width: 1400px) {
       left: 1045px;
       top: 2950px;
