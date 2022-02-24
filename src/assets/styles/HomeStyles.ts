@@ -132,10 +132,10 @@ export const AboutContainer = styled.div`
         font-size: 50px;
         padding-left: 20px;
       }
-        svg {
-          right: 30px
-        }
+      svg {
+        right: 30px
       }
+    }
   }
   .products {
     display: flex;
@@ -207,6 +207,7 @@ export const AboutContainer = styled.div`
         }
       }
     }
+  }
   @media (max-width: 425px) {
     flex-direction: column;
     .product {
@@ -365,7 +366,6 @@ export const PortfolioContainer = styled.div`
         width: 100%;
         height: 100%;
         background: rgba(0,0,0,.8);
-        border-radius: 20px;
         content: '';
         position: absolute;
         top: 0;
