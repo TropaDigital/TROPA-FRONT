@@ -79,7 +79,6 @@ export const SliderDiv = styled.div`
         }
     }
     @media (max-width: 425px) {
-        width: 70%;
         flex-direction: column;
     }        
 `
