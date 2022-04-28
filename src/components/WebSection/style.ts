@@ -66,7 +66,6 @@ export const WebDiv = styled.div`
     }
     .web {
         width: 400px;
-        min-width: 400px;
         height: 233px;
         background: url('/images/Notebook.png');
         background-size: cover;
@@ -139,6 +138,14 @@ export const WebDiv = styled.div`
                     fill: ${colors.primaryLight};
                 }
             }     
+        }
+    }
+
+    @media (max-width: 425px) {
+        .web {
+            width: 350px;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
     }
    
