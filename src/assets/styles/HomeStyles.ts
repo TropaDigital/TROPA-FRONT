@@ -105,9 +105,6 @@ export const AboutContainer = styled.div`
   justify-content: center;
   padding: 70px 0px;
   overflow: hidden;
-  @media(max-width: 440px) {
-    padding: 70px 0 0 0;
-  }
   div.title {
     position: relative;
     display: flex;
@@ -126,16 +123,7 @@ export const AboutContainer = styled.div`
       position: absolute;
       right: 0px;
       top: 0px;
-    }
-    @media(max-width: 425px) {
-      h2 {
-        font-size: 50px;
-        padding-left: 20px;
-      }
-      svg {
-        right: 30px
-      }
-    }
+    }    
   }
   .products {
     display: flex;
@@ -210,22 +198,48 @@ export const AboutContainer = styled.div`
   }
   @media (max-width: 425px) {
     flex-direction: column;
-    .product {
-      width: 100%;
-      border-radius:20px !important;
-      border-width: 0px;
-      height: 230px !important;
-      margin: 0px 0px;
-      &:hover {
-        transform: none;
-        border-radius: 0px !important;
-      } 
-      a {
-        height: auto !important;
-        p {
-          margin-top: 20px;
-        }
+    padding: 40px 0;  
+    div.title {
+      h2 {
+        font-size: 50px;
+        padding-left: 20px;
       }
+      svg {
+        right: 10%;
+      }
+    }  
+    .products {
+      flex-direction: column;
+      .product {
+        width: 80%;
+        border-radius: 20px;
+        height: 230px !important;
+        margin: 0px 0px;
+        &:nth-child(1) {
+          border-radius: 20px 20px 0px 0px ;
+        }
+        &:nth-child(2) {
+          border-radius:0px;
+          margin-bottom: -3px;
+          margin-top: -3px;
+          svg {
+            stroke-width: 3px;
+            stroke: ${colors.primaryGrey}            
+          }
+        }
+        &:nth-child(3) {
+          border-radius: 0px 0 20px 20px;
+        }
+        &:hover {
+          transform: none;
+        } 
+        a {
+          height: auto !important;
+          p {
+            margin-top: 20px;
+          }
+        }
+      }      
     }
   }
 `
@@ -242,9 +256,20 @@ export const LanguagesContainer = styled.div`
     img {
       margin: 0px 20px;
     }
+    .flutter {
+      width: 150px;
+    }
+    .angular {
+      width: 50px;
+    }
   }
   @media (max-width: 425px) {
-    height: 370px;
+    height: 550px;
+    .center {
+      img {
+        margin: 10px 0;
+      }
+    }
   }
 `
 

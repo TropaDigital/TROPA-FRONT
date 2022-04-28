@@ -203,8 +203,14 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                             <img src="/images/languages/reactnative.png" />
                         </Animate>
                         <Animate effect="zoomIn">
-                            <img src="/images/languages/scss.png" />
+                            <img src="/images/languages/angularjs.png" className='angular' />
                         </Animate>
+                        <Animate effect="zoomIn">
+                            <img src="/images/languages/flutter.png" className='flutter'/>
+                        </Animate>
+                        {/* <Animate effect="zoomIn">
+                            <img src="/images/languages/scss.png" />
+                        </Animate> */}
                         <Animate effect="zoomIn">
                             <img src="/images/languages/mysql.png" />
                         </Animate>
