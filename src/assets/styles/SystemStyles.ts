@@ -206,9 +206,20 @@ export const LanguagesContainer = styled.div`
     img {
       margin: 0px 20px;
     }
+    .flutter {
+      width: 150px;
+    }
+    .angular {
+      width: 50px;
+    }
   }
   @media (max-width: 425px) {
-    height: 350px;
+    height: 550px;
+    .center {
+      img {
+        margin: 10px 0;
+      }
+    }
   }
 `
 
