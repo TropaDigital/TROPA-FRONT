@@ -4,9 +4,9 @@ import axios from 'axios'
 var baseUrl
 
 if(process.env.NODE_ENV === 'development') {
-    baseUrl =  'https://backzinho.tropa.digital/'
+    baseUrl =  'https://tropa.backendtropa.com.br/'
 } else {
-    baseUrl =  'https://backzinho.tropa.digital/'
+    baseUrl =  'https://tropa.backendtropa.com.br/'
 }
 
 const apiTropa = axios.create({
