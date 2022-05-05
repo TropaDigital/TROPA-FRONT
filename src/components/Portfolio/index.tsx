@@ -162,7 +162,7 @@ const Portfolio: NextPage<IPort> = ({
                                         <img src="/images/MobileBlack.png" alt="Celular com imagem do site" />
                                     </div>
                                     {
-                                        portfolioSelected.mobile
+                                        portfolioSelected.mobile?.imagens?.length > 2
                                         ?
                                         <div 
                                             className='back3'     
