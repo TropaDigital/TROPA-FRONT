@@ -117,7 +117,7 @@ export const SocialContainerCarousel = styled.div`
       flex-direction: column;
       align-items: flex-start;
       background-color: ${colors.primaryDark};
-      transition: all .2s;
+      transition: all .5s;
       margin-top: -10px;
       > a {
           border-radius: 100px;
@@ -146,10 +146,16 @@ export const SocialContainerCarousel = styled.div`
       .text {
         margin-top: -518px;
         height: 518px;
-        opacity: .8;
+        background: #FFF;
+        a {
+          color: ${colors.primary};
+        }
         p {
           overflow: auto;
-            white-space: unset;
+          overflow-x: hidden;
+          white-space: unset;
+          white-space: pre-line;
+          cursor: text;
         }
       }
     }
