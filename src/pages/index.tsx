@@ -110,7 +110,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
                         name="description"
                         content="Desenvolvimento de aplicativos, sistemas e sites."
                     />
-                    <meta property="og:image" content="https://tropa.digital/images/instagram.jpg"></meta>
+                    <meta property="og:image" content="https://tropa.digital/images/bannerHome.jpg"></meta>
                     <link rel="icon" href="/favicon1.ico" />
                 </Head>
                 <Header

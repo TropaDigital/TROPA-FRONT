@@ -121,7 +121,7 @@ const Sistemas: NextPage = () => {
                             name="description"
                             content="Desenvolvimento de sistemas."
                         />
-                        <meta property="og:image" content="https://tropa.digital/images/instagram.jpg"></meta>
+                        <meta property="og:image" content="https://tropa.digital/images/Notebook1.png"></meta>
                         <link rel="icon" href="/favicon1.ico" />
                     </Head>
                     <Header

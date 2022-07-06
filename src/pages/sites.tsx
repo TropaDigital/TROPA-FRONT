@@ -26,7 +26,7 @@ const Sites: NextPage = () => {
                         name="description"
                         content="Desenvolvimento de sites."
                     />
-                    <meta property="og:image" content="https://tropa.digital/images/instagram.jpg"></meta>
+                    <meta property="og:image" content="https://tropa.digital/images/Mac.png"></meta>
                     <link rel="icon" href="/favicon1.ico" />
                 </Head>
                 <Header
