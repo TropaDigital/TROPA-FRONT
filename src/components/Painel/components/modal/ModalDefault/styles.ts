@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../../assets/styles/mixin';
 
 export const Container = styled.div`
   position: fixed;
@@ -45,7 +46,7 @@ export const Container = styled.div`
       width: 10px;
     }
     &::-webkit-scrollbar-track {
-      background: var(--white);
+      background: ${colors.primaryWhite};
       border-radius: 12px;
     }
 

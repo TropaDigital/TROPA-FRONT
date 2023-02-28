@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../assets/styles/mixin';
 
 export const Container = styled.div`
   border-radius: 8px;
@@ -7,7 +8,7 @@ export const Container = styled.div`
     width: 100%;
 
     span {
-      color: var(--alert);
+      color: ${colors.alert};
       font-weight: 500;
       font-size: 14px;
     }
@@ -56,7 +57,7 @@ export const Container = styled.div`
       }
     }
     .removeImage:hover {
-      background-color: var(--alert);
+      background-color: ${colors.alert};
       cursor: pointer;
       opacity: 0.65;
       .removeIcon {

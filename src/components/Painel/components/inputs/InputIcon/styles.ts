@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { colors } from "../../../../../assets/styles/mixin";
 
 export const Container = styled.div`
   max-width: 100%;
@@ -15,8 +16,8 @@ export const Container = styled.div`
     width: 100%;
     height: 48px;
     border-radius: 8px;
-    border: 1px solid var(--base2);
-    background-color: var(--white);
+    border: 1px solid ${colors.primaryGrey};
+    background-color: ${colors.primary};
     padding: 0 50px;
 
     font-size: 16px;

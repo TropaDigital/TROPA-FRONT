@@ -53,6 +53,6 @@ export const Container = styled.div<Props>`
 
     font-size: 16px;
     font-weight: 400;
-    color: var(--text1);
+    color: ${colors.primaryWhite};
   }
 `;

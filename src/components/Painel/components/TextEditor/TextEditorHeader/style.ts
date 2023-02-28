@@ -1,16 +1,17 @@
 import styled from 'styled-components';
+import { colors } from '../../../../../assets/styles/mixin';
 
 type Props = {
   isOpen: boolean;
 };
 
 export const EditorHeader = styled.div`
-  background-color: var(--white);
+  background-color: ${colors.primaryWhite};
   min-height: 47px;
   width: 100%;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  border: 1px solid var(--text3);
+  border: 1px solid ${colors.primaryDark};
   border-bottom: none;
   display: flex;
   align-items: center;
@@ -71,8 +72,8 @@ export const DropDownMenuFontSize = styled.div<Props>`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   position: absolute;
   top: 110%;
-  background-color: var(--white);
-  border: 1px solid var(--text3);
+  background-color: ${colors.primaryWhite};
+  border: 1px solid ${colors.primaryDark};
   padding: 8px;
   border-radius: 8px;
   min-width: 100px;

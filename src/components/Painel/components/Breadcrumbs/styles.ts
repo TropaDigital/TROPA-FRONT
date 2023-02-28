@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../assets/styles/mixin';
 
 export const Container = styled.nav`
   display: flex;
@@ -8,12 +9,12 @@ export const Container = styled.nav`
   p {
     font-size: 12px;
     line-height: 16px;
-    color: var(--text3);
+    color: ${colors.primaryDark};
     font-weight: 500;
   }
 
   .darkLetter {
-    color: var(--text2);
+    color: ${colors.primaryDark};
   }
 
   span {

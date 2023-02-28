@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { colors } from '../../../../assets/styles/mixin';
 
 export const TextEditorContainer = styled.div`
   margin: 32px 0;
 
   .ProseMirror {
-    border: 1px solid var(--text3);
+    border: 1px solid ${colors.primaryDark};
     min-height: 405px;
     max-height: 550px;
     overflow-y: scroll;

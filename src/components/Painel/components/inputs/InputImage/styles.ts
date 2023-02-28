@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../../assets/styles/mixin';
 
 export const Container = styled.div`
   .inputWrapper {
@@ -9,12 +10,12 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--base3);
+    background-color: ${colors.primaryGrey};
     border-radius: 8px;
 
     .inputImage {
       position: absolute;
-      border: 1px dashed var(--text3);
+      border: 1px dashed ${colors.primaryDark};
       background-color: transparent;
       border-radius: 8px;
       width: 100%;

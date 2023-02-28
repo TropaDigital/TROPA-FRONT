@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../assets/styles/mixin';
 
 export const Container = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ export const Container = styled.div`
       font-size: 32px;
       line-height: 40px;
       font-weight: 600;
-      color: var(--color1A);
+      color: ${colors.primaryDark};
     }
     .pathComponent {
     }
@@ -39,7 +40,7 @@ export const Container = styled.div`
         font-size: 16px;
         line-height: 24px;
         font-weight: 500;
-        color: var(--color1A);
+        color: ${colors.primaryDark};
       }
     }
   }

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { colors } from '../../../../assets/styles/mixin';
 
 interface propsModal {
   isOpen: boolean;
@@ -38,7 +39,7 @@ export const ModalLogOut = styled.div<propsModal>`
   position: absolute;
   width: 150px;
   height: 48px;
-  background-color: var(--white);
+  background-color: ${colors.primaryWhite};
   top: 0;
   right: 0;
   margin-top: 34px;
@@ -62,7 +63,7 @@ export const ModalLogOut = styled.div<propsModal>`
     font-size: 14px;
     line-height: 16px;
     font-weight: 400;
-    color: var(--alert);
+    color: ${colors.alert};
   }
   ${({ isOpen }) =>
     isOpen &&

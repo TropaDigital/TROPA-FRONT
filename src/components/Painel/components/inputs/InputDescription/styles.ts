@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../../assets/styles/mixin';
 
 type Props = {
   minHeight?: number;
@@ -18,8 +19,8 @@ export const Container = styled.div<Props>`
   .inputField {
     min-height: 48px;
     border-radius: 8px;
-    border: 1px solid var(--base2);
-    background-color: var(--white);
+    border: 1px solid ${colors.primaryGrey};
+    background-color: ${colors.primaryWhite};
     padding: 10px 14px;
     resize: none;
     min-height: ${({ minHeight }) => (minHeight ? `${minHeight}px` : '72px')};

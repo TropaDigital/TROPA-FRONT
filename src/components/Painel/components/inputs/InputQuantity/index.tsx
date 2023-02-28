@@ -26,7 +26,7 @@ const InputQuantity = ({
         <Tooltip title={tooltip}>
           <S.ToolTipContainer>
             <label className="inputLabel">{label}</label>
-            <InfoIcon size={16} color={'var(--base1)'} />
+            <InfoIcon size={16} color={colors.primaryGrey} />
           </S.ToolTipContainer>
         </Tooltip>
       )}

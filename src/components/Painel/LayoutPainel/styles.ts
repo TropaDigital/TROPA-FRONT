@@ -7,6 +7,7 @@ interface ISideBarProps {
 
 export const Container = styled.div<ISideBarProps>`
   height: 100vh;
+  /* font-family: ${fonts.manrope}; */
 
   .headerLayoutDashboard {
     transition: all 0.3s;
@@ -42,13 +43,16 @@ export const Container = styled.div<ISideBarProps>`
       align-items: center;
       padding: 24px 30px;
       background-color: ${colors.neutralGrey};
-      font-family: ${fonts.manrope};
       font-weight: 400;
 
       color: ${colors.primaryWhite};
       font-size: 16px;
       line-height: 16px;
       font-weight: 400;
+
+      .noticeUser {
+        font-family: ${fonts.manrope};
+      }
 
       .sideBarMenuWrapper {
         display: none;
@@ -119,6 +123,11 @@ export const Container = styled.div<ISideBarProps>`
         width: 100%;
         display: flex;
         gap: 12px;
+
+        .titleSelectPage {
+          font-family: ${fonts.manrope};
+          font-weight: 600;
+        }
       }
       .handleCloseSideBar {
         display: flex;
@@ -133,6 +142,7 @@ export const Container = styled.div<ISideBarProps>`
         padding: 7px 0;
         border-radius: 6px;
         cursor: pointer;
+        font-family: ${fonts.manrope} !important;
 
         .textHandleCloseSideBar {
           font-size: 16px;

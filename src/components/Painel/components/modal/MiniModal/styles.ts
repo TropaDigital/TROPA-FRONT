@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../../assets/styles/mixin';
 
 
 
@@ -25,6 +26,6 @@ export const Container = styled.div`
     color: var(--text1);
   }
   .redText {
-    color: var(--alert);
+    color: ${colors.alert};
   }
 `;

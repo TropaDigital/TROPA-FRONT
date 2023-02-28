@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronTopIcon, LogoutIcon, PersonIcon } from '@/src/assets/icons';
+import { ChevronTopIcon, LogoutIcon, PersonIcon } from "../../../Svg";
 import * as S from './styles';
 import { useRouter } from 'next/router';
 

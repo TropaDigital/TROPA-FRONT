@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../assets/styles/mixin';
 
 // import { Rubik } from '@next/font/google';
 // const rubik = Rubik({
@@ -72,8 +73,8 @@ export const Container = styled.div`
           font-size: 14px;
           line-height: 20px;
           padding: 24px 0px;
-          color: var(--text2);
-          border-bottom: 1px solid var(--base2);
+          color: ${colors.primaryDark};
+          border-bottom: 1px solid ${colors.primaryGrey};
           padding: 24px;
         }
       }

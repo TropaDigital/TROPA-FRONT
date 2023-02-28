@@ -7,6 +7,7 @@ const colors = {
   secondaryDark: "#211A13",
   neutralDark: "#212529",
   neutralGrey: "#343A40",
+  alert: "#F03D3D",
 };
 
 const fonts = {

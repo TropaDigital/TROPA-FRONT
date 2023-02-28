@@ -1,6 +1,7 @@
 import { InfoIcon } from '@/src/assets/icons';
 import * as S from './styles';
 import Tooltip from '@mui/material/Tooltip';
+import { colors } from '../../../../../assets/styles/mixin';
 interface IInputDescription
   extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
@@ -22,7 +23,7 @@ const InputDescription = ({
         <Tooltip title={tooltip}>
           <S.ToolTipContainer>
             <label className="inputLabel">{label}</label>
-            <InfoIcon size={16} color={'var(--base1)'} />
+            <InfoIcon size={16} color={colors.primaryGrey} />
           </S.ToolTipContainer>
         </Tooltip>
       )}

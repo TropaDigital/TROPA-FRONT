@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import { colors, fonts } from './mixin'
+import { createGlobalStyle } from "styled-components";
+import { colors, fonts } from "./mixin";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -237,4 +237,4 @@ export const GlobalStyles = createGlobalStyle`
             animation: strokeEffectPrimaryGrey 2s linear infinite;
         }
     }
-`
+`;

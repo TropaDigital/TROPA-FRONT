@@ -13,7 +13,6 @@ export const Select = styled.nav<props>`
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    font-family: ${fonts.manrope};
     @media (max-width: 835px) {
       position: absolute;
       top: 22px;
@@ -29,7 +28,7 @@ export const Select = styled.nav<props>`
       .titleSelectPage {
         font-size: 16px;
         line-height: 24px;
-        color: var(--text2);
+        color: ${colors.primaryDark};
         font-weight: 500;
         transition: all 0.3s;
 

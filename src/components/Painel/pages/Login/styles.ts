@@ -146,7 +146,7 @@ export const FormWrapper = styled.div`
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
-      color: var(--base1);
+      color: ${colors.primaryGrey};
       margin-bottom: 40px;
     }
     .inputWrapper {

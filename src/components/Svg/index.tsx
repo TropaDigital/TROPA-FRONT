@@ -987,7 +987,7 @@ export const ChevronTopIcon = ({ color = "#ADBDBA", size = 18 }: any) => (
   </svg>
 );
 
-export const LogoutIcon: React.FC = ({ size = 18, color = "#212529" }: any) => {
+export const ExitIcon: React.FC = ({ size = 18, color = "#212529" }: any) => {
   return (
     <svg
       width={size}
@@ -1020,6 +1020,49 @@ export const LogoutIcon: React.FC = ({ size = 18, color = "#212529" }: any) => {
     </svg>
   );
 };
+
+export const PersonIcon = ({ color = '#069CD1', size = 18 }: any) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+  >
+    <path
+      fill={color}
+      d="M12 12q-1.65 0-2.825-1.175Q8 9.65 8 8q0-1.65 1.175-2.825Q10.35 4 12 4q1.65 0 2.825 1.175Q16 6.35 16 8q0 1.65-1.175 2.825Q13.65 12 12 12Zm-6 8q-.825 0-1.412-.587Q4 18.825 4 18v-.8q0-.85.438-1.563q.437-.712 1.162-1.087q1.55-.775 3.15-1.163Q10.35 13 12 13t3.25.387q1.6.388 3.15 1.163q.725.375 1.162 1.087Q20 16.35 20 17.2v.8q0 .825-.587 1.413Q18.825 20 18 20Z"
+    />
+  </svg>
+);
+
+export const LogoutIcon = ({ color = '#069CD1', size = 18 }: any) => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3.99829 10.0008V12.0016C3.99829 13.1066 4.89409 14.0024 5.99912 14.0024H12.0016C13.1067 14.0024 14.0025 13.1066 14.0025 12.0016V3.99827C14.0025 2.89324 13.1067 1.99744 12.0016 1.99744H5.99912C4.89409 1.99744 3.99829 2.89324 3.99829 3.99827V5.9991"
+      stroke="#F03D3D"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8 10.0007L10.0008 7.99986L8 5.99902"
+      stroke="#F03D3D"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M1.99756 7.99998H10.0009"
+      stroke="#F03D3D"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 export const ExampleSVG: React.FC = ({ className }: any) => {
   return <svg />;

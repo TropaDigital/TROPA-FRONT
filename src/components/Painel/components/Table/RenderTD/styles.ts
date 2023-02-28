@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../../assets/styles/mixin';
 
 export const Container = styled.td`
   position: relative;
@@ -17,7 +18,7 @@ export const Container = styled.td`
   }
   .inativo,
   .Inativo {
-    color: var(--alert);
+    color: ${colors.alert};
     font-weight: 500;
     &::before {
       content: '.';
@@ -38,7 +39,7 @@ export const Container = styled.td`
     transition: all 0.4s;
     &:hover {
       transition: all 0.4s;
-      background-color: var(--base2);
+      background-color: ${colors.primaryGrey};
     }
   }
 `;

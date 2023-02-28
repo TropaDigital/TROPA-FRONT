@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../../../assets/styles/mixin';
 
 type Props = {
   width?: number
@@ -27,8 +28,8 @@ export const InputWrapper = styled.div`
     height: 48px;
     width: 100%;
     border-radius: 8px;
-    border: 1px solid var(--base2);
-    background-color: var(--white);
+    border: 1px solid ${colors.primaryGrey};
+    background-color: ${colors.primaryWhite};
     padding: 0 16px;
 
     font-size: 16px;
@@ -41,7 +42,7 @@ export const InputWrapper = styled.div`
     position: absolute;
     width: 17px;
     height: 14px;
-    background-color: var(--white);
+    background-color: ${colors.primaryWhite};
     pointer-events: none;
     z-index: 2;
     right: 15px;

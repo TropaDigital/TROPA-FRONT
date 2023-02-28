@@ -27,13 +27,13 @@ export const Button = styled.button<IPropsStyle>`
   ${({ color }) =>
     color === 'darkButton' &&
     css`
-      background-color: var(--bg);
+      background-color: ${colors.primaryDark};
     `}
 
     ${({ color }) =>
     color === 'transparent' &&
     css`
       background-color: transparent;
-      border: 1px solid var(--color1A);
+      border: 1px solid ${colors.primaryDark};
     `}
 `;

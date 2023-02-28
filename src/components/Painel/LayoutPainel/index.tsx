@@ -8,9 +8,9 @@ import { Container } from "./styles";
 import SelectSideBar from "../components/SelectSideBar";
 
 import panelConfig from "../panelConfig.json";
-// import LogoutPanel from '../components/LogoutPanel';
+import LogoutPanel from "../components/LogoutPanel";
 import Link from "next/link";
-import { LogoutIcon, LogoWithoutDigital, PageIcon } from "../../Svg";
+import { ExitIcon, LogoutIcon, LogoWithoutDigital, PageIcon } from "../../Svg";
 import useCookies from "react-cookie/cjs/useCookies";
 import { useRouter } from "next/router";
 interface ILayoutPanelProps {
@@ -19,9 +19,9 @@ interface ILayoutPanelProps {
 
 export default function LayoutPainel({ children }: ILayoutPanelProps) {
   const [sideBarIsOpen, setSideBarIsOpen] = useState<boolean>(true);
-  const [cookie, setCookie, removeCookie] = useCookies()
+  const [cookie, setCookie, removeCookie] = useCookies();
 
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <Container sideBarIsOpen={sideBarIsOpen}>
@@ -37,7 +37,7 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
           <p className="noticeUser">
             Olá, bom dia! Você possui 3 novos pedidos para processar.
           </p>
-          {/* <LogoutPanel /> */}
+          <LogoutPanel />
         </div>
       </header>
       <div className="mainWrapper">
@@ -56,11 +56,11 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
           <button
             className="handleCloseSideBar"
             onClick={() => {
-              removeCookie("admin")
+              removeCookie("admin");
               router.push("/painel");
             }}
           >
-            <LogoutIcon />
+            <ExitIcon />
             <p className="textHandleCloseSideBar">Sair</p>
           </button>
         </div>
