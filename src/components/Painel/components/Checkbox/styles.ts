@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../../../assets/styles/mixin";
 
-import { CheckmarkIcon } from "../../../Svg";
-
 export const Container = styled.div`
   label {
     display: flex;
@@ -25,7 +23,6 @@ export const CheckRemember = styled.input.attrs({ type: "checkbox" })`
   border: 1.5px solid ${colors.primaryWhite};
   background: none;
   position: relative;
-  transition: .2s;
 
   &:checked {
     background-color: ${colors.primary};

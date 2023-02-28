@@ -1,8 +1,8 @@
-import { propsPage } from '../../interface';
-import React, { ReactNode, useEffect, useState } from 'react';
-import { Select } from './styles';
-import { ChevronTopIcon } from '@/src/assets/icons';
-import Link from 'next/link';
+import { propsPage } from "../../interface";
+import React, { ReactNode, useEffect, useState } from "react";
+import { Select } from "./styles";
+import Link from "next/link";
+import { ChevronTopIcon } from "../../../Svg";
 
 interface ISelectProps {
   pages: Array<propsPage>;
@@ -42,7 +42,10 @@ export default function SelectSideBar({
       }}
       sideBarIsOpen={sideBarIsOpen}
     >
-      <div className="titleSelectPageWrapper" onClick={() => setSelectIsOpen(!selectIsOpen)}>
+      <div
+        className="titleSelectPageWrapper"
+        onClick={() => setSelectIsOpen(!selectIsOpen)}
+      >
         <div className="titleSelectLeftSide">
           <div className="iconMenu">{icon}</div>
           <p className="titleSelectPage">{title}</p>
@@ -60,8 +63,8 @@ export default function SelectSideBar({
       </div>
       <div className="optionsSelect">
         {pages.map((row: propsPage, key: number) => (
-          <Link href={`/painel/${row.path}`} className="cardToPage" key={key}>
-            {row.name}
+          <Link href={`/painel/${row.path}`} key={key}>
+            <a className="cardToPage">{row.name}</a>
           </Link>
         ))}
       </div>

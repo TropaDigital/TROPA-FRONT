@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
+import { colors, fonts } from "../../../../assets/styles/mixin";
 
 interface props {
   isOpen: boolean;
@@ -12,6 +13,7 @@ export const Select = styled.nav<props>`
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    font-family: ${fonts.manrope};
     @media (max-width: 835px) {
       position: absolute;
       top: 22px;
@@ -20,9 +22,9 @@ export const Select = styled.nav<props>`
       display: flex;
       gap: 11px;
       .iconMenu {
-        margin-left: ${({ sideBarIsOpen }) => (sideBarIsOpen ? '0px' : '12px')};
+        margin-left: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "0px" : "12px")};
         transition: all 0.3s;
-        cursor: ${({ sideBarIsOpen }) => (sideBarIsOpen ? 'unset' : 'pointer')};
+        cursor: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "unset" : "pointer")};
       }
       .titleSelectPage {
         font-size: 16px;
@@ -31,13 +33,24 @@ export const Select = styled.nav<props>`
         font-weight: 500;
         transition: all 0.3s;
 
-        opacity: ${({ sideBarIsOpen }) => (sideBarIsOpen ? '1' : '0')};
+        opacity: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "1" : "0")};
       }
+    }
+    .handleOpenSelect {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
     }
     .iconOpenSelect {
       transition: all 0.3s;
 
-      opacity: ${({ sideBarIsOpen }) => (sideBarIsOpen ? '1' : '0')};
+      opacity: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "1" : "0")};
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       svg {
         transform: rotate(180deg);
@@ -68,26 +81,28 @@ export const Select = styled.nav<props>`
       css`
         transition: all 0.3s;
         max-height: unset;
-        height: ${(numberOfOptions * 42).toString() + 'px'};
+        height: ${(numberOfOptions * 42).toString() + "px"};
       `}
 
     .cardToPage {
-      border-left: 1px solid var(--base2);
+      border-left: 1px solid ${colors.primaryGrey};
       padding-left: 15px;
       margin-left: 12px;
       height: 42px;
       text-decoration: none;
-      color: var(--text2);
+      color: ${colors.secondaryDark};
       display: flex;
       align-items: center;
       font-size: 16px;
-      font-weight: 400;
+      font-weight: 600;
       line-height: 24px;
       margin-left: 12px;
       transition: all 0.3s;
+      font-family: ${fonts.manrope};
 
       &:hover {
-        background-color: var(--base3);
+        background-color: rgba(231, 234, 238, 0.7);
+        border-radius: 8px;
       }
     }
   }

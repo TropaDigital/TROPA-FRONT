@@ -1,22 +1,44 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colors } from "../../../../../assets/styles/mixin";
 
-export const Container = styled.div`
+type Props = {
+  labelType?: string
+}
+
+export const Container = styled.div<Props>`
   width: 100%;
   position: relative;
+  ${({ labelType }) =>
+    labelType === "default" &&
+    css`
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .inputLabel {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        color: ${colors.primaryWhite};
+      }
+    `}
 
-  .inputLabel {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 600;
-    color: ${colors.primaryWhite};
-    background-color: ${colors.secondaryDark};
-    padding: 0 8px;
-    font-size: 12px;
-    position: absolute;
-    top: -12px;
-    left: 24px;
-  }
+  ${({ labelType }) =>
+    labelType === "inner" &&
+    css`
+      position: relative;
+      .inputLabel {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        color: ${colors.primaryWhite};
+        background-color: ${colors.secondaryDark};
+        padding: 0 8px;
+        font-size: 12px;
+        position: absolute;
+        top: -12px;
+        left: 24px;
+      }
+    `}
   .inputField {
     border-radius: 8px;
     border: 1px solid ${colors.primaryWhite};

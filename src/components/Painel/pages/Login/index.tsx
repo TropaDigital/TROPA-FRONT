@@ -12,7 +12,11 @@ import { Logo } from "../../../Svg";
 import posterLoginPagel from "../../../../../public/images/posterLoginPanel.png";
 import Image from "next/image";
 import ForgotPassword from "../../components/ForgotPassword";
-import RememberMe from "../../components/RememberMe";
+import Link from "next/link";
+import Checkbox from "../../components/Checkbox";
+import { useCookies } from "react-cookie";
+import "animate.css"
+import Cookies from "react-cookie/cjs/Cookies";
 
 interface IDTO {
   login: string;
@@ -27,6 +31,7 @@ export default function PanelLoginComponent() {
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [cookie, setCookie] = useCookies()
 
   const router = useRouter();
 
@@ -58,12 +63,13 @@ export default function PanelLoginComponent() {
       setIsLoading(true);
       if (!DTO.login || !DTO.password)
         throw new Error("Todos os campos são obrigatórios");
-      if (DTO.login != "amazonia@teste.com")
+      if (DTO.login != "tropadigital@teste.com")
         throw new Error("O login está incorreto");
-      if (DTO.password !== "Mud@r123")
+      if (DTO.password !== "tropadigital")
         throw new Error("A senha está incorreta");
 
-      router.push("/painel/produtos");
+      setCookie("admin", "AuthorizedTropaAdmin")
+      router.push("/painel/dashboard");
     } catch (error: any) {
       toast.error(error.message);
       setIsLoading(false);
@@ -90,7 +96,7 @@ export default function PanelLoginComponent() {
             handleSubmitAccessForm(e);
           }}
         >
-          <div className="logoGreenCasaAmazonia">
+          <div className="logo">
             <Logo />
           </div>
 
@@ -101,6 +107,7 @@ export default function PanelLoginComponent() {
           <div className="inputWrapper">
             <Inputdefault
               label="Email"
+              labelType="inner"
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 handleOnChange("login", event?.target?.value);
               }}
@@ -112,6 +119,7 @@ export default function PanelLoginComponent() {
           <div className="inputWrapper">
             <InputPassword
               label="Senha"
+              labelType="inner"
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 handleOnChange("password", event?.target?.value);
               }}
@@ -120,7 +128,7 @@ export default function PanelLoginComponent() {
             />
           </div>
           <div className="bottomForm">
-            <RememberMe />
+            <Checkbox label="Lembrar-me" />
             <ForgotPassword />
           </div>
 
@@ -133,8 +141,10 @@ export default function PanelLoginComponent() {
           >
             <p className="textSubmitPanel">Acessar minha conta</p>
           </ButtonDefault>
+          <p className="registerAccount">
+            Não tem uma conta? <Link href="/">Cadastre-se</Link>
+          </p>
         </form>
-        <p>Não tem uma conta? Cadastre-se</p>
       </S.FormWrapper>
     </S.Container>
   );

@@ -85,6 +85,92 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 800;
         font-display: swap;
     }
+    // Inter
+    @font-face {
+        font-family: "Inter";
+        src: url("/fonts/INTER/Inter-Thin.ttf");
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("/fonts/INTER/Inter-Light.ttf");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("/fonts/INTER/Inter-Regular.ttf");
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("/fonts/INTER/Inter-SemiBold.ttf");
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("/fonts/INTER/Inter-Bold.ttf");
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("/fonts/INTER/Inter-ExtraBold.ttf");
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+    }
+    // Manrope
+    @font-face {
+        font-family: "Manrope";
+        src: url("/fonts/MANROPE/Manrope-ExtraLight.ttf");
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Manrope";
+        src: url("/fonts/MANROPE/Manrope-Light.ttf");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Manrope";
+        src: url("/fonts/MANROPE/Manrope-Regular.ttf");
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Manrope";
+        src: url("/fonts/MANROPE/Manrope-SemiBold.ttf");
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Manrope";
+        src: url("/fonts/MANROPE/Manrope-Bold.ttf");
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Manrope";
+        src: url("/fonts/MANROPE/Manrope-ExtraBold.ttf");
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+    }
 
     //global styles
     * {

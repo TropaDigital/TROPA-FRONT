@@ -103,6 +103,46 @@ export const Logo: React.FC = ({ width = 298, height = 42 }: any) => {
   );
 };
 
+export const LogoWithoutDigital: React.FC = ({
+  width = 148,
+  height = 32,
+}: any) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 148 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M29.0875 20.5407L32.4985 19.2332V10.411L29.0875 9.10352C26.9011 4.23256 22.0122 0.838379 16.3272 0.838379C10.6422 0.838379 5.75322 4.23256 3.56687 9.10352L0.155884 10.411V19.232L3.56687 20.5395C4.36769 22.3237 5.5323 23.9085 6.96466 25.2028V26.1441H4.42532L2.74804 31.1615H29.9063L28.229 26.1441H25.6092V25.276C27.0788 23.9697 28.271 22.3573 29.0875 20.5407ZM12.6004 5.10782H20.0539V6.98201H12.6004V5.10782ZM24.7532 19.5754L22.1814 22.1472H10.4129L7.82071 19.555V11.1566L10.4093 8.56804H22.2211L24.752 11.099V19.5754H24.7532Z"
+        fill="#CC6237"
+      />
+      <path
+        d="M44.4387 18.2992H47.6876V30.8614H55.6106V18.2992H58.8595V10.375H44.4387V18.2992Z"
+        fill="#D8BCA9"
+      />
+      <path
+        d="M108.243 10.4819V30.8602H116.011V28.142H124.157L127.837 24.4633V14.2891L124.028 10.4819H108.243ZM120.068 20.3739H116.011V18.2512H120.068V20.3739Z"
+        fill="#D8BCA9"
+      />
+      <path
+        d="M95.7574 10.2573C90.0448 10.2573 85.3959 14.905 85.3959 20.6188C85.3959 26.3314 90.0436 30.9802 95.7574 30.9802C101.471 30.9802 106.119 26.3326 106.119 20.6188C106.118 14.905 101.47 10.2573 95.7574 10.2573ZM97.3866 20.5671C97.4142 21.4664 96.7059 22.2204 95.8066 22.248C95.2183 22.2696 94.8233 21.9791 94.6396 21.8062C94.4559 21.6333 94.1449 21.2563 94.1269 20.668C94.0993 19.7687 94.8077 19.0147 95.7069 18.9871C95.7238 18.9871 95.7406 18.9859 95.7586 18.9859C96.6338 18.9871 97.3602 19.6859 97.3866 20.5671Z"
+        fill="#D8BCA9"
+      />
+      <path
+        d="M61.3051 30.8593H69.0732V18.1482H75.0187L71.0638 22.1031V30.8593H83.189V23.0912H81.0627L83.2706 20.882V10.3789H61.3051V30.8593Z"
+        fill="#D8BCA9"
+      />
+      <path
+        d="M130.201 10.4819V30.8614H137.97V18.25H140.076V30.8614H147.844V10.4819H130.201Z"
+        fill="#D8BCA9"
+      />
+    </svg>
+  );
+};
+
 export const IconSearch: React.FC = ({ width = 25, height = 25 }: any) => {
   return (
     <svg
@@ -890,6 +930,96 @@ export const EyeIconClose = ({ color = "#ADBDBA", size = 24 }: any) => (
     />
   </svg>
 );
+
+export const PageIcon = ({ color = "#212928", size = 24 }: any) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M21 14H14V21H21V14Z"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10 14H3V21H10V14Z"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M21 3H14V10H21V3Z"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10 3H3V10H10V3Z"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ChevronTopIcon = ({ color = "#ADBDBA", size = 18 }: any) => (
+  <svg
+    width="8"
+    height="5"
+    viewBox="0 0 8 5"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M3.5286 0.528636C3.78895 0.268287 4.21106 0.268287 4.47141 0.528636L7.80474 3.86197C8.06509 4.12232 8.06509 4.54443 7.80474 4.80478C7.54439 5.06513 7.12228 5.06513 6.86193 4.80478L4 1.94285L1.13807 4.80478C0.877722 5.06513 0.455612 5.06513 0.195262 4.80478C-0.0650874 4.54443 -0.0650874 4.12232 0.195262 3.86197L3.5286 0.528636Z"
+      fill={color}
+    />
+  </svg>
+);
+
+export const LogoutIcon: React.FC = ({ size = 18, color = "#212529" }: any) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M13 9H1"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.99902 4L13 9.001L7.99902 14.001"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13 1H15C16.105 1 17 1.895 17 3V15C17 16.105 16.105 17 15 17H13"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 
 export const ExampleSVG: React.FC = ({ className }: any) => {
   return <svg />;

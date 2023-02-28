@@ -5,6 +5,8 @@ const colors = {
   primaryGrey: "#E3E3E3",
   primaryWhite: "#FFF",
   secondaryDark: "#211A13",
+  neutralDark: "#212529",
+  neutralGrey: "#343A40",
 };
 
 const fonts = {
@@ -13,6 +15,8 @@ const fonts = {
   chaney: `'Chaney', sans-serif`,
   gellix: `'Gellix', sans-serif`,
   arto: `'Arto', sans-serif`,
+  inter: `'Inter', sans-serif`,
+  manrope: `'Manrope', sans-serif`,
 };
 
 export { colors, fonts };

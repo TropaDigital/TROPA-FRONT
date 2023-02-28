@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../../../assets/styles/mixin";
+import { colors, fonts } from "../../../../assets/styles/mixin";
 
 // import { Rubik } from '@next/font/google';
 
@@ -13,6 +13,7 @@ export const Container = styled.div`
   height: 100vh;
   background-color: ${colors.secondaryDark};
   overflow-x: hidden;
+  font-family: ${fonts.inter};
 `;
 
 export const RightWrapper = styled.div`
@@ -36,6 +37,43 @@ export const RightWrapper = styled.div`
     position: absolute;
     right: 0;
     z-index: 0;
+    animation: animationBanner linear 2s;
+    animation-delay: 1.7s;
+
+    @keyframes animationBanner {
+      0% {
+        filter: blur(0px);
+      }
+      50% {
+        filter: blur(1.1px);
+        transform: scale(1.02);
+      }
+      100% {
+        filter: blur(0px);
+      }
+    }
+
+    @media (min-height: 960px) {
+      @media (max-width: 1100px) {
+        right: -50px;
+      }
+    }
+
+    @media (max-height: 910px) {
+      width: 550px;
+    }
+
+    @media (max-height: 830px) {
+      width: 500px;
+    }
+
+    @media (max-height: 750px) {
+      width: 450px;
+    }
+
+    @media (max-height: 680px) {
+      width: 400px;
+    }
   }
 
   .bgImageWrapper {
@@ -66,7 +104,7 @@ export const RightWrapper = styled.div`
       .bgImage {
         padding: 80px;
       }
-      .logoCasaAmazonia {
+      .logo {
         display: none;
       }
     }
@@ -93,14 +131,15 @@ export const FormWrapper = styled.div`
 
   .panelAccess {
     width: 416px;
-    .logoGreenCasaAmazonia {
+    .logo {
       margin-bottom: 96px;
     }
     .welcomeBack {
       font-size: 32px;
       line-height: 32px;
-      font-weight: 600;
+      font-weight: 700;
       color: ${colors.primaryLight};
+      font-family: ${fonts.poppins};
       margin-bottom: 8px;
     }
     .subtitleForm {
@@ -124,6 +163,16 @@ export const FormWrapper = styled.div`
       justify-content: space-between;
       margin-bottom: 32px;
     }
+    .registerAccount {
+      font-weight: 400;
+      margin-top: 15px;
+
+      a {
+        text-decoration: none;
+        color: ${colors.primaryWhite};
+        margin-left: 5px;
+      }
+    }
   }
 
   @media (max-width: 1100px) {
@@ -139,7 +188,7 @@ export const FormWrapper = styled.div`
     padding: 20px;
     .panelAccess {
       width: 100%;
-      .logoGreenCasaAmazonia {
+      .logo {
         width: 100%;
         display: flex;
         justify-content: center;

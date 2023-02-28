@@ -1,44 +1,43 @@
-import {
-  DoubleChevronWithCircle,
-  LogoWhite,
-  PageIcon,
-} from '@/src/assets/icons';
-import { ReactNode, useState } from 'react';
-import { Container } from './styles';
-import SelectSideBar from '../components/SelectSideBar';
+// import {
+//   DoubleChevronWithCircle,
+//   LogoWhite,
+//   PageIcon,
+// } from '@/src/assets/icons';
+import { ReactNode, useState } from "react";
+import { Container } from "./styles";
+import SelectSideBar from "../components/SelectSideBar";
 
-import panelConfig from '../panelConfig.json';
-import LogoutPanel from '../components/LogoutPanel';
-import Link from 'next/link';
-
+import panelConfig from "../panelConfig.json";
+// import LogoutPanel from '../components/LogoutPanel';
+import Link from "next/link";
+import { LogoutIcon, LogoWithoutDigital, PageIcon } from "../../Svg";
+import useCookies from "react-cookie/cjs/useCookies";
+import { useRouter } from "next/router";
 interface ILayoutPanelProps {
   children: ReactNode;
 }
 
 export default function LayoutPainel({ children }: ILayoutPanelProps) {
-  const [sideBarIsOpen, setSideBarIsOpen] = useState<boolean>(false);
+  const [sideBarIsOpen, setSideBarIsOpen] = useState<boolean>(true);
+  const [cookie, setCookie, removeCookie] = useCookies()
+
+  const router = useRouter()
 
   return (
     <Container sideBarIsOpen={sideBarIsOpen}>
       <header className="headerLayoutDashboard">
         <div className="leftSideWithLogo">
-          <Link href="/">{sideBarIsOpen && <LogoWhite />}</Link>
+          <Link href="/" passHref>
+            <a>
+              <LogoWithoutDigital />
+            </a>
+          </Link>
         </div>
         <div className="rigthSideWithAvatar">
-          <div className="navigateOptions">
-            <div className="sideBarMenuWrapper">
-              <div onClick={() => setSideBarIsOpen(!sideBarIsOpen)}>
-                <PageIcon color={'var(--white)'} />
-              </div>
-              <div className="sideBarMenu">
-                {panelConfig.pages.map(page => {
-                  return <Link href={`/painel/${page.path}`}>{page.name}</Link>
-                })}
-              </div>
-            </div>
-          </div>
-          <p className="congratsUser">Olá, seja bem-vindo(a) de volta.</p>
-          <LogoutPanel />
+          <p className="noticeUser">
+            Olá, bom dia! Você possui 3 novos pedidos para processar.
+          </p>
+          {/* <LogoutPanel /> */}
         </div>
       </header>
       <div className="mainWrapper">
@@ -50,18 +49,19 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
                 setSideBarIsOpen(true);
               }}
               pages={panelConfig.pages}
-              title={'Páginas'}
+              title={"Dashboard"}
               icon={<PageIcon />}
             />
           </div>
           <button
             className="handleCloseSideBar"
             onClick={() => {
-              setSideBarIsOpen(!sideBarIsOpen);
+              removeCookie("admin")
+              router.push("/painel");
             }}
           >
-            <DoubleChevronWithCircle />
-            <p className="textHandleCloseSideBar">Recolher Menu</p>
+            <LogoutIcon />
+            <p className="textHandleCloseSideBar">Sair</p>
           </button>
         </div>
 
