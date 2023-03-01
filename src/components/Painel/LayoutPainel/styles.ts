@@ -52,6 +52,7 @@ export const Container = styled.div<ISideBarProps>`
 
       .noticeUser {
         font-family: ${fonts.manrope};
+        font-weight: 400;
       }
 
       .sideBarMenuWrapper {

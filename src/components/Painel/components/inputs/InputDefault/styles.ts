@@ -55,4 +55,9 @@ export const Container = styled.div<Props>`
     font-weight: 400;
     color: ${colors.primaryWhite};
   }
+  .validationError {
+    font-weight: 500;
+    font-size: 14px;
+    color: ${colors.alert};
+  }
 `;

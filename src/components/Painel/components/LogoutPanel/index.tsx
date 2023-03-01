@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { ChevronTopIcon, LogoutIcon, PersonIcon } from "../../../Svg";
-import * as S from './styles';
-import { useRouter } from 'next/router';
+import * as S from "./styles";
+import { useRouter } from "next/router";
+import { colors } from "../../../../assets/styles/mixin";
+import { useCookies } from "react-cookie";
 
 export default function LogoutPanel() {
   const [modalLogOutOpen, setModalLogOutOpen] = useState<boolean>(false);
-  const router = useRouter();
+  const [cookie, setCookie, removeCookie] = useCookies()
 
   return (
     <S.Container isOpen={modalLogOutOpen}>
       <div className="avatarPerson">
-        <PersonIcon color={'var(--color1D)'} />
+        <PersonIcon color={colors.primaryWhite} />
       </div>
       <button
         className="chevronHandleLogOutVisibility"
@@ -23,7 +25,7 @@ export default function LogoutPanel() {
       <S.ModalLogOut isOpen={modalLogOutOpen}>
         <button
           onClick={() => {
-            router.push('/');
+            removeCookie("AuthorizedTropaAdmin");
           }}
         >
           <LogoutIcon />

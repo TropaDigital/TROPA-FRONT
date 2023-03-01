@@ -17,6 +17,8 @@ import Checkbox from "../../components/Checkbox";
 import { useCookies } from "react-cookie";
 import "animate.css";
 import Cookies from "react-cookie/cjs/Cookies";
+import { Formik } from "formik";
+import { loginSchema } from "./yupSchema";
 
 interface IDTO {
   login: string;
@@ -26,60 +28,17 @@ interface IDTO {
 export default function PanelLoginComponent() {
   // const [currentBgImage, setCurrentBgImage] =
   //   useState<StaticImageData>(bgLoginAcai);
-  const [DTO, setDTO] = useState<IDTO>({
-    login: "",
-    password: "",
-  });
   const [isLoading, setIsLoading] = useState(false);
   const [cookie, setCookie] = useCookies();
 
   const router = useRouter();
 
-  // useEffect(() => {
-  //   handleBgImage();
-  // }, []);
-
-  function handleOnChange(pos: "login" | "password", value: string) {
-    const newDTO: IDTO = DTO;
-    newDTO[pos] = value;
-    setDTO({ ...newDTO });
-  }
-
-  // function handleBgImage() {
-  //   const options: Array<StaticImageData> = [
-  //     bgLoginAcai,
-  //     bgLoginChocolate,
-  //     bgLoginMandioca,
-  //     bgLoginPeixe,
-  //   ];
-  //   setInterval(() => {
-  //     var imagePos = Math.floor(Math.random() * options?.length);
-  //     setCurrentBgImage(options[imagePos]);
-  //   }, 5000);
-  // }
-
-  async function checkDTO() {
-    try {
-      setIsLoading(true);
-      if (!DTO.login || !DTO.password)
-        throw new Error("Todos os campos são obrigatórios");
-      if (DTO.login != "admin@tropa.digital.com")
-        throw new Error("O login está incorreto");
-      if (DTO.password !== "tropadigital")
-        throw new Error("A senha está incorreta");
-
-      setCookie("AuthorizedTropaAdmin", "ZGQmIiDzlL");
+  const checkLogin = (email: string, password: string) => {
+    if (email === "admin@tropa.digital.com" || password === "tropadigital") {
       router.push("/painel/dashboard");
-    } catch (error: any) {
-      toast.error(error.message);
-      setIsLoading(false);
+      setCookie("AuthorizedTropaAdmin", "JKoknHCxazT");
     }
-  }
-
-  function handleSubmitAccessForm(e: FormEvent) {
-    e.preventDefault();
-    checkDTO();
-  }
+  };
 
   return (
     <S.Container>
@@ -90,61 +49,64 @@ export default function PanelLoginComponent() {
       </S.RightWrapper>
 
       <S.FormWrapper>
-        <form
-          className="panelAccess"
-          onSubmit={(e: FormEvent) => {
-            handleSubmitAccessForm(e);
+        <Formik
+          initialValues={{
+            email: "",
+            password: "",
+          }}
+          validationSchema={loginSchema}
+          onSubmit={({ email, password }) => {
+            checkLogin(email, password);
           }}
         >
-          <div className="logo">
-            <Logo />
-          </div>
+          {({ touched, errors, handleChange, values, handleSubmit }) => (
+            <form className="panelAccess" onSubmit={handleSubmit}>
+              <div className="logo">
+                <Logo />
+              </div>
 
-          <h2 className="welcomeBack">Bem-vindo de volta!</h2>
-          <h3 className="subtitleForm">
-            Entre com sua conta para acessar o painel.
-          </h3>
-          <div className="inputWrapper">
-            <Inputdefault
-              label="Email"
-              labelType="inner"
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                handleOnChange("login", event?.target?.value);
-              }}
-              value={DTO?.login}
-              placeholder="email@exemplo.com"
-              type={"email"}
-            />
-          </div>
-          <div className="inputWrapper">
-            <InputPassword
-              label="Senha"
-              labelType="inner"
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                handleOnChange("password", event?.target?.value);
-              }}
-              value={DTO?.password}
-              placeholder="Digite sua senha"
-            />
-          </div>
-          <div className="bottomForm">
-            <Checkbox label="Lembrar-me" />
-            <ForgotPassword />
-          </div>
+              <h2 className="welcomeBack">Bem-vindo de volta!</h2>
+              <h3 className="subtitleForm">
+                Entre com sua conta para acessar o painel.
+              </h3>
+              <div className="inputWrapper">
+                <Inputdefault
+                  label="Email"
+                  labelType="inner"
+                  value={values.email}
+                  name="email"
+                  onChange={handleChange}
+                  placeholder="email@exemplo.com"
+                  error={touched.email ? errors.email : null}
+                  autoComplete="off"
+                />
+              </div>
+              <div className="inputWrapper">
+                <InputPassword
+                  label="Senha"
+                  labelType="inner"
+                  onChange={handleChange}
+                  name="password"
+                  value={values.password}
+                  placeholder="Digite sua senha"
+                  error={touched.password ? errors.password : null}
+                  autoComplete="off"
+                />
+              </div>
+              <div className="bottomForm">
+                <Checkbox label="Lembrar-me" />
+                <ForgotPassword />
+              </div>
 
-          <ButtonDefault
-            type="submit"
-            color="primaryButton"
-            onClick={() => {
-              checkDTO();
-            }}
-          >
-            <p className="textSubmitPanel">Acessar minha conta</p>
-          </ButtonDefault>
-          <p className="registerAccount">
-            Não tem uma conta? <Link href="/">Cadastre-se</Link>
-          </p>
-        </form>
+              <ButtonDefault type="submit" color="primaryButton">
+                <p className="textSubmitPanel">Acessar minha conta</p>
+              </ButtonDefault>
+              <p className="registerAccount">
+                Não tem uma conta? <Link href="/">Cadastre-se</Link>
+              </p>
+            </form>
+          )}
+        </Formik>
       </S.FormWrapper>
     </S.Container>
   );

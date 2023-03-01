@@ -5,30 +5,39 @@ import * as S from "./styles";
 interface IInputDefault extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   labelType?: "default" | "inner";
+  error?: any;
 }
 
-export default function InputPassword({ label, labelType = "default", ...rest }: IInputDefault) {
+export default function InputPassword({
+  label,
+  error,
+  labelType = "default",
+  ...rest
+}: IInputDefault) {
   const [visibility, setVisibility] = useState<boolean>(false);
 
   return (
-    <S.Container labelType={labelType}>
-      <label className="inputLabel">{label}</label>
-      <div className="inputWrapper">
-        <input
-          className="inputField"
-          {...rest}
-          type={visibility ? "text" : "password"}
-        ></input>
-        <button
-          type="button"
-          className="eyeIcon"
-          onClick={() => {
-            setVisibility(!visibility);
-          }}
-        >
-          {visibility ? <EyeIconClose /> : <EyeIcon />}
-        </button>
-      </div>
-    </S.Container>
+    <>
+      <S.Container labelType={labelType}>
+        <label className="inputLabel">{label}</label>
+        <div className="inputWrapper">
+          <input
+            className="inputField"
+            {...rest}
+            type={visibility ? "text" : "password"}
+          ></input>
+          <button
+            type="button"
+            className="eyeIcon"
+            onClick={() => {
+              setVisibility(!visibility);
+            }}
+          >
+            {visibility ? <EyeIconClose /> : <EyeIcon />}
+          </button>
+          {error && <span className="validationError">{error}</span>}
+        </div>
+      </S.Container>
+    </>
   );
 }

@@ -62,4 +62,9 @@ export const Container = styled.div<Props>`
 
     cursor: pointer;
   }
+  .validationError {
+    font-size: 14px;
+    font-weight: 500;
+    color: ${colors.alert};
+  }
 `;

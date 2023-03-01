@@ -35,7 +35,8 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
         </div>
         <div className="rigthSideWithAvatar">
           <p className="noticeUser">
-            Olá, bom dia! Você possui 3 novos pedidos para processar.
+            Olá, bom dia! Você possui <span>3</span> novos pedidos para
+            processar.
           </p>
           <LogoutPanel />
         </div>
@@ -56,8 +57,8 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
           <button
             className="handleCloseSideBar"
             onClick={() => {
-              removeCookie("admin");
-              router.push("/painel");
+              removeCookie("AuthorizedTropaAdmin");
+              router.push("/");
             }}
           >
             <ExitIcon />
