@@ -34,9 +34,18 @@ export default function PanelLoginComponent() {
   const router = useRouter();
 
   const checkLogin = (email: string, password: string) => {
+    const now = new Date();
+
     if (email === "admin@tropa.digital.com" || password === "tropadigital") {
+      const rememberMe: any = document?.querySelector("input:checked");
+      if (rememberMe) {
+        setCookie("AuthorizedTropaAdmin", "JKoknHCxazT", {
+          maxAge: now.setDate(now.getDate() + 3),
+        });
+      } else {
+        setCookie("AuthorizedTropaAdmin", "JKoknHCxazT");
+      }
       router.push("/painel/dashboard");
-      setCookie("AuthorizedTropaAdmin", "JKoknHCxazT");
     }
   };
 
@@ -94,7 +103,7 @@ export default function PanelLoginComponent() {
                 />
               </div>
               <div className="bottomForm">
-                <Checkbox label="Lembrar-me" />
+                <Checkbox label="Lembrar-me" id="rememberMe" />
                 <ForgotPassword />
               </div>
 
