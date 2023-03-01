@@ -15,7 +15,7 @@ import ForgotPassword from "../../components/ForgotPassword";
 import Link from "next/link";
 import Checkbox from "../../components/Checkbox";
 import { useCookies } from "react-cookie";
-import "animate.css"
+import "animate.css";
 import Cookies from "react-cookie/cjs/Cookies";
 
 interface IDTO {
@@ -31,7 +31,7 @@ export default function PanelLoginComponent() {
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [cookie, setCookie] = useCookies()
+  const [cookie, setCookie] = useCookies();
 
   const router = useRouter();
 
@@ -63,12 +63,12 @@ export default function PanelLoginComponent() {
       setIsLoading(true);
       if (!DTO.login || !DTO.password)
         throw new Error("Todos os campos são obrigatórios");
-      if (DTO.login != "tropadigital@teste.com")
+      if (DTO.login != "admin@tropa.digital.com")
         throw new Error("O login está incorreto");
       if (DTO.password !== "tropadigital")
         throw new Error("A senha está incorreta");
 
-      setCookie("admin", "AuthorizedTropaAdmin")
+      setCookie("AuthorizedTropaAdmin", "ZGQmIiDzlL");
       router.push("/painel/dashboard");
     } catch (error: any) {
       toast.error(error.message);
@@ -136,7 +136,7 @@ export default function PanelLoginComponent() {
             type="submit"
             color="primaryButton"
             onClick={() => {
-              SubmitEvent;
+              checkDTO();
             }}
           >
             <p className="textSubmitPanel">Acessar minha conta</p>
