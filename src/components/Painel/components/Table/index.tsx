@@ -19,6 +19,31 @@ export default function Table({ title, search, header, data }: ITableProps) {
   const [actualItem, setActualItem] = useState<any>();
   const [isSelectedAll, setIsSelectedAll] = useState<boolean>(false);
 
+  const selectAll = (mainCheckbox: any) => {
+    const allCheckboxes = document?.querySelectorAll("#select");
+
+    setIsSelectedAll(!mainCheckbox.checked);
+
+    if (allCheckboxes)
+      allCheckboxes.forEach((checkbox: any) => {
+        if (isSelectedAll) {
+          checkbox.checked = "checked";
+        }
+
+        if (!isSelectedAll) {
+          checkbox.checked = "";
+        }
+      });
+  };
+
+  useEffect(() => {
+    const selectAllCheckbox: any = document?.querySelector("#selectAll");
+
+    selectAllCheckbox?.addEventListener("change", () =>
+      selectAll(selectAllCheckbox)
+    );
+  }, [isSelectedAll]);
+
   // const pathName = usePathname();
 
   // const queryClient = useQueryClient();
@@ -116,17 +141,11 @@ export default function Table({ title, search, header, data }: ITableProps) {
       <table>
         <thead>
           <tr>
-            {header.map((row, key) => {
-              if (row.key === "select_product") {
-                console.log(row);
-              }
-
-              return (
-                <th align="left" key={key}>
-                  {row.label}
-                </th>
-              );
-            })}
+            {header.map((row, key) => (
+              <th align="left" key={key}>
+                {row.label}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
