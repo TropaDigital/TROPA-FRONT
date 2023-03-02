@@ -34,13 +34,13 @@ export default function PanelLoginComponent() {
   const router = useRouter();
 
   const checkLogin = (email: string, password: string) => {
-    const now = new Date();
+    const expiresInFiveDays = 1 * 60 * 60 * 24 * 5;
 
     if (email === "admin@tropa.digital.com" || password === "tropadigital") {
       const rememberMe: any = document?.querySelector("input:checked");
       if (rememberMe) {
-        setCookie("AuthorizedTropaAdmin", "JKoknHCxazT", {
-          maxAge: now.setDate(now.getDate() + 3),
+          setCookie("AuthorizedTropaAdmin", "JKoknHCxazT", {
+          maxAge: expiresInFiveDays, // 5 Dias
         });
       } else {
         setCookie("AuthorizedTropaAdmin", "JKoknHCxazT");
