@@ -1,3 +1,4 @@
+import { color } from "@mui/system";
 import styled from "styled-components";
 import { colors, fonts } from "../../../../assets/styles/mixin";
 
@@ -151,6 +152,9 @@ export const FormWrapper = styled.div`
     }
     .inputWrapper {
       margin-bottom: 24px;
+    }
+    .inputField {
+      color: ${colors.primaryWhite};
     }
     .textSubmitPanel {
       font-size: 16px;

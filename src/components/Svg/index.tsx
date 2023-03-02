@@ -1202,6 +1202,101 @@ export const PencilIcon = ({ color = "#495755", size = 16 }: any) => (
   </svg>
 );
 
+export const TrashIcon = ({ color = "#FFFFFF", size = 24 }: any) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+  >
+    <path
+      fill={color}
+      d="m20.37 8.91l-1 1.73l-12.13-7l1-1.73l3.04 1.75l1.36-.37l4.33 2.5l.37 1.37l3.03 1.75M6 19V7h5.07L18 11v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2Z"
+    />
+  </svg>
+);
+
+export const InfoIcon = ({ color = "#069CD1", size = 18 }: any) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+  >
+    <path
+      fill={color}
+      d="M11 17h2v-6h-2v6Zm1-8q.425 0 .713-.288T13 8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8q0 .425.288.713T12 9Zm0 13q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"
+    />
+  </svg>
+);
+
+export const CameraIcon = ({ color = "#869693", size = 32 }: any) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 33 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M20.3389 13.557C22.4149 15.633 22.4149 18.999 20.3389 21.075C18.2629 23.151 14.897 23.151 12.8209 21.075C10.7449 18.999 10.7449 15.633 12.8209 13.557C14.897 11.481 18.2629 11.481 20.3389 13.557"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M28.5 12V24C28.5 25.4734 27.3067 26.6667 25.8333 26.6667H7.16667C5.69333 26.6667 4.5 25.4734 4.5 24V12C4.5 10.5267 5.69333 9.33337 7.16667 9.33337H9.83333L11.7827 5.99471C12.0213 5.58537 12.46 5.33337 12.9347 5.33337H20.0067C20.4747 5.33337 20.908 5.57871 21.1493 5.97871L23.1667 9.33337H25.8333C27.3067 9.33337 28.5 10.5267 28.5 12Z"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export function InnerArrow({ color = "#495755" }: any) {
+  return (
+    <svg
+      width="6"
+      height="4"
+      viewBox="0 0 6 4"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.5 3.25L3 0.75L0.5 3.25"
+        stroke={color}
+        strokeWidth="0.833333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function OuterArrow({ color = "#495755" }: any) {
+  return (
+    <svg
+      width="6"
+      height="4"
+      viewBox="0 0 6 4"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.5 0.75L3 3.25L5.5 0.75"
+        stroke={color}
+        strokeWidth="0.833333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export const ExampleSVG: React.FC = ({ className }: any) => {
   return <svg />;
 };

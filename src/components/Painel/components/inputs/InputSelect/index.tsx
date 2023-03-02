@@ -24,9 +24,9 @@ const InputSelect = ({
         <option disabled selected value="">
           Selecione
         </option>
-        {options.map((opt) => {
+        {options.map((opt, key) => {
           return (
-            <option selected={opt === values} value={opt}>
+            <option selected={opt === values} value={opt} key={key}>
               {opt}
             </option>
           );

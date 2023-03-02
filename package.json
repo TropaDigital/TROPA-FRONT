@@ -8,6 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.11",
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
     "cookie": "^0.5.0",

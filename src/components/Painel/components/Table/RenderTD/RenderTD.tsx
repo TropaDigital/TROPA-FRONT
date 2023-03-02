@@ -43,12 +43,12 @@ export default function RenderTD({ head, item, onClickOptions }: IRenderTD) {
                 {
                   label: "Editar",
                   value: "editar",
-                  icon: <PencilIcon />,
+                  icon: <a />,
                 },
                 {
                   label: "Deletar",
                   value: "deletar",
-                  icon: <CloseIcon />,
+                  icon: <a />,
                 },
               ]}
             />

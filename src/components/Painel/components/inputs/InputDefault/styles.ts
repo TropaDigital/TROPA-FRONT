@@ -21,7 +21,7 @@ export const Container = styled.div<Props>`
         font-size: 16px;
         line-height: 24px;
         font-weight: 600;
-        color: ${colors.primaryWhite};
+        color: ${colors.primaryDark};
       }
     `}
 
@@ -46,14 +46,14 @@ export const Container = styled.div<Props>`
   .inputField {
     min-height: 48px;
     border-radius: 8px;
-    border: 1px solid ${colors.primaryWhite};
+    border: 1px solid ${colors.primaryGrey};
     background-color: transparent;
     padding: 16px 24px;
     width: 100%;
 
     font-size: 16px;
     font-weight: 400;
-    color: ${colors.primaryWhite};
+    color: ${colors.primaryDark};
   }
   .validationError {
     font-weight: 500;

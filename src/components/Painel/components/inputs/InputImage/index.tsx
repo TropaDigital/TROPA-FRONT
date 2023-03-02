@@ -1,28 +1,28 @@
-import { CameraIcon } from '@/src/assets/icons';
-import { usePostImage } from '@/src/services/image/POST/usePostImage';
-import { usePathname } from 'next/navigation';
+// import { usePostImage } from '@/src/services/image/POST/usePostImage';
+// import { usePathname } from 'next/navigation';
+import { CameraIcon } from '../../../../Svg';
 import { Container } from './styles';
 import { IInputFileProps } from './types';
 
 export default function InputImage({ onPostImage, error }: IInputFileProps) {
-  const pathName = usePathname()
+  // const pathName = usePathname()
   let tipo = ''
 
-  if(pathName?.includes('receitas')) {
-    tipo = "Receita"
-  }else {
-    tipo = "Produto"
-  }
+  // if(pathName?.includes('receitas')) {
+  //   tipo = "Receita"
+  // }else {
+  //   tipo = "Produto"
+  // }
 
 
-  const { postImage } = usePostImage(tipo);
+  // const { postImage } = usePostImage(tipo);
 
   async function LoadImage(file: React.ChangeEvent<HTMLInputElement>) {
     let formData = new FormData();
     if (file.target.files?.length) {
       formData.append('theFiles', file?.target?.files[0]);
-      let response: any = await postImage(formData);
-      onPostImage(response);
+      // let response: any = await postImage(formData);
+      // onPostImage(response);
     }
   }
 

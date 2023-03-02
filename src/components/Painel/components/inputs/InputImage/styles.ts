@@ -38,7 +38,7 @@ export const Container = styled.div`
         font-weight: 400;
         font-size: 20px;
         line-height: 24px;
-        color: var(--text4);
+        color: ${colors.neutralGrey};
       }
       .inputButton {
         font-family: 'Poppins';
@@ -47,8 +47,7 @@ export const Container = styled.div`
         font-size: 14px;
         line-height: 16px;
         text-decoration-line: underline;
-
-        color: var(--text1);
+        color: ${colors.neutralGrey};
       }
     }
   }

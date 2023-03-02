@@ -1,11 +1,21 @@
 import styled from 'styled-components';
-import { colors } from '../../../../assets/styles/mixin';
+import { colors, fonts } from '../../../../assets/styles/mixin';
 
 export const Container = styled.div`
   border-radius: 8px;
   width: 100%;
   .formAddProductWrapper {
     width: 100%;
+
+    .inputLabel {
+      font-family: ${fonts.manrope};
+    }
+    
+    .inputField {
+      font-family: ${fonts.inter};
+      font-weight: 400;
+      background-color: ${colors.primaryWhite};
+    }
 
     span {
       color: ${colors.alert};
@@ -15,9 +25,7 @@ export const Container = styled.div`
   }
   .lineElementsWrapper {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 15px;
+    gap: 24px;
   }
   .inputsProductWrapper {
     display: flex;
@@ -28,9 +36,11 @@ export const Container = styled.div`
     justify-content: flex-end;
   }
   .button {
-    max-width: 152px;
-    font-weight: 500;
+    font-family: ${fonts.inter};
+    max-width: min-content;
+    font-weight: 600;
     font-size: 16px;
+    padding: 14px 40px;
 
     @media (max-width: 835px) {
       max-width: 100%;

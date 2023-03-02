@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../../../assets/styles/mixin';
+import { colors, fonts } from '../../../../../assets/styles/mixin';
 
 export const Container = styled.div`
   position: absolute;
@@ -28,10 +28,13 @@ export const Container = styled.div`
       background-color: ${colors.primaryGrey};
     }
   }
+  .boldText,
   .normalText {
-    color: ${colors.neutralDark};
+    font-family: ${fonts.dmsans};
+    color: ${colors.secondaryDark};
+    font-weight: 500;
   }
-  .redText {
-    color: ${colors.alert};
+  .boldText {
+    font-weight: 700;
   }
 `;

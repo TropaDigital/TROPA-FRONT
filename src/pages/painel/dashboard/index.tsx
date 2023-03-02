@@ -6,12 +6,13 @@ import Checkbox from "../../../components/Painel/components/Checkbox";
 import { ImageIcon, SearchIcon } from "../../../components/Svg";
 import InputIcon from "../../../components/Painel/components/inputs/InputIcon";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const PainelDashboard = () => {
   const header = [
     {
       key: "select_product",
-      label: <Checkbox />,
+      label: <Checkbox id="selectAll" />,
       type: "string",
     },
     {
@@ -72,7 +73,7 @@ const PainelDashboard = () => {
             header={header}
             data={[
               {
-                select_product: <Checkbox/>,
+                select_product: <Checkbox id="select"/>,
                 project_name: "Consórcio Tradição",
                 project_stock: "Em Estoque",
                 project_sku: "A14B56C78",

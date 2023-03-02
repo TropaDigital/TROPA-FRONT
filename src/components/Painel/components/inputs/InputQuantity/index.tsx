@@ -1,6 +1,8 @@
-import { InfoIcon, InnerArrow, OuterArrow } from '@/src/assets/icons';
+// import { InfoIcon, InnerArrow, OuterArrow } from '@/src/assets/icons';
 // import ToolTips from '@/src/components/global/ToolTips';
 import Tooltip from '@mui/material/Tooltip';
+import { colors } from '../../../../../assets/styles/mixin';
+import { InfoIcon, InnerArrow, OuterArrow } from '../../../../Svg';
 import * as S from './styles';
 interface IInputQuantity extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;

@@ -4,20 +4,20 @@
 // import { useDeleteRecipe } from '@/src/services/receitas/DELETE/useDeleteRecipes';
 // import { IGetRecipes } from '@/src/services/receitas/GET/types';
 // import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import ButtonDefault from '../ButtonDefault';
-import FormProduct from '../forms/FormProduct';
-import FormRecipe from '../forms/FormRecipe';
-import Modal from '../modal/ModalDefault';
-import RenderTD from './RenderTD/RenderTD';
-import { Container, ModalDeleteProduct } from './styles';
-import { ITableProps } from './types';
+import { useState, useEffect } from "react";
+import ButtonDefault from "../ButtonDefault";
+import FormProduct from "../forms/FormProduct";
+import Modal from "../modal/ModalDefault";
+import RenderTD from "./RenderTD/RenderTD";
+import { Container, ModalDeleteProduct } from "./styles";
+import { ITableProps } from "./types";
 // import { useQueryClient } from 'react-query';
 
 export default function Table({ title, search, header, data }: ITableProps) {
   const [dataInternal, setDataInternal] = useState<any>(data);
   const [modalOpen, setModalOpen] = useState<string | null>(null);
   const [actualItem, setActualItem] = useState<any>();
+  const [isSelectedAll, setIsSelectedAll] = useState<boolean>(false);
 
   // const pathName = usePathname();
 
@@ -47,34 +47,24 @@ export default function Table({ title, search, header, data }: ITableProps) {
 
   return (
     <Container>
-      {/* {modalOpen === 'editar' && (
+      {modalOpen === "editar" && (
         <Modal
           onClose={() => {
             setModalOpen(null);
           }}
           setData={() => {}}
         >
-          {pathName?.includes('receitas') ? (
-            <FormRecipe
-              modalOpen="editar"
-              actualItem={actualItem}
-              onSubmit={() => {
-                setModalOpen('');
-              }}
-            />
-          ) : (
-            <FormProduct
-              modalOpen="editar"
-              actualItem={actualItem}
-              onSubmit={() => {
-                setModalOpen('');
-              }}
-            />
-          )}
+          <FormProduct
+            modalOpen="editar"
+            actualItem={actualItem}
+            onSubmit={() => {
+              setModalOpen("");
+            }}
+          />
         </Modal>
-      )} */}
+      )}
 
-      {modalOpen === 'deletar' && (
+      {modalOpen === "deletar" && (
         <Modal
           onClose={() => {
             setModalOpen(null);
@@ -92,7 +82,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
               <ButtonDefault
                 color="transparent"
                 onClick={() => {
-                  setModalOpen('');
+                  setModalOpen("");
                 }}
               >
                 <p className="buttonText transparentButton">Cancelar</p>
@@ -101,8 +91,8 @@ export default function Table({ title, search, header, data }: ITableProps) {
                 color="darkButton"
                 onClick={() => {
                   let itemType: any = actualItem?.id_receita
-                    ? 'recipe'
-                    : 'product';
+                    ? "recipe"
+                    : "product";
 
                   // removeProductOrRecipe(
                   //   actualItem?.id_receita
@@ -126,11 +116,17 @@ export default function Table({ title, search, header, data }: ITableProps) {
       <table>
         <thead>
           <tr>
-            {header.map((row, key) => (
-              <th align="left" key={key}>
-                {row.label}
-              </th>
-            ))}
+            {header.map((row, key) => {
+              if (row.key === "select_product") {
+                console.log(row);
+              }
+
+              return (
+                <th align="left" key={key}>
+                  {row.label}
+                </th>
+              );
+            })}
           </tr>
         </thead>
         <tbody>

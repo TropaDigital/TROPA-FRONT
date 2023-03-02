@@ -1,7 +1,7 @@
-import { InfoIcon } from '@/src/assets/icons';
 import * as S from './styles';
 import Tooltip from '@mui/material/Tooltip';
 import { colors } from '../../../../../assets/styles/mixin';
+import { InfoIcon } from '../../../../Svg';
 interface IInputDescription
   extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   label?: string;

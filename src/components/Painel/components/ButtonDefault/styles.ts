@@ -35,5 +35,6 @@ export const Button = styled.button<IPropsStyle>`
     css`
       background-color: transparent;
       border: 1px solid ${colors.primaryDark};
+      color: ${colors.primaryDark};
     `}
 `;

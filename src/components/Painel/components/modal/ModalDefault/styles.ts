@@ -15,7 +15,8 @@ export const Container = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(33, 37, 41, 0.5);
+    backdrop-filter: blur(5px);
   }
   .closeModal {
     display: flex;
@@ -25,12 +26,12 @@ export const Container = styled.div`
   }
   .modalContent {
     position: relative;
-    background-color: var(--bg);
-    width: 536px;
+    background-color: ${colors.primaryWhite};
+    max-width: 528px;
+    max-height: 692px;
     padding: 24px;
     border-radius: 12px;
-    max-height: 80%;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin: 0 20px;
     @media (max-width: 450px) {
       border-radius: 8px;

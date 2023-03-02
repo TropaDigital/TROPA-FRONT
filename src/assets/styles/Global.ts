@@ -90,19 +90,33 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Inter";
         src: url("/fonts/INTER/Inter-Thin.ttf");
         font-style: normal;
-        font-weight: 300;
+        font-weight: 100;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("/fonts/INTER/Inter-ExtraLight.ttf");
+        font-style: normal;
+        font-weight: 200;
         font-display: swap;
     }
     @font-face {
         font-family: "Inter";
         src: url("/fonts/INTER/Inter-Light.ttf");
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         font-display: swap;
     }
     @font-face {
         font-family: "Inter";
         src: url("/fonts/INTER/Inter-Regular.ttf");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url("/fonts/INTER/Inter-Medium.ttf");
         font-style: normal;
         font-weight: 500;
         font-display: swap;
@@ -133,19 +147,26 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Manrope";
         src: url("/fonts/MANROPE/Manrope-ExtraLight.ttf");
         font-style: normal;
-        font-weight: 300;
+        font-weight: 200;
         font-display: swap;
     }
     @font-face {
         font-family: "Manrope";
         src: url("/fonts/MANROPE/Manrope-Light.ttf");
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         font-display: swap;
     }
     @font-face {
         font-family: "Manrope";
         src: url("/fonts/MANROPE/Manrope-Regular.ttf");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Manrope";
+        src: url("/fonts/MANROPE/Manrope-Medium.ttf");
         font-style: normal;
         font-weight: 500;
         font-display: swap;
