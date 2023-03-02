@@ -1297,6 +1297,26 @@ export function OuterArrow({ color = "#495755" }: any) {
   );
 }
 
+export const DownArrow: React.FC = ({ color = "#495057", size = 12 }: any) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 11 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.65827 1.53271V10.4669M5.65827 10.4669L10.1254 5.99982M5.65827 10.4669L1.19116 5.99982"
+        stroke={color}
+        strokeWidth="1.27632"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
 export const ExampleSVG: React.FC = ({ className }: any) => {
   return <svg />;
 };
