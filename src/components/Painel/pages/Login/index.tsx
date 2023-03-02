@@ -45,7 +45,9 @@ export default function PanelLoginComponent() {
       } else {
         setCookie("AuthorizedTropaAdmin", "JKoknHCxazT");
       }
-      router.push("/painel/dashboard");
+      router.push({
+        pathname: "/painel/dashboard",
+      });
     }
   };
 

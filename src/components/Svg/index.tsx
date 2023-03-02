@@ -1021,7 +1021,7 @@ export const ExitIcon: React.FC = ({ size = 18, color = "#212529" }: any) => {
   );
 };
 
-export const PersonIcon = ({ color = '#069CD1', size = 18 }: any) => (
+export const PersonIcon = ({ color = "#069CD1", size = 18 }: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -1035,7 +1035,7 @@ export const PersonIcon = ({ color = '#069CD1', size = 18 }: any) => (
   </svg>
 );
 
-export const LogoutIcon = ({ color = '#069CD1', size = 18 }: any) => (
+export const LogoutIcon = ({ color = "#069CD1", size = 18 }: any) => (
   <svg
     width="16"
     height="16"
@@ -1058,6 +1058,144 @@ export const LogoutIcon = ({ color = '#069CD1', size = 18 }: any) => (
     <path
       d="M1.99756 7.99998H10.0009"
       stroke="#F03D3D"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ImageIcon: React.FC = ({ size = 18, color = "#323232" }: any) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M15.0025 12.3345C15.0025 13.8079 13.8081 15.0023 12.3347 15.0023H5.66528C4.1919 15.0023 2.9975 13.8079 2.9975 12.3345V5.66509C2.9975 4.19172 4.1919 2.99731 5.66528 2.99731H12.3347C13.8081 2.99731 15.0025 4.19172 15.0025 5.66509V12.3345Z"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.9975 9.66681L3.8613 8.803C4.16286 8.50145 4.57186 8.33203 4.99833 8.33203C5.4248 8.33203 5.8338 8.50145 6.13536 8.803L9 11.6676"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.66727 15.0025L9.8658 10.804C10.4938 10.176 11.5119 10.176 12.1398 10.804L14.7671 13.4312"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const SearchIcon: React.FC = ({ size = 18, color = "#667085" }: any) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.5 16.5L12.875 12.875M14.8333 8.16667C14.8333 11.8486 11.8486 14.8333 8.16667 14.8333C4.48477 14.8333 1.5 11.8486 1.5 8.16667C1.5 4.48477 4.48477 1.5 8.16667 1.5C11.8486 1.5 14.8333 4.48477 14.8333 8.16667Z"
+        stroke={color}
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const MenuIcon = ({ color = "#212529", size = 25 }: any) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 25 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12.497 17.5022C12.2219 17.5022 11.9968 17.7273 11.9998 18.0024C11.9998 18.2775 12.2249 18.5026 12.5 18.5026C12.7751 18.5026 13.0002 18.2775 13.0002 18.0024C13.0002 17.7273 12.7751 17.5022 12.497 17.5022"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.497 11.4996C12.2219 11.4996 11.9968 11.7247 11.9998 11.9998C11.9998 12.275 12.2249 12.5001 12.5 12.5001C12.7751 12.5001 13.0002 12.275 13.0002 11.9998C13.0002 11.7247 12.7751 11.4996 12.497 11.4996"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.497 5.49719C12.2219 5.49719 11.9968 5.72229 11.9998 5.9974C11.9998 6.27252 12.2249 6.49761 12.5 6.49761C12.7751 6.49761 13.0002 6.27252 13.0002 5.9974C13.0002 5.72229 12.7751 5.49719 12.497 5.49719"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const CloseIcon = ({ color = "#F03D3D", size = 18 }: any) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.33331 5.33337L10.6666 10.6667"
+      stroke={color}
+      strokeWidth="1.125"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.6666 5.33337L5.33331 10.6667"
+      stroke={color}
+      strokeWidth="1.125"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const PencilIcon = ({ color = "#495755", size = 16 }: any) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M3.52865 10.4126L10.4126 3.52862C10.6726 3.26862 11.0946 3.26862 11.3546 3.52862L12.472 4.64595C12.732 4.90595 12.732 5.32795 12.472 5.58795L5.58731 12.4713C5.46265 12.5966 5.29331 12.6666 5.11665 12.6666H3.33331V10.8833C3.33331 10.7066 3.40331 10.5373 3.52865 10.4126Z"
+      stroke={color}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.16669 4.77332L11.2267 6.83332"
+      stroke={color}
       strokeLinecap="round"
       strokeLinejoin="round"
     />

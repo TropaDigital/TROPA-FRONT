@@ -7,7 +7,7 @@ export interface ITableProps {
   search?: ReactNode;
   header: Array<{
     key: string;
-    label: string;
+    label: string | any;
     type: string;
   }>;
   data: Array<IGetProduct> | Array<IGetRecipes> | any;

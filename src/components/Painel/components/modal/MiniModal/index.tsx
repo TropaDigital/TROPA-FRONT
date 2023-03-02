@@ -30,6 +30,7 @@ export default function MiniModal({ options, onClick, closeModal }: IMiniModalPr
         {options?.map((row: OptionsProps, key: number) => (
           <button
           className={`${row?.value === 'deletar' ? 'redText' : 'normalText'}`}
+          key={key}
           onClick={() => {
             onClick(row?.value);
           }}

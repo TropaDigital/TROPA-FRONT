@@ -18,6 +18,7 @@ const fonts = {
   arto: `'Arto', sans-serif`,
   inter: `'Inter', sans-serif`,
   manrope: `'Manrope', sans-serif`,
+  dmsans: `'DM Sans', sans-serif`
 };
 
 export { colors, fonts };

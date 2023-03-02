@@ -1,14 +1,22 @@
-import styled from 'styled-components';
-import { colors } from '../../../../../assets/styles/mixin';
+import styled from "styled-components";
+import { colors, fonts } from "../../../../../assets/styles/mixin";
 
 export const Container = styled.td`
   position: relative;
+  h1, h2, h3, span, p {
+    font-family: ${fonts.dmsans};
+  } 
+  span {
+    img {
+      border-radius: 4px;
+    }
+  }
   .ativo,
   .Ativo {
-    color: var(--color1C);
+    color: ${colors.primaryDark};
     font-weight: 500;
     &::before {
-      content: '.';
+      content: ".";
       font-size: 40px;
       margin-right: 5px;
       position: absolute;
@@ -18,10 +26,10 @@ export const Container = styled.td`
   }
   .inativo,
   .Inativo {
-    color: ${colors.alert};
+    color: ${colors.primaryDark};
     font-weight: 500;
     &::before {
-      content: '.';
+      content: ".";
       font-size: 40px;
       margin-right: 5px;
       position: absolute;
@@ -37,6 +45,9 @@ export const Container = styled.td`
     height: 35px;
     border-radius: 50%;
     transition: all 0.4s;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     &:hover {
       transition: all 0.4s;
       background-color: ${colors.primaryGrey};

@@ -17,7 +17,7 @@ export const Container = styled.div`
     height: 48px;
     border-radius: 8px;
     border: 1px solid ${colors.primaryGrey};
-    background-color: ${colors.primary};
+    background-color: ${colors.primaryWhite};
     padding: 0 50px;
 
     font-size: 16px;

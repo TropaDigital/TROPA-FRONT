@@ -152,6 +152,26 @@ export const Container = styled.div<ISideBarProps>`
           color: ${colors.neutralDark};
         }
       }
+      .sideBarFooter {
+        > p {
+          font-family: ${fonts.manrope};
+          font-size: 16px;
+        }
+
+        .adminUserName {
+          font-weight: 700;
+          color: ${colors.neutralDark};
+        }
+
+        .adminEmail {
+          font-size: 14px;
+          color: ${colors.neutralGrey};
+        }
+
+        .handleCloseSideBar {
+          margin-top: 24px;
+        }
+      }
     }
     .mainWrapperWithChildren {
       margin-left: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "216px" : "80px")};

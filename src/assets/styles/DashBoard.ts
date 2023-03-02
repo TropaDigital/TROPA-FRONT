@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import { fonts } from "./mixin";
+import { colors, fonts } from "./mixin";
 
 export const DashContainer = styled.div`
-  p {
+  p, h1, h2, h3, span, a {
     font-family: ${fonts.manrope};
+  }
+
+  .customCheckbox {
+    border: 2px solid ${colors.secondaryDark};
   }
 `;

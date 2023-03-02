@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 import { Button } from './styles';
 
 interface IPropsButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  color: 'primaryButton' | 'darkButton' | 'transparent';
   children: ReactNode;
+  color: 'primaryButton' | 'darkButton' | 'transparent';
 }
 
 export default function ButtonDefault({

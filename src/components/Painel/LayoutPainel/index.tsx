@@ -54,16 +54,21 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
               icon={<PageIcon />}
             />
           </div>
-          <button
-            className="handleCloseSideBar"
-            onClick={() => {
-              removeCookie("AuthorizedTropaAdmin");
-              router.push("/");
-            }}
-          >
-            <ExitIcon />
-            <p className="textHandleCloseSideBar">Sair</p>
-          </button>
+          <div className="sideBarFooter">
+            <p className="adminUserName">Username</p>
+            <p className="adminEmail">admin@tropa.digital.com</p>
+
+            <button
+              className="handleCloseSideBar"
+              onClick={() => {
+                removeCookie("AuthorizedTropaAdmin");
+                router.push("/");
+              }}
+            >
+              <ExitIcon />
+              <p className="textHandleCloseSideBar">Sair</p>
+            </button>
+          </div>
         </div>
 
         <main className="mainWrapperWithChildren">{children}</main>

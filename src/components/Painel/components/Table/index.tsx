@@ -1,9 +1,9 @@
-import { AlertIcon } from '@/src/assets/icons';
-import { useDeleteProduct } from '@/src/services/products/DELETE/useDeleteProduct';
-import { IGetProduct } from '@/src/services/products/GET/types';
-import { useDeleteRecipe } from '@/src/services/receitas/DELETE/useDeleteRecipes';
-import { IGetRecipes } from '@/src/services/receitas/GET/types';
-import { usePathname } from 'next/navigation';
+// import { AlertIcon } from '@/src/assets/icons';
+// import { useDeleteProduct } from '@/src/services/products/DELETE/useDeleteProduct';
+// import { IGetProduct } from '@/src/services/products/GET/types';
+// import { useDeleteRecipe } from '@/src/services/receitas/DELETE/useDeleteRecipes';
+// import { IGetRecipes } from '@/src/services/receitas/GET/types';
+// import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import ButtonDefault from '../ButtonDefault';
 import FormProduct from '../forms/FormProduct';
@@ -12,19 +12,19 @@ import Modal from '../modal/ModalDefault';
 import RenderTD from './RenderTD/RenderTD';
 import { Container, ModalDeleteProduct } from './styles';
 import { ITableProps } from './types';
-import { useQueryClient } from 'react-query';
+// import { useQueryClient } from 'react-query';
 
 export default function Table({ title, search, header, data }: ITableProps) {
-  const [dataInternal, setDataInternal] = useState<Array<IGetProduct>>(data);
+  const [dataInternal, setDataInternal] = useState<any>(data);
   const [modalOpen, setModalOpen] = useState<string | null>(null);
   const [actualItem, setActualItem] = useState<any>();
 
-  const pathName = usePathname();
+  // const pathName = usePathname();
 
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
-  const { deleteRecipes } = useDeleteRecipe();
-  const { deleteProduct } = useDeleteProduct();
+  // const { deleteRecipes } = useDeleteRecipe();
+  // const { deleteProduct } = useDeleteProduct();
 
   useEffect(() => {
     if (data) {
@@ -32,22 +32,22 @@ export default function Table({ title, search, header, data }: ITableProps) {
     }
   }, [data]);
 
-  function handleModal(modalType: string, product: IGetProduct | IGetRecipes) {
+  function handleModal(modalType: string, product: any) {
     setModalOpen(modalType);
   }
 
-  async function removeProductOrRecipe(id: number, type: 'recipe' | 'product') {
-    if (type === 'product') {
-      deleteProduct(id);
-    } else {
-      deleteRecipes(id);
-    }
-    setModalOpen('');
-  }
+  // async function removeProductOrRecipe(id: number, type: 'recipe' | 'product') {
+  //   if (type === 'product') {
+  //     deleteProduct(id);
+  //   } else {
+  //     deleteRecipes(id);
+  //   }
+  //   setModalOpen('');
+  // }
 
   return (
     <Container>
-      {modalOpen === 'editar' && (
+      {/* {modalOpen === 'editar' && (
         <Modal
           onClose={() => {
             setModalOpen(null);
@@ -72,7 +72,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
             />
           )}
         </Modal>
-      )}
+      )} */}
 
       {modalOpen === 'deletar' && (
         <Modal
@@ -82,7 +82,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
           setData={() => {}}
         >
           <ModalDeleteProduct>
-            <AlertIcon />
+            {/* <AlertIcon /> */}
             <div className="modalTitleWarning">Excluir item</div>
             <div className="modalDescription">
               Tem certeza de que deseja excluir esse item ? Essa ação não poderá
@@ -98,18 +98,18 @@ export default function Table({ title, search, header, data }: ITableProps) {
                 <p className="buttonText transparentButton">Cancelar</p>
               </ButtonDefault>
               <ButtonDefault
-                color="warning"
+                color="darkButton"
                 onClick={() => {
                   let itemType: any = actualItem?.id_receita
                     ? 'recipe'
                     : 'product';
 
-                  removeProductOrRecipe(
-                    actualItem?.id_receita
-                      ? actualItem?.id_receita
-                      : actualItem?.id_produto,
-                    itemType
-                  );
+                  // removeProductOrRecipe(
+                  //   actualItem?.id_receita
+                  //     ? actualItem?.id_receita
+                  //     : actualItem?.id_produto,
+                  //   itemType
+                  // );
                 }}
               >
                 <p className="buttonText warningButton">Excluir</p>
@@ -134,7 +134,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
           </tr>
         </thead>
         <tbody>
-          {dataInternal?.map((row: IGetProduct, key) => (
+          {dataInternal?.map((row: any, key: any) => (
             <tr key={key}>
               {header?.map((head: string | any, keyHead) => (
                 <>

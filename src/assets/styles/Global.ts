@@ -171,6 +171,28 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 800;
         font-display: swap;
     }
+    //DM Sans
+    @font-face {
+        font-family: "DM Sans";
+        src: url("/fonts/DMSANS/DMSans-Regular.ttf");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "DM Sans";
+        src: url("/fonts/DMSANS/DMSans-Medium.ttf");
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "DM Sans";
+        src: url("/fonts/DMSANS/DMSans-Bold.ttf");
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+    }
 
     //global styles
     * {
