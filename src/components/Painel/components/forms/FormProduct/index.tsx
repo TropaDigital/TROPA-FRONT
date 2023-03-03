@@ -29,7 +29,7 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
 
   useEffect(() => {
     if (actualItem) {
-      setPrice(formatPrice(actualItem?.valor));
+      setPrice(formatPrice(actualItem?.project_price));
       setImage(actualItemImages);
       handleOnChangeDTO("imagem", actualItemImages);
     }
@@ -90,12 +90,12 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
     <S.Container>
       <Formik
         initialValues={{
-          images: [""],
-          titulo: "",
-          sku: "",
-          preco: "",
-          estoque: "",
-          status: "",
+          images: [],
+          titulo: actualItem?.project_name ?? "",
+          sku: actualItem?.project_sku ?? "",
+          preco: price ?? "",
+          estoque: actualItem?.project_stock ?? "",
+          status: actualItem?.status ?? "",
         }}
         validationSchema={productSchema}
         onSubmit={(values) => {
@@ -164,7 +164,13 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
                 />
 
                 <div className="lineElementsWrapper">
-                  <Inputdefault label="SKU" />
+                  <Inputdefault
+                    label="SKU"
+                    placeholder="SKU do produto"
+                    name="sku"
+                    value={values.sku}
+                    onChange={(e: any) => handleChange(e)}
+                  />
                   <Inputdefault
                     label="Preço (R$)"
                     placeholder="R$59,99"
@@ -187,10 +193,12 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
                   <InputSelect
                     label="Estoque"
                     options={["Em estoque", "Fora de estoque"]}
+                    value={values.estoque}
                   />
                   <InputSelect
                     label="Status"
                     options={["Ativo", "Desativado"]}
+                    value={values.status}
                   />
                 </div>
 
