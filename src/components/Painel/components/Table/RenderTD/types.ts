@@ -10,4 +10,5 @@ export interface IRenderTD {
   };
   item: IGetProduct | IGetRecipes;
   openMenu?: (modal: 'edit' | 'delete') => void;
+  isLoading?: boolean,
 }

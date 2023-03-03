@@ -73,6 +73,19 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
 
         <main className="mainWrapperWithChildren">{children}</main>
       </div>
+      <footer className="footerWrapper">
+        <div>
+        &copy; 2023, Todos os direitos reservados.
+        </div>
+        <div>
+          <Link href="/painel/dashboard">
+              Privacy policy
+          </Link>
+          <Link href="/painel/dashboard">
+              Terms of use
+          </Link>
+        </div>
+      </footer>
     </Container>
   );
 }

@@ -825,21 +825,21 @@ export const IconClose: React.FC<any> = ({ className }: any) => {
       <path
         d="M83.64 165.28C128.729 165.28 165.28 128.729 165.28 83.64C165.28 38.5515 128.729 2 83.64 2C38.5515 2 2 38.5515 2 83.64C2 128.729 38.5515 165.28 83.64 165.28Z"
         stroke="#CC6237"
-        stroke-width="3"
+        strokeWidth="3"
         stroke-miterlimit="10"
         className={className}
       />
       <path
         d="M46.352 120.928L120.928 46.352"
         stroke="#CC6237"
-        stroke-width="3"
+        strokeWidth="3"
         stroke-miterlimit="10"
         className={className}
       />
       <path
         d="M120.928 120.928L46.352 46.352"
         stroke="#CC6237"
-        stroke-width="3"
+        strokeWidth="3"
         stroke-miterlimit="10"
         className={className}
       />
@@ -1310,6 +1310,54 @@ export const DownArrow: React.FC = ({ color = "#495057", size = 12 }: any) => {
         d="M5.65827 1.53271V10.4669M5.65827 10.4669L10.1254 5.99982M5.65827 10.4669L1.19116 5.99982"
         stroke={color}
         strokeWidth="1.27632"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const AlertIcon = ({ color = "#D92D20", size = 56 }: any) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 56 56"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="4" y="4" width="48" height="48" rx="24" fill="#FEE4E2" />
+    <path
+      d="M28 24V28M28 32H28.01M38 28C38 33.5228 33.5228 38 28 38C22.4772 38 18 33.5228 18 28C18 22.4772 22.4772 18 28 18C33.5228 18 38 22.4772 38 28Z"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <rect
+      x="4"
+      y="4"
+      width="48"
+      height="48"
+      rx="24"
+      stroke="#FEF3F2"
+      strokeWidth="8"
+    />
+  </svg>
+);
+
+export const ArrowHead: React.FC = ({ color = "#323232" }: any) => {
+  return (
+    <svg
+      width="6"
+      height="10"
+      viewBox="0 0 6 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 1L1 5L5 9"
+        stroke={color}
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

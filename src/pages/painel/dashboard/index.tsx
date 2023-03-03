@@ -16,7 +16,7 @@ const PainelDashboard = () => {
       type: "string",
     },
     {
-      key: "project_image",
+      key: "produtoImagens",
       label: <ImageIcon />,
       type: "image",
     },

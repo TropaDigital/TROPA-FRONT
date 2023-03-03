@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { colors } from '../../../../../assets/styles/mixin';
+import styled from "styled-components";
+import { colors } from "../../../../../assets/styles/mixin";
 
 export const Container = styled.div`
   .inputWrapper {
@@ -38,16 +38,16 @@ export const Container = styled.div`
         font-weight: 400;
         font-size: 20px;
         line-height: 24px;
-        color: ${colors.neutralGrey};
+        color: ${colors.darkGrey};
       }
       .inputButton {
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
         line-height: 16px;
         text-decoration-line: underline;
-        color: ${colors.neutralGrey};
+        color: ${colors.darkGrey};
       }
     }
   }

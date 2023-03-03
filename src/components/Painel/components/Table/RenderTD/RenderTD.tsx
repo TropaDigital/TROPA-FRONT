@@ -6,8 +6,9 @@ import moment from "moment";
 import * as S from "./styles";
 import { IRenderTD } from "./types";
 import { CloseIcon, MenuIcon, PencilIcon } from "../../../../Svg";
+import { Skeleton } from "@mui/material";
 
-export default function RenderTD({ head, item, onClickOptions }: IRenderTD) {
+export default function RenderTD({ head, item, isLoading, onClickOptions }: IRenderTD) {
   const [miniModal, setMiniModal] = useState<boolean>(false);
 
   const labelKey:
@@ -20,9 +21,7 @@ export default function RenderTD({ head, item, onClickOptions }: IRenderTD) {
 
   return (
     <S.Container id="td">
-      {head.type === "date" && (
-        <span>{moment(item.criado).format("DD/MM/YYYY")}</span>
-      )}
+      {head.type === "date" && isLoading ? <Skeleton/> : head.type === "date" && <span>{moment(item.criado).format("DD/MM/YYYY")}</span>}
       {head.type === "options" && (
         <button
           className="buttonOptions"
@@ -46,6 +45,11 @@ export default function RenderTD({ head, item, onClickOptions }: IRenderTD) {
                   icon: <a />,
                 },
                 {
+                  label: "Visualizar",
+                  value: "visualizar",
+                  icon: <a />,
+                },
+                {
                   label: "Deletar",
                   value: "deletar",
                   icon: <a />,
@@ -55,14 +59,21 @@ export default function RenderTD({ head, item, onClickOptions }: IRenderTD) {
           )}
         </button>
       )}
-      {head.type === "status" && (
+      {head.type === "status" && isLoading ? <Skeleton width={35}/>  
+      : head.type === "status" && (
         <span className={item[head.key] as string}>
           {item.status.toLowerCase() === "ativo" ? "Ativo" : "Inativo"}
         </span>
       )}
-      {head.type === "string" && <span>{item[labelKey] as string}</span>}
-      {head.type === "number" && <span>{item[labelKey] as number}</span>}
-      {head.type === "image" && (
+
+      {head.type === "string" && isLoading ? <Skeleton width={80} /> 
+      : head.type === "string" && <span>{item[labelKey] as string}</span>}
+
+      {head.type === "number" && isLoading ? <Skeleton width={80} /> 
+      : head.type === "number" && <span>{item[labelKey] as number}</span>}
+
+      {head.type === "image" && isLoading ? <Skeleton variant="rounded" height={40} width={40} /> 
+      : head.type === "image" && (
         <Image
           alt={head?.label}
           width={60}

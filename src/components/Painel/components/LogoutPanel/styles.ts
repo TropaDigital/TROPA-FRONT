@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { colors } from '../../../../assets/styles/mixin';
+import styled, { css } from "styled-components";
+import { colors } from "../../../../assets/styles/mixin";
 
 interface propsModal {
   isOpen: boolean;
@@ -14,12 +14,27 @@ export const Container = styled.div<propsModal>`
     width: 24px;
     height: 24px;
     border-radius: 12px;
-    background-color: var(--bg);
+    background-color: ${colors.primaryWhite};
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background: url("../../../../public/images/insta.jpg") center center
+      no-repeat;
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
   }
   .chevronHandleLogOutVisibility {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     svg {
       transform: rotate(-180deg);
       transition: all 0.3s;
@@ -58,6 +73,10 @@ export const ModalLogOut = styled.div<propsModal>`
     justify-content: flex-start;
     padding: 12px;
     gap: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
   }
   .logoutText {
     font-size: 14px;

@@ -28,7 +28,7 @@ export const Container = styled.div`
     position: relative;
     background-color: ${colors.primaryWhite};
     max-width: 528px;
-    max-height: 692px;
+    height: auto;
     padding: 24px;
     border-radius: 12px;
     overflow-y: auto;
@@ -52,12 +52,12 @@ export const Container = styled.div`
     }
 
     &::-webkit-scrollbar-thumb {
-      background: var(--color1B);
+      background: ${colors.primaryDark};
       border-radius: 12px;
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background: var(--color1D);
+      background: ${colors.secondaryDark};
       border-radius: 12px;
     }
   }

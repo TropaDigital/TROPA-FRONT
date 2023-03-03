@@ -42,7 +42,7 @@ export const Container = styled.div<ISideBarProps>`
       justify-content: space-between;
       align-items: center;
       padding: 24px 30px;
-      background-color: ${colors.neutralGrey};
+      background-color: ${colors.darkGrey};
       font-weight: 400;
 
       color: ${colors.primaryWhite};
@@ -165,7 +165,7 @@ export const Container = styled.div<ISideBarProps>`
 
         .adminEmail {
           font-size: 14px;
-          color: ${colors.neutralGrey};
+          color: ${colors.primaryLight};
         }
 
         .handleCloseSideBar {
@@ -183,6 +183,33 @@ export const Container = styled.div<ISideBarProps>`
       @media (max-width: 835px) {
         width: 100%;
         margin-left: 0;
+      }
+    }
+  }
+  .footerWrapper {
+    width: calc(100% - 216px);
+    margin-left: 216px;
+    height: 66px;
+    border-top: 1px solid ${colors.primaryGrey};
+    background-color: ${colors.primaryWhite};
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 30px;
+
+    > div {
+      color: ${colors.grey};
+      font-weight: ${fonts.dmsans};
+      font-weight: 400;
+      display: flex;
+      gap: 40px;
+      font-size: 14px;
+
+      a {
+        color: ${colors.grey};
+        font-weight: ${fonts.dmsans};
+        font-weight: 400;
+        text-decoration: none;
       }
     }
   }

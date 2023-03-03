@@ -5,9 +5,12 @@
 // import { IGetRecipes } from '@/src/services/receitas/GET/types';
 // import { usePathname } from 'next/navigation';
 import { useState, useEffect } from "react";
+import { colors } from "../../../../assets/styles/mixin";
+import { AlertIcon } from "../../../Svg";
 import ButtonDefault from "../ButtonDefault";
 import FormProduct from "../forms/FormProduct";
 import Modal from "../modal/ModalDefault";
+import Pagination from "../Pagination";
 import RenderTD from "./RenderTD/RenderTD";
 import { Container, ModalDeleteProduct } from "./styles";
 import { ITableProps } from "./types";
@@ -18,38 +21,37 @@ export default function Table({ title, search, header, data }: ITableProps) {
   const [modalOpen, setModalOpen] = useState<string | null>(null);
   const [actualItem, setActualItem] = useState<any>();
   const [isSelectedAll, setIsSelectedAll] = useState<boolean>(false);
-
-  const selectAll = (mainCheckbox: any) => {
-    const allCheckboxes = document?.querySelectorAll("#select");
-
-    setIsSelectedAll(!mainCheckbox.checked);
-
-    if (allCheckboxes)
-      allCheckboxes.forEach((checkbox: any) => {
-        if (isSelectedAll) {
-          checkbox.checked = "checked";
-        }
-
-        if (!isSelectedAll) {
-          checkbox.checked = "";
-        }
-      });
-  };
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const selectAllCheckbox: any = document?.querySelector("#selectAll");
 
-    selectAllCheckbox?.addEventListener("change", () =>
-      selectAll(selectAllCheckbox)
-    );
-  }, [isSelectedAll]);
+    const selectAll = () => {
+      const allCheckboxes = document?.querySelectorAll("#select");
+      console.log(selectAllCheckbox.checked)
+      setIsSelectedAll(selectAllCheckbox.checked);
 
-  // const pathName = usePathname();
+      if (allCheckboxes)
+        allCheckboxes.forEach((checkbox: any) => {
+          if (isSelectedAll) {
+            checkbox.checked = "checked";
+          }
 
-  // const queryClient = useQueryClient();
+          if (!isSelectedAll) {
+            checkbox.checked = "";
+          }
+        });
+    };
 
-  // const { deleteRecipes } = useDeleteRecipe();
-  // const { deleteProduct } = useDeleteProduct();
+    selectAllCheckbox?.addEventListener("click", () => selectAll);
+  }, []);
+
+  useEffect(() => {
+    // Loading na chamada de API
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+  }, []);
 
   useEffect(() => {
     if (data) {
@@ -60,15 +62,6 @@ export default function Table({ title, search, header, data }: ITableProps) {
   function handleModal(modalType: string, product: any) {
     setModalOpen(modalType);
   }
-
-  // async function removeProductOrRecipe(id: number, type: 'recipe' | 'product') {
-  //   if (type === 'product') {
-  //     deleteProduct(id);
-  //   } else {
-  //     deleteRecipes(id);
-  //   }
-  //   setModalOpen('');
-  // }
 
   return (
     <Container>
@@ -97,7 +90,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
           setData={() => {}}
         >
           <ModalDeleteProduct>
-            {/* <AlertIcon /> */}
+            <AlertIcon />
             <div className="modalTitleWarning">Excluir item</div>
             <div className="modalDescription">
               Tem certeza de que deseja excluir esse item ? Essa ação não poderá
@@ -157,6 +150,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
                     key={keyHead}
                     head={head}
                     item={row}
+                    isLoading={isLoading}
                     onClickOptions={(modalType, product) => {
                       handleModal(modalType, product);
                       setActualItem(product);
@@ -168,6 +162,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
           ))}
         </tbody>
       </table>
+      <Pagination />
     </Container>
   );
 }
