@@ -826,21 +826,21 @@ export const IconClose: React.FC<any> = ({ className }: any) => {
         d="M83.64 165.28C128.729 165.28 165.28 128.729 165.28 83.64C165.28 38.5515 128.729 2 83.64 2C38.5515 2 2 38.5515 2 83.64C2 128.729 38.5515 165.28 83.64 165.28Z"
         stroke="#CC6237"
         strokeWidth="3"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         className={className}
       />
       <path
         d="M46.352 120.928L120.928 46.352"
         stroke="#CC6237"
         strokeWidth="3"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         className={className}
       />
       <path
         d="M120.928 120.928L46.352 46.352"
         stroke="#CC6237"
         strokeWidth="3"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         className={className}
       />
     </svg>
@@ -1358,6 +1358,64 @@ export const ArrowHead: React.FC = ({ color = "#323232" }: any) => {
         d="M5 1L1 5L5 9"
         stroke={color}
         strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const BellIcon: React.FC = ({ className }: any) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M6 13.5V9C6 5.68629 8.68629 3 12 3V3C13.5913 3 15.1174 3.63214 16.2426 4.75736C17.3679 5.88258 18 7.4087 18 9V13.5H18.25C19.2165 13.5 20 14.2835 20 15.25V15.25C20 16.2165 19.2165 17 18.25 17H5.75C4.7835 17 4 16.2165 4 15.25V15.25C4 14.2835 4.7835 13.5 5.75 13.5H6Z"
+        stroke="#F8F9FA"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14 20H10"
+        stroke="#F8F9FA"
+        strokeWidth="1.51083"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const BellNotificationIcon: React.FC = ({ className }: any) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M6 13.5V9C6 5.68629 8.68629 3 12 3V3C13.5913 3 15.1174 3.63214 16.2426 4.75736C17.3679 5.88258 18 7.4087 18 9V13.5H18.25C19.2165 13.5 20 14.2835 20 15.25V15.25C20 16.2165 19.2165 17 18.25 17H5.75C4.7835 17 4 16.2165 4 15.25V15.25C4 14.2835 4.7835 13.5 5.75 13.5H6Z"
+        stroke="#F8F9FA"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14 20H10"
+        stroke="#F8F9FA"
+        strokeWidth="1.51083"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

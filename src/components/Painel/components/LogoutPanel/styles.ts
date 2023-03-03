@@ -20,8 +20,6 @@ export const Container = styled.div<propsModal>`
     justify-content: center;
     border-radius: 50%;
     border: none;
-    background: url("../../../../public/images/insta.jpg") center center
-      no-repeat;
 
     img {
       border-radius: 50%;

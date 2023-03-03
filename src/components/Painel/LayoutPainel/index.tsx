@@ -10,9 +10,17 @@ import SelectSideBar from "../components/SelectSideBar";
 import panelConfig from "../panelConfig.json";
 import LogoutPanel from "../components/LogoutPanel";
 import Link from "next/link";
-import { ExitIcon, LogoutIcon, LogoWithoutDigital, PageIcon } from "../../Svg";
+import {
+  BellIcon,
+  BellNotificationIcon,
+  ExitIcon,
+  LogoutIcon,
+  LogoWithoutDigital,
+  PageIcon,
+} from "../../Svg";
 import useCookies from "react-cookie/cjs/useCookies";
 import { useRouter } from "next/router";
+import NotificationPanel from "../components/NotificationPanel";
 interface ILayoutPanelProps {
   children: ReactNode;
 }
@@ -38,7 +46,10 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
             Olá, bom dia! Você possui <span>3</span> novos pedidos para
             processar.
           </p>
-          <LogoutPanel />
+          <div className="userContainer">
+            <NotificationPanel/>
+            <LogoutPanel />
+          </div>
         </div>
       </header>
       <div className="mainWrapper">
@@ -74,16 +85,10 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
         <main className="mainWrapperWithChildren">{children}</main>
       </div>
       <footer className="footerWrapper">
+        <div>&copy; 2023, Todos os direitos reservados.</div>
         <div>
-        &copy; 2023, Todos os direitos reservados.
-        </div>
-        <div>
-          <Link href="/painel/dashboard">
-              Privacy policy
-          </Link>
-          <Link href="/painel/dashboard">
-              Terms of use
-          </Link>
+          <Link href="/painel/dashboard">Privacy policy</Link>
+          <Link href="/painel/dashboard">Terms of use</Link>
         </div>
       </footer>
     </Container>

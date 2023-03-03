@@ -76,7 +76,6 @@ export const Container = styled.div`
           font-weight: 500;
           font-size: 14px;
           line-height: 20px;
-          padding: 24px 0px;
           color: ${colors.primaryDark};
           border-bottom: 1px solid ${colors.primaryGrey};
           padding: 24px;

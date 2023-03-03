@@ -17,11 +17,16 @@ export const Container = styled.div`
     background-color: ${colors.lightGrey};
     border-radius: 6px;
     cursor: pointer;
+    transition: .4s;
 
     &.next {
       svg {
         transform: rotate(180deg);
       }
+    }
+
+    &.disabled {
+        background-color: transparent;
     }
   }
 

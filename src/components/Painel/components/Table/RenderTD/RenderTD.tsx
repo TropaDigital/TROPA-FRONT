@@ -66,14 +66,15 @@ export default function RenderTD({ head, item, isLoading, onClickOptions }: IRen
         </span>
       )}
 
+      {head.type === "select_product" && <span>{item[labelKey]}</span>}
+
       {head.type === "string" && isLoading ? <Skeleton width={80} /> 
       : head.type === "string" && <span>{item[labelKey] as string}</span>}
 
       {head.type === "number" && isLoading ? <Skeleton width={80} /> 
       : head.type === "number" && <span>{item[labelKey] as number}</span>}
 
-      {head.type === "image" && isLoading ? <Skeleton variant="rounded" height={40} width={40} /> 
-      : head.type === "image" && (
+      {head.type === "image" && (
         <Image
           alt={head?.label}
           width={60}

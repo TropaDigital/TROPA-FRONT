@@ -50,6 +50,16 @@ export const Container = styled.div<ISideBarProps>`
       line-height: 16px;
       font-weight: 400;
 
+      .userContainer {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        svg {
+          cursor: pointer;
+        }
+      }
+
       .noticeUser {
         font-family: ${fonts.manrope};
         font-weight: 400;
@@ -165,7 +175,8 @@ export const Container = styled.div<ISideBarProps>`
 
         .adminEmail {
           font-size: 14px;
-          color: ${colors.primaryLight};
+          color: ${colors.grey};
+          font-weight: 400;
         }
 
         .handleCloseSideBar {

@@ -20,31 +20,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
   const [dataInternal, setDataInternal] = useState<any>(data);
   const [modalOpen, setModalOpen] = useState<string | null>(null);
   const [actualItem, setActualItem] = useState<any>();
-  const [isSelectedAll, setIsSelectedAll] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    const selectAllCheckbox: any = document?.querySelector("#selectAll");
-
-    const selectAll = () => {
-      const allCheckboxes = document?.querySelectorAll("#select");
-      console.log(selectAllCheckbox.checked)
-      setIsSelectedAll(selectAllCheckbox.checked);
-
-      if (allCheckboxes)
-        allCheckboxes.forEach((checkbox: any) => {
-          if (isSelectedAll) {
-            checkbox.checked = "checked";
-          }
-
-          if (!isSelectedAll) {
-            checkbox.checked = "";
-          }
-        });
-    };
-
-    selectAllCheckbox?.addEventListener("click", () => selectAll);
-  }, []);
 
   useEffect(() => {
     // Loading na chamada de API

@@ -7,12 +7,17 @@ interface ICheckbox {
 
 const Checkbox = ({ label, id }: ICheckbox) => {
   return (
-    <S.Container>
-      <label>
-        <S.CheckRemember id={id} className="customCheckbox" />
-        <p className="rememberMeText">{label}</p>
-      </label>
-    </S.Container>
+    <>
+      {label !== "" && (
+        <S.Container>
+          <label>
+            <S.CheckRemember id={id} className="customCheckbox" />
+            <p className="rememberMeText">{label}</p>
+          </label>
+        </S.Container>
+      )}
+      {label === "" && <S.CheckRemember id={id} className="customCheckbox" />}
+    </>
   );
 };
 

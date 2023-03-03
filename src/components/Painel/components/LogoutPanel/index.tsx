@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { ChevronTopIcon, LogoutIcon, PersonIcon } from "../../../Svg";
+import { BellIcon, ChevronTopIcon, LogoutIcon, PersonIcon } from "../../../Svg";
 import * as S from "./styles";
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { colors } from "../../../../assets/styles/mixin";
 import { useCookies } from "react-cookie";
 import TropaAdminPhoto from "../../../../../public/images/insta.jpg";
@@ -19,20 +19,14 @@ export default function LogoutPanel() {
           setModalLogOutOpen(!modalLogOutOpen);
         }}
       >
-        <div className="avatarPerson">
-          <Image
-            src={TropaAdminPhoto}
-            alt="foto do usuário"
-            width={40}
-            height={40}
-          />
-        </div>
+        <div className="avatarPerson"></div>
         <ChevronTopIcon />
       </button>
       <S.ModalLogOut isOpen={modalLogOutOpen}>
         <button
           onClick={() => {
             removeCookie("AuthorizedTropaAdmin");
+            router.push("/");
           }}
         >
           <LogoutIcon />
