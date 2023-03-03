@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BellIcon } from "../../../Svg";
 import * as S from "./styles";
 
@@ -44,10 +44,30 @@ const NotificationPanel = () => {
     },
   ];
 
+  function useOutsideAlerter(ref: any) {
+    useEffect(() => {
+      function handleClickOutside(event: any) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setIsNotificationOpen(false);
+        }
+      }
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
+
   return (
     <>
       <S.Container>
-        <div onClick={() => setIsNotificationOpen(!isNotificationOpen)}>
+        <div
+          onClick={() => setIsNotificationOpen(!isNotificationOpen)}
+          ref={wrapperRef}
+        >
           <BellIcon />
         </div>
 
