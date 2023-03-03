@@ -26,7 +26,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
     // Loading na chamada de API
     setTimeout(() => {
       setIsLoading(false);
-    }, 800);
+    }, 3000);
   }, []);
 
   useEffect(() => {

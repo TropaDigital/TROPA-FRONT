@@ -10,3 +10,10 @@ export const DashContainer = styled.div`
     border: 2px solid ${colors.secondaryDark};
   }
 `;
+
+export const DashboardInfoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+`

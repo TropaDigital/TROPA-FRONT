@@ -14,10 +14,10 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     aspect-ratio: 4/4;
-    background-color: ${colors.lightGrey};
+    background-color: ${colors.secondaryLight};
     border-radius: 6px;
     cursor: pointer;
-    transition: .4s;
+    transition: 0.4s;
 
     &.next {
       svg {
@@ -26,7 +26,7 @@ export const Container = styled.div`
     }
 
     &.disabled {
-        background-color: transparent;
+      background-color: transparent;
     }
   }
 
@@ -42,7 +42,7 @@ export const Container = styled.div`
       background-color: transparent;
       transition: 0.7s;
       &:hover {
-        background-color: ${colors.lightGrey};
+        background-color: ${colors.secondaryLight};
       }
       &.active {
         background-color: ${colors.secondaryDark};

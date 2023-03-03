@@ -1423,6 +1423,89 @@ export const BellNotificationIcon: React.FC = ({ className }: any) => {
   );
 };
 
+export const TrendingIcon: React.FC = ({ color = "#868E96" }: any) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_236_1029)">
+        <path
+          d="M13.6666 9.00024V5.00024H9.66667"
+          stroke={color}
+          strokeWidth="1.5"
+          strokeLinecap="square"
+        />
+        <path
+          d="M2 12.3333L5.44617 8.16667L8.7282 10.1667L13.3333 5.33325"
+          stroke={color}
+          strokeWidth="1.5"
+          strokeLinecap="square"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_236_1029">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export const TrendingDownIcon: React.FC = ({ color = "#868E96" }: any) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_236_1020)">
+        <path
+          d="M9.66667 11.6667H13.6667V7.66675"
+          stroke={color}
+          strokeWidth="1.5"
+          strokeLinecap="square"
+        />
+        <path
+          d="M2 4.33325L5.44617 8.49992L8.7282 6.49992L13 10.9999"
+          stroke={color}
+          strokeWidth="1.5"
+          strokeLinecap="square"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_236_1020">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export const ChevronArrowRight: React.FC = ({ color = "#64748B"}: any) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M6.19526 4.19526C6.45561 3.93491 6.87772 3.93491 7.13807 4.19526L10.4714 7.5286C10.7318 7.78894 10.7318 8.21106 10.4714 8.4714L7.13807 11.8047C6.87772 12.0651 6.45561 12.0651 6.19526 11.8047C5.93491 11.5444 5.93491 11.1223 6.19526 10.8619L9.05719 8L6.19526 5.13807C5.93491 4.87772 5.93491 4.45561 6.19526 4.19526Z"
+        fill={color}
+      />
+    </svg>
+  );
+};
+
 export const ExampleSVG: React.FC = ({ className }: any) => {
   return <svg />;
 };

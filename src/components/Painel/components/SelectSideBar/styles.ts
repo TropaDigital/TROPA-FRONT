@@ -103,6 +103,12 @@ export const Select = styled.nav<props>`
         background-color: rgba(231, 234, 238, 0.7);
         border-radius: 8px;
       }
+
+      &.withSubpages {
+        cursor: pointer;
+        display: flex;
+        gap: 78px;
+      }
     }
   }
 `;

@@ -1,12 +1,13 @@
 import LayoutPainel from "../../../components/Painel/LayoutPainel";
 import Head from "next/head";
-import { DashContainer } from "../../../assets/styles/DashBoard";
+import { DashboardInfoContainer, DashContainer } from "../../../assets/styles/DashboardStyles";
 import Table from "../../../components/Painel/components/Table";
 import Checkbox from "../../../components/Painel/components/Checkbox";
 import { DownArrow, ImageIcon, SearchIcon } from "../../../components/Svg";
 import InputIcon from "../../../components/Painel/components/inputs/InputIcon";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Card from "../../../components/Painel/components/Card";
 
 const PainelDashboard = () => {
   const header = [
@@ -111,7 +112,25 @@ const PainelDashboard = () => {
         <link rel="icon" href="/favicon1.ico" />
       </Head>
       <LayoutPainel>
+        <h1 style={{ marginBottom: "32px" }}>Dashboard</h1>
         <DashContainer>
+          <DashboardInfoContainer>
+            <Card
+              label="TOTAL NO MÊS"
+              titulo="R$ 43.324,00"
+              percentage="+22"
+            />
+            <Card
+              label="TAXA DE CONVERSÃO"
+              titulo="2.25% ~ 2.3%"
+              percentage="-0.02"
+            />
+            <Card
+              label="visitantes únicos"
+              titulo="4.607"
+              percentage="-15"
+            />
+          </DashboardInfoContainer>
           <Table
             header={header}
             data={products}
@@ -123,7 +142,7 @@ const PainelDashboard = () => {
                   icon={<SearchIcon />}
                   name="search"
                 />
-              </form>,
+              </form>
             ]}
           />
         </DashContainer>
