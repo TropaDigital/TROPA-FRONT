@@ -1,6 +1,6 @@
 import { propsPage } from "../../interface";
 import React, { ReactNode, useEffect, useState } from "react";
-import { Select } from "./styles";
+import { Select, SubSelect } from "./styles";
 import Link from "next/link";
 import { ChevronTopIcon } from "../../../Svg";
 
@@ -63,9 +63,22 @@ export default function SelectSideBar({
       </div>
       <div className="optionsSelect">
         {pages.map((row: propsPage, key: number) => (
-          <Link href={`/painel/${row.path}`} key={key}>
-            <a className="cardToPage">{row.name}</a>
-          </Link>
+          <>
+            <Link href={`/painel/${row.path}`} key={key}>
+              <a className="cardToPage">{row.name}</a>
+            </Link>
+
+            {row.subpages && (
+              <SubSelect isOpen={false} numberOfOptions={row.subpages?.length}>
+                {row.subpages &&
+                  row.subpages.map((subpage, key) => (
+                    <Link href={subpage.path} key={key}>
+                      <a>{subpage.name}</a>
+                    </Link>
+                  ))}
+              </SubSelect>
+            )}
+          </>
         ))}
       </div>
     </Select>

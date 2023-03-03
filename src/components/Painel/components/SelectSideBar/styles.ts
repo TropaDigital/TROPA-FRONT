@@ -1,13 +1,18 @@
 import styled, { css } from "styled-components";
 import { colors, fonts } from "../../../../assets/styles/mixin";
 
-interface props {
+interface SelectProps {
   isOpen: boolean;
   numberOfOptions: number;
   sideBarIsOpen?: boolean;
 }
 
-export const Select = styled.nav<props>`
+interface SubSelectProps {
+  isOpen: boolean;
+  numberOfOptions: number;
+}
+
+export const Select = styled.nav<SelectProps>`
   .titleSelectPageWrapper {
     display: flex;
     justify-content: space-between;
@@ -31,7 +36,6 @@ export const Select = styled.nav<props>`
         color: ${colors.primaryDark};
         font-weight: 500;
         transition: all 0.3s;
-
         opacity: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "1" : "0")};
       }
     }
@@ -80,8 +84,8 @@ export const Select = styled.nav<props>`
       css`
         transition: all 0.3s;
         max-height: unset;
-        height: ${(numberOfOptions * 42).toString() + "px"};
       `}
+    height: auto;
 
     .cardToPage {
       border-left: 1px solid ${colors.primaryGrey};
@@ -103,12 +107,34 @@ export const Select = styled.nav<props>`
         background-color: rgba(231, 234, 238, 0.7);
         border-radius: 8px;
       }
+    }
+  }
+`;
 
-      &.withSubpages {
-        cursor: pointer;
-        display: flex;
-        gap: 78px;
-      }
+export const SubSelect = styled.div<SubSelectProps>`
+  ${({ isOpen, numberOfOptions }) =>
+    isOpen &&
+    numberOfOptions &&
+    css`
+      transition: all 0.3s;
+      max-height: unset;
+      height: ${(numberOfOptions * 42).toString() + "px"};
+    `}
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  border-left: 1px solid ${colors.primaryGrey};
+
+  a {
+    font-weight: 500;
+    text-decoration: none;
+    color: ${colors.primaryDark};
+    padding: 5px 15px;
+
+    &:hover {
+      background-color: rgba(231, 234, 238, 0.7);
+      border-radius: 8px;
     }
   }
 `;
