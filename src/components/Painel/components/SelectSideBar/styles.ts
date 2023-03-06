@@ -7,10 +7,10 @@ interface SelectProps {
   sideBarIsOpen?: boolean;
 }
 
-interface SubSelectProps {
+type SubSelectProps = {
   isOpen: boolean;
   numberOfOptions: number;
-}
+};
 
 export const Select = styled.nav<SelectProps>`
   .titleSelectPageWrapper {
@@ -83,9 +83,9 @@ export const Select = styled.nav<SelectProps>`
       numberOfOptions &&
       css`
         transition: all 0.3s;
-        max-height: unset;
+        max-height: 100%;
+        height: auto;
       `}
-    height: auto;
 
     .cardToPage {
       border-left: 1px solid ${colors.primaryGrey};
@@ -105,32 +105,56 @@ export const Select = styled.nav<SelectProps>`
 
       &:hover {
         background-color: rgba(231, 234, 238, 0.7);
-        border-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
       }
     }
   }
 `;
 
 export const SubSelect = styled.div<SubSelectProps>`
+  display: flex;
+  flex-direction: column;
+  height: 42px;
+
+  .subMenusCard {
+    position: relative;
+    cursor: pointer;
+
+    .cardToPage {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: ${({ isOpen }) => (isOpen ? "8px" : "0")};
+    }
+
+    svg {
+      position: absolute;
+      right: 5px;
+      transition: all 0.3s;
+      top: 50%;
+      transform: translateY(-50%)
+        ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "")};
+    }
+  }
+
   ${({ isOpen, numberOfOptions }) =>
     isOpen &&
     numberOfOptions &&
     css`
-      transition: all 0.3s;
+      transition: height 0.3s;
       max-height: unset;
-      height: ${(numberOfOptions * 42).toString() + "px"};
+      height: ${(numberOfOptions * 49).toString() + "px"};
     `}
-
-  display: flex;
-  flex-direction: column;
-  margin-left: 40px;
-  border-left: 1px solid ${colors.primaryGrey};
 
   a {
     font-weight: 500;
     text-decoration: none;
     color: ${colors.primaryDark};
     padding: 5px 15px;
+    display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+    margin-left: 40px;
+    border-left: 1px solid ${colors.primaryGrey};
 
     &:hover {
       background-color: rgba(231, 234, 238, 0.7);

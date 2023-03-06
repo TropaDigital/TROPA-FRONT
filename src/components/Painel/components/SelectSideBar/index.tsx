@@ -2,7 +2,7 @@ import { propsPage } from "../../interface";
 import React, { ReactNode, useEffect, useState } from "react";
 import { Select, SubSelect } from "./styles";
 import Link from "next/link";
-import { ChevronTopIcon } from "../../../Svg";
+import { ChevronArrowRight, ChevronTopIcon } from "../../../Svg";
 
 interface ISelectProps {
   pages: Array<propsPage>;
@@ -20,11 +20,14 @@ export default function SelectSideBar({
   openSideBar,
   ...rest
 }: ISelectProps) {
-  const [selectIsOpen, setSelectIsOpen] = useState<boolean>(false);
+  const [selectIsOpen, setSelectIsOpen] = useState<boolean>(true);
+  const [subSelectIsOpen, setSubSelectIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    setSelectIsOpen(false);
-  }, [sideBarIsOpen]);
+    if (!selectIsOpen) {
+      setSubSelectIsOpen(false);
+    }
+  }, [selectIsOpen]);
 
   function handleToogleSideBar() {
     if (!sideBarIsOpen) {
@@ -64,19 +67,35 @@ export default function SelectSideBar({
       <div className="optionsSelect">
         {pages.map((row: propsPage, key: number) => (
           <>
-            <Link href={`/painel/${row.path}`} key={key}>
-              <a className="cardToPage">{row.name}</a>
-            </Link>
+            {!row.subpages && (
+              <Link href={`/painel/${row.path}`} key={key}>
+                <a className="cardToPage">{row.name}</a>
+              </Link>
+            )}
 
             {row.subpages && (
-              <SubSelect isOpen={false} numberOfOptions={row.subpages?.length}>
-                {row.subpages &&
-                  row.subpages.map((subpage, key) => (
-                    <Link href={subpage.path} key={key}>
-                      <a>{subpage.name}</a>
-                    </Link>
-                  ))}
-              </SubSelect>
+              <>
+                <SubSelect
+                  isOpen={subSelectIsOpen}
+                  numberOfOptions={row.subpages?.length}
+                >
+                  <div
+                    className="subMenusCard"
+                    onClick={() => {
+                      setSubSelectIsOpen(!subSelectIsOpen);
+                    }}
+                  >
+                    <a className="cardToPage ">{row.name}</a>
+                    <ChevronArrowRight />
+                  </div>
+                  {row.subpages &&
+                    row.subpages.map((subpage, key) => (
+                      <Link href={subpage.path} key={key}>
+                        <a>{subpage.name}</a>
+                      </Link>
+                    ))}
+                </SubSelect>
+              </>
             )}
           </>
         ))}

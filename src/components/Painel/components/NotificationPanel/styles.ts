@@ -23,7 +23,7 @@ export const NotificationContainer = styled.div<Props>`
     isNotificationPanelOpen ? "auto" : "hidden"};
   height: ${({ isNotificationPanelOpen }) =>
     isNotificationPanelOpen ? "620px" : "0px"};
-  transition: height 0.7s ease-in-out;
+  transition: height 0.3s ease-in-out;
 
   ::-webkit-scrollbar {
     width: 10px;
