@@ -29,9 +29,9 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
 
   useEffect(() => {
     if (actualItem) {
-      setPrice(formatPrice(actualItem?.project_price));
+      setPrice(actualItem?.project_price);
       setImage(actualItemImages);
-      handleOnChangeDTO("imagem", actualItemImages);
+      handleOnChangeDTO("imagem", ["https://via.placeholder.com/60"]);
     }
   }, [actualItem]);
 
@@ -90,10 +90,11 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
     <S.Container>
       <Formik
         initialValues={{
-          images: [],
+          images: ["https://via.placeholder.com/60"],
           titulo: actualItem?.project_name ?? "",
           sku: actualItem?.project_sku ?? "",
-          preco: price ?? "",
+          preco:
+            actualItem?.project_price.replace("R$", "").replace(",", ".") ?? "",
           estoque: actualItem?.project_stock ?? "",
           status: actualItem?.status ?? "",
         }}
@@ -111,6 +112,8 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
           handleChange,
         }) => (
           <>
+            {console.log("++++++++++++++++++", values)}
+            {console.log("------------------", DTO)}
             <Form onSubmit={handleSubmit} className="formAddProductWrapper">
               <InputImage
                 onPostImage={(image: string) => {

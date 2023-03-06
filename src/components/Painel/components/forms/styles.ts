@@ -47,7 +47,7 @@ export const Container = styled.div`
     }
   }
   .imageComponentWrapper {
-    margin-top: 10px;
+    margin: 10px 0;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -61,6 +61,7 @@ export const Container = styled.div`
       align-items: center;
       justify-content: center;
       border-radius: 5px;
+      z-index: 3;
       .removeIcon {
         display: none;
         transition: 0.7s linear;

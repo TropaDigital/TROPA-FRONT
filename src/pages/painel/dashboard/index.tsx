@@ -1,12 +1,10 @@
 import LayoutPainel from "../../../components/Painel/LayoutPainel";
 import Head from "next/head";
-import { DashboardInfoContainer, DashContainer } from "../../../assets/styles/DashboardStyles";
+import { DashContainer } from "../../../assets/styles/DashboardStyles";
 import Table from "../../../components/Painel/components/Table";
 import Checkbox from "../../../components/Painel/components/Checkbox";
-import { DownArrow, ImageIcon, SearchIcon } from "../../../components/Svg";
+import { ImageIcon, SearchIcon } from "../../../components/Svg";
 import InputIcon from "../../../components/Painel/components/inputs/InputIcon";
-import { useRouter } from "next/router";
-import { useState } from "react";
 
 const PainelDashboard = () => {
   const header = [
