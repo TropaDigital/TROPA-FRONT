@@ -34,6 +34,8 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
     }
   }, [actualItem]);
 
+  console.log(actualItem)
+
   const [DTO, setDTO] = useState<{ valor: number; imagem: string[] }>({
     valor: 0,
     imagem: [],
@@ -201,7 +203,7 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
                   />
                   <InputSelect
                     label="Status"
-                    options={["Ativo", "Desativado"]}
+                    options={["Ativo", "Inativo"]}
                     value={values.status}
                   />
                 </div>

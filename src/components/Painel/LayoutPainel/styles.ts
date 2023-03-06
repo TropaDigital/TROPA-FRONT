@@ -23,6 +23,10 @@ export const Container = styled.div<ISideBarProps>`
     font-family: ${fonts.manrope};
   }
 
+  .customCheckbox {
+    border: 2px solid ${colors.primaryDark};
+  }
+
   .headerLayoutDashboard {
     transition: all 0.3s;
     width: 100%;
@@ -84,6 +88,10 @@ export const Container = styled.div<ISideBarProps>`
         span {
           font-family: ${fonts.manrope};
           font-weight: 400;
+        }
+
+        .ordersQuantity {
+          font-weight: 600;
         }
 
         .tinyScreen,

@@ -47,13 +47,13 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
             <MobileMenu />
             <p className="noticeUser">
               <span className="largeScreen">
-                Olá, bom dia! Você possui 3 novos pedidos para processar.
+                Olá, bom dia! Você possui <span className="ordersQuantity">3</span> novos pedidos para processar.
               </span>
               <span className="mediumScreen">
-                Você possui 3 novos pedidos para processar.
+                Você possui <span className="ordersQuantity">3</span> novos pedidos para processar.
               </span>
               <span className="tinyScreen">
-                3 novos pedidos para processar.
+                <span className="ordersQuantity">3</span> novos pedidos para processar.
               </span>
             </p>
           </div>

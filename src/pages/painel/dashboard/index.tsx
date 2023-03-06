@@ -69,7 +69,7 @@ const PainelDashboard = () => {
       select_product: <Checkbox id="select" />,
       produtoImagens: ["https://via.placeholder.com/60"],
       project_name: "Tênis Urban Explorer",
-      project_stock: "Fora de Estoque",
+      project_stock: "Fora de estoque",
       project_sku: "D25E36F49",
       project_price: "R$ 371,98",
       status: "Inativo",
@@ -126,7 +126,6 @@ const PainelDashboard = () => {
                 placeholder="Buscar produtos"
                 icon={<SearchIcon />}
                 name="search"
-                onChange={(e: any) => handleSearch(e)}
               />
             </form>,
           ]}
