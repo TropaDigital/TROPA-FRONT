@@ -26,7 +26,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
     // Loading na chamada de API
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 800);
   }, []);
 
   useEffect(() => {
@@ -40,105 +40,107 @@ export default function Table({ title, search, header, data }: ITableProps) {
   }
 
   return (
-    <Container>
-      {modalOpen === "editar" && (
-        <Modal
-          onClose={() => {
-            setModalOpen(null);
-          }}
-          setData={() => {}}
-        >
-          <FormProduct
-            modalOpen="editar"
-            actualItem={actualItem}
-            onSubmit={() => {
-              setModalOpen("");
+    <>
+      <Container>
+        {modalOpen === "editar" && (
+          <Modal
+            onClose={() => {
+              setModalOpen(null);
             }}
-          />
-        </Modal>
-      )}
+            setData={() => {}}
+          >
+            <FormProduct
+              modalOpen="editar"
+              actualItem={actualItem}
+              onSubmit={() => {
+                setModalOpen("");
+              }}
+            />
+          </Modal>
+        )}
 
-      {modalOpen === "deletar" && (
-        <Modal
-          onClose={() => {
-            setModalOpen(null);
-          }}
-          setData={() => {}}
-        >
-          <ModalDeleteProduct>
-            <AlertIcon />
-            <div className="modalTitleWarning">Excluir item</div>
-            <div className="modalDescription">
-              Tem certeza de que deseja excluir esse item ? Essa ação não poderá
-              ser desfeita
-            </div>
-            <span className="buttonWrapper">
-              <ButtonDefault
-                color="transparent"
-                onClick={() => {
-                  setModalOpen("");
-                }}
-              >
-                <p className="buttonText transparentButton">Cancelar</p>
-              </ButtonDefault>
-              <ButtonDefault
-                color="darkButton"
-                onClick={() => {
-                  let itemType: any = actualItem?.id_receita
-                    ? "recipe"
-                    : "product";
+        {modalOpen === "deletar" && (
+          <Modal
+            onClose={() => {
+              setModalOpen(null);
+            }}
+            setData={() => {}}
+          >
+            <ModalDeleteProduct>
+              <AlertIcon />
+              <div className="modalTitleWarning">Excluir item</div>
+              <div className="modalDescription">
+                Tem certeza de que deseja excluir esse item ? Essa ação não
+                poderá ser desfeita
+              </div>
+              <span className="buttonWrapper">
+                <ButtonDefault
+                  color="transparent"
+                  onClick={() => {
+                    setModalOpen("");
+                  }}
+                >
+                  <p className="buttonText transparentButton">Cancelar</p>
+                </ButtonDefault>
+                <ButtonDefault
+                  color="darkButton"
+                  onClick={() => {
+                    let itemType: any = actualItem?.id_receita
+                      ? "recipe"
+                      : "product";
 
-                  // removeProductOrRecipe(
-                  //   actualItem?.id_receita
-                  //     ? actualItem?.id_receita
-                  //     : actualItem?.id_produto,
-                  //   itemType
-                  // );
-                }}
-              >
-                <p className="buttonText warningButton">Excluir</p>
-              </ButtonDefault>
-            </span>
-          </ModalDeleteProduct>
-        </Modal>
-      )}
+                    // removeProductOrRecipe(
+                    //   actualItem?.id_receita
+                    //     ? actualItem?.id_receita
+                    //     : actualItem?.id_produto,
+                    //   itemType
+                    // );
+                  }}
+                >
+                  <p className="buttonText warningButton">Excluir</p>
+                </ButtonDefault>
+              </span>
+            </ModalDeleteProduct>
+          </Modal>
+        )}
 
-      <header className="headerTable">
-        <p className="titleHeaderTable">{title}</p>
-        <div className="buttonsWrapper">{search}</div>
-      </header>
-      <table>
-        <thead>
-          <tr>
-            {header.map((row, key) => (
-              <th align="left" key={key}>
-                {row.label}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {dataInternal?.map((row: any, key: any) => (
-            <tr key={key}>
-              {header?.map((head: string | any, keyHead) => (
-                <>
-                  <RenderTD
-                    key={keyHead}
-                    head={head}
-                    item={row}
-                    isLoading={isLoading}
-                    onClickOptions={(modalType, product) => {
-                      handleModal(modalType, product);
-                      setActualItem(product);
-                    }}
-                  />
-                </>
+        <header className="headerTable">
+          <p className="titleHeaderTable">{title}</p>
+          <div className="buttonsWrapper">{search}</div>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              {header.map((row, key) => (
+                <th align="left" key={key}>
+                  {row.label}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {dataInternal?.map((row: any, key: any) => (
+              <tr key={key}>
+                {header?.map((head: string | any, keyHead) => (
+                  <>
+                    <RenderTD
+                      key={keyHead}
+                      head={head}
+                      item={row}
+                      isLoading={isLoading}
+                      onClickOptions={(modalType, product) => {
+                        handleModal(modalType, product);
+                        setActualItem(product);
+                      }}
+                    />
+                  </>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Container>
       <Pagination />
-    </Container>
+    </>
   );
 }

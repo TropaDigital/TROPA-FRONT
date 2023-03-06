@@ -21,6 +21,7 @@ import {
 import useCookies from "react-cookie/cjs/useCookies";
 import { useRouter } from "next/router";
 import NotificationPanel from "../components/NotificationPanel";
+import MobileMenu from "../components/MobileMenu";
 interface ILayoutPanelProps {
   children: ReactNode;
 }
@@ -42,12 +43,22 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
           </Link>
         </div>
         <div className="rigthSideWithAvatar">
-          <p className="noticeUser">
-            Olá, bom dia! Você possui <span>3</span> novos pedidos para
-            processar.
-          </p>
+          <div className="leftSideWrapper">
+            <MobileMenu />
+            <p className="noticeUser">
+              <span className="largeScreen">
+                Olá, bom dia! Você possui 3 novos pedidos para processar.
+              </span>
+              <span className="mediumScreen">
+                Você possui 3 novos pedidos para processar.
+              </span>
+              <span className="tinyScreen">
+                3 novos pedidos para processar.
+              </span>
+            </p>
+          </div>
           <div className="userContainer">
-            <NotificationPanel/>
+            <NotificationPanel />
             <LogoutPanel />
           </div>
         </div>

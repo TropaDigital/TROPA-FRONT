@@ -19,10 +19,6 @@ export const Select = styled.nav<SelectProps>`
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    @media (max-width: 835px) {
-      position: absolute;
-      top: 22px;
-    }
     .titleSelectLeftSide {
       display: flex;
       gap: 11px;
@@ -37,7 +33,7 @@ export const Select = styled.nav<SelectProps>`
         color: ${colors.primaryDark};
         font-weight: 500;
         transition: all 0.3s;
-        opacity: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "1" : "0")};
+        /* opacity: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "1" : "0")}; */
       }
     }
     .handleOpenSelect {
@@ -145,7 +141,11 @@ export const SubSelect = styled.div<SubSelectProps>`
     css`
       transition: height 0.3s;
       max-height: unset;
-      height: ${(numberOfOptions * 49).toString() + "px"};
+      height: ${(numberOfOptions * 46).toString() + "px"};
+
+      @media(max-width: 835px) {
+        height: ${(numberOfOptions * 40).toString() + "px"};
+      }
     `}
 
   a {

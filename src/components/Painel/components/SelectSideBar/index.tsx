@@ -22,7 +22,6 @@ export default function SelectSideBar({
 }: ISelectProps) {
   const [selectIsOpen, setSelectIsOpen] = useState<boolean>(true);
   const [subSelectIsOpen, setSubSelectIsOpen] = useState<boolean>(false);
-  const [subMenuIsOpen, setSubMenuIsOpen] = useState({})
 
   useEffect(() => {
     if (!selectIsOpen) {

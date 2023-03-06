@@ -1,17 +1,9 @@
 import styled from "styled-components";
 import { colors, fonts } from "../../../../assets/styles/mixin";
 
-// import { Rubik } from '@next/font/google';
-// const rubik = Rubik({
-//   subsets: ['latin'],
-//   weight: ['300', '400', '500', '600', '700', '800'],
-// });
-
 export const Container = styled.div`
   box-shadow: 0px 4px 12px rgba(25, 73, 62, 0.1);
-  @media (max-width: 900px) {
-    overflow-x: scroll;
-  }
+  overflow: auto;
   .headerTable {
     display: flex;
     flex-wrap: wrap;
@@ -69,7 +61,7 @@ export const Container = styled.div`
       }
     }
     tbody {
-      overflow-x: scroll;
+      overflow-x: auto;
       tr {
         td {
           font-style: normal;

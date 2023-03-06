@@ -7,7 +7,21 @@ interface ISideBarProps {
 
 export const Container = styled.div<ISideBarProps>`
   height: 100vh;
-  /* font-family: ${fonts.manrope}; */
+
+  p,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  table,
+  tr,
+  td,
+  a {
+    font-family: ${fonts.manrope};
+  }
 
   .headerLayoutDashboard {
     transition: all 0.3s;
@@ -35,8 +49,7 @@ export const Container = styled.div<ISideBarProps>`
     }
     .rigthSideWithAvatar {
       transition: all 0.3s;
-      width: ${({ sideBarIsOpen }) =>
-        sideBarIsOpen ? "calc(100% - 216px)" : "calc(100% - 80px)"};
+      width: calc(100% - 216px);
       height: 100%;
       display: flex;
       justify-content: space-between;
@@ -50,10 +63,17 @@ export const Container = styled.div<ISideBarProps>`
       line-height: 16px;
       font-weight: 400;
 
+      .leftSideWrapper {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
       .userContainer {
         display: flex;
         align-items: center;
         gap: 20px;
+        padding-left: 30px;
 
         svg {
           cursor: pointer;
@@ -61,10 +81,36 @@ export const Container = styled.div<ISideBarProps>`
       }
 
       .noticeUser {
-        font-family: ${fonts.manrope};
-        font-weight: 400;
-      }
+        span {
+          font-family: ${fonts.manrope};
+          font-weight: 400;
+        }
 
+        .tinyScreen,
+        .mediumScreen {
+          display: none;
+        }
+
+        @media (max-width: 680px) {
+          .largeScreen {
+            display: none;
+          }
+
+          .mediumScreen {
+            display: inline-block;
+          }
+        }
+
+        @media (max-width: 565px) {
+          .mediumScreen {
+            display: none;
+          }
+
+          .tinyScreen {
+            display: inline-block;
+          }
+        }
+      }
       .sideBarMenuWrapper {
         display: none;
         @media (max-width: 835px) {
@@ -100,10 +146,7 @@ export const Container = styled.div<ISideBarProps>`
 
         .optionsSelect {
           margin: 0;
-          position: relative;
-          top: 116px;
           background-color: ${colors.primaryWhite};
-          border-bottom-right-radius: 12px;
           .cardToPage {
             padding: 12px;
           }
@@ -222,6 +265,17 @@ export const Container = styled.div<ISideBarProps>`
         font-weight: 400;
         text-decoration: none;
       }
+    }
+
+    @media (max-width: 835px) {
+      margin-left: 0;
+      width: 100%;
+    }
+    @media (max-width: 530px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      height: auto;
     }
   }
 `;

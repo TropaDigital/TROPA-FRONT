@@ -24,24 +24,6 @@ const NotificationPanel = () => {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnamminus reprehenderit vitae quae?",
       wasRead: true,
     },
-    {
-      titulo: "Novo pedido para processar",
-      texto:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnamminus reprehenderit vitae quae?",
-      wasRead: true,
-    },
-    {
-      titulo: "Novo pedido para processar",
-      texto:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnamminus reprehenderit vitae quae?",
-      wasRead: true,
-    },
-    {
-      titulo: "Novo pedido para processar",
-      texto:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnamminus reprehenderit vitae quae?",
-      wasRead: true,
-    },
   ];
 
   function useOutsideAlerter(ref: any) {
@@ -66,12 +48,11 @@ const NotificationPanel = () => {
       <S.Container>
         <div
           onClick={() => setIsNotificationOpen(!isNotificationOpen)}
-          ref={wrapperRef}
         >
           <BellIcon />
         </div>
 
-        <S.NotificationContainer isNotificationPanelOpen={isNotificationOpen}>
+        <S.NotificationContainer isNotificationPanelOpen={isNotificationOpen} ref={wrapperRef} quantity={userNotifications.length}>
           <div className="notificationHeader">
             <p>Notificações</p>
           </div>

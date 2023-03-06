@@ -1,10 +1,10 @@
 import LayoutPainel from "../../../components/Painel/LayoutPainel";
 import Head from "next/head";
-import { DashContainer } from "../../../assets/styles/DashboardStyles";
 import Table from "../../../components/Painel/components/Table";
 import Checkbox from "../../../components/Painel/components/Checkbox";
 import { ImageIcon, SearchIcon } from "../../../components/Svg";
 import InputIcon from "../../../components/Painel/components/inputs/InputIcon";
+import { useState } from "react";
 
 const PainelDashboard = () => {
   const header = [
@@ -54,10 +54,11 @@ const PainelDashboard = () => {
       type: "options",
     },
   ];
-
+  // Resposta da API
   const products = [
     {
       select_product: <Checkbox id="select" />,
+      produtoImagens: ["https://via.placeholder.com/60"],
       project_name: "Camiseta Wild Frontier",
       project_stock: "Em Estoque",
       project_sku: "A14B56C78",
@@ -66,14 +67,16 @@ const PainelDashboard = () => {
     },
     {
       select_product: <Checkbox id="select" />,
+      produtoImagens: ["https://via.placeholder.com/60"],
       project_name: "Tênis Urban Explorer",
-      project_stock: "Em Estoque",
+      project_stock: "Fora de Estoque",
       project_sku: "D25E36F49",
       project_price: "R$ 371,98",
-      status: "Ativo",
+      status: "Inativo",
     },
     {
       select_product: <Checkbox id="select" />,
+      produtoImagens: ["https://via.placeholder.com/60"],
       project_name: "Jaqueta Eagle Flight",
       project_stock: "Em Estoque",
       project_sku: "G12H34I56",
@@ -82,6 +85,7 @@ const PainelDashboard = () => {
     },
     {
       select_product: <Checkbox id="select" />,
+      produtoImagens: ["https://via.placeholder.com/60"],
       project_name: "Camisa Sharp Edge",
       project_stock: "Em Estoque",
       project_sku: "J78K12L90",
@@ -90,6 +94,7 @@ const PainelDashboard = () => {
     },
     {
       select_product: <Checkbox id="select" />,
+      produtoImagens: ["https://via.placeholder.com/60"],
       project_name: "Calça Rugged Denim",
       project_stock: "Em Estoque",
       project_sku: "M89N45O12",
@@ -97,7 +102,7 @@ const PainelDashboard = () => {
       status: "Ativo",
     },
   ];
-
+  //
   return (
     <>
       <Head>
@@ -110,22 +115,22 @@ const PainelDashboard = () => {
       </Head>
       <LayoutPainel>
         <h1 style={{ marginBottom: "32px" }}>Dashboard</h1>
-        <DashContainer>
-          <Table
-            header={header}
-            data={products}
-            title="Todos os Produtos"
-            search={[
-              <form key="">
-                <InputIcon
-                  placeholder="Buscar produtos"
-                  icon={<SearchIcon />}
-                  name="search"
-                />
-              </form>
-            ]}
-          />
-        </DashContainer>
+
+        <Table
+          header={header}
+          data={products}
+          title="Todos os Produtos"
+          search={[
+            <form key="">
+              <InputIcon
+                placeholder="Buscar produtos"
+                icon={<SearchIcon />}
+                name="search"
+                onChange={(e: any) => handleSearch(e)}
+              />
+            </form>,
+          ]}
+        />
       </LayoutPainel>
     </>
   );

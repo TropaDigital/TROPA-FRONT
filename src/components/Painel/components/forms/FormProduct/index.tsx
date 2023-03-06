@@ -22,7 +22,6 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
   const [image, setImage] = useState<string[]>();
   const [imagesIdToRemove, setImagesIdToRemove] = useState<string[]>([]);
   const [price, setPrice] = useState<string>("");
-
   const actualItemImages = actualItem?.produtoImagens?.map((objImage: any) => {
     return objImage?.url_imagem;
   });
@@ -31,7 +30,7 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
     if (actualItem) {
       setPrice(actualItem?.project_price);
       setImage(actualItemImages);
-      handleOnChangeDTO("imagem", ["https://via.placeholder.com/60"]);
+      handleOnChangeDTO("imagem", [...actualItem.produtoImagens]);
     }
   }, [actualItem]);
 
@@ -90,16 +89,20 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
     <S.Container>
       <Formik
         initialValues={{
-          images: ["https://via.placeholder.com/60"],
+          images: actualItem?.produtoImagens ?? [],
           titulo: actualItem?.project_name ?? "",
           sku: actualItem?.project_sku ?? "",
           preco:
-            actualItem?.project_price.replace("R$", "").replace(",", ".") ?? "",
+            actualItem?.project_price
+              .replace("R$", "")
+              .replace(",", ".")
+              .trim() ?? "",
           estoque: actualItem?.project_stock ?? "",
           status: actualItem?.status ?? "",
         }}
         validationSchema={productSchema}
         onSubmit={(values) => {
+          console.log("+++++++++++++++++++++++++++++");
           console.log(values);
         }}
       >
@@ -112,8 +115,6 @@ const FormProduct = ({ modalOpen, actualItem, onSubmit }: IFormProduct) => {
           handleChange,
         }) => (
           <>
-            {console.log("++++++++++++++++++", values)}
-            {console.log("------------------", DTO)}
             <Form onSubmit={handleSubmit} className="formAddProductWrapper">
               <InputImage
                 onPostImage={(image: string) => {

@@ -7,6 +7,7 @@ export const Container = styled.td`
     font-family: ${fonts.dmsans};
   } 
   span {
+    white-space: nowrap;
     img {
       border-radius: 4px;
     }

@@ -5,13 +5,13 @@ interface ICheckbox {
   id?: string;
 }
 
-const Checkbox = ({ label, id }: ICheckbox) => {
+const Checkbox = ({ label, id, ...rest }: ICheckbox) => {
   return (
     <>
       {label !== "" && (
         <S.Container>
           <label>
-            <S.CheckRemember id={id} className="customCheckbox" />
+            <S.CheckRemember id={id} className="customCheckbox" {...rest} />
             <p className="rememberMeText">{label}</p>
           </label>
         </S.Container>

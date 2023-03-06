@@ -59,9 +59,9 @@ export const ModalLogOut = styled.div<propsModal>`
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s;
-  opacity: 0;
+  display: none;
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: flex-start;
 
@@ -85,7 +85,7 @@ export const ModalLogOut = styled.div<propsModal>`
   ${({ isOpen }) =>
     isOpen &&
     css`
-      opacity: 1;
+      display: flex;
       transition: all 0.3s;
     `};
 `;

@@ -4,6 +4,7 @@ import { colors, fonts } from "../../../../assets/styles/mixin";
 type Props = {
   wasRead?: boolean;
   isNotificationPanelOpen?: boolean;
+  quantity?: number
 };
 
 export const Container = styled.div`
@@ -21,9 +22,16 @@ export const NotificationContainer = styled.div<Props>`
   color: ${colors.primaryDark};
   overflow: ${({ isNotificationPanelOpen }) =>
     isNotificationPanelOpen ? "auto" : "hidden"};
-  height: ${({ isNotificationPanelOpen }) =>
-    isNotificationPanelOpen ? "620px" : "0px"};
-  transition: height 0.3s ease-in-out;
+  height: ${({ isNotificationPanelOpen, quantity }) =>
+    isNotificationPanelOpen && quantity ? quantity * 111 + 61 + "px" : "0px"};
+  transition: height 175ms ease-in-out;
+
+  @media (max-width: 675px) {
+    width: 300px;
+  }
+  @media(max-width:420px) {
+    width: 250px;
+  }
 
   ::-webkit-scrollbar {
     width: 10px;
