@@ -10,6 +10,7 @@ interface SelectProps {
 type SubSelectProps = {
   isOpen: boolean;
   numberOfOptions: number;
+  row?: any;
 };
 
 export const Select = styled.nav<SelectProps>`
@@ -155,10 +156,11 @@ export const SubSelect = styled.div<SubSelectProps>`
     display: ${({ isOpen }) => (isOpen ? "block" : "none")};
     margin-left: 40px;
     border-left: 1px solid ${colors.primaryGrey};
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 
     &:hover {
       background-color: rgba(231, 234, 238, 0.7);
-      border-radius: 8px;
     }
   }
 `;

@@ -22,6 +22,7 @@ export default function SelectSideBar({
 }: ISelectProps) {
   const [selectIsOpen, setSelectIsOpen] = useState<boolean>(true);
   const [subSelectIsOpen, setSubSelectIsOpen] = useState<boolean>(false);
+  const [subMenuIsOpen, setSubMenuIsOpen] = useState({})
 
   useEffect(() => {
     if (!selectIsOpen) {
@@ -78,6 +79,7 @@ export default function SelectSideBar({
                 <SubSelect
                   isOpen={subSelectIsOpen}
                   numberOfOptions={row.subpages?.length}
+                  row={row}
                 >
                   <div
                     className="subMenusCard"
