@@ -39,6 +39,22 @@ export default function Table({ title, search, header, data }: ITableProps) {
     setModalOpen(modalType);
   }
 
+  useEffect(() => {
+    const handleSelectAll = () => {
+      const mainCheckbox: any = document.querySelector("#selectAll");
+
+      mainCheckbox?.addEventListener("click", () => {
+        const allCheckboxes: any = document?.querySelectorAll("#select");
+        const isCheckedAll: boolean = mainCheckbox.checked
+
+        allCheckboxes.forEach((checkbox: any) => {
+          checkbox.checked = isCheckedAll;
+        });
+      });
+    };
+    handleSelectAll();
+  }, []);
+
   return (
     <>
       <Container>
