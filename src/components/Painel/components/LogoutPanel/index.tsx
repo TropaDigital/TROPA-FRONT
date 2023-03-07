@@ -40,7 +40,7 @@ export default function LogoutPanel() {
         <button
           onClick={() => {
             removeCookie("AuthorizedTropaAdmin");
-            router.push("/");
+            router.push("/painel");
           }}
         >
           <LogoutIcon />

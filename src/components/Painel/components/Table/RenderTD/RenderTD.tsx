@@ -53,17 +53,14 @@ export default function RenderTD({
                 {
                   label: "Editar",
                   value: "editar",
-                  icon: <a />,
                 },
                 {
                   label: "Visualizar",
                   value: "visualizar",
-                  icon: <a />,
                 },
                 {
                   label: "Excluir",
-                  value: "deletar",
-                  icon: <a />,
+                  value: "excluir",
                 },
               ]}
             />

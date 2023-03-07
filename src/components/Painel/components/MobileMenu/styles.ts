@@ -49,7 +49,6 @@ export const MobileMenuContainer = styled.div<Props>`
   box-shadow: 0px 4px 12px rgba(25, 73, 62, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 15px;
   a {
     color: ${colors.primaryDark};
@@ -65,6 +64,10 @@ export const MobileMenuContainer = styled.div<Props>`
     justify-content: center;
     padding: 18px;
     width: 100%;
+  }
+
+  .menuContainer {
+    padding: 20px 10px;
   }
   
   @media(min-width: 835px) {

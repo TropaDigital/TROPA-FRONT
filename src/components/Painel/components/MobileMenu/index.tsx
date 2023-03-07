@@ -19,12 +19,14 @@ const MobileMenu = () => {
           <LogoWithoutDigital />
         </div>
 
-        <SelectSideBar
-          title="Dashboard"
-          icon={<PageIcon />}
-          pages={PanelConfig.pages}
-          openSideBar={() => setIsSideBarOpen(isSideBarOpen)}
-        />
+        <div className="menuContainer">
+          <SelectSideBar
+            title="Dashboard"
+            icon={<PageIcon />}
+            pages={PanelConfig.pages}
+            openSideBar={() => setIsSideBarOpen(isSideBarOpen)}
+          />
+        </div>
       </MobileMenuContainer>
     </>
   );

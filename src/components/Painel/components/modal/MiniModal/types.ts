@@ -9,5 +9,5 @@ export interface IMiniModalProps {
 export interface OptionsProps {
   label: string;
   value: string;
-  icon: ReactNode;
+  icon?: ReactNode;
 }

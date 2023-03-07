@@ -84,7 +84,7 @@ export default function LayoutPainel({ children }: ILayoutPanelProps) {
               className="handleCloseSideBar"
               onClick={() => {
                 removeCookie("AuthorizedTropaAdmin");
-                router.push("/");
+                router.push("/painel");
               }}
             >
               <ExitIcon />

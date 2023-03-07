@@ -4,6 +4,7 @@
 // import { useDeleteRecipe } from '@/src/services/receitas/DELETE/useDeleteRecipes';
 // import { IGetRecipes } from '@/src/services/receitas/GET/types';
 // import { usePathname } from 'next/navigation';
+import router from "next/router";
 import { useState, useEffect } from "react";
 import { colors } from "../../../../assets/styles/mixin";
 import { AlertIcon } from "../../../Svg";
@@ -34,6 +35,12 @@ export default function Table({ title, search, header, data }: ITableProps) {
       setDataInternal([...data]);
     }
   }, [data]);
+
+  useEffect(() => {
+    if(modalOpen === "visualizar") {
+      router.push(`/portfolio/${actualItem.slug}`)
+    }
+  }, [modalOpen])
 
   function handleModal(modalType: string, product: any) {
     setModalOpen(modalType);
@@ -75,7 +82,7 @@ export default function Table({ title, search, header, data }: ITableProps) {
           </Modal>
         )}
 
-        {modalOpen === "deletar" && (
+        {modalOpen === "excluir" && (
           <Modal
             onClose={() => {
               setModalOpen(null);
