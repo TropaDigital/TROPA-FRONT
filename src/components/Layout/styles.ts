@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { colors, fonts } from "../../assets/styles/mixin";
+import styled from 'styled-components';
+import { colors, fonts } from '../../assets/styles/mixin';
 
 export const LayoutContainer = styled.div`
     display: flex;
     flex-direction: column;
-    overflow-x:hidden;
-`
+    overflow-x: hidden;
+`;
 
 export const ContainerCenter = styled.div`
     width: 1140px;
@@ -20,39 +20,39 @@ export const ContainerCenter = styled.div`
             display: flex;
             justify-content: space-between;
             button {
-                background: transparent;                
+                background: transparent;
                 border: none;
                 outline: none;
                 cursor: pointer;
-                transition: all .2s;
-                width: 25px;            
+                transition: all 0.2s;
+                width: 25px;
                 &:hover {
-                transform: scale(1.2);
+                    transform: scale(1.2);
                 }
                 svg {
-                width: 25px;
-                height: 59px;
+                    width: 25px;
+                    height: 59px;
                 }
             }
         }
     }
-    @media(max-width:1140px) {
+    @media (max-width: 1140px) {
         padding: 0px 30px;
     }
     @media (max-width: 425px) {
-      width: 100%;
-      flex-direction: column;
-      justify-content: space-evenly;
-      padding: 0px 10px;
-    }   
-`
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0px 10px;
+    }
+`;
 
 export const HeaderContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    box-sizing:border-box;
+    box-sizing: border-box;
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,10 +61,11 @@ export const HeaderContainer = styled.div`
         width: 100%;
         height: 100%;
         position: absolute;
-        overflow:hidden;
+        overflow: hidden;
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
+
         top: 0px;
         left: 0px;
     }
@@ -90,12 +91,12 @@ export const HeaderContainer = styled.div`
         @media (max-width: 425px) {
             width: 100%;
             flex-direction: column;
-        }  
+        }
         .logo {
             display: flex;
             align-items: center;
             svg {
-                transition: all .2s;
+                transition: all 0.2s;
             }
         }
         .center {
@@ -111,11 +112,11 @@ export const HeaderContainer = styled.div`
             width: 100vw;
             padding: 70px 0px;
             top: 0px;
-            transition: all .5s;
+            transition: all 0.5s;
             z-index: 99999;
             @media (max-width: 425px) {
                 width: 100vw;
-            }  
+            }
             &.active {
                 position: fixed;
                 top: 0px;
@@ -139,19 +140,19 @@ export const HeaderContainer = styled.div`
         }
         ul.menu-site {
             display: flex;
-            list-style:none;
+            list-style: none;
             padding: 12.5px 0px;
             margin: 0px;
             align-items: center;
             position: relative;
             > li {
                 margin-left: 35px;
-                box-sizing:border-box;
+                box-sizing: border-box;
                 @media (max-width: 425px) {
                     margin-left: 15px;
-                }  
+                }
                 a {
-                    text-decoration:none;
+                    text-decoration: none;
                     text-transform: uppercase;
                     font-size: 16px;
                     font-family: ${fonts.bebasNeue};
@@ -159,29 +160,29 @@ export const HeaderContainer = styled.div`
                     font-weight: 400;
                     cursor: pointer;
                     &:hover {
-                        color: #FFF;
+                        color: #fff;
                     }
-                }         
+                }
                 > ul {
                     position: fixed;
                     list-style: none;
                     background: ${colors.primary};
                     opacity: 0;
                     visibility: hidden;
-                    margin-top:0px;
+                    margin-top: 0px;
                     padding: 20px;
-                    transition: all .2s;
+                    transition: all 0.2s;
                     li {
                         padding: 3px 0px;
                     }
-                }      
+                }
                 &:hover {
                     ul {
                         opacity: 1;
                         visibility: visible;
-                        margin-top:12px;
+                        margin-top: 12px;
                     }
-                } 
+                }
             }
             @media (max-width: 425px) {
                 display: none;
@@ -196,10 +197,10 @@ export const HeaderContainer = styled.div`
             position: fixed;
             top: 0px;
             left: 0px;
-            background: rgba(0,0,0,.9);
-            box-sizing:border-box;
+            background: rgba(0, 0, 0, 0.9);
+            box-sizing: border-box;
             padding: 9px 10px;
-            animation: fadeInRight .2s;
+            animation: fadeInRight 0.2s;
             list-style: none;
             svg {
                 margin-bottom: 15px;
@@ -210,7 +211,7 @@ export const HeaderContainer = styled.div`
                 text-align: right;
                 padding: 15px 15px 0px 0px;
                 a {
-                    text-decoration:none;
+                    text-decoration: none;
                     text-transform: uppercase;
                     font-size: 20px;
                     font-family: ${fonts.bebasNeue};
@@ -218,9 +219,9 @@ export const HeaderContainer = styled.div`
                     font-weight: 400;
                     color: ${colors.primaryLight} !important;
                     cursor: pointer;
-                    
+
                     &:hover {
-                        color: #FFF;
+                        color: #fff;
                     }
                 }
             }
@@ -231,7 +232,7 @@ export const HeaderContainer = styled.div`
             @media (max-width: 425px) {
                 display: flex;
                 position: relative;
-            }  
+            }
         }
     }
     .content-banner {
@@ -243,7 +244,7 @@ export const HeaderContainer = styled.div`
         z-index: 1;
         padding-top: 15vh;
     }
-`
+`;
 
 export const FooterContainer = styled.div`
     width: 100%;
@@ -260,12 +261,12 @@ export const FooterContainer = styled.div`
             padding: 30px;
             flex-direction: column-reverse;
             align-items: flex-start;
-        }   
+        }
         .item {
             display: flex;
             align-items: center;
             a {
-                display:flex;
+                display: flex;
             }
             img {
                 margin-right: 15px;
@@ -287,7 +288,7 @@ export const FooterContainer = styled.div`
             }
             @media (max-width: 425px) {
                 padding-bottom: 20px;
-            }   
+            }
         }
     }
     .powered {
@@ -302,4 +303,4 @@ export const FooterContainer = styled.div`
             padding: 0 30px;
         }
     }
-`
+`;

@@ -112,8 +112,8 @@ const Header: React.FC<IProps> = ({
                             <ul className="hidden">
                                 {closeIcon}
                                 {menus.map((row, key) => (
-                                    <Link href={row.href}>
-                                        <li key={key}>
+                                    <Link href={row.href} key={key}>
+                                        <li>
                                             <a>{row.value}</a>
                                         </li>
                                     </Link>

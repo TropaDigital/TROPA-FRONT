@@ -1,17 +1,18 @@
-import styled from "styled-components";
-import { colors, fonts } from "../../assets/styles/mixin";
+import styled from 'styled-components';
+import { colors, fonts } from '../../assets/styles/mixin';
 
 export const WeDoContainer = styled.div`
     overflow: hidden;
     width: 100%;
-    min-height: 100vh;
-    background:${colors.primary};
+    background: ${colors.primaryLight};
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 70px 0px;
     box-sizing: border-box;
+    margin-top: -1px;
+    position: relative;
     @media (max-width: 425px) {
         width: 100%;
     }
@@ -59,15 +60,26 @@ export const WeDoContainer = styled.div`
                 color: ${colors.primaryDark};
                 font-size: 18px;
                 margin-top: 40px;
-                font-weight:normal;
+                font-weight: normal;
                 text-align: justify;
+            }
+        }
+        .text {
+            display: flex;
+            gap: 14px;
+            flex-direction: column;
+            position: relative;
+            z-index: 3;
+            p {
+                font-size: 14px;
+                font-weight: 500;
             }
         }
         .stages {
             width: 100%;
             * {
-                    transition: all .2s;
-                }
+                transition: all 0.2s;
+            }
             @media (max-width: 425px) {
                 width: 100%;
                 display: flex;
@@ -79,7 +91,11 @@ export const WeDoContainer = styled.div`
                 box-sizing: border-box;
                 padding: 35px 40px;
                 border-radius: 10px;
-                background: radial-gradient(130px 70px at 150px bottom, ${colors.primary}, ${colors.primaryDark});
+                background: radial-gradient(
+                    130px 70px at 150px bottom,
+                    ${colors.primary},
+                    ${colors.primaryDark}
+                );
                 margin: 15px 0px;
                 width: 100%;
                 height: 110px;
@@ -97,11 +113,11 @@ export const WeDoContainer = styled.div`
                 &:hover {
                     width: 85%;
                     @media (max-width: 1100px) {
-                        width: 63%;                        
+                        width: 63%;
                     }
                     @media (max-width: 425px) {
                         width: 375px;
-                    }                  
+                    }
                 }
                 .title {
                     display: flex;
@@ -159,9 +175,9 @@ export const WeDoContainer = styled.div`
                         visibility: hidden;
                     }
                 }
-                &:hover {                   
+                &:hover {
                     .description {
-                        visibility: visible; 
+                        visibility: visible;
                         left: 900px;
                         @media (max-width: 1100px) {
                             left: 590px;
@@ -175,7 +191,7 @@ export const WeDoContainer = styled.div`
                     .title {
                         span {
                             color: ${colors.primary};
-                        }                        
+                        }
                     }
                 }
             }
@@ -221,5 +237,4 @@ export const WeDoContainer = styled.div`
             }
         }
     }
-`
-
+`;

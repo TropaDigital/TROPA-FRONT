@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="powered">
                     <span>
-                        <b>Tropa Digital</b> • Copyright © 2021 - Todos os
+                        <b>Tropa Digital</b> • Copyright © 2022 - Todos os
                         direitos reservados.
                     </span>
                 </div>
