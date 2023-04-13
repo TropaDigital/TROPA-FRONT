@@ -1,0 +1,46 @@
+{
+  "cases": [
+    {
+      "id": 1,
+      "slug": "alpha-fm",
+      "title": "Uma das rádios com maior audiência na cidade de SP",
+      "name": "Alpha FM",
+      "year": "2022",
+      "platform": "Website, Sistema",
+      "video": "/images/cases/alpha-fm/preview.gif",
+      "text": "Alpha FM é uma estação de rádio que opera na frequência 101,7 MHz em FM para ouvintes da Região Metropolitana de São Paulo. A Tropa foi escolhida para o desenvolvimento do portal 100% responsivo, integrado com o player ao vivo da rádio.",
+      "front": "React",
+      "backend": "NodeJS",
+      "titleExtra": "Dark & Light mode",
+      "images": {
+        "principal": "/images/cases/alpha-fm/1.png",
+        "mobile1": "/images/cases/alpha-fm/2.png",
+        "mobile2": "/images/cases/alpha-fm/3.png",
+        "mobile3": "/images/cases/alpha-fm/4.png",
+        "extra1": "/images/cases/alpha-fm/5.png",
+        "extra2": "/images/cases/alpha-fm/6.png"
+      }
+    },
+    {
+      "id": 2,
+      "slug": "amazoncopy",
+      "title": "Automação com Geolocalização e serviços offline",
+      "name": "Amazoncopy",
+      "year": "2022",
+      "platform": "Sistema, APP",
+      "video": "/images/cases/amazoncopy/preview.gif",
+      "text": "A Tropa desenvolveu um aplicativo para a empresa que é usado pelos motoristas para gerenciar as entregas e manutenções. O aplicativo usa a geolocalização para mostrar os pontos mais próximos e criar um itinerário para os motoristas. Isso ajuda a tornar as entregas e manutenções mais eficientes e no tempo correto. A Tropa Digital trabalhou em estreita colaboração com a Amazon Copy para garantir que o aplicativo atendesse às necessidades específicas da empresa e ajudasse a melhorar a experiência geral do cliente e a eficiência operacional.",
+      "front": "React",
+      "backend": "NodeJS",
+      "titleExtra": "Integração com mapas",
+      "images": {
+        "principal": "/images/cases/amazoncopy/1.png",
+        "mobile1": null,
+        "mobile2": null,
+        "mobile3": null,
+        "extra1": "/images/cases/amazoncopy/5.png",
+        "extra2": null
+      }
+    }
+  ]
+}

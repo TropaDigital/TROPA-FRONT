@@ -21,7 +21,7 @@ export const ContainerSistemasLP = styled.div`
     text-transform: uppercase;
     font-weight: normal;
     color: ${colors.primaryLight};
-    line-height: 40px;
+    line-height: 50px;
   }
   @media (max-width: 420px) {
     .title {
@@ -48,7 +48,7 @@ export const ContainerSistemasLP = styled.div`
       }
       p {
         color: ${colors.primaryLight};
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 500;
         margin-top: 30px;
         max-width: 80%;
@@ -136,6 +136,7 @@ export const ContainerSistemasLP = styled.div`
         overflow: auto;
         overflow-y: hidden;
         height: 350px;
+        margin-bottom: 40px;
         .line {
           svg {
             width: 1140px;
@@ -156,6 +157,9 @@ export const ContainerSistemasLP = styled.div`
     &#wedo {
       background: #cebaa8;
       padding: 30px 0px;
+      .title {
+        width: 200px;
+      }
       @media (max-width: 420px) {
         padding: 30px;
       }
@@ -187,7 +191,7 @@ export const ContainerSistemasLP = styled.div`
             width: 100%;
           }
           p {
-            font-size: 13px;
+            font-size: 15px;
             margin-top: 20px;
             font-weight: 500;
           }
@@ -248,7 +252,7 @@ export const ContainerSistemasLP = styled.div`
               font-family: "Poppins";
               font-style: italic;
               font-weight: 500;
-              font-size: 14px;
+              font-size: 15px;
               line-height: 21px;
               text-align: right;
               text-transform: uppercase;
@@ -387,7 +391,7 @@ export const ContainerSistemasLP = styled.div`
       font-family: "Poppins";
       font-style: normal;
       font-weight: 400;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 17px;
       text-align: center;
       color: #ffffff;

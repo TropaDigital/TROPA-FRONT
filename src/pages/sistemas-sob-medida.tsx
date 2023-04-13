@@ -97,6 +97,10 @@ const SistemasSobMedida: NextPage = () => {
         setPreview("/images/cases/text2you.png");
       }
     }, 5000);
+
+    return () => {
+      clearTimeout(intervalID);
+    };
   }, [preview]);
 
   return (
