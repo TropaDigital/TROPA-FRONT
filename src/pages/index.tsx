@@ -25,7 +25,6 @@ import {
     BannerHome,
     HomeContainer,
     LanguagesContainer,
-    PortfolioContainer,
 } from '../assets/styles/HomeStyles';
 import { ContainerCenter } from '../components/Layout/styles';
 import Social from '../components/Social';
@@ -33,7 +32,7 @@ import WhyTropa from '../components/WhyTropa/WhyTropa';
 import Contact from '../components/Contact';
 import Footer from '../components/Layout/Footer';
 import apiTropa from './api/api';
-import PulseLoader from 'react-spinners/PulseLoader';
+import ListCases from '../components/Cases/Cases';
 
 interface IProps {
     scrollTo?: string;
@@ -234,72 +233,7 @@ const Home: NextPage<IProps> = ({ scrollTo }) => {
 
                 <Social itemsToShow={itemsToShowSocial} />
 
-                <PortfolioContainer id="portfolio">
-                    <ContainerCenter className="head-portfolio">
-                        <Animate effect="fadeInUp" startAnimation={200}>
-                            <div className="title">
-                                <h2>Portfólio</h2>
-                                <IconGlobal className="effect-stroke light" />
-                            </div>
-                        </Animate>
-                        <div className="buttons">
-                            <button onClick={() => slider.current.slidePrev()}>
-                                <IconArrowLeft />
-                            </button>
-                            <button onClick={() => slider.current.slideNext()}>
-                                <IconArrowRight />
-                            </button>
-                        </div>
-                    </ContainerCenter>
-
-                    <Carousel
-                        itemsToShow={itemsToShowPortfolio}
-                        isRTL={false}
-                        className="cards"
-                        itemPadding={[0]}
-                        outerSpacing={0}
-                        pagination={false}
-                        showArrows={false}
-                        showEmptySlots={false}
-                        ref={slider}
-                    >
-                        {portfoliosList.length > 0
-                            ? portfoliosList.map((row: any, key: any) => (
-                                  <Link
-                                      key={key}
-                                      href={`/portfolio/${row.slug}`}
-                                  >
-                                      <div
-                                          className="card"
-                                          key={key}
-                                          style={{
-                                              backgroundImage:
-                                                  'url(' +
-                                                  row.imagem_principal +
-                                                  ')',
-                                          }}
-                                      >
-                                          <h4>{row.titulo}</h4>
-                                          <i>{row.descricao}</i>
-                                      </div>
-                                  </Link>
-                              ))
-                            : [1, 2, 3].map((row: any, key) => (
-                                  <div
-                                      className="loader"
-                                      key={key}
-                                      style={{
-                                          backgroundImage:
-                                              'url(' +
-                                              row.imagem_principal +
-                                              ')',
-                                      }}
-                                  >
-                                      <PulseLoader color="#fff" size={30} />
-                                  </div>
-                              ))}
-                    </Carousel>
-                </PortfolioContainer>
+                <ListCases />
                 <Contact />
                 <Footer />
             </HomeContainer>

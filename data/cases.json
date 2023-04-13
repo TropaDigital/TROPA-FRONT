@@ -1,46 +1,264 @@
 {
-  "cases": [
-    {
-      "id": 1,
-      "slug": "alpha-fm",
-      "title": "Uma das rádios com maior audiência na cidade de SP",
-      "name": "Alpha FM",
-      "year": "2022",
-      "platform": "Website, Sistema",
-      "video": "/images/cases/alpha-fm/preview.gif",
-      "text": "Alpha FM é uma estação de rádio que opera na frequência 101,7 MHz em FM para ouvintes da Região Metropolitana de São Paulo. A Tropa foi escolhida para o desenvolvimento do portal 100% responsivo, integrado com o player ao vivo da rádio.",
-      "front": "React",
-      "backend": "NodeJS",
-      "titleExtra": "Dark & Light mode",
-      "images": {
-        "principal": "/images/cases/alpha-fm/1.png",
-        "mobile1": "/images/cases/alpha-fm/2.png",
-        "mobile2": "/images/cases/alpha-fm/3.png",
-        "mobile3": "/images/cases/alpha-fm/4.png",
-        "extra1": "/images/cases/alpha-fm/5.png",
-        "extra2": "/images/cases/alpha-fm/6.png"
-      }
-    },
-    {
-      "id": 2,
-      "slug": "amazoncopy",
-      "title": "Automação com Geolocalização e serviços offline",
-      "name": "Amazoncopy",
-      "year": "2022",
-      "platform": "Sistema, APP",
-      "video": "/images/cases/amazoncopy/preview.gif",
-      "text": "A Tropa desenvolveu um aplicativo para a empresa que é usado pelos motoristas para gerenciar as entregas e manutenções. O aplicativo usa a geolocalização para mostrar os pontos mais próximos e criar um itinerário para os motoristas. Isso ajuda a tornar as entregas e manutenções mais eficientes e no tempo correto. A Tropa Digital trabalhou em estreita colaboração com a Amazon Copy para garantir que o aplicativo atendesse às necessidades específicas da empresa e ajudasse a melhorar a experiência geral do cliente e a eficiência operacional.",
-      "front": "React",
-      "backend": "NodeJS",
-      "titleExtra": "Integração com mapas",
-      "images": {
-        "principal": "/images/cases/amazoncopy/1.png",
-        "mobile1": null,
-        "mobile2": null,
-        "mobile3": null,
-        "extra1": "/images/cases/amazoncopy/5.png",
-        "extra2": null
-      }
-    }
-  ]
+    "cases": [
+        {
+            "id": 1,
+            "slug": "alpha-fm",
+            "title": "Uma das rádios com maior audiência na cidade de SP",
+            "name": "Alpha FM",
+            "year": "2022",
+            "platform": "Website",
+            "text": "Alpha FM é uma estação de rádio que opera na frequência 101,7 MHz em FM para ouvintes da Região Metropolitana de São Paulo. A Tropa foi escolhida para o desenvolvimento do portal 100% responsivo, integrado com o player ao vivo da rádio.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Conversation",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 2,
+            "slug": "amazoncopy",
+            "title": "Automação com Geolocalização e serviços offline",
+            "name": "Amazoncopy",
+            "year": "2022",
+            "platform": "Sistema",
+            "text": "A Tropa desenvolveu um aplicativo para a empresa que é usado pelos motoristas para gerenciar as entregas e manutenções. O aplicativo usa a geolocalização para mostrar os pontos mais próximos e criar um itinerário para os motoristas. Isso ajuda a tornar as entregas e manutenções mais eficientes e no tempo correto. A Tropa Digital trabalhou em estreita colaboração com a Amazon Copy para garantir que o aplicativo atendesse às necessidades específicas da empresa e ajudasse a melhorar a experiência geral do cliente e a eficiência operacional.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Integração com mapas",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 3,
+            "slug": "eyou",
+            "title": "Soluções em comunicacões em massa",
+            "name": "Eyou",
+            "year": "2021",
+            "platform": "Website",
+            "text": "EYou é uma plataforma online com diversas soluções utilizando SMS, Whatsapp, Telefonia e muito mais. A Tropa foi escolhida para o desenvolvimento do site institucional 100% responsivo, e também para o desenvolvimento de uma landpage para captação de novos clientes.",
+            "front": "React",
+            "backend": "PHP",
+            "titleExtra": "SEO & Responsividade",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 7,
+            "slug": "eyou-sms",
+            "title": "Soluções em envios de SMS em massa",
+            "name": "Eyou SMS",
+            "year": "2021",
+            "platform": "Sistema",
+            "text": "",
+            "front": "React",
+            "backend": "PHP",
+            "titleExtra": "Criação de templates & drag and drop",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 8,
+            "slug": "eyou-omni",
+            "title": "Plataforma Omni channel, atendimentos online via socket e whatsapp",
+            "name": "Eyou Omni",
+            "year": "2023",
+            "platform": "Sistema",
+            "text": "A plataforma Eyou Omni é uma solução completa para empresas que desejam fornecer um serviço de atendimento ao cliente de alta qualidade em vários canais de comunicação. Com recursos como grupos de atendimento, fila de atendimento, chatbot e atendimento via web e WhatsApp, a plataforma permite que os agentes de atendimento trabalhem juntos para resolver os problemas dos clientes de maneira rápida e eficiente. Além disso, a plataforma oferece recursos avançados de relatórios e análises para que as empresas possam entender melhor o comportamento dos clientes e a eficácia do atendimento ao cliente em todos os canais de comunicação. Com a plataforma Eyou Omni, as empresas podem fornecer um serviço de atendimento ao cliente eficiente e de alta qualidade, melhorando a satisfação do cliente e construindo um relacionamento mais forte com eles em todos os pontos de contato.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Conversation & Chatbot",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 4,
+            "slug": "cooks-cooker",
+            "title": "Gerenciamento dos cozinheiros",
+            "name": "Cooks Cooker",
+            "year": "2021",
+            "platform": "Sistema",
+            "text": "O Cooks Cooker é uma ferramenta essencial para os cozinheiros que desejam oferecer suas habilidades culinárias aos usuários do aplicativo. Ao fazer login no painel, os cozinheiros podem criar seu perfil, adicionar informações sobre suas especialidades culinárias e definir seus horários disponíveis para cozinhar. Eles também podem criar seus próprios menus e definir preços para as refeições que desejam oferecer. O painel do Cooks permite que os cozinheiros gerenciem facilmente seus pedidos e comuniquem-se com os usuários para garantir que as refeições sejam entregues no prazo e com qualidade. Com o painel do Cooks, os cozinheiros têm a liberdade de trabalhar em casa, de acordo com seus próprios horários e oferecer suas habilidades culinárias para pessoas que valorizam uma refeição caseira deliciosa.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Cadastro & Funcionalidades sob medida",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 5,
+            "slug": "cooks-app",
+            "title": "O Primeiro App de Comidas Artesanais",
+            "name": "Cooks APP",
+            "year": "2021",
+            "platform": "App",
+            "text": "O Cooks Cooker é uma ferramenta essencial para os cozinheiros que desejam oferecer suas habilidades culinárias aos usuários do aplicativo. Ao fazer login no painel, os cozinheiros podem criar seu perfil, adicionar informações sobre suas especialidades culinárias e definir seus horários disponíveis para cozinhar. Eles também podem criar seus próprios menus e definir preços para as refeições que desejam oferecer. O painel do Cooks permite que os cozinheiros gerenciem facilmente seus pedidos e comuniquem-se com os usuários para garantir que as refeições sejam entregues no prazo e com qualidade. Com o painel do Cooks, os cozinheiros têm a liberdade de trabalhar em casa, de acordo com seus próprios horários e oferecer suas habilidades culinárias para pessoas que valorizam uma refeição caseira deliciosa.",
+            "front": "React Native",
+            "backend": "NodeJS",
+            "titleExtra": "Cadastro & Funcionalidades sob medida",
+            "images": {
+                "principal": null,
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 5,
+            "slug": "cooks-admin",
+            "title": "Gerenciamento administrativo do APP Cooks",
+            "name": "Cooks Admin",
+            "year": "2021",
+            "platform": "Sistema",
+            "text": "O sistema de gerenciamento administrativo do Cooks é uma ferramenta poderosa que permite que a equipe de gerenciamento gerencie facilmente todas as operações do aplicativo. O sistema oferece recursos avançados de gerenciamento de usuários, pedidos e pagamentos, além de permitir que a equipe de suporte ao cliente gerencie e resolva problemas rapidamente. O sistema também fornece análises detalhadas sobre o desempenho do aplicativo, permitindo que a equipe de gerenciamento tome decisões informadas para melhorar a experiência do usuário e aumentar a rentabilidade. Com o sistema de gerenciamento administrativo do Cooks, a equipe de gerenciamento pode se concentrar em fornecer um serviço de alta qualidade para os usuários e cozinheiros, enquanto garantem que o aplicativo continue a crescer e expandir.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "",
+            "images": {
+                "principal": null,
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": null,
+                "extra2": null
+            }
+        },
+        {
+            "id": 5,
+            "slug": "somo-collab",
+            "title": "uma agência colaborativa, de profissionais de comunicação e tecnologia",
+            "name": "Somo Collab",
+            "year": "2020",
+            "platform": "Site",
+            "text": "Somo Collab é uma empresa de design digital que oferece soluções criativas e personalizadas para ajudar as empresas a melhorar sua presença online. Com uma equipe de designers talentosos, a Somo Collab trabalha em estreita colaboração com seus clientes para entender suas necessidades e objetivos de negócios. Eles criam designs visualmente impressionantes para sites, aplicativos móveis, mídias sociais e outros canais digitais, ajudando as empresas a se destacarem em um mercado cada vez mais competitivo. A Somo Collab se dedica a fornecer soluções de design exclusivas e personalizadas para seus clientes, ajudando-os a alcançar seus objetivos de negócios e ter sucesso em um mundo cada vez mais digital.",
+            "front": "PHP",
+            "backend": "ZendFramework",
+            "titleExtra": "Responsividade & SEO",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 6,
+            "slug": "text2you",
+            "title": "Uma ferramenta poderosa de disparo e conversation",
+            "name": "Text2you",
+            "year": "2020",
+            "platform": "Sistema",
+            "text": "A Text2you é uma empresa especializada em fornecer soluções de comunicação eficazes para empresas de todos os tamanhos. Eles oferecem serviços de disparos em SMS, Whatsapp, Email e chat em plataformas como Instagram, Telegram e Facebook, permitindo que as empresas se comuniquem com seus clientes de forma rápida e eficiente. A Text2you trabalha de forma receptiva, oferecendo suporte e atendimento personalizado para garantir que as necessidades de comunicação dos clientes sejam atendidas de forma eficiente. Além disso, a Text2you oferece recursos avançados de análise e relatórios para ajudar as empresas a entender melhor a eficácia de suas campanhas de comunicação e melhorar a experiência do cliente. Com a Text2you, as empresas podem se comunicar com seus clientes de forma fácil e eficiente, melhorando a eficácia de suas campanhas de marketing e fortalecendo o relacionamento com seus clientes.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Campanhas & Conversation",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": null,
+                "mobile2": null,
+                "mobile3": null,
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 9,
+            "slug": "facinnius",
+            "title": "Empresa de cosméticos profissionais de alta tecnologia e performance",
+            "name": "Facinnius",
+            "year": "2022",
+            "platform": "Website",
+            "text": "O desenvolvimento do site da Facinius foi projetado para fornecer aos clientes informações completas sobre os produtos e serviços da empresa, incluindo uma vitrine completa de todos os produtos disponíveis para compra em lojas físicas. O site apresenta um design atraente e fácil de usar, com recursos como filtros de pesquisa, informações detalhadas do produto e avaliações de clientes. Os clientes podem encontrar facilmente uma loja da Facinius próxima a eles, ver horários de funcionamento e receber informações sobre eventos e promoções especiais. Com o site da Facinius, a empresa pode se conectar com seus clientes de maneira mais eficiente, fornecendo uma experiência online envolvente e informativa.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Linhas & Produtos",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 10,
+            "slug": "super-beneficios",
+            "title": "Super Beneficios Corretora",
+            "name": "Super Beneficios",
+            "year": "2020",
+            "platform": "Website",
+            "text": "O site institucional da Super Benefícios foi projetado para fornecer aos clientes uma visão geral dos serviços e produtos oferecidos pela corretora de seguros. Com um design moderno e profissional, o site apresenta informações detalhadas sobre os planos de seguro oferecidos pela empresa, além de recursos educacionais para ajudar os clientes a entender melhor suas opções de seguro. Os clientes também podem entrar em contato com a equipe da Super Benefícios por meio do site, preenchendo um formulário de contato ou solicitando uma cotação de seguro. Além disso, o site apresenta informações sobre a empresa, incluindo sua história, missão e valores. Com o site institucional da Super Benefícios, a corretora de seguros pode se conectar com seus clientes e fornecer informações valiosas sobre seus serviços de seguro, aumentando a conscientização da marca e a confiança do cliente.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Linhas & Produtos",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 12,
+            "slug": "doubts",
+            "title": "Uma nova forma de tirar dúvidas e encontrar soluções",
+            "name": "Doubts",
+            "year": "2023",
+            "platform": "Sistema",
+            "text": "O desenvolvimento do site Doubts foi projetado para fornecer uma plataforma única para os usuários obterem respostas para suas dúvidas. Com uma interface amigável, o site permite que os usuários postem suas perguntas em tópicos específicos e recebam respostas de outros usuários ou consultores especializados. O site também possui recursos avançados, como votação de respostas e classificação de usuários, para garantir que as respostas mais úteis e confiáveis sejam destacadas.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Perfil de usuario",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        }
+    ]
 }
