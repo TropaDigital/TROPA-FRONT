@@ -11,6 +11,9 @@ export const ContainerSistemasLP = styled.div`
     margin: 0px auto;
     padding: 30px 0px;
     max-width: 95%;
+    @media (max-width: 420px) {
+      max-width: 100%;
+    }
   }
   .title {
     font-size: 55px;
@@ -19,6 +22,12 @@ export const ContainerSistemasLP = styled.div`
     font-weight: normal;
     color: ${colors.primaryLight};
     line-height: 40px;
+  }
+  @media (max-width: 420px) {
+    .title {
+      font-size: 35px;
+      line-height: 35px;
+    }
   }
   header {
     width: 100%;
@@ -29,9 +38,13 @@ export const ContainerSistemasLP = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
+    @media (max-width: 420px) {
+      padding: 30px;
+    }
     .text {
       max-width: 40%;
-      .title {
+      @media (max-width: 420px) {
+        max-width: 100%;
       }
       p {
         color: ${colors.primaryLight};
@@ -39,6 +52,9 @@ export const ContainerSistemasLP = styled.div`
         font-weight: 500;
         margin-top: 30px;
         max-width: 80%;
+        @media (max-width: 420px) {
+          max-width: 100%;
+        }
       }
     }
     &:after {
@@ -81,6 +97,9 @@ export const ContainerSistemasLP = styled.div`
           transform: rotate(90deg);
           animation: aparecer 1s ease forwards;
           animation-delay: 0.5s;
+          @media (max-width: 420px) {
+            display: none;
+          }
         }
         @keyframes aparecer {
           0% {
@@ -106,6 +125,10 @@ export const ContainerSistemasLP = styled.div`
       background: #cc6138;
       .title {
         width: 450px;
+        max-width: 100%;
+        @media (max-width: 420px) {
+          padding: 0px 30px;
+        }
       }
       .container-line {
         position: relative;
@@ -133,6 +156,9 @@ export const ContainerSistemasLP = styled.div`
     &#wedo {
       background: #cebaa8;
       padding: 30px 0px;
+      @media (max-width: 420px) {
+        padding: 30px;
+      }
       &:before {
         width: 120%;
         height: 200px;
@@ -151,9 +177,15 @@ export const ContainerSistemasLP = styled.div`
         .logo {
           margin-top: -120px;
           margin-bottom: 40px;
+          @media (max-width: 420px) {
+            margin-top: -95px;
+          }
         }
         .text {
           width: calc(100% - 650px);
+          @media (max-width: 420px) {
+            width: 100%;
+          }
           p {
             font-size: 13px;
             margin-top: 20px;
@@ -165,6 +197,9 @@ export const ContainerSistemasLP = styled.div`
           position: absolute;
           right: -120px;
           top: -40px;
+          @media (max-width: 420px) {
+            display: none;
+          }
         }
       }
       .title {
@@ -179,6 +214,10 @@ export const ContainerSistemasLP = styled.div`
         justify-content: space-between;
         gap: 30px;
         align-items: center;
+        @media (max-width: 420px) {
+          overflow: auto;
+          padding: 0px 30px;
+        }
         .item {
           display: flex;
           background: #24201a;
@@ -191,6 +230,7 @@ export const ContainerSistemasLP = styled.div`
           .icon {
             display: flex;
             align-items: center;
+            margin-right: 10px;
           }
           .text {
             text-align: right;
@@ -213,6 +253,7 @@ export const ContainerSistemasLP = styled.div`
               text-align: right;
               text-transform: uppercase;
               color: #cc6138;
+              white-space: nowrap;
             }
           }
         }
@@ -222,12 +263,25 @@ export const ContainerSistemasLP = styled.div`
       background-color: ${colors.primaryLight};
       z-index: 999;
       padding-bottom: 100px;
+      @media (max-width: 420px) {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
       .preview {
         position: absolute;
         margin-left: -200px;
+        @media (max-width: 420px) {
+          transform: scale(1.6);
+          width: 100%;
+          margin-left: 0px;
+          margin-top: 60px;
+        }
       }
       .options {
         height: 340px;
+        @media (max-width: 420px) {
+          height: 300px;
+        }
         box-sizing: border-box;
         padding-left: 520px;
         display: flex;

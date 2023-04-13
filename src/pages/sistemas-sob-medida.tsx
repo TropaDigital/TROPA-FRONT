@@ -16,6 +16,7 @@ import Footer from "../components/Layout/Footer";
 import Contact from "../components/Contact";
 import { useEffect, useState } from "react";
 import Animate from "../components/Animation/Animate";
+import { clearInterval } from "timers";
 
 interface IPropsMethodology {
   number: number;
@@ -85,6 +86,17 @@ const SistemasSobMedida: NextPage = () => {
         "Eyou Omni é uma plataforma inovadora que oferece uma solução unificada para atendimento ao cliente via chat web e WhatsApp. Com a tecnologia de socket, a plataforma garante uma experiência de chat em tempo real, permitindo que os usuários interajam com os atendentes de forma instantânea e eficiente. Além disso, a integração com o WhatsApp permite que as empresas se comuniquem com os clientes em um canal popular e conveniente. Com Eyou Omni, é possível gerenciar todas as conversas em um único lugar, tornando o processo de atendimento mais ágil e organizado. A plataforma também oferece recursos avançados de análise e relatórios para ajudar as empresas a monitorar o desempenho do atendimento e aprimorar a experiência do cliente."
       );
     }
+  }, [preview]);
+  useEffect(() => {
+    const intervalID = setTimeout(() => {
+      if (preview === "/images/cases/text2you.png") {
+        setPreview("/images/cases/123jus.png");
+      } else if (preview === "/images/cases/123jus.png") {
+        setPreview("/images/cases/eyouomni.png");
+      } else if (preview === "/images/cases/eyouomni.png") {
+        setPreview("/images/cases/text2you.png");
+      }
+    }, 5000);
   }, [preview]);
 
   return (
