@@ -6,7 +6,7 @@
             "title": "Uma das rádios com maior audiência na cidade de SP",
             "name": "Alpha FM",
             "year": "2022",
-            "platform": "Website",
+            "platform": "Website ",
             "text": "Alpha FM é uma estação de rádio que opera na frequência 101,7 MHz em FM para ouvintes da Região Metropolitana de São Paulo. A Tropa foi escolhida para o desenvolvimento do portal 100% responsivo, integrado com o player ao vivo da rádio.",
             "front": "React",
             "backend": "NodeJS",
@@ -251,6 +251,106 @@
             "front": "React",
             "backend": "NodeJS",
             "titleExtra": "Perfil de usuario",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 12,
+            "slug": "grupo-tradicao",
+            "title": "Grande grupo de consórcio",
+            "name": "Grupo Tradição",
+            "year": "2023",
+            "platform": "Website",
+            "text": "O desenvolvimento do site institucional do Grupo Tradição foi projetado para fornecer uma experiência de usuário intuitiva e eficiente. Com um design limpo e moderno, o site apresenta informações completas sobre os serviços oferecidos pelo Grupo Tradição, incluindo planos de consórcio, condições de pagamento e informações sobre a empresa. Além disso, o site foi otimizado para SEO, o que significa que foi desenvolvido com técnicas avançadas para aumentar sua visibilidade nos resultados de pesquisa orgânica do Google. Isso é fundamental para garantir que os clientes em potencial possam encontrar facilmente o Grupo Tradição na internet.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "SEO & Responsividade",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 12,
+            "slug": "grupo-tradicao-painel",
+            "title": "Gerenciamento de dados do site Tradição",
+            "name": "Grupo Tradição Admin",
+            "year": "2023",
+            "platform": "Sistema",
+            "text": "O sistema desenvolvido para o Grupo Tradição foi projetado para gerenciar efetivamente todos os dados relacionados ao site institucional da empresa. O sistema inclui recursos avançados de gerenciamento de conteúdo, como a possibilidade de atualizar informações sobre os serviços de consórcio, condições de pagamento, horários de funcionamento, entre outras informações.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Dados totalmente personalizados",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 13,
+            "slug": "casa-amazonia",
+            "title": "Os melhores produtos da Amazônia",
+            "name": "Casa Amazonônia",
+            "year": "2023",
+            "platform": "Site",
+            "text": "O site Casa Amazônia foi desenvolvido para apresentar de forma virtual os produtos alimentícios da Amazônia, em uma vitrine atraente e fácil de navegar. Os usuários podem explorar a diversidade de alimentos da região, conhecer sua origem e processo de produção, além de obter informações sobre os pontos de venda desses produtos.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Seo & Clean",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 14,
+            "slug": "casa-amazonia-painel",
+            "title": "Gerenciamento de dados do site Casa Amazônia",
+            "name": "Casa Amazonônia Admin",
+            "year": "2023",
+            "platform": "Sistema",
+            "text": "O painel de gerenciamento de dados do site Casa Amazônia foi projetado para fornecer aos administradores do site um controle completo sobre as informações apresentadas aos usuários. Com recursos avançados de gerenciamento de conteúdo, o painel permite que os administradores atualizem facilmente as informações sobre os produtos alimentícios da Amazônia, incluindo origem, processo de produção e pontos de venda.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Seo & Clean",
+            "images": {
+                "principal": "principal.png",
+                "mobile1": "mobile1.png",
+                "mobile2": "mobile2.png",
+                "mobile3": "mobile3.png",
+                "extra1": "extra1.png",
+                "extra2": "extra2.png"
+            }
+        },
+        {
+            "id": 15,
+            "slug": "123jus",
+            "title": "Descomplica suas demandas em 1 2 3!",
+            "name": "123Jus",
+            "year": "2023",
+            "platform": "Sistema",
+            "text": "O sistema 123Jus foi desenvolvido com o objetivo de fornecer aos usuários um serviço rápido, barato e descomplicado para questões jurídicas. Com uma interface amigável e fácil de usar, o sistema permite que os usuários acessem informações jurídicas precisas e obtenham soluções rápidas para seus problemas legais.",
+            "front": "React",
+            "backend": "NodeJS",
+            "titleExtra": "Seo & Clean",
             "images": {
                 "principal": "principal.png",
                 "mobile1": "mobile1.png",
