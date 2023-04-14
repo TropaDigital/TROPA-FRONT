@@ -11,53 +11,43 @@ import 'react-toastify/dist/ReactToastify.css';
 const Contact: React.FC = () => {
     const router = useRouter();
 
-    const [DTO, setDTO] = useState <any>({
+    const [DTO, setDTO] = useState<any>({
         nome: '',
         email: '',
         mensagem: '',
     });
 
-    function handleSubmit(e: any) {
-        e.preventDefault();
-        setDTO({
-            nome: '',
-            email: '',
-            mensagem: '', 
-        })
-    }
-    
-    const sendContact = async() => {
-        
+    const [loading, setLoading] = useState(false);
+
+    const sendContact = async (e: any) => {
         try {
-            console.log(DTO);
-
-            const response = await apiTropa.post(
-                "/contato",
-                DTO
-            )
-            
+            e.preventDefault();
+            setLoading(true);
+            const response = await apiTropa.post('/contato', DTO);
+            setDTO({
+                nome: '',
+                email: '',
+                mensagem: '',
+            });
             toast.success(response.data.message, {
-                className: "toast-sucess",
-                theme: 'colored'
-            })
-            
-            
-        }
-        catch (e: any) {
+                className: 'toast-sucess',
+                theme: 'colored',
+            });
+            setLoading(false);
+        } catch (e: any) {
+            setLoading(false);
             toast.error(e.response.data.message, {
-                className: "toast-error",
-                theme: "colored"
-            })
+                className: 'toast-error',
+                theme: 'colored',
+            });
         }
-    }
+    };
 
-    const changeDTO = (key:string, value:string) => {
-
+    const changeDTO = (key: string, value: string) => {
         console.log(value);
         DTO[key] = value;
-        setDTO({...DTO});
-    }
-
+        setDTO({ ...DTO });
+    };
 
     return (
         <ContactContainer id="contato">
@@ -78,36 +68,38 @@ const Contact: React.FC = () => {
                         </a>
                     </div>
                 </Animate>
-                <form onSubmit={handleSubmit}>
-                    <input 
-                        placeholder="SEU NOME" 
-                        name='nome' 
-                        value={DTO.nome} 
-                        onChange={(e) => changeDTO(e.target.name, e.target.value)} 
+                <form onSubmit={sendContact}>
+                    <input
+                        placeholder="SEU NOME"
+                        name="nome"
+                        value={DTO.nome}
+                        onChange={(e) =>
+                            changeDTO(e.target.name, e.target.value)
+                        }
                     />
-                    <input 
-                        placeholder="SEU E-MAIL" 
-                        type={'email'} name='email' 
-                        value={DTO.email} 
-                        onChange={(e) => changeDTO(e.target.name, e.target.value)} 
+                    <input
+                        placeholder="SEU E-MAIL"
+                        type={'email'}
+                        name="email"
+                        value={DTO.email}
+                        onChange={(e) =>
+                            changeDTO(e.target.name, e.target.value)
+                        }
                     />
                     <textarea
                         placeholder="DIGITE UMA MENSAGEM"
-                        name='mensagem'
+                        name="mensagem"
                         value={DTO.mensagem}
-                        onChange={(e) => changeDTO(e.target.name, e.target.value)} 
+                        onChange={(e) =>
+                            changeDTO(e.target.name, e.target.value)
+                        }
                     />
-                    <button 
-                        type='submit' 
-                        onClick={() => sendContact()} 
-                    >
-                        Enviar
+                    <button type="submit">
+                        {loading ? 'ENVIANDO...' : 'Enviar'}
                     </button>
                 </form>
             </ContainerCenter>
-            <ToastContainer
-                position='top-center'
-            />
+            <ToastContainer position="top-center" />
         </ContactContainer>
     );
 };

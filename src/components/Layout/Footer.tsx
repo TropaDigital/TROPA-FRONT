@@ -1,13 +1,13 @@
 import React from 'react';
-import {
-    IconAstronautFull,
-} from '../Svg';
+import { IconAstronautFull } from '../Svg';
+import { WPPButton } from '../WPPButton/WPPButton';
 
 import { ContainerCenter, FooterContainer } from './styles';
 
 const Footer: React.FC = () => {
     return (
         <FooterContainer>
+            <WPPButton />
             <ContainerCenter>
                 <div className="infos">
                     <div className="item">

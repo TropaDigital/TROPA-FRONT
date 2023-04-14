@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import casesData from '../../../data/cases.json';
 
 export interface ICase {
+    inactive?: boolean;
     id: number;
     slug: string;
     name: string;
@@ -13,6 +14,7 @@ export interface ICase {
     backend: string;
     titleExtra: string;
     images: {
+        preview?: string | null;
         principal: string;
         mobile1: string | null;
         mobile2: string | null;
@@ -28,7 +30,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (slug) {
         // Retorna um caso específico pelo ID
         const caseItem = casesData.cases.find(
-            (item: ICase) => item.slug === slug
+            (item: ICase) => item.slug === slug && !item.inactive
         );
 
         if (caseItem) {
@@ -41,6 +43,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         }
     } else {
         // Retorna todos os casos
-        res.status(200).json(casesData.cases);
+        res.status(200).json(
+            casesData.cases.filter((obj: any) => !obj.inactive)
+        );
     }
 }

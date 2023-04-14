@@ -73,7 +73,9 @@ const Case: NextPage = () => {
                     <link rel="icon" href="/favicon1.ico" />
                 </Head>
                 <Header
-                    className="case-banner"
+                    className={`case-banner ${
+                        portfolioSelected.images?.preview ? 'video' : 'auto'
+                    }`}
                     menus={[
                         {
                             href: '/home/o-que-fazemos',
@@ -120,12 +122,14 @@ const Case: NextPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div
-                        className="video"
-                        style={{
-                            backgroundImage: `url(/images/cases/${portfolioSelected.slug}/preview.gif)`,
-                        }}
-                    />
+                    {portfolioSelected.images?.preview && (
+                        <div
+                            className="video"
+                            style={{
+                                backgroundImage: `url(/images/cases/${portfolioSelected.slug}/${portfolioSelected.images.preview})`,
+                            }}
+                        />
+                    )}
                 </Header>
 
                 <section id="about">

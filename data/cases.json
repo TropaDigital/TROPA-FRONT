@@ -1,6 +1,7 @@
 {
     "cases": [
         {
+            "inactive": false,
             "id": 1,
             "slug": "alpha-fm",
             "title": "Uma das rádios com maior audiência na cidade de SP",
@@ -12,6 +13,7 @@
             "backend": "NodeJS",
             "titleExtra": "Conversation",
             "images": {
+                "preview": "preview.gif",
                 "principal": "principal.png",
                 "mobile1": "mobile1.png",
                 "mobile2": "mobile2.png",
@@ -21,6 +23,7 @@
             }
         },
         {
+            "inactive": true,
             "id": 2,
             "slug": "amazoncopy",
             "title": "Automação com Geolocalização e serviços offline",
@@ -32,6 +35,7 @@
             "backend": "NodeJS",
             "titleExtra": "Integração com mapas",
             "images": {
+                "preview": "preview.gif",
                 "principal": "principal.png",
                 "mobile1": "mobile1.png",
                 "mobile2": "mobile2.png",
@@ -41,6 +45,7 @@
             }
         },
         {
+            "inactive": false,
             "id": 3,
             "slug": "eyou",
             "title": "Soluções em comunicacões em massa",
@@ -61,13 +66,14 @@
             }
         },
         {
+            "inactive": false,
             "id": 7,
             "slug": "eyou-sms",
             "title": "Soluções em envios de SMS em massa",
             "name": "Eyou SMS",
             "year": "2021",
             "platform": "Sistema",
-            "text": "",
+            "text": "A plataforma Eyou SMS foi desenvolvida com o objetivo de fornecer aos usuários uma solução rápida e fácil para enviar mensagens de texto em massa. Com recursos avançados de gerenciamento de contatos, a plataforma permite que os usuários gerenciem facilmente suas listas de contatos e enviem mensagens personalizadas para grandes grupos.",
             "front": "React",
             "backend": "PHP",
             "titleExtra": "Criação de templates & drag and drop",
@@ -81,6 +87,7 @@
             }
         },
         {
+            "inactive": false,
             "id": 8,
             "slug": "eyou-omni",
             "title": "Plataforma Omni channel, atendimentos online via socket e whatsapp",
@@ -101,13 +108,14 @@
             }
         },
         {
+            "inactive": false,
             "id": 4,
             "slug": "cooks-cooker",
             "title": "Gerenciamento dos cozinheiros",
-            "name": "Cooks Cooker",
+            "name": "Web Cooker",
             "year": "2021",
             "platform": "Sistema",
-            "text": "O Cooks Cooker é uma ferramenta essencial para os cozinheiros que desejam oferecer suas habilidades culinárias aos usuários do aplicativo. Ao fazer login no painel, os cozinheiros podem criar seu perfil, adicionar informações sobre suas especialidades culinárias e definir seus horários disponíveis para cozinhar. Eles também podem criar seus próprios menus e definir preços para as refeições que desejam oferecer. O painel do Cooks permite que os cozinheiros gerenciem facilmente seus pedidos e comuniquem-se com os usuários para garantir que as refeições sejam entregues no prazo e com qualidade. Com o painel do Cooks, os cozinheiros têm a liberdade de trabalhar em casa, de acordo com seus próprios horários e oferecer suas habilidades culinárias para pessoas que valorizam uma refeição caseira deliciosa.",
+            "text": "O Web Cooker é uma ferramenta essencial para os cozinheiros que desejam oferecer suas habilidades culinárias aos usuários do aplicativo. Ao fazer login no painel, os cozinheiros podem criar seu perfil, adicionar informações sobre suas especialidades culinárias e definir seus horários disponíveis para cozinhar. Eles também podem criar seus próprios menus e definir preços para as refeições que desejam oferecer. O painel do Cooks permite que os cozinheiros gerenciem facilmente seus pedidos e comuniquem-se com os usuários para garantir que as refeições sejam entregues no prazo e com qualidade. Com o painel do Cooks, os cozinheiros têm a liberdade de trabalhar em casa, de acordo com seus próprios horários e oferecer suas habilidades culinárias para pessoas que valorizam uma refeição caseira deliciosa.",
             "front": "React",
             "backend": "NodeJS",
             "titleExtra": "Cadastro & Funcionalidades sob medida",
@@ -121,16 +129,17 @@
             }
         },
         {
+            "inactive": false,
             "id": 5,
             "slug": "cooks-app",
             "title": "O Primeiro App de Comidas Artesanais",
             "name": "Cooks APP",
             "year": "2021",
             "platform": "App",
-            "text": "O Cooks Cooker é uma ferramenta essencial para os cozinheiros que desejam oferecer suas habilidades culinárias aos usuários do aplicativo. Ao fazer login no painel, os cozinheiros podem criar seu perfil, adicionar informações sobre suas especialidades culinárias e definir seus horários disponíveis para cozinhar. Eles também podem criar seus próprios menus e definir preços para as refeições que desejam oferecer. O painel do Cooks permite que os cozinheiros gerenciem facilmente seus pedidos e comuniquem-se com os usuários para garantir que as refeições sejam entregues no prazo e com qualidade. Com o painel do Cooks, os cozinheiros têm a liberdade de trabalhar em casa, de acordo com seus próprios horários e oferecer suas habilidades culinárias para pessoas que valorizam uma refeição caseira deliciosa.",
+            "text": "O Cooks APP é um aplicativo desenvolvido especialmente para os amantes de comidas artesanais, que desejam descobrir novas opções de alimentos de qualidade e encomendar seus pratos favoritos de forma rápida e conveniente. Com o Cooks APP, os usuários podem navegar pelas opções de alimentos, ver avaliações e comentários de outros usuários, escolher as opções de entrega ou consumo no local e pagar com segurança, tudo isso em apenas alguns cliques.",
             "front": "React Native",
             "backend": "NodeJS",
-            "titleExtra": "Cadastro & Funcionalidades sob medida",
+            "titleExtra": "",
             "images": {
                 "principal": null,
                 "mobile1": "mobile1.png",
@@ -141,7 +150,8 @@
             }
         },
         {
-            "id": 5,
+            "inactive": true,
+            "id": 6,
             "slug": "cooks-admin",
             "title": "Gerenciamento administrativo do APP Cooks",
             "name": "Cooks Admin",
@@ -161,7 +171,8 @@
             }
         },
         {
-            "id": 5,
+            "inactive": false,
+            "id": 7,
             "slug": "somo-collab",
             "title": "uma agência colaborativa, de profissionais de comunicação e tecnologia",
             "name": "Somo Collab",
@@ -181,7 +192,8 @@
             }
         },
         {
-            "id": 6,
+            "inactive": false,
+            "id": 8,
             "slug": "text2you",
             "title": "Uma ferramenta poderosa de disparo e conversation",
             "name": "Text2you",
@@ -201,6 +213,7 @@
             }
         },
         {
+            "inactive": false,
             "id": 9,
             "slug": "facinnius",
             "title": "Empresa de cosméticos profissionais de alta tecnologia e performance",
@@ -221,6 +234,7 @@
             }
         },
         {
+            "inactive": false,
             "id": 10,
             "slug": "super-beneficios",
             "title": "Super Beneficios Corretora",
@@ -241,6 +255,7 @@
             }
         },
         {
+            "inactive": false,
             "id": 12,
             "slug": "doubts",
             "title": "Uma nova forma de tirar dúvidas e encontrar soluções",
@@ -261,6 +276,7 @@
             }
         },
         {
+            "inactive": false,
             "id": 12,
             "slug": "grupo-tradicao",
             "title": "Grande grupo de consórcio",
@@ -281,7 +297,8 @@
             }
         },
         {
-            "id": 12,
+            "inactive": false,
+            "id": 13,
             "slug": "grupo-tradicao-painel",
             "title": "Gerenciamento de dados do site Tradição",
             "name": "Grupo Tradição Admin",
@@ -301,7 +318,8 @@
             }
         },
         {
-            "id": 13,
+            "inactive": false,
+            "id": 14,
             "slug": "casa-amazonia",
             "title": "Os melhores produtos da Amazônia",
             "name": "Casa Amazonônia",
@@ -321,7 +339,8 @@
             }
         },
         {
-            "id": 14,
+            "inactive": false,
+            "id": 15,
             "slug": "casa-amazonia-painel",
             "title": "Gerenciamento de dados do site Casa Amazônia",
             "name": "Casa Amazonônia Admin",
@@ -341,7 +360,8 @@
             }
         },
         {
-            "id": 15,
+            "inactive": false,
+            "id": 16,
             "slug": "123jus",
             "title": "Descomplica suas demandas em 1 2 3!",
             "name": "123Jus",
