@@ -36,6 +36,10 @@ export const ContainerCase = styled.div`
       justify-content: space-between;
       align-items: flex-end;
       height: 96px;
+      @media (max-width: 420px) {
+        flex-direction: column;
+        height: auto;
+      }
       h1 {
         font-family: "Poppins";
         font-style: normal;
@@ -44,10 +48,19 @@ export const ContainerCase = styled.div`
         line-height: 120%;
         color: #ffffff;
         max-width: 50%;
+        @media (max-width: 420px) {
+          max-width: 100%;
+        }
       }
       .infos {
         display: flex;
         gap: 70px;
+        @media (max-width: 420px) {
+          justify-content: space-between;
+          width: 100%;
+          gap: 0px;
+          margin-top: 20px;
+        }
         > div {
           display: flex;
           flex-direction: column;
@@ -83,6 +96,12 @@ export const ContainerCase = styled.div`
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      @media (max-width: 420px) {
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        height: 350px;
+        flex: unset;
+      }
       &:before {
         content: "";
         background-color: #fff;
@@ -153,9 +172,18 @@ export const ContainerCase = styled.div`
       .principal {
         margin-bottom: 100px;
       }
+      @media (max-width: 420px) {
+        h2 {
+          text-align: center;
+        }
+      }
       .list-mobile {
         display: flex;
         justify-content: space-between;
+        @media (max-width: 420px) {
+          flex-direction: column;
+          align-items: center;
+        }
         gap: 30px;
         margin-bottom: 100px;
         .phone {
