@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import type { NextPage } from 'next';
-import { ContainerSistemasLP } from '../assets/styles/SistemasLP';
+import { ContainerSistemasLP } from '../../assets/styles/SistemasLP';
 import Head from 'next/head';
 import {
     IconDesenvolvimento,
@@ -10,16 +10,16 @@ import {
     IconSustentacao,
     LineMethodology,
     Logo,
-} from '../components/Svg';
+} from '../../components/Svg';
 import Image from 'next/image';
-import Footer from '../components/Layout/Footer';
-import Contact from '../components/Contact';
+import Footer from '../../components/Layout/Footer';
+import Contact from '../../components/Contact';
 import { useEffect, useState } from 'react';
-import Animate from '../components/Animation/Animate';
-import ListCases from '../components/Cases/Cases';
-import { WPPButton } from '../components/WPPButton/WPPButton';
+import Animate from '../../components/Animation/Animate';
+import ListCases from '../../components/Cases/Cases';
+import { WPPButton } from '../../components/WPPButton/WPPButton';
 import Link from 'next/link';
-import Header from '../components/Layout/Header';
+import Header from '../../components/Layout/Header';
 
 interface IPropsMethodology {
     number: number;

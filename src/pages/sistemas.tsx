@@ -1,4 +1,4 @@
-import SistemasSobMedida from './sistemas-sob-medida';
+import SistemasSobMedida from './sistemas-sob-medida/sistemas-sob-medida';
 
 export default function Sistemas({}) {
     return (
