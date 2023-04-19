@@ -20,7 +20,10 @@ import ListCases from '../../components/Cases/Cases';
 import { WPPButton } from '../../components/WPPButton/WPPButton';
 import Link from 'next/link';
 import Header from '../../components/Layout/Header';
-import { useGoogleAnalytics } from '../../utils/useGoogleAnalytics';
+import {
+    GA_TRACKING_ID,
+    useGoogleAnalytics,
+} from '../../utils/useGoogleAnalytics';
 
 interface IPropsMethodology {
     number: number;
@@ -65,7 +68,6 @@ export const MethodologyItem = ({
 const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
     const router = useRouter();
 
-    const GA_TRACKING_ID = 'AW-11149050857';
     const { logEvent } = useGoogleAnalytics(GA_TRACKING_ID);
 
     useEffect(() => {

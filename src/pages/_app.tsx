@@ -1,91 +1,99 @@
-import { GlobalStyles } from "../assets/styles/Global";
-import type { AppProps } from "next/app";
-import NextNProgress from "nextjs-progressbar";
-import * as gtag from "../lib/gtag";
-import Analytics from "./../components/Analytics";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { GlobalStyles } from '../assets/styles/Global';
+import type { AppProps } from 'next/app';
+import NextNProgress from 'nextjs-progressbar';
+import Analytics from './../components/Analytics';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { initGA, logPageView } from '../utils/analytics';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+    const router = useRouter();
 
-  useEffect(() => {
-    const handleRouteChange = (url: any) => {
-      gtag.pageview(url);
+    useEffect(() => {
+        initGA('G-TMC8BJVX26'); // Substitua o ID de acompanhamento pelo seu próprio ID de acompanhamento
+    }, []);
+
+    useEffect(() => {
+        logPageView(location.pathname);
+    }, [router.pathname]);
+
+    const [loadingInitial, setLoadingInitial] = useState(true);
+
+    const LoadingInitial = ({
+        size = 100,
+        className = '',
+        color = '#cc6138',
+    }: any) => {
+        setTimeout(() => {
+            setLoadingInitial(false);
+        }, 500);
+
+        return (
+            <div
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    background: 'white',
+                    zIndex: 99999999999999,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={size}
+                    height={size}
+                    viewBox="0 0 24 24"
+                    className={className}
+                >
+                    <rect
+                        x="0"
+                        y="0"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="none"
+                    />
+                    <path
+                        fill={color}
+                        d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z"
+                        opacity=".5"
+                    />
+                    <path
+                        fill={color}
+                        d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z"
+                    >
+                        <animateTransform
+                            attributeName="transform"
+                            dur="1s"
+                            from="0 12 12"
+                            repeatCount="indefinite"
+                            to="360 12 12"
+                            type="rotate"
+                        />
+                    </path>
+                </svg>
+            </div>
+        );
     };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
-
-  const [loadingInitial, setLoadingInitial] = useState(true);
-
-  const LoadingInitial = ({
-    size = 100,
-    className = "",
-    color = "#cc6138",
-  }: any) => {
-    setTimeout(() => {
-      setLoadingInitial(false);
-    }, 500);
-
     return (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "fixed",
-          top: 0,
-          left: 0,
-          background: "white",
-          zIndex: 99999999999999,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
-          className={className}
-        >
-          <rect x="0" y="0" width="24" height="24" fill="none" stroke="none" />
-          <path
-            fill={color}
-            d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z"
-            opacity=".5"
-          />
-          <path fill={color} d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z">
-            <animateTransform
-              attributeName="transform"
-              dur="1s"
-              from="0 12 12"
-              repeatCount="indefinite"
-              to="360 12 12"
-              type="rotate"
+        <>
+            <GlobalStyles />
+            <NextNProgress
+                color="#b4613c"
+                startPosition={0.3}
+                stopDelayMs={200}
+                height={10}
+                showOnShallow={true}
             />
-          </path>
-        </svg>
-      </div>
+            <Analytics />
+            {loadingInitial ? <LoadingInitial /> : <Component {...pageProps} />}
+        </>
     );
-  };
-  return (
-    <>
-      <GlobalStyles />
-      <NextNProgress
-        color="#b4613c"
-        startPosition={0.3}
-        stopDelayMs={200}
-        height={10}
-        showOnShallow={true}
-      />
-      {loadingInitial ? <LoadingInitial /> : <Component {...pageProps} />}
-      <Analytics />
-    </>
-  );
 }
 
 export default MyApp;

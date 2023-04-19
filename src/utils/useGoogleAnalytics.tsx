@@ -8,6 +8,8 @@ type GtagEvent = {
     value: number;
 };
 
+export const GA_TRACKING_ID = 'AW-11149050857';
+
 export const useGoogleAnalytics = (trackingId: string) => {
     const router = useRouter();
 

@@ -7,14 +7,16 @@ import { IconArrow, IconAstronaut, IconGlobal } from '../Svg';
 import { ContainerCases } from './Cases.style';
 import Link from 'next/link';
 import Masonry from 'react-masonry-css';
-import { useGoogleAnalytics } from '../../utils/useGoogleAnalytics';
+import {
+    GA_TRACKING_ID,
+    useGoogleAnalytics,
+} from '../../utils/useGoogleAnalytics';
 
 interface IProps {
     filter?: 'Website' | 'Sistema' | 'APP';
 }
 
 export const CardItem = ({ item }: { item: ICase }) => {
-    const GA_TRACKING_ID = 'AW-11149050857';
     const { logEvent } = useGoogleAnalytics(GA_TRACKING_ID);
 
     return (
