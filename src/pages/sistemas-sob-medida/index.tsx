@@ -374,7 +374,7 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
             <section id="cases">
                 <ListCases filter="Sistema" />
             </section>
-            <Contact />
+            <Contact redirect="https://tropa.digital/sistemas-sob-medida/sucesso" />
             <Footer />
             <WPPButton text="Olá, estou interessado em Sistemas Sob Medida. Gostaria de algumas informações, poderia me ajudar?" />
         </ContainerSistemasLP>
