@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { ContainerWPPButton } from './WPPButton.style';
 import * as ga from '../../lib/gtag';
+import { useRouter } from 'next/router';
 
 export const WPPButton = ({ text }: { text?: string }) => {
     const [messageWPP, setMessageWPP] = useState('hidden');
+    const router = useRouter();
     useEffect(() => {
         const internval = setInterval(() => {
             setMessageWPP('animate__animated animate__fadeInRight');
@@ -20,12 +22,7 @@ export const WPPButton = ({ text }: { text?: string }) => {
             </span>
             <a
                 onClick={() =>
-                    ga.event({
-                        action: 'click',
-                        params: {
-                            search_term: 'botao whatsapp',
-                        },
-                    })
+                    ga.gtagReportConversion(router.pathname + '?whatsapp=send')
                 }
                 href={`https://api.whatsapp.com/send?phone=5511978675858&text=${text}`}
                 target="_blank"
