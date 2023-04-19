@@ -7,31 +7,14 @@ import { IconArrow, IconAstronaut, IconGlobal } from '../Svg';
 import { ContainerCases } from './Cases.style';
 import Link from 'next/link';
 import Masonry from 'react-masonry-css';
-import {
-    GA_TRACKING_ID,
-    useGoogleAnalytics,
-} from '../../utils/useGoogleAnalytics';
 
 interface IProps {
     filter?: 'Website' | 'Sistema' | 'APP';
 }
 
 export const CardItem = ({ item }: { item: ICase }) => {
-    const { logEvent } = useGoogleAnalytics(GA_TRACKING_ID);
-
     return (
-        <div
-            className="case"
-            onClick={() =>
-                logEvent({
-                    action: 'click',
-                    category: 'sistemas-sob-sistema',
-                    label: 'case - ' + item.name,
-                    value: 0,
-                })
-            }
-            key={item.id}
-        >
+        <div className="case" key={item.id}>
             <Link passHref href={`/case/${item.slug}`}>
                 <div
                     className={'thumbnail'}

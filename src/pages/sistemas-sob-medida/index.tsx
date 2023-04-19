@@ -20,10 +20,6 @@ import ListCases from '../../components/Cases/Cases';
 import { WPPButton } from '../../components/WPPButton/WPPButton';
 import Link from 'next/link';
 import Header from '../../components/Layout/Header';
-import {
-    GA_TRACKING_ID,
-    useGoogleAnalytics,
-} from '../../utils/useGoogleAnalytics';
 
 interface IPropsMethodology {
     number: number;
@@ -68,18 +64,6 @@ export const MethodologyItem = ({
 const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
     const router = useRouter();
 
-    const { logEvent } = useGoogleAnalytics(GA_TRACKING_ID);
-
-    useEffect(() => {
-        // Rastreie a visualização da página
-        logEvent({
-            action: 'page_view',
-            category: 'sistema-sob-medida',
-            label: 'novo acesso',
-            value: 0,
-        });
-    }, [logEvent]);
-
     const [scrolledMethodology, setScrolledMethodology] = useState(false);
     const [scrollDifferent, setSCrollDiferent] = useState(false);
 
@@ -98,6 +82,21 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
                     content="https://tropa.digital/images/bannerHome.jpg"
                 ></meta>
                 <link rel="icon" href="/favicon1.ico" />
+                <script
+                    id="gtag"
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=G-TMC8BJVX26"
+                ></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-TMC8BJVX26');
+            `,
+                    }}
+                ></script>
             </Head>
 
             <Header

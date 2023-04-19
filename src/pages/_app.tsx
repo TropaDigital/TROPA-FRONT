@@ -3,19 +3,10 @@ import type { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
 import Analytics from './../components/Analytics';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { initGA, logPageView } from '../utils/analytics';
+import { useState } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter();
-
-    useEffect(() => {
-        initGA('G-TMC8BJVX26'); // Substitua o ID de acompanhamento pelo seu próprio ID de acompanhamento
-    }, []);
-
-    useEffect(() => {
-        logPageView(location.pathname);
-    }, [router.pathname]);
 
     const [loadingInitial, setLoadingInitial] = useState(true);
 
