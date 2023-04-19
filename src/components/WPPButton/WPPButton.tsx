@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ContainerWPPButton } from './WPPButton.style';
+import * as ga from '../../lib/gtag';
 
 export const WPPButton = ({ text }: { text?: string }) => {
     const [messageWPP, setMessageWPP] = useState('hidden');
@@ -18,6 +19,14 @@ export const WPPButton = ({ text }: { text?: string }) => {
                 Ficou alguma dúvida? Entre em contato!
             </span>
             <a
+                onClick={() =>
+                    ga.event({
+                        action: 'search',
+                        params: {
+                            search_term: 'Botao whatsapp',
+                        },
+                    })
+                }
                 href={`https://api.whatsapp.com/send?phone=5511978675858&text=${text}`}
                 target="_blank"
                 rel="noreferrer"
