@@ -20,6 +20,7 @@ import ListCases from '../../components/Cases/Cases';
 import { WPPButton } from '../../components/WPPButton/WPPButton';
 import Link from 'next/link';
 import Header from '../../components/Layout/Header';
+import { useGoogleAnalytics } from '../../utils/useGoogleAnalytics';
 
 interface IPropsMethodology {
     number: number;
@@ -63,6 +64,19 @@ export const MethodologyItem = ({
 
 const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
     const router = useRouter();
+
+    const GA_TRACKING_ID = 'AW-11149050857';
+    const { logEvent } = useGoogleAnalytics(GA_TRACKING_ID);
+
+    useEffect(() => {
+        // Rastreie a visualização da página
+        logEvent({
+            action: 'page_view',
+            category: 'sistema-sob-medida',
+            label: 'novo acesso',
+            value: 0,
+        });
+    }, [logEvent]);
 
     const [scrolledMethodology, setScrolledMethodology] = useState(false);
     const [scrollDifferent, setSCrollDiferent] = useState(false);

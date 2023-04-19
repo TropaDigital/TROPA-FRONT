@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useGoogleAnalytics } from '../../utils/useGoogleAnalytics';
 import { ContainerWPPButton } from './WPPButton.style';
 
 export const WPPButton = ({ text }: { text?: string }) => {
@@ -12,12 +13,28 @@ export const WPPButton = ({ text }: { text?: string }) => {
         }, 10000);
     }, []);
 
+    const GA_TRACKING_ID = 'AW-11149050857';
+    const { logEvent } = useGoogleAnalytics(GA_TRACKING_ID);
+
+    const handleButtonClick = (label: string) => {
+        // Rastreie um evento de clique em um botão
+        logEvent({
+            action: 'click',
+            category: 'sistema-sob-medida',
+            label,
+            value: 0,
+        });
+
+        //
+    };
+
     return (
         <ContainerWPPButton>
             <span className={messageWPP}>
                 Ficou alguma dúvida? Entre em contato!
             </span>
             <a
+                onClick={() => handleButtonClick('botao whtasapp')}
                 href={`https://api.whatsapp.com/send?phone=5511978675858&text=${text}`}
                 target="_blank"
                 rel="noreferrer"
