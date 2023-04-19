@@ -19,6 +19,10 @@ export default class MyDocument extends Document {
             gtag('config', 'G-TMC8BJVX26', {
               page_path: window.location.pathname,
             });
+            gtag('config', 'AW-11149050857', {
+                page_path: window.location.pathname,
+              });
+            
           `,
                         }}
                     />

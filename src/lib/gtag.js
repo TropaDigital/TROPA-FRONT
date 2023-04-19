@@ -18,7 +18,7 @@ export const gtagReportConversion = (url) => {
         }
     };
     gtag('event', 'conversion', {
-        'send_to': 'AW-11149050857/DhBvCOWkopkYEOmHpMQp',
+        'send_to': 'AW-11149050857',
         'event_callback': callback
     });
     return false;
