@@ -18,7 +18,6 @@ import { useEffect, useState } from 'react';
 import Animate from '../../components/Animation/Animate';
 import ListCases from '../../components/Cases/Cases';
 import { WPPButton } from '../../components/WPPButton/WPPButton';
-import Link from 'next/link';
 import Header from '../../components/Layout/Header';
 
 interface IPropsMethodology {
@@ -82,21 +81,6 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
                     content="https://tropa.digital/images/bannerHome.jpg"
                 ></meta>
                 <link rel="icon" href="/favicon1.ico" />
-                <script
-                    id="gtag"
-                    async
-                    src="https://www.googletagmanager.com/gtag/js?id=G-TMC8BJVX26"
-                ></script>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-TMC8BJVX26');
-            `,
-                    }}
-                ></script>
             </Head>
 
             <Header
