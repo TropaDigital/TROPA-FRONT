@@ -21,9 +21,9 @@ export const WPPButton = ({ text }: { text?: string }) => {
             <a
                 onClick={() =>
                     ga.event({
-                        action: 'search',
+                        action: 'click',
                         params: {
-                            search_term: 'Botao whatsapp',
+                            search_term: 'botao whatsapp',
                         },
                     })
                 }
