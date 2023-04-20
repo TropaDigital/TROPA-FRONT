@@ -16,7 +16,7 @@ export const WPPButton = ({ text }: { text?: string }) => {
     }, []);
 
     const handleCLickButton = (url: string) => {
-        ga.gtagReportConversion(router.pathname + '/sucesso');
+        ga.gtagReportConversion('/sistemas-sob-medida/sucesso');
         window.open(url, '_blank');
     };
 
