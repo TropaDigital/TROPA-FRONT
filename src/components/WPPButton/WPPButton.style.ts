@@ -8,7 +8,7 @@ export const ContainerWPPButton = styled.div`
     padding: 30px;
     display: flex;
     align-items: center;
-    a {
+    .button {
         width: 60px;
         height: 60px;
         border-radius: 100px;

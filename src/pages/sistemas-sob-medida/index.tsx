@@ -14,11 +14,12 @@ import {
 import Image from 'next/image';
 import Footer from '../../components/Layout/Footer';
 import Contact from '../../components/Contact';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Animate from '../../components/Animation/Animate';
 import ListCases from '../../components/Cases/Cases';
 import { WPPButton } from '../../components/WPPButton/WPPButton';
 import Header from '../../components/Layout/Header';
+import { ContainerCenter } from '../../components/Layout/styles';
 
 interface IPropsMethodology {
     number: number;
@@ -65,6 +66,30 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
 
     const [scrolledMethodology, setScrolledMethodology] = useState(false);
     const [scrollDifferent, setSCrollDiferent] = useState(false);
+    const videoRef = useRef<any>();
+    const [videoStart, setVideoStart] = useState(false);
+    const [videoStatus, setVideoStatus] = useState('pause');
+
+    useEffect(() => {
+        const videoElement = videoRef.current;
+
+        if (videoElement) {
+            const handlePause = () => {
+                setVideoStatus('pause');
+            };
+
+            const handlePlay = () => {
+                setVideoStatus('play');
+            };
+
+            videoElement.addEventListener('pause', handlePause);
+            videoElement.addEventListener('play', handlePlay);
+            return () => {
+                videoElement.removeEventListener('pause', handlePause);
+                videoElement.removeEventListener('play', handlePlay);
+            };
+        }
+    }, [videoRef]);
 
     return (
         <ContainerSistemasLP>
@@ -370,6 +395,41 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section id="video">
+                <ContainerCenter>
+                    <div id="container-video-cases">
+                        <div className={`overlay ${videoStatus}`}>
+                            <button onClick={() => videoRef.current?.play()}>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <rect
+                                        x="0"
+                                        y="0"
+                                        width="24"
+                                        height="24"
+                                        fill="none"
+                                        stroke="none"
+                                    />
+                                    <path
+                                        fill="currentColor"
+                                        d="m9.5 16.5l7-4.5l-7-4.5v9ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                        <video
+                            ref={videoRef}
+                            src="/cases.mp4"
+                            autoPlay={videoStart === false ? true : false}
+                            controls={videoStatus === 'play' ? true : false}
+                        ></video>
+                    </div>
+                </ContainerCenter>
             </section>
             <section id="cases">
                 <ListCases filter="Sistema" />
