@@ -174,34 +174,34 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
                                     number={1}
                                     top={75}
                                     icon={<IconEntedimento />}
-                                    title="Entendimento"
-                                    description="Etapa de reuniões para entendimento da necessidade e cenario do cliente."
-                                    steps={['Reuniões', 'Pesquisas']}
+                                    title="Start"
+                                    description="Reuniões da equipe com o cliente para melhor entedimento do projeto."
+                                    steps={[
+                                        'Reuniões',
+                                        'Pesquisas',
+                                        'Wireframe',
+                                    ]}
                                 />
                             </Animate>
                             <MethodologyItem
                                 number={2}
                                 top={55}
                                 icon={<IconSolucaoProblema />}
-                                title="Solução do Problema"
-                                description="A melhor forma de resolução com técnicas e tecnologias consolidadas."
-                                steps={[
-                                    'UX/UI',
-                                    'Protótipos',
-                                    'Testes com usuários',
-                                ]}
+                                title="Criativo"
+                                description="Onde tiramos todas as ideias da etapa start e desenhamnos o escopo final."
+                                steps={['UX/UI', 'Alinhamentos']}
                             />
                             <MethodologyItem
                                 top={60}
                                 number={3}
                                 icon={<IconDesenvolvimento />}
                                 title="Desenvolvimento"
-                                description="Planejamento, codificação e acompanhamento do projeto."
+                                description="Desenvolvimento ágil, baseado em SCRUM."
                                 steps={[
+                                    'Planejamentos',
                                     'Testes',
-                                    'Deploy',
-                                    'Dailys',
-                                    'Plannings',
+                                    'Ambiente de dev',
+                                    'Reuniões',
                                 ]}
                             />
                             <MethodologyItem
@@ -209,16 +209,20 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
                                 number={4}
                                 icon={<IconEntregaProjeto />}
                                 title="Entrega do Projeto"
-                                description="Projeto entregue com estratégias de deploy contínuo."
-                                steps={['Deploy', 'Monitoramento']}
+                                description="Projeto entregue e monitoramento sobre bugs."
+                                steps={[
+                                    'Ambiente produção',
+                                    'Monitoramaneto',
+                                    'Correção de bugs',
+                                ]}
                             />
                             <MethodologyItem
                                 top={30}
                                 number={5}
                                 icon={<IconSustentacao />}
-                                title="Sustentação"
-                                description="Manutenção e atualização contínua do software da empresa."
-                                steps={['Tarefas', 'Bugs e melhorias']}
+                                title="Manutenção"
+                                description="Manutenção, correção de bugs e melhorias."
+                                steps={['Melhorias']}
                             />
                         </div>
                     </div>
