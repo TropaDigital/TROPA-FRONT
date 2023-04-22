@@ -250,7 +250,7 @@ export const ContainerSistemasLP = styled.div`
     }
     section {
         position: relative;
-        &#methodology {
+        &#metodologia {
             display: flex;
             align-items: center;
             z-index: 2;
@@ -266,7 +266,7 @@ export const ContainerSistemasLP = styled.div`
                 margin-top: 30px;
                 overflow: auto;
                 overflow-y: hidden;
-                height: 350px;
+                height: 360px;
                 margin-bottom: 40px;
                 .line {
                     svg {
@@ -285,7 +285,7 @@ export const ContainerSistemasLP = styled.div`
                 }
             }
         }
-        &#wedo {
+        &#nossos-cases {
             background: #cebaa8;
             padding: 30px 0px;
             .title {

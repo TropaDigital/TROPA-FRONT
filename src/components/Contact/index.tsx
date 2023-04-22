@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Contact = ({ redirect }: { redirect: string }) => {
+const Contact = ({ redirect }: { redirect?: string }) => {
     const router = useRouter();
 
     const [DTO, setDTO] = useState<any>({
@@ -34,7 +34,7 @@ const Contact = ({ redirect }: { redirect: string }) => {
                 theme: 'colored',
             });
             setLoading(false);
-            router.push(redirect);
+            router.push(redirect ?? '/');
         } catch (e: any) {
             setLoading(false);
             toast.error(e.response.data.message, {

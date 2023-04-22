@@ -62,7 +62,10 @@ const Aplicativos: NextPage = () => {
                         name="description"
                         content="Desenvolvimento de aplicativos."
                     />
-                    <meta property="og:image" content="https://tropa.digital/images/phoneApp.jpg"></meta>
+                    <meta
+                        property="og:image"
+                        content="https://tropa.digital/images/phoneApp.jpg"
+                    ></meta>
                     <link rel="icon" href="/favicon1.ico" />
                 </Head>
                 <Header
@@ -155,10 +158,16 @@ const Aplicativos: NextPage = () => {
                             <img src="/images/languages/reactnative.png" />
                         </Animate>
                         <Animate effect="zoomIn">
-                            <img src="/images/languages/angularjs.png" className='angular' />
+                            <img
+                                src="/images/languages/angularjs.png"
+                                className="angular"
+                            />
                         </Animate>
                         <Animate effect="zoomIn">
-                            <img src="/images/languages/flutter.png" className='flutter' />
+                            <img
+                                src="/images/languages/flutter.png"
+                                className="flutter"
+                            />
                         </Animate>
                         {/* <Animate effect="zoomIn">
                             <img src="/images/languages/scss.png" />
@@ -173,71 +182,6 @@ const Aplicativos: NextPage = () => {
                 </LanguagesContainer>
                 <WhyTropa />
                 <MobileSection />
-
-                <PortfolioContainer id="portfolio">
-                    <ContainerCenter className="head-portfolio">
-                        <Animate effect="fadeInUp" startAnimation={200}>
-                            <div className="title">
-                                <h2>Portfólio</h2>
-                                <IconGlobal className="effect-stroke light" />
-                            </div>
-                        </Animate>
-                        <div className="buttons">
-                            <button onClick={() => slider.current.slidePrev()}>
-                                <IconArrowLeft />
-                            </button>
-                            <button onClick={() => slider.current.slideNext()}>
-                                <IconArrowRight />
-                            </button>
-                        </div>
-                    </ContainerCenter>
-
-                    <Carousel
-                        itemsToShow={itemsToShowPortfolio}
-                        isRTL={false}
-                        className="cards"
-                        itemPadding={[0]}
-                        outerSpacing={0}
-                        pagination={false}
-                        showArrows={false}
-                        showEmptySlots={false}
-                        ref={slider}
-                        breakPoints={breakpoints}
-                    >
-                        {portfoliosList.length > 0
-                            ? portfoliosList.map((row: any, key) => (
-                                  <Link href={`/portfolio/${row.slug}`}>
-                                      <div
-                                          className="card"
-                                          key={key}
-                                          style={{
-                                              backgroundImage:
-                                                  'url(' +
-                                                  row.imagem_principal +
-                                                  ')',
-                                          }}
-                                      >
-                                          <h4>{row.titulo}</h4>
-                                          <i>{row.descricao}</i>
-                                      </div>
-                                  </Link>
-                              ))
-                            : [1, 2, 3].map((row: any, key) => (
-                                  <div
-                                      className="loader"
-                                      key={key}
-                                      style={{
-                                          backgroundImage:
-                                              'url(' +
-                                              row.imagem_principal +
-                                              ')',
-                                      }}
-                                  >
-                                      <PulseLoader color="#fff" size={30} />
-                                  </div>
-                              ))}
-                    </Carousel>
-                </PortfolioContainer>
 
                 <Contact />
                 <Footer />

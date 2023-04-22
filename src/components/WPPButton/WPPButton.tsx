@@ -16,8 +16,12 @@ export const WPPButton = ({ text }: { text?: string }) => {
     }, []);
 
     const handleCLickButton = (url: string) => {
-        ga.gtagReportConversion('/sistemas-sob-medida/sucesso');
-        window.open(url, '_blank');
+        ga.gtagReportConversion('/sistemas-sob-medida/whatsapp');
+
+        router.push('/send-whatsapp');
+        setTimeout(() => {
+            window.open(url, '_blank');
+        }, 1000);
     };
 
     return (

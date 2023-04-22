@@ -8,6 +8,7 @@ export const ContainerWPPButton = styled.div`
     padding: 30px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     .button {
         width: 60px;
         height: 60px;
@@ -20,6 +21,7 @@ export const ContainerWPPButton = styled.div`
         animation: pulse 1s linear infinite;
         position: relative;
         z-index: 99999;
+        cursor: pointer;
         svg {
             color: #fff;
         }

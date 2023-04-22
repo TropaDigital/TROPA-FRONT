@@ -91,6 +91,16 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
         }
     }, [videoRef]);
 
+    useEffect(() => {
+        const hash = window.location.hash.substring(1); // obtem a âncora da URL
+        if (hash) {
+            const element = document.getElementById(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' }); // rola suavemente até o elemento
+            }
+        }
+    }, []);
+
     return (
         <ContainerSistemasLP>
             <Head>
@@ -131,7 +141,7 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
                 </div>
             </Header>
 
-            <section id="methodology">
+            <section id="metodologia">
                 <div className="center-page">
                     <Animate effect="fadeInUp" className="effect">
                         <h2 className="title">Metodologia Tropa</h2>
@@ -228,7 +238,7 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
                     </div>
                 </div>
             </section>
-            <section id="wedo">
+            <section id="nossos-cases">
                 <div className="center-page">
                     <div className="logo">
                         <svg
@@ -429,7 +439,6 @@ const SistemasSobMedida: any = ({ menus = [] }: { menus?: any }) => {
                         <video
                             ref={videoRef}
                             src="/cases.mp4"
-                            autoPlay={videoStart === false ? true : false}
                             controls={videoStatus === 'play' ? true : false}
                         ></video>
                     </div>
