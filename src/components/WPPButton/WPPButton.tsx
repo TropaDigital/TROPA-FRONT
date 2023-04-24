@@ -16,7 +16,7 @@ export const WPPButton = ({ text }: { text?: string }) => {
     }, []);
 
     const handleCLickButton = () => {
-        ga.gtagReportConversion('/sistemas-sob-medida/whatsapp');
+        ga.gtagReportConversion('/sistemas-sob-medida/send-whatsapp');
         router.push('/send-whatsapp');
     };
 
