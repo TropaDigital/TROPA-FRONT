@@ -10,15 +10,14 @@ export const event = ({ action, params }) => {
     window.gtag('event', action, params);
 };
 
-
-export const gtagReportConversion = (url) => {
+export function gtagReportConversion(url) {
     var callback = function () {
         if (typeof (url) != 'undefined') {
             window.location = url;
         }
     };
     gtag('event', 'conversion', {
-        'send_to': 'AW-11149050857',
+        'send_to': 'AW-11149050857/DhBvCOWkopkYEOmHpMQp',
         'event_callback': callback
     });
     return false;
