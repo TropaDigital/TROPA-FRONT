@@ -3,7 +3,7 @@ import { ContainerWPPButton } from './WPPButton.style';
 import * as ga from '../../lib/gtag';
 import { useRouter } from 'next/router';
 
-export const WPPButton = ({ text }: { text?: string }) => {
+export const WPPButton = ({ text = '' }: { text?: string }) => {
     const [messageWPP, setMessageWPP] = useState('hidden');
     const router = useRouter();
     useEffect(() => {
