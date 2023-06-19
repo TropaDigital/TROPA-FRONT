@@ -7,6 +7,7 @@ import { IconArrow, IconAstronaut, IconGlobal } from '../Svg';
 import { ContainerCases } from './Cases.style';
 import Link from 'next/link';
 import Masonry from 'react-masonry-css';
+import { colors } from '../../assets/styles/mixin';
 
 interface IProps {
     filter?: 'Website' | 'Sistema' | 'APP';
@@ -75,10 +76,14 @@ export default function ListCases({ filter }: IProps) {
         <ContainerCases id="portfolio">
             <ContainerCenter>
                 <Animate effect="fadeInUp" startAnimation={200}>
-                    <div className="title">
-                        <h2>Cases</h2>
-                        <IconAstronaut className="effect-stroke primary" />
-                    </div>
+                    <h2
+                        style={{
+                            color: colors.primaryLight,
+                        }}
+                        className="title"
+                    >
+                        O que fizemos
+                    </h2>
                 </Animate>
             </ContainerCenter>
             <section id="list-cases">

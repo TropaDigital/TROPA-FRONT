@@ -250,41 +250,6 @@ export const ContainerSistemasLP = styled.div`
     }
     section {
         position: relative;
-        &#metodologia {
-            display: flex;
-            align-items: center;
-            z-index: 2;
-            .title {
-                width: 450px;
-                max-width: 100%;
-                @media (max-width: 420px) {
-                    padding: 0px 30px;
-                }
-            }
-            .container-line {
-                position: relative;
-                margin-top: 30px;
-                overflow: auto;
-                overflow-y: hidden;
-                height: 360px;
-                margin-bottom: 40px;
-                .line {
-                    svg {
-                        width: 1140px;
-                    }
-                }
-                .steps {
-                    display: flex;
-                    position: absolute;
-                    top: 0px;
-                    justify-content: space-between;
-                    width: 98%;
-                    margin: 0px 1%;
-                    max-width: 100%;
-                    gap: 28px;
-                }
-            }
-        }
         &#nossos-cases {
             background: #cebaa8;
             padding: 30px 0px;

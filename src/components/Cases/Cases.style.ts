@@ -12,44 +12,6 @@ export const ContainerCases = styled.div`
         min-height: unset;
         padding-bottom: 30px;
     }
-    .title {
-        margin: 0px 0px;
-        position: relative;
-        display: flex;
-        width: 398px;
-        margin-top: 30px;
-        h2 {
-            font-family: ${fonts.chaney};
-            font-weight: normal;
-            color: ${colors.primaryLight};
-            font-size: 62px;
-            font-weight: normal;
-            line-height: 55px;
-            padding-top: 30px;
-            margin-bottom: 80px;
-        }
-        svg {
-            position: absolute;
-            right: 47px;
-            top: -20px;
-            transform: rotate(20deg);
-        }
-        @media (max-width: 425px) {
-            margin: 0px 0;
-            padding: 0px;
-            height: auto;
-            h2 {
-                font-size: 40px;
-                margin-left: 20px;
-                margin-bottom: 0px;
-            }
-            svg {
-                top: -30px;
-                right: 80px;
-                width: 80px;
-            }
-        }
-    }
     #list-cases {
         background-color: ${colors.primaryDark};
         padding: 0px 0px 60px 0px;
