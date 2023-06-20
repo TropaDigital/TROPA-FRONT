@@ -2,11 +2,10 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Footer from '../../components/Layout/Footer';
 import Contact from '../../components/Contact';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { WPPButton } from '../../components/WPPButton/WPPButton';
 import { ContainerDesenvolvimentos } from '../../assets/styles/DesenvolvimentosStyle';
-import { VideoLP } from '../../components/VideoLP/VideoLP';
-import { IconEvelope, IconMessage, Logo } from '../../components/Svg';
+import { Logo } from '../../components/Svg';
 import * as ga from '../../lib/gtag';
 import Image from 'next/image';
 import {
@@ -20,6 +19,8 @@ import {
 import { colors } from '../../assets/styles/mixin';
 import ListCases from '../../components/Cases/Cases';
 import { ContainerCenter } from '../../components/Layout/styles';
+import { ICase } from '../api/cases';
+import axios from 'axios';
 
 interface IPropsMethodology {
     number: number;
@@ -150,9 +151,20 @@ const ContainerButtons = ({
 };
 
 const SistemasSobMedida: any = () => {
+    const [indicePosition, setIndicePosition] = useState<number>(0);
+    const [randomImage, setRandomImage] = useState<any>(
+        '/images/cases/alpha-fm/principal.png'
+    );
+    const [data, setData] = useState<ICase[]>([]);
     const [scrolledMethodology, setScrolledMethodology] = useState(false);
 
+    const getData = useCallback(async () => {
+        const response = await axios.get('/api/cases');
+        setData([...response.data]);
+    }, []);
+
     useEffect(() => {
+        getData();
         const hash = window.location.hash.substring(1); // obtem a âncora da URL
         if (hash) {
             const element = document.getElementById(hash);
@@ -160,11 +172,29 @@ const SistemasSobMedida: any = () => {
                 element.scrollIntoView({ behavior: 'smooth' }); // rola suavemente até o elemento
             }
         }
-    }, []);
+    }, [getData]);
 
     const onClickGATAG = () => {
         ga.gtagReportConversion('/send-whatsapp');
     };
+
+    useEffect(() => {
+        const intervalRanomImage = setInterval(() => {
+            if (data.length > 0) {
+                if (data[indicePosition].images.principal) {
+                    setRandomImage(
+                        `/images/cases/${data[indicePosition].slug}/${data[indicePosition]?.images?.principal}`
+                    );
+                }
+                if (indicePosition + 1 === data.length) {
+                    setIndicePosition(0);
+                } else {
+                    setIndicePosition(indicePosition + 1);
+                }
+            }
+        }, 5000);
+        return () => clearInterval(intervalRanomImage);
+    }, [data, indicePosition]);
 
     return (
         <ContainerDesenvolvimentos>
@@ -199,8 +229,13 @@ const SistemasSobMedida: any = () => {
                         </p>
                         <ContainerButtons onClickGATAG={onClickGATAG} />
                     </div>
-                    <div id="video-institucional">
-                        <VideoLP />
+                    <div id="cases-roles">
+                        <div
+                            className="browser-case"
+                            style={{
+                                backgroundImage: `url(${randomImage})`,
+                            }}
+                        ></div>
                     </div>
                 </div>
             </div>
@@ -208,6 +243,7 @@ const SistemasSobMedida: any = () => {
             <ContainerWaves
                 color={colors.primaryGrey}
                 background={colors.primaryLight}
+                className="wave-banner"
             />
 
             <section className="light">

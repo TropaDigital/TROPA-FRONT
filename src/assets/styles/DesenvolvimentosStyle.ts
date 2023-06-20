@@ -22,6 +22,10 @@ export const ContainerDesenvolvimentos = styled.div`
     .wave-first {
         margin-top: -20px;
     }
+    .wave-banner {
+        position: relative;
+        z-index: 1;
+    }
     .center-page {
         width: 1140px;
         margin: 0px auto;
@@ -397,6 +401,50 @@ export const ContainerDesenvolvimentos = styled.div`
                 display: flex;
                 flex-direction: column;
                 border-radius: 10px;
+                .browser- case {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            #cases-roles {
+                height: 580px;
+                min-width: 700px;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                background-image: url('/images/computer-mask.png');
+                background-size: 100% auto;
+                margin-bottom: -250px;
+                z-index: -9;
+                .browser-case {
+                    width: 603px;
+                    height: 342px;
+                    margin: 12px 8px 8px 84px;
+                    background-size: 102% auto;
+                    background-position: center top;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    box-sizing: border-box;
+                    position: relative;
+                    p {
+                        display: flex;
+                        background: ${colors.primary};
+                        padding: 20px;
+                        backdrop-filter: blur(3px);
+                        font-size: 20px;
+                        font-family: ${fonts.chaney};
+                        text-transform: uppercase;
+                        font-weight: normal;
+                        text-align: left;
+                        color: ${colors.primaryLight};
+                        max-width: 80%;
+                        animation: fadeInLeft 0.5s;
+                        border-radius: 10px;
+                    }
+                }
             }
             @media (max-width: 420px) {
                 flex-direction: column;
