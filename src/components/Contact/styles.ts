@@ -11,7 +11,7 @@ export const ContactContainer = styled.div`
     justify-content: center;
     position: relative;
     overflow: hidden;
-    height: 100vh;
+    padding: 100px 0px;
     box-sizing: border-box;
     margin: 0px;
     @keyframes animationBannerContact {

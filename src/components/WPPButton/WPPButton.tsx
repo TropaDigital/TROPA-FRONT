@@ -1,9 +1,15 @@
 import { useEffect, useState } from 'react';
 import { ContainerWPPButton } from './WPPButton.style';
-import * as ga from '../../lib/gtag';
+
 import { useRouter } from 'next/router';
 
-export const WPPButton = ({ text = '' }: { text?: string }) => {
+export const WPPButton = ({
+    text = '',
+    onClickGATAG = () => {},
+}: {
+    text?: string;
+    onClickGATAG?(): void;
+}) => {
     const [messageWPP, setMessageWPP] = useState('hidden');
     const router = useRouter();
     useEffect(() => {
@@ -16,8 +22,8 @@ export const WPPButton = ({ text = '' }: { text?: string }) => {
     }, []);
 
     const handleCLickButton = () => {
-        ga.gtagReportConversion('/send-whatsapp');
         router.push('/send-whatsapp');
+        onClickGATAG();
     };
 
     return (

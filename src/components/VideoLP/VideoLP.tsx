@@ -25,7 +25,7 @@ export const VideoLP = () => {
 
     return (
         <ContainerVideoLP>
-            <div id="container-video-cases">
+            <div className="content-browser">
                 <div className={`overlay ${videoStatus}`}>
                     <div className="thumbnail" />
                     <button onClick={() => videoRef.current?.play()}>

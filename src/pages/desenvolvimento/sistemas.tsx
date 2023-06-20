@@ -7,6 +7,7 @@ import { WPPButton } from '../../components/WPPButton/WPPButton';
 import { ContainerDesenvolvimentos } from '../../assets/styles/DesenvolvimentosStyle';
 import { VideoLP } from '../../components/VideoLP/VideoLP';
 import { IconEvelope, IconMessage, Logo } from '../../components/Svg';
+import * as ga from '../../lib/gtag';
 import {
     IconEntedimento,
     LineMethodology,
@@ -98,7 +99,10 @@ export const ContainerWaves = ({
     );
 };
 
-const ContainerButtons = ({ position = 'vertical' }) => {
+const ContainerButtons = ({
+    position = 'vertical',
+    onClickGATAG = () => {},
+}) => {
     return (
         <div className={`buttons-contact ${position}`}>
             <a
@@ -106,6 +110,7 @@ const ContainerButtons = ({ position = 'vertical' }) => {
                 href="https://api.whatsapp.com/send?phone=5511978675858&text=Olá, vim do site e tenho algumas dúvidas."
                 target="_blank"
                 rel="noreferrer"
+                onClick={onClickGATAG}
             >
                 <i>
                     <svg
@@ -154,6 +159,10 @@ const SistemasSobMedida: any = () => {
         }
     }, []);
 
+    const onClickGATAG = () => {
+        ga.gtagReportConversion('/send-whatsapp');
+    };
+
     return (
         <ContainerDesenvolvimentos>
             <Head>
@@ -184,7 +193,7 @@ const SistemasSobMedida: any = () => {
                             máximo online! Entre em contato para saber mais e
                             impulsione seu negócio para o sucesso digital!
                         </p>
-                        <ContainerButtons />
+                        <ContainerButtons onClickGATAG={onClickGATAG} />
                     </div>
                     <div id="video-institucional">
                         <VideoLP />
@@ -236,10 +245,11 @@ const SistemasSobMedida: any = () => {
                                         para o seu negócio.
                                     </p>
                                     <a>
-                                        O sistema sob medida é a melhor opção
-                                        para funções e ferramentas com utilidade
-                                        ,resolução de problemas e uma nova ideia
-                                        de mercado.
+                                        Um sistema personalizado é a melhor
+                                        opção para funções, ferramentas e
+                                        resolução de problemas com utilidade,
+                                        além de representar uma nova ideia de
+                                        mercado.
                                     </a>
                                 </div>
                             </li>
@@ -277,7 +287,9 @@ const SistemasSobMedida: any = () => {
                                     </p>
                                     <a>
                                         O aplicativo é a melhor opção para
-                                        funções e ferramentas com utilidade.
+                                        funções e ferramentas com utilidade,
+                                        desde a resolução de problemas até o
+                                        fornecimento de um produto.
                                     </a>
                                 </div>
                             </li>
@@ -338,11 +350,12 @@ const SistemasSobMedida: any = () => {
                                         programação mais modernas.
                                     </p>
                                     <a>
-                                        A alocação de SQUAD é a melhor opção
-                                        quando você já tem um escopo do projeto
-                                        e precisa apenas da mão de obra, você
-                                        quem fica responsavel de gerenciar sua
-                                        equipe e oque será desenvolvido.
+                                        A alocação de um time (SQUAD) é a melhor
+                                        opção quando você já tem um escopo de
+                                        projeto definido e precisa apenas da mão
+                                        de obra. Você fica responsável por
+                                        gerenciar a equipe e determinar o que
+                                        será desenvolvido.
                                     </a>
                                 </div>
                             </li>
@@ -400,7 +413,7 @@ const SistemasSobMedida: any = () => {
                                 top={55}
                                 icon={<IconSolucaoProblema />}
                                 title="Criativo"
-                                description="Onde tiramos todas as ideias da etapa start e desenhamnos o escopo final."
+                                description="Onde tiramos todas as ideias da etapa start e desenhamos o escopo final."
                                 steps={['UX/UI', 'Alinhamentos']}
                             />
                             <MethodologyItem
@@ -460,8 +473,9 @@ const SistemasSobMedida: any = () => {
                         ))}
                     </div>
                     <div className="text-buttons">
-                        <p>Iai, que tal tirar seu projeto do papel?</p>
-                        <ContainerButtons />
+                        <p>Ficou alguma dúvida?</p>
+                        <p className="line">Entre em contato</p>
+                        <ContainerButtons onClickGATAG={onClickGATAG} />
                     </div>
                 </div>
             </section>
@@ -475,16 +489,13 @@ const SistemasSobMedida: any = () => {
                 <ListCases />
             </section>
 
-            <div className="wave-case">
-                <ContainerWaves
-                    background={'#211a13'}
-                    color={colors.primaryDark}
-                />
-            </div>
             <Contact redirect="https://tropa.digital/sistemas-sob-medida/sucesso" />
 
             <Footer />
-            <WPPButton text="Olá, estou interessado em Sistemas Sob Medida. Gostaria de algumas informações, poderia me ajudar?" />
+            <WPPButton
+                onClickGATAG={onClickGATAG}
+                text="Olá, estou interessado em Sistemas Sob Medida. Gostaria de algumas informações, poderia me ajudar?"
+            />
         </ContainerDesenvolvimentos>
     );
 };

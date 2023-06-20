@@ -267,8 +267,10 @@ export const ContainerDesenvolvimentos = styled.div`
             }
             #video-institucional {
                 height: 360px;
+                min-width: 695px;
                 display: flex;
                 flex-direction: column;
+                border-radius: 10px;
             }
             @media (max-width: 420px) {
                 flex-direction: column;
@@ -288,7 +290,7 @@ export const ContainerDesenvolvimentos = styled.div`
         position: relative;
         overflow: hidden;
         padding: 0px;
-        margin-bottom: -15px;
+        margin-bottom: -25px;
     }
     .wave-case {
         display: flex;
@@ -384,6 +386,7 @@ export const ContainerDesenvolvimentos = styled.div`
         .text-buttons {
             display: flex;
             flex-direction: column;
+            align-items: center;
             width: 400px;
             margin: 30px auto;
             border-radius: 20px;
@@ -392,16 +395,35 @@ export const ContainerDesenvolvimentos = styled.div`
             position: relative;
             z-index: 99;
             margin-top: 100px;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.05);
             .buttons-contact > span {
                 color: ${colors.primaryDark};
             }
+            .buttons-contact {
+                margin-top: 20px;
+            }
             p {
-                margin-bottom: 20px;
-                font-size: 25px;
+                font-size: 20px;
                 text-align: center;
-                font-family: ${fonts.chaney};
-                font-weight: 400;
-                color: ${colors.primary};
+                font-weight: 600;
+                color: ${colors.primaryDark};
+                margin: 0px;
+                position: relative;
+                &.line {
+                    &:after {
+                        content: '';
+                        width: 100%;
+                        height: 5px;
+                        background: orange;
+                        position: absolute;
+                        bottom: 5px;
+                        z-index: -1;
+                        left: 0%;
+                        opacity: 0.5;
+                    }
+                }
             }
         }
         .center-page {
