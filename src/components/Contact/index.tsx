@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Animate from '../Animation/Animate';
 import { ContainerCenter } from '../Layout/styles';
-import { IconEvelope, IconEvelopeFull } from '../Svg';
+import { IconEvelope, IconEvelopeFull, IconWhatsapp } from '../Svg';
 import { ContactContainer } from './styles';
 import apiTropa from '../../pages/api/api';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ContainerWaves } from '../../pages/desenvolvimento/sistemas';
+import { IconPhone } from '../Svg/index';
 
 const Contact = ({ redirect }: { redirect?: string }) => {
     const router = useRouter();
@@ -53,52 +55,58 @@ const Contact = ({ redirect }: { redirect?: string }) => {
     return (
         <ContactContainer id="contato">
             <ContainerCenter className="center">
-                <Animate effect="fadeInRight">
-                    <div className="infos">
-                        <div className="title">
-                            <h2>Con-tato</h2>
-                            <IconEvelope className="effect-stroke primary" />
-                        </div>
+                <div className="form-contact">
+                    <h3>Contato</h3>
+                    <p>
+                        Vem conversar com a gente, esclarecer uma dúvida, ou
+                        tirar o projeto do papel!
+                    </p>
+                    <form onSubmit={sendContact}>
+                        <input
+                            placeholder="Nome completo"
+                            name="nome"
+                            value={DTO.nome}
+                            onChange={(e) =>
+                                changeDTO(e.target.name, e.target.value)
+                            }
+                        />
+                        <input
+                            placeholder="E-mail para contato"
+                            type={'email'}
+                            name="email"
+                            value={DTO.email}
+                            onChange={(e) =>
+                                changeDTO(e.target.name, e.target.value)
+                            }
+                        />
+                        <textarea
+                            placeholder="Nos conte mais sobre o seu projeto"
+                            name="mensagem"
+                            value={DTO.mensagem}
+                            onChange={(e) =>
+                                changeDTO(e.target.name, e.target.value)
+                            }
+                        />
+                        <button type="submit">
+                            {loading ? '...' : 'Enviar'}
+                        </button>
+                    </form>
+                </div>
+                <div className="other">
+                    <span>ou</span>
+                </div>
+                <div className="qrcode">
+                    <div className="container-qrcode">
+                        <i>
+                            <IconWhatsapp />
+                        </i>
                         <p>
-                            Vem conversar com a gente, esclarecer uma dúvida, ou
-                            tirar o projeto do papel!
+                            Aponte a camera do seu celular para o QRCode e fale
+                            com um de nossos especialistas.
                         </p>
-                        <a>
-                            <IconEvelopeFull />
-                            <span>contato@tropa.digital</span>
-                        </a>
+                        <img src="/images/qrcode-wpp.png" alt="QRCODE" />
                     </div>
-                </Animate>
-                <form onSubmit={sendContact}>
-                    <input
-                        placeholder="SEU NOME"
-                        name="nome"
-                        value={DTO.nome}
-                        onChange={(e) =>
-                            changeDTO(e.target.name, e.target.value)
-                        }
-                    />
-                    <input
-                        placeholder="SEU E-MAIL"
-                        type={'email'}
-                        name="email"
-                        value={DTO.email}
-                        onChange={(e) =>
-                            changeDTO(e.target.name, e.target.value)
-                        }
-                    />
-                    <textarea
-                        placeholder="DIGITE UMA MENSAGEM"
-                        name="mensagem"
-                        value={DTO.mensagem}
-                        onChange={(e) =>
-                            changeDTO(e.target.name, e.target.value)
-                        }
-                    />
-                    <button type="submit">
-                        {loading ? 'ENVIANDO...' : 'Enviar'}
-                    </button>
-                </form>
+                </div>
             </ContainerCenter>
             <ToastContainer position="top-center" />
         </ContactContainer>

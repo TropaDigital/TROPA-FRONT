@@ -1,174 +1,203 @@
-import styled from "styled-components";
-import { colors, fonts } from "../../assets/styles/mixin";
+import styled from 'styled-components';
+import { colors, fonts } from '../../assets/styles/mixin';
 
 export const ContactContainer = styled.div`
     background-color: ${colors.primaryDark};
     background-image: url('/images/bannerContactR.png');
     background-position: center bottom;
     background-repeat: no-repeat;
-    min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0px;
     @keyframes animationBannerContact {
         0% {
-            opacity:0
+            opacity: 0;
         }
         50% {
-            opacity:.5;
+            opacity: 0.5;
         }
-        100%{
-            opacity:0
+        100% {
+            opacity: 0;
         }
     }
     &:after {
-      width: 100%;
-      height: 100%;
-      content: '';
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      background: ${colors.primaryDark};
-      background-size: cover;
-      background-position: top center;
-      z-index: 0;
-      animation: animationBannerContact linear 5s infinite;
-      animation-delay: 1.3s;
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background: ${colors.primaryDark};
+        background-size: cover;
+        background-position: top center;
+        z-index: 0;
+        animation: animationBannerContact linear 5s infinite;
+        animation-delay: 1.3s;
+    }
+    h3 {
+        font-size: 55px;
+        font-family: 'Chaney', sans-serif;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: ${colors.primaryLight};
+        line-height: 50px;
+        margin: 0px;
+        margin-bottom: 50px;
+        border-left: 10px solid #cc6138;
+        padding-left: 15px;
     }
     .center {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
         position: relative;
         z-index: 1;
-        .infos {
+        .form-contact {
             display: flex;
             flex-direction: column;
-            .title {
-                position: relative;
-                width: 450px;
-                h2 {
-                    font-size: 125px;
-                    text-transform: uppercase;
-                    line-height: 100px;
-                    font-weight: 100;
-                    color: ${colors.primaryLight};
-                    font-family: ${fonts.chaney};
-                    font-weight: normal;
-                }
-                svg {
-                    transform: rotate(30deg);
-                    position: absolute;
-                    right: -60px;
-                    top: -88px;
-                    width: 250px;
-                    height: 250px;
-                }
-            }
+            max-width: 100%;
+            width: 50%;
             > p {
-                font-size: 18px;
-                color: ${colors.primary};
-                width: 305px;
-                margin-top: 50px;
-                padding: 0px;
+                margin-bottom: 25px;
+                color: ${colors.primaryLight};
             }
-            > a {
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                input,
+                textarea {
+                    padding: 10px;
+                    min-height: 45px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border: none;
+                    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.05);
+                    border: 2px solid ${colors.primary};
+                    color: #fff;
+                    resize: none;
+                    font-weight: 400;
+                    &::placeholder {
+                        color: #fff;
+                    }
+                }
+                textarea {
+                    height: 140px;
+                }
+                button {
+                    border: none;
+                    background: ${colors.primary};
+                    color: #fff;
+                    padding: 15px;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+        .other {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            height: 190px;
+            box-sizing: border-box;
+            padding: 0px 30px;
+            img {
+                width: 200px;
+                margin-bottom: 15px;
+            }
+            span {
                 display: flex;
                 align-items: center;
-                margin-top: 30px;
-                svg {
-                    width: 27px;
-                    height: 18px;
+                width: 100%;
+                margin: 10px 0px;
+                color: ${colors.primaryLight};
+                &:after,
+                &:before {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    border-bottom: 2px dashed ${colors.primaryLight};
+                    opacity: 0.5;
                 }
-                span {
-                    font-size: 17px;
-                    text-transform: uppercase;
-                    color: ${colors.primaryLight};
+                &:before {
+                    margin-right: 10px;
+                }
+                &:after {
                     margin-left: 10px;
                 }
             }
-            @media (max-width: 425px) {
-                .title {
-                    width: 400px;
-                    margin-left: 35px;
-                    > h2 {
-                        font-size: 75px;
+        }
+        .qrcode {
+            display: flex;
+            .container-qrcode {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 5px solid ${colors.primaryLight};
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 10px 0px 10px 10px rgba(0, 0, 0, 0.3);
+                i {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 100px;
+                    background: #fff;
+                    margin-top: -40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.1);
+                    &:after {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 100px;
+                        position: absolute;
+                        content: '';
+                        z-index: -1;
+                        border: 5px solid ${colors.primaryLight};
                     }
                     svg {
-                        right: 60px;
-                        top: 10px;
-                        width: 170px;
-                        height: 170px;
+                        width: 60%;
+                        height: 60%;
+                        path {
+                            fill: #07bc0c;
+                        }
                     }
                 }
-                > p {
-                    margin-left: 35px;  
+                img {
+                    border-radius: 10px;
                 }
-                > a {
-                    margin-left: 35px;  
+                p {
+                    margin: 20px 0px;
+                    font-weight: 500;
+                    font-size: 14px;
+                    max-width: 300px;
+                    box-sizing: border-box;
+                    padding: 0px 20px;
+                    text-align: center;
                 }
             }
         }
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-left: 20%;
-            align-items: flex-start;
-            input, textarea {
+        @media (max-width: 420px) {
+            .form-contact {
                 width: 100%;
-                height: 80px;
-                background: transparent;
-                border: none;
-                margin-bottom: 50px;
-                border-bottom: 1px solid ${colors.primaryLight};
-                resize: none;
-                color: ${colors.primaryLight};
-                &::placeholder {
-                    color: ${colors.primaryLight};
-                }
-                @media (max-width: 425px) {
-                    width: 90%;
-                    margin-bottom: 25px;
-                }
+                box-sizing: border-box;
+                padding: 0px 30px;
             }
-            textarea {
-                height: 120px;
+            .qrcode {
+                display: none;
             }
-            button {
-                width: 160px;
-                height: 80px;
-                text-transform: uppercase;
-                border-radius: 100px;
-                background: ${colors.primary};
-                border: none;
-                color: ${colors.primaryLight};
-                font-size: 17px;
-                cursor: pointer;
-                transition: all .2s;
-                &:hover {
-                    transform: scale(1.1);
-                }
+            .other {
+                display: none;
             }
-            @media (max-width: 425px) {
-                margin-left: 10%;
-            }
-        }
-        @media (max-width: 425px) {
-            padding: 20px;
         }
     }
-    /* .toast-error {
-        background-color: ${colors.primary};
-        div {
-            color: ${colors.primaryGrey};
-        }
-    }
-    .toast-sucess {
-        div {
-            color: black;
-        }
-    } */
-`
+`;
