@@ -6,6 +6,22 @@ export const ContainerDesenvolvimentos = styled.div`
     display: flex;
     flex-direction: column;
     background: ${colors.primaryLight};
+
+    @keyframes astronautEffect {
+        0% {
+            transform: rotate(-10deg);
+        }
+        100% {
+            transform: rotate(10deg) scale(0.9);
+        }
+    }
+
+    .effect-astronaut {
+        animation: astronautEffect 10s linear infinite alternate;
+    }
+    .wave-first {
+        margin-top: -20px;
+    }
     .center-page {
         width: 1140px;
         margin: 0px auto;
@@ -66,6 +82,23 @@ export const ContainerDesenvolvimentos = styled.div`
         margin-bottom: 50px;
         border-left: 10px solid ${colors.primary};
         padding-left: 15px;
+        u {
+            text-decoration: none;
+            font-family: ${fonts.chaney};
+            font-weight: normal;
+            position: relative;
+            z-index: 1;
+            &:after {
+                content: '';
+                width: 100%;
+                height: 10px;
+                background: rgba(255, 255, 255, 0.4);
+                position: absolute;
+                bottom: 15px;
+                z-index: -1;
+                left: 0%;
+            }
+        }
     }
     @media (max-width: 420px) {
         .title {
@@ -195,10 +228,103 @@ export const ContainerDesenvolvimentos = styled.div`
         }
     }
     section {
+        display: flex;
+        flex-direction: column;
         margin: 0px;
         padding: 30px 0px;
         position: relative;
         box-sizing: border-box;
+        h4 {
+            font-size: 45px;
+            font-family: ${fonts.chaney};
+            text-transform: uppercase;
+            font-weight: normal;
+            color: ${colors.primaryDark};
+            line-height: 50px;
+            margin: 0px;
+            margin-bottom: 50px;
+            border-left: 10px solid ${colors.primary};
+            padding-left: 15px;
+            position: relative;
+            u {
+                text-decoration: none;
+                font-family: ${fonts.chaney};
+                font-weight: normal;
+                position: relative;
+                z-index: 1;
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 10px;
+                    background: rgba(204, 97, 56, 0.4);
+                    position: absolute;
+                    bottom: 15px;
+                    z-index: -1;
+                    left: 0%;
+                }
+            }
+        }
+        .row-item-line {
+            display: flex;
+            justify-content: space-between;
+            .text-default {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                max-width: 45%;
+                p {
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-bottom: 15px;
+                    span {
+                        background: rgba(204, 97, 56, 0.4);
+                    }
+                }
+            }
+            .image {
+                display: flex;
+                flex-direction: column;
+                img {
+                    max-width: 100%;
+                }
+                &.astronaut {
+                    margin-top: -100px;
+                    width: 500px;
+                    height: 500px;
+                    margin-right: 100px;
+                    margin-bottom: -50px;
+                }
+                &.email {
+                    margin-top: -100px;
+                    min-width: 500px;
+                    height: 500px;
+                }
+            }
+        }
+        .list-images-ft {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 60px;
+            img {
+                height: 30px;
+            }
+        }
+        &.light {
+            background: ${colors.primaryGrey};
+        }
+        &.reverse {
+            background: ${colors.primaryGrey};
+            p {
+                span {
+                    background: rgba(255, 255, 255, 0.4) !important;
+                }
+            }
+            .row-item-line {
+                flex-direction: row-reverse;
+            }
+        }
     }
 
     #head-dev {
@@ -416,12 +542,11 @@ export const ContainerDesenvolvimentos = styled.div`
                         content: '';
                         width: 100%;
                         height: 5px;
-                        background: orange;
+                        background: rgba(204, 97, 56, 0.4);
                         position: absolute;
                         bottom: 5px;
                         z-index: -1;
                         left: 0%;
-                        opacity: 0.5;
                     }
                 }
             }
