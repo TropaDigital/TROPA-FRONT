@@ -8,22 +8,15 @@ export default class MyDocument extends Document {
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
                         async
-                        src={`https://www.googletagmanager.com/gtag/js?id=G-TMC8BJVX26`}
+                        src={`https://www.googletagmanager.com/gtag/js?id=AW-11228645635`}
                     />
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-TMC8BJVX26', {
-              page_path: window.location.pathname,
-            });
-            gtag('config', 'AW-11149050857', {
-                page_path: window.location.pathname,
-              });
-            
-          `,
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'AW-11228645635');`,
                         }}
                     />
                 </Head>

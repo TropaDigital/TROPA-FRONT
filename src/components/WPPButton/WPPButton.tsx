@@ -22,7 +22,7 @@ export const WPPButton = ({
     }, []);
 
     const handleCLickButton = () => {
-        router.push('/send-whatsapp');
+        router.push('/whatsapp');
         onClickGATAG();
     };
 
