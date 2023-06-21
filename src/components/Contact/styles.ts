@@ -186,11 +186,14 @@ export const ContactContainer = styled.div`
                 }
             }
         }
-        @media (max-width: 420px) {
+        @media (max-width: 600px) {
             .form-contact {
                 width: 100%;
                 box-sizing: border-box;
                 padding: 0px 30px;
+                input, textarea, button {
+                    font-size: 20px;
+                }
             }
             .qrcode {
                 display: none;

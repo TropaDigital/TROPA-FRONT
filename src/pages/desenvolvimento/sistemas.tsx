@@ -169,6 +169,14 @@ const SistemasSobMedida: any = () => {
                 <title>
                     Tropa.Digital - Desenvolvimento de sistema sob medida
                 </title>
+                <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=600px" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <meta name="mobile-web-app-capable" content="yes" />
                 <meta
                     name="description"
                     content="Desenvolvimento de sistemas personalizados sob medida."
@@ -452,6 +460,11 @@ const SistemasSobMedida: any = () => {
                         </div>
                     </div>
                 </div>
+                <div className="text-buttons">
+                        <p>Ficou alguma dúvida?</p>
+                        <p className="line">Entre em contato</p>
+                        <ContainerButtons onClickGATAG={onClickGATAG} />
+                    </div>
             </section>
 
             <ContainerWaves
@@ -472,11 +485,7 @@ const SistemasSobMedida: any = () => {
                             />
                         ))}
                     </div>
-                    <div className="text-buttons">
-                        <p>Ficou alguma dúvida?</p>
-                        <p className="line">Entre em contato</p>
-                        <ContainerButtons onClickGATAG={onClickGATAG} />
-                    </div>
+                    
                 </div>
             </section>
 
