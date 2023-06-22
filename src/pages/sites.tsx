@@ -500,13 +500,21 @@ const SitePages: any = () => {
                         </div>
                     </div>
                 </div>
-                <div className="text-buttons">
-                    <p>Ficou alguma dúvida?</p>
-                    <p className="line">Entre em contato</p>
-                    <ContainerButtons
-                        text="Olá, gostaria de algumas informações sobre desenvolvimento de sites, poderia me ajudar?"
-                        onClickGATAG={onClickGATAG}
-                    />
+
+                <div className="foot-section">
+                    <div className="text-buttons">
+                        <p>Parcelamos o seu site</p>
+                        <p className="line">EM ATÉ 12X</p>
+                        <img src="/images/bandeiras.png" />
+                    </div>
+                    <div className="text-buttons">
+                        <p>Ficou alguma dúvida?</p>
+                        <p className="line">Entre em contato</p>
+                        <ContainerButtons
+                            text="Olá, gostaria de algumas informações sobre desenvolvimento de sites, poderia me ajudar?"
+                            onClickGATAG={onClickGATAG}
+                        />
+                    </div>
                 </div>
             </section>
 

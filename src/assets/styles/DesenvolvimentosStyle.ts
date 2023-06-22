@@ -566,6 +566,17 @@ export const ContainerDesenvolvimentos = styled.div`
             }
         }
     }
+    .foot-section {
+        display: flex;
+        gap: 50px;
+        @media (max-width: 600px) {
+            flex-direction: column;
+        }
+        img {
+            max-width: 100%;
+            margin-top: 30px;
+        }
+    }
     .text-buttons {
         display: flex;
         flex-direction: column;
@@ -577,7 +588,7 @@ export const ContainerDesenvolvimentos = styled.div`
         margin-bottom: -200px;
         position: relative;
         z-index: 999999;
-        margin-top: 100px;
+        margin-top: 30px;
         backdrop-filter: blur(5px);
         background: rgba(255, 255, 255, 0.5);
         box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.05);
