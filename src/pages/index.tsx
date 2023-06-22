@@ -85,7 +85,10 @@ const IndexPage: any = () => {
                             máximo online! Entre em contato para saber mais e
                             impulsione seu negócio para o sucesso digital!
                         </p>
-                        <ContainerButtons onClickGATAG={onClickGATAG} />
+                        <ContainerButtons
+                            text="Olá, estou interessado em Sistemas Sob Medida. Gostaria de algumas informações, poderia me ajudar?"
+                            onClickGATAG={onClickGATAG}
+                        />
                     </div>
                     <div id="video-institucional">
                         <VideoLP />
@@ -347,7 +350,10 @@ const IndexPage: any = () => {
                 <div className="text-buttons">
                     <p>Ficou alguma dúvida?</p>
                     <p className="line">Entre em contato</p>
-                    <ContainerButtons onClickGATAG={onClickGATAG} />
+                    <ContainerButtons
+                        text="Olá, estou interessado em Sistemas Sob Medida. Gostaria de algumas informações, poderia me ajudar?"
+                        onClickGATAG={onClickGATAG}
+                    />
                 </div>
             </section>
 

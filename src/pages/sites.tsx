@@ -114,7 +114,10 @@ const SitePages: any = () => {
                             tecnologias do mercado. Obtenha quantas contas de
                             e-mail precisar.
                         </p>
-                        <ContainerButtons onClickGATAG={onClickGATAG} />
+                        <ContainerButtons
+                            text="Olá, gostaria de algumas informações sobre desenvolvimento de sites, poderia me ajudar?"
+                            onClickGATAG={onClickGATAG}
+                        />
                     </div>
                     <div id="cases-roles">
                         <div
@@ -500,7 +503,10 @@ const SitePages: any = () => {
                 <div className="text-buttons">
                     <p>Ficou alguma dúvida?</p>
                     <p className="line">Entre em contato</p>
-                    <ContainerButtons onClickGATAG={onClickGATAG} />
+                    <ContainerButtons
+                        text="Olá, gostaria de algumas informações sobre desenvolvimento de sites, poderia me ajudar?"
+                        onClickGATAG={onClickGATAG}
+                    />
                 </div>
             </section>
 

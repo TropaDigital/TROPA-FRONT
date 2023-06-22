@@ -599,7 +599,7 @@ export const ContainerDesenvolvimentos = styled.div`
                     content: '';
                     width: 100%;
                     height: 5px;
-                    background: rgba(204, 97, 56, 0.4);
+                    background: ${colors.primaryGrey};
                     position: absolute;
                     bottom: 5px;
                     z-index: -1;

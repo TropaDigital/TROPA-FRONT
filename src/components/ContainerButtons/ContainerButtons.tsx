@@ -1,18 +1,20 @@
 import { IconEntedimento } from '../Svg';
 import { ContainerElementButtons } from './ContainerButtons.style';
+import { IconEvelopeFull } from '../Svg/index';
 
 export const ContainerButtons = ({
     position = 'vertical',
     onClickGATAG = () => {},
     email = true,
     whatsapp = true,
+    text = 'Olá, vim do site e tenho algumas dúvidas.',
 }) => {
     return (
         <ContainerElementButtons className={`buttons-contact ${position}`}>
             {whatsapp && (
                 <a
                     className="wpp"
-                    href="https://api.whatsapp.com/send?phone=5511978675858&text=Olá, vim do site e tenho algumas dúvidas."
+                    href={`https://api.whatsapp.com/send?phone=5511978675858&text=${text}`}
                     target="_blank"
                     rel="noreferrer"
                     onClick={onClickGATAG}
@@ -45,7 +47,7 @@ export const ContainerButtons = ({
             {email && (
                 <a href="#contato">
                     <i>
-                        <IconEntedimento color="#FFF" />
+                        <IconEvelopeFull />
                     </i>
                     <span>SOLICITAR ORÇAMENTO GRÁTIS</span>
                 </a>

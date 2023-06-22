@@ -27,11 +27,13 @@ export const ContainerElementButtons = styled.div`
         border-radius: 100px;
         box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
         text-decoration: none;
+        transform: scale(0.9);
         @media (max-width: 600px) {
             font-size: 20px;
         }
         &.wpp {
             background: #07bc0c;
+            transform: scale(1);
             span {
                 color: #fff;
             }
@@ -59,14 +61,18 @@ export const ContainerElementButtons = styled.div`
             transition: all 0.2s;
             box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
             svg {
-                width: 15px;
-                height: 15px;
+                width: 20px;
+                height: 20px;
                 path {
                     fill: ${colors.primaryDark};
                 }
             }
         }
         &:hover {
+            transform: scale(1);
+            &.wpp {
+                transform: scale(1.1);
+            }
             i {
                 transform: scale(1.5);
             }
