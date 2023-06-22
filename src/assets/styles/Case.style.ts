@@ -39,6 +39,19 @@ export const ContainerCase = styled.div`
             justify-content: space-between;
             align-items: flex-end;
             height: 96px;
+            .back {
+                background: transparent;
+                border: none;
+                display: flex;
+                cursor: pointer;
+                height: 100%;
+                align-items: center;
+                svg {
+                    path {
+                        stroke: white;
+                    }
+                }
+            }
             @media (max-width: 420px) {
                 flex-direction: column;
                 height: auto;

@@ -6,11 +6,11 @@ import Footer from '../../../components/Layout/Footer';
 import { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../../../components/Layout/Header';
-import { PortfolioBanner } from '../../../assets/styles/PortfolioStyles';
 import { ContainerCase } from '../../../assets/styles/Case.style';
 import { ICase } from '../../api/cases';
 import { ContainerCenter } from '../../../components/Layout/styles';
 import Image from 'next/image';
+import { IconArrowLeft } from '../../../components/Svg';
 
 export const ContainerMobile = ({
     image,
@@ -76,30 +76,12 @@ const Case: NextPage = () => {
                     className={`case-banner ${
                         portfolioSelected.images?.preview ? 'video' : 'auto'
                     }`}
-                    menus={[
-                        {
-                            href: '/home/o-que-fazemos',
-                            value: 'O que fazemos',
-                        },
-                        {
-                            href: '/home/a-tropa',
-                            value: 'A Tropa',
-                        },
-                        {
-                            href: '/home/social',
-                            value: 'Social',
-                        },
-                        {
-                            href: '/home/portfolio',
-                            value: 'Portfolio',
-                        },
-                        {
-                            href: '/home/contato',
-                            value: 'contato',
-                        },
-                    ]}
+                    menus={[]}
                 >
                     <div className="head">
+                        <button className="back" onClick={() => router.back()}>
+                            <IconArrowLeft />
+                        </button>
                         <h1>{portfolioSelected.title}</h1>
                         <div className="infos">
                             <div>
