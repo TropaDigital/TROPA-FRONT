@@ -25,7 +25,7 @@ import { ContainerButtons } from '../components/ContainerButtons/ContainerButton
 import { ContainerWaves } from '../components/ContainerWaves/ContainerWaves';
 import { MethodologyItem } from '../components/MethodologyItem/MethodologyItem';
 
-const SitePages: any = () => {
+const AppsPages: any = () => {
     const [indicePosition, setIndicePosition] = useState<number>(0);
     const [randomImage, setRandomImage] = useState<any>(
         '/images/cases/alpha-fm/principal.png'
@@ -106,26 +106,21 @@ const SitePages: any = () => {
                         <div id="logo">
                             <Logo />
                         </div>
-                        <h1>Criação de Sites Profissionais</h1>
+                        <h1>Criação de APP Android & iOS</h1>
                         <span>Mais barato e mais rápido</span>
                         <p>
-                            Somos uma agência de criação de sites profissionais,
-                            nossos sites são desenvolvidos nas melhores
-                            tecnologias do mercado. Obtenha quantas contas de
-                            e-mail precisar.
+                            Somos especializados em desenvolvimento de
+                            aplicativos para Android e iOS! Aqui, transformamos
+                            sua visão em realidade, fornecendo soluções de alta
+                            qualidade e profissionalismo para o seu negócio.
                         </p>
                         <ContainerButtons
-                            text="Olá, gostaria de algumas informações sobre desenvolvimento de sites, poderia me ajudar?"
+                            text="Olá, gostaria de algumas informações sobre desenvolvimento de aplicativos, poderia me ajudar?"
                             onClickGATAG={onClickGATAG}
                         />
                     </div>
-                    <div id="cases-roles">
-                        <div
-                            className="browser-case"
-                            style={{
-                                backgroundImage: `url(${randomImage})`,
-                            }}
-                        ></div>
+                    <div id="phone-app">
+                        <img src="/images/phone-app.png" alt="Celular" />
                     </div>
                 </div>
             </div>
@@ -139,45 +134,37 @@ const SitePages: any = () => {
             <section className="light">
                 <ContainerCenter>
                     <h4>
-                        A verdadeira tecnologia por trás
-                        <br />
-                        <u>dos</u>
-                        <u> </u>
-                        <u>melhores</u>
-                        <u> </u>
-                        <u>sites!</u>
+                        Transforme <u>sua Visão em Realidade</u>
                     </h4>
 
                     <div className="row-item-line">
                         <div className="text-default">
                             <p>
-                                Diferentemente de muitos concorrentes, que optam
-                                por vender exclusivamente na plataforma{' '}
+                                Nossa equipe especializada está pronta para
+                                criar um aplicativo personalizado que atenda às
+                                suas necessidades específicas.{' '}
                                 <span>
-                                    WordPress, uma solução popular de sites
-                                    prontos
-                                </span>
-                                , temos o compromisso de oferecer aos nossos
-                                clientes algo verdadeiramente excepcional.
+                                    Utilizamos as tecnologias mais avançadas do
+                                    mercado
+                                </span>{' '}
+                                para garantir que seu aplicativo seja moderno,
+                                intuitivo e totalmente funcional.
                             </p>
                             <p>
-                                Ao escolher os nossos serviços, você está
-                                optando pela confiabilidade e desempenho
-                                incomparáveis. Essa tecnologia avançada nos
-                                permite{' '}
-                                <span>
-                                    criar sites seguros, rápidos e adaptáveis
-                                </span>
-                                , garantindo uma experiência excepcional para os
-                                visitantes.
+                                Não perca a oportunidade de ter um aplicativo de
+                                qualidade, que se destaque da concorrência e{' '}
+                                <span>impulsione o sucesso do seu negócio</span>
+                                . Entre em contato conosco hoje mesmo para
+                                discutir suas ideias e começar a criar um
+                                aplicativo incrível para Android e iOS. Estamos
+                                ansiosos para trabalhar com você!
                             </p>
                             <div className="list-images-ft">
-                                <img src="/images/languages/reactjs.png" />
-                                <img src="/images/languages/nextjs.png" />
-                                <img src="/images/languages/angularjs.png" />
-                                <img src="/images/languages/vuejs.png" />
+                                <img src="/images/languages/reactnative.png" />
                                 <img src="/images/languages/flutter.png" />
-                                <img src="/images/languages/node.png" />
+                                <img src="/images/languages/xamarin.png" />
+                                <img src="/images/languages/swift.png" />
+                                <img src="/images/languages/android.png" />
                             </div>
                         </div>
                         <div className="image astronaut">
@@ -213,25 +200,30 @@ const SitePages: any = () => {
                             }}
                         >
                             <h4>
-                                Contas de Email Personalizadas
-                                <br />
-                                <u>Ilimitadas</u>
-                                <u> </u>
-                                <u>para</u>
-                                <u> </u>
-                                <u>o</u>
-                                <u> </u>
-                                <u>seu</u>
-                                <br />
-                                <u>Site</u>
+                                Uma <u>Experiência</u>
+                                {` `}
+                                <u>Incomparável</u> para Aplicativos iOS e
+                                Android
                             </h4>
                             <p>
-                                Tenha total controle sobre a comunicação do seu
-                                negócio! Com a nossa{' '}
-                                <span>solução de hospedagem</span>, oferecemos a
-                                você a liberdade de criar quantas contas de
-                                e-mail personalizadas forem necessárias,
-                                exemplo: <span>nome@empresa.com.br</span>
+                                Na nossa agência, entendemos que o design UX/UI
+                                é o aliado essencial dos nossos clientes. Com
+                                uma equipe especializada em criação de
+                                aplicativos para iOS e Android,{' '}
+                                <span>
+                                    entregamos uma experiência do usuário
+                                    inigualável
+                                </span>
+                                , combinando excelência no design com
+                                funcionalidade excepcional. Cada detalhe é
+                                cuidadosamente elaborado para garantir que{' '}
+                                <span>
+                                    seu aplicativo seja intuitivo, atrativo
+                                </span>{' '}
+                                e ofereça uma jornada perfeita para os usuários.
+                                Confie em nós para criar um design que irá
+                                encantar seus clientes e impulsionar o sucesso
+                                do seu aplicativo.
                             </p>
                         </div>
                         <div className="image email">
@@ -413,9 +405,7 @@ const SitePages: any = () => {
             <ContainerWaves background={colors.primaryGrey} />
             <section id="metodologia">
                 <div className="center-page">
-                    <h2 className="title">
-                        Seu site <u>pronto em 10 dias</u> úteis
-                    </h2>
+                    <h2 className="title">Como fazemos</h2>
                     <div className="mobile">
                         <div
                             className={`swipe animate__animated ${
@@ -503,15 +493,10 @@ const SitePages: any = () => {
 
                 <div className="foot-section">
                     <div className="text-buttons">
-                        <p>Parcelamos o seu site</p>
-                        <p className="line">EM ATÉ 12X SEM JUROS</p>
-                        <img src="/images/bandeiras.png" />
-                    </div>
-                    <div className="text-buttons">
                         <p>Ficou alguma dúvida?</p>
                         <p className="line">Entre em contato</p>
                         <ContainerButtons
-                            text="Olá, gostaria de algumas informações sobre desenvolvimento de sites, poderia me ajudar?"
+                            text="Olá, gostaria de algumas informações sobre desenvolvimento de aplicativos, poderia me ajudar?"
                             onClickGATAG={onClickGATAG}
                         />
                     </div>
@@ -553,10 +538,10 @@ const SitePages: any = () => {
             <Footer />
             <WPPButton
                 onClickGATAG={onClickGATAG}
-                text="Olá, gostaria de algumas informações sobre desenvolvimento de sites, poderia me ajudar?"
+                text="Olá, gostaria de algumas informações sobre desenvolvimento de aplicativos, poderia me ajudar?"
             />
         </ContainerDesenvolvimentos>
     );
 };
 
-export default SitePages;
+export default AppsPages;

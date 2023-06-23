@@ -228,6 +228,7 @@ export const ContainerDesenvolvimentos = styled.div`
             align-items: center;
             justify-content: space-between;
             margin-top: 60px;
+            gap: 10px;
             img {
                 height: 30px;
             }
@@ -262,7 +263,7 @@ export const ContainerDesenvolvimentos = styled.div`
                 position: relative;
                 z-index: 1;
                 p {
-                    padding-right: 170px !important;
+                    padding-right: 190px !important;
                     box-sizing: border-box;
                     font-size: 13px !important;
                     line-height: 22px !important;
@@ -320,6 +321,7 @@ export const ContainerDesenvolvimentos = styled.div`
         z-index: 9999;
         margin-bottom: -120px;
         background-image: url('/images/noise.png');
+        overflow: hidden;
         .center-page {
             align-items: center;
             display: flex;
@@ -378,9 +380,23 @@ export const ContainerDesenvolvimentos = styled.div`
                 display: flex;
                 flex-direction: column;
                 border-radius: 10px;
-                .browser- case {
+                .browser-case {
                     width: 100%;
                     height: 100%;
+                }
+            }
+            #phone-app {
+                min-width: 700px;
+                height: 580px;
+                display: flex;
+                justify-content: flex-end;
+                img {
+                    margin-right: -90px;
+                    width: 130%;
+                    height: 130%;
+                    @media (max-width: 600px) {
+                        margin-top: -100px;
+                    }
                 }
             }
             #cases-roles {
