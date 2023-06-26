@@ -39,7 +39,15 @@ const IndexPage: any = ({ section = false }) => {
         if (hash) {
             const element = document.getElementById(hash);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth' }); // rola suavemente até o elemento
+                const yOffset = -50; // ajuste da margem negativa
+                const y =
+                    element.getBoundingClientRect().top +
+                    window.pageYOffset +
+                    yOffset;
+
+                window.scrollTo({
+                    top: y,
+                });
             }
         }
     }, []);

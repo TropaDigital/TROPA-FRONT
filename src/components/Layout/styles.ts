@@ -60,9 +60,15 @@ export const HeaderContainer = styled.div`
         height: 100px;
         display: flex;
         align-items: center;
-        position: fixed;
+        position: relative;
         z-index: 999;
         backdrop-filter: blur(10px);
+        transition: all 0.5s;
+        &.fixed {
+            position: fixed;
+            animation: fadeInDown 0.5s;
+            height: 50px;
+        }
         .center {
             display: flex;
             justify-content: space-between;
@@ -149,6 +155,16 @@ export const HeaderContainer = styled.div`
                             z-index: -1;
                             transition: all 0.2s;
                             opacity: 0.5;
+                        }
+                    }
+                    &:hover,
+                    &.active {
+                        > a {
+                            background: rgba(255, 255, 255, 0.5);
+                            &:after {
+                                width: 0px;
+                                left: 50%;
+                            }
                         }
                     }
                     &:hover {

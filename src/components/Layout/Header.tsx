@@ -18,12 +18,10 @@ const Header: React.FC<IProps> = ({ menuHidden = false }) => {
     const router = useRouter();
 
     const [menuFixed, setMenuFixed] = useState<boolean>(false);
-    const [openMenu, setOpenMenu] = useState(false);
-    const [mostraSubmenu, setMostraSubmenu] = useState(false);
 
     useEffect(() => {
         document.addEventListener('scroll', () => {
-            if (window.scrollY > 30) {
+            if (window.scrollY > 300) {
                 setMenuFixed(true);
             } else if (window.scrollY === 0) {
                 setMenuFixed(false);
@@ -37,9 +35,14 @@ const Header: React.FC<IProps> = ({ menuHidden = false }) => {
 
     const [menuVisibile, setMenuVisibile] = useState(false);
 
+    const isContatoRoute = router.pathname === '/contato';
+    const isQuemSomosoute = router.pathname === '/quem-somos';
+    const isOqueFazemosRoute =
+        router.pathname.split('/oque-fazemos/').length > 1 ? true : false;
+
     return (
         <HeaderContainer>
-            <div className="relative">
+            <div className={`relative ${menuFixed ? 'fixed' : 'normal'}`}>
                 <ContainerCenter className="center">
                     {menuHidden ? (
                         <a className="logo">
@@ -91,10 +94,22 @@ const Header: React.FC<IProps> = ({ menuHidden = false }) => {
                                 menuVisibile ? 'visible' : 'hidden'
                             }`}
                         >
-                            <li>
-                                <Link href="/quem-somos">Quem somos</Link>
+                            <li
+                                className={
+                                    isQuemSomosoute ? 'active' : 'normal'
+                                }
+                            >
+                                {isQuemSomosoute ? (
+                                    <a>Quem somos</a>
+                                ) : (
+                                    <Link href="/quem-somos">Quem somos</Link>
+                                )}
                             </li>
-                            <li>
+                            <li
+                                className={
+                                    isOqueFazemosRoute ? 'active' : 'normal'
+                                }
+                            >
                                 <a>Oque fazemos</a>
                                 <ul>
                                     <li>
@@ -119,8 +134,14 @@ const Header: React.FC<IProps> = ({ menuHidden = false }) => {
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <Link href="/contato">Contato</Link>
+                            <li
+                                className={isContatoRoute ? 'active' : 'normal'}
+                            >
+                                {isContatoRoute ? (
+                                    <a>Contato</a>
+                                ) : (
+                                    <Link href="/contato">Contato</Link>
+                                )}
                             </li>
                         </ul>
                     )}
