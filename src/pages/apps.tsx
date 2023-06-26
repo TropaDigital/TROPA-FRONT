@@ -24,8 +24,9 @@ import axios from 'axios';
 import { ContainerButtons } from '../components/ContainerButtons/ContainerButtons';
 import { ContainerWaves } from '../components/ContainerWaves/ContainerWaves';
 import { MethodologyItem } from '../components/MethodologyItem/MethodologyItem';
+import Header from '../components/Layout/Header';
 
-const AppsPages: any = () => {
+const AppsPages: any = ({ menu = false }) => {
     const [indicePosition, setIndicePosition] = useState<number>(0);
     const [randomImage, setRandomImage] = useState<any>(
         '/images/cases/alpha-fm/principal.png'
@@ -74,9 +75,7 @@ const AppsPages: any = () => {
     return (
         <ContainerDesenvolvimentos>
             <Head>
-                <title>
-                    Tropa.Digital - Desenvolvimento de sistema sob medida
-                </title>
+                <title>Criação de APP Android & iOS - Tropa Digital</title>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=600px" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -100,12 +99,10 @@ const AppsPages: any = () => {
                 <link rel="icon" href="/favicon1.ico" />
             </Head>
 
+            <Header menuHidden={!menu} />
             <div id="head-dev">
                 <div className="center-page">
                     <div className="text">
-                        <div id="logo">
-                            <Logo />
-                        </div>
                         <h1>Criação de APP Android & iOS</h1>
                         <span>Mais barato e mais rápido</span>
                         <p>

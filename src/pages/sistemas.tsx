@@ -1,12 +1,13 @@
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Footer from '../components/Layout/Footer';
 import Contact from '../components/Contact';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { WPPButton } from '../components/WPPButton/WPPButton';
 import { ContainerDesenvolvimentos } from '../assets/styles/DesenvolvimentosStyle';
-import { VideoLP } from '../components/VideoLP/VideoLP';
 import { Logo } from '../components/Svg';
 import * as ga from '../lib/gtag';
+import Image from 'next/image';
 import {
     IconEntedimento,
     LineMethodology,
@@ -17,43 +18,65 @@ import {
 } from '../components/Svg/index';
 import { colors } from '../assets/styles/mixin';
 import ListCases from '../components/Cases/Cases';
-import { ContainerWaves } from '../components/ContainerWaves/ContainerWaves';
+import { ContainerCenter } from '../components/Layout/styles';
+import { ICase } from './api/cases';
+import axios from 'axios';
 import { ContainerButtons } from '../components/ContainerButtons/ContainerButtons';
+import { ContainerWaves } from '../components/ContainerWaves/ContainerWaves';
 import { MethodologyItem } from '../components/MethodologyItem/MethodologyItem';
 import Header from '../components/Layout/Header';
+import { VideoLP } from '../components/VideoLP/VideoLP';
 
-interface IPropsMethodology {
-    number: number;
-    icon: React.ReactNode;
-    title: string;
-    description: string;
-    steps: string[];
-    top: number;
-}
-
-const IndexPage: any = ({ section = false }) => {
+const SistemasPages: any = ({ menu = false }) => {
+    const [indicePosition, setIndicePosition] = useState<number>(0);
+    const [randomImage, setRandomImage] = useState<any>(
+        '/images/cases/alpha-fm/principal.png'
+    );
+    const [data, setData] = useState<ICase[]>([]);
     const [scrolledMethodology, setScrolledMethodology] = useState(false);
 
+    const getData = useCallback(async () => {
+        const response = await axios.get('/api/cases');
+        setData([...response.data]);
+    }, []);
+
     useEffect(() => {
-        const hash: any = section; // obtem a âncora da URL
+        getData();
+        const hash = window.location.hash.substring(1); // obtem a âncora da URL
         if (hash) {
             const element = document.getElementById(hash);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' }); // rola suavemente até o elemento
             }
         }
-    }, []);
+    }, [getData]);
 
     const onClickGATAG = () => {
         ga.gtagReportConversion('/whatsapp');
     };
 
+    useEffect(() => {
+        const intervalRanomImage = setInterval(() => {
+            if (data.length > 0) {
+                if (data[indicePosition].images.principal) {
+                    setRandomImage(
+                        `/images/cases/${data[indicePosition].slug}/${data[indicePosition]?.images?.principal}`
+                    );
+                }
+                if (indicePosition + 1 === data.length) {
+                    setIndicePosition(0);
+                } else {
+                    setIndicePosition(indicePosition + 1);
+                }
+            }
+        }, 5000);
+        return () => clearInterval(intervalRanomImage);
+    }, [data, indicePosition]);
+
     return (
         <ContainerDesenvolvimentos>
             <Head>
-                <title>
-                    Tropa.Digital - Desenvolvimento de sistema sob medida
-                </title>
+                <title>Criação de Sistemas sob medida - Tropa Digital</title>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=600px" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -63,8 +86,12 @@ const IndexPage: any = ({ section = false }) => {
                 />
                 <meta name="mobile-web-app-capable" content="yes" />
                 <meta
+                    name="mobile-web-app-status-bar-style"
+                    content="black-translucent"
+                />
+                <meta
                     name="description"
-                    content="Desenvolvimento de sistemas personalizados sob medida."
+                    content="Desenvolvimento de aplicativos Android & iOS."
                 />
                 <meta
                     property="og:image"
@@ -73,19 +100,22 @@ const IndexPage: any = ({ section = false }) => {
                 <link rel="icon" href="/favicon1.ico" />
             </Head>
 
-            <Header />
+            <Header menuHidden={!menu} />
             <div id="head-dev">
                 <div className="center-page">
                     <div className="text">
-                        <h1>Desenvolvimento de software</h1>
+                        <h1>Criação de sistemas sob medida</h1>
                         <span>Mais barato e mais rápido</span>
                         <p>
-                            Tire seu projeto do papel e alcance seu potencial
-                            máximo online! Entre em contato para saber mais e
-                            impulsione seu negócio para o sucesso digital!
+                            Oferecemos serviços especializados em
+                            desenvolvimento de sistemas sob medida! Nossa equipe
+                            transforma suas ideias em realidade, fornecendo
+                            soluções personalizadas de alta qualidade e
+                            profissionalismo para impulsionar o sucesso do seu
+                            negócio.
                         </p>
                         <ContainerButtons
-                            text="Olá, vim do site da Tropa e tenho algumas dúvidas, poderia me ajudar?"
+                            text="Olá, gostaria de algumas informações sobre desenvolvimento de sistemas sob medida, poderia me ajudar?"
                             onClickGATAG={onClickGATAG}
                         />
                     </div>
@@ -98,6 +128,118 @@ const IndexPage: any = ({ section = false }) => {
             <ContainerWaves
                 color={colors.primaryGrey}
                 background={colors.primaryLight}
+                className="wave-banner"
+            />
+
+            <section className="light">
+                <ContainerCenter>
+                    <h4>
+                        Potencialize <u>seu</u> <u>Negócio</u> <u>Online:</u>
+                        <br />
+                        Sistemas Web <u>Sob</u> <u>Medida</u>
+                    </h4>
+
+                    <div className="row-item-line">
+                        <div className="text-default">
+                            <p>
+                                Oferecemos nossa expertise incomparável em
+                                desenvolvimento de sistemas web sob medida para
+                                {` `}
+                                <span>
+                                    impulsionar o crescimento e sucesso do seu
+                                    negócio.
+                                </span>
+                            </p>
+                            <p>
+                                Nossa equipe altamente qualificada e apaixonada
+                                trabalha com excelência para criar soluções
+                                tecnológicas personalizadas que atendam às suas
+                                {` `}
+                                <span>necessidades específicas</span>.
+                                Combinando conhecimento avançado em
+                                desenvolvimento web e as melhores práticas da
+                                indústria, entregamos sistemas web de alto
+                                desempenho, seguros e intuitivos.
+                            </p>
+                            <div className="list-images-ft">
+                                <img src="/images/languages/node.png" />
+                                <img src="/images/languages/reactjs.png" />
+                                <img src="/images/languages/angularjs.png" />
+                                <img src="/images/languages/vuejs.png" />
+                                <img src="/images/languages/postgresql.png" />
+                                <img src="/images/languages/redis.png" />
+                                <img src="/images/languages/mysql.png" />
+                            </div>
+                        </div>
+                        <div className="image astronaut">
+                            <Image
+                                alt="astronaut"
+                                className="effect-astronaut"
+                                src="/images/astronauts.png"
+                                width="500"
+                                height="500"
+                            />
+                        </div>
+                    </div>
+                </ContainerCenter>
+            </section>
+
+            <ContainerWaves
+                className="wave-first"
+                background={colors.primaryGrey}
+                color={colors.primaryLight}
+            />
+
+            <section
+                style={{
+                    backgroundColor: colors.primaryLight,
+                }}
+            >
+                <ContainerCenter>
+                    <div className="row-item-line">
+                        <div
+                            className="text-default"
+                            style={{
+                                maxWidth: '70%',
+                            }}
+                        >
+                            <h4>
+                                Experiência do Usuário Aprimorada <br />
+                                <u>Desenvolvimento</u> <u>de</u>{' '}
+                                <u>Excelência</u>
+                            </h4>
+                            <p>
+                                somos especializados no desenvolvimento de
+                                sistemas web sob medida que oferecem uma
+                                experiência do usuário aprimorada.{' '}
+                                <span>
+                                    Nossa equipe dedicada se esforça para
+                                    entender profundamente suas necessidades
+                                </span>
+                                , garantindo que cada interação com o sistema
+                                seja intuitiva e envolvente. Além disso,
+                                seguimos rigorosamente as melhores práticas de
+                                desenvolvimento, garantindo que seu sistema seja
+                                construído com excelência em desempenho,
+                                segurança e escalabilidade
+                            </p>
+                        </div>
+                        <div className="image email">
+                            <Image
+                                alt="email"
+                                src="/images/discussion.png"
+                                width="500"
+                                height="500"
+                            />
+                        </div>
+                    </div>
+                </ContainerCenter>
+            </section>
+
+            <ContainerWaves
+                className="wave-first"
+                background={colors.primaryLight}
+                color={colors.primaryGrey}
             />
 
             <section id="oque-fazemos">
@@ -346,13 +488,16 @@ const IndexPage: any = ({ section = false }) => {
                         </div>
                     </div>
                 </div>
-                <div className="text-buttons">
-                    <p>Ficou alguma dúvida?</p>
-                    <p className="line">Entre em contato</p>
-                    <ContainerButtons
-                        text="Olá, vim do site da Tropa e tenho algumas dúvidas, poderia me ajudar?"
-                        onClickGATAG={onClickGATAG}
-                    />
+
+                <div className="foot-section">
+                    <div className="text-buttons">
+                        <p>Ficou alguma dúvida?</p>
+                        <p className="line">Entre em contato</p>
+                        <ContainerButtons
+                            text="Olá, gostaria de algumas informações sobre desenvolvimento de sistemas sob medida, poderia me ajudar?"
+                            onClickGATAG={onClickGATAG}
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -391,10 +536,10 @@ const IndexPage: any = ({ section = false }) => {
             <Footer />
             <WPPButton
                 onClickGATAG={onClickGATAG}
-                text="Olá, vim do site da Tropa e tenho algumas dúvidas, poderia me ajudar?"
+                text="Olá, gostaria de algumas informações sobre desenvolvimento de sistemas sob medida, poderia me ajudar?"
             />
         </ContainerDesenvolvimentos>
     );
 };
 
-export default IndexPage;
+export default SistemasPages;

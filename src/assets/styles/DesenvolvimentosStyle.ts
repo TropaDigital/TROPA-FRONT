@@ -318,14 +318,14 @@ export const ContainerDesenvolvimentos = styled.div`
         display: flex;
         flex-direction: column;
         position: relative;
-        z-index: 9999;
+        z-index: 50;
         margin-bottom: -120px;
         background-image: url('/images/noise.png');
         overflow: hidden;
         .center-page {
-            align-items: center;
+            align-items: flex-start;
             display: flex;
-            padding: 10vh 0px;
+            padding: 50px 0px;
             #logo {
                 .tropa {
                     fill: ${colors.primaryDark};
@@ -375,7 +375,7 @@ export const ContainerDesenvolvimentos = styled.div`
                 }
             }
             #video-institucional {
-                height: 360px;
+                height: 435px;
                 min-width: 695px;
                 display: flex;
                 flex-direction: column;
@@ -390,6 +390,7 @@ export const ContainerDesenvolvimentos = styled.div`
                 height: 580px;
                 display: flex;
                 justify-content: flex-end;
+                margin-top: -150px;
                 img {
                     margin-right: -90px;
                     width: 130%;
@@ -408,7 +409,7 @@ export const ContainerDesenvolvimentos = styled.div`
                 background-image: url('/images/computer-mask.png');
                 background-size: 100% auto;
                 margin-bottom: -100px;
-                z-index:;
+                z-index: ;
                 .browser-case {
                     width: 603px;
                     height: 342px;
