@@ -91,7 +91,7 @@ const SitePages: any = () => {
                 />
                 <meta
                     name="description"
-                    content="Desenvolvimento de sistemas personalizados sob medida."
+                    content="Desenvolvimento de sites profissionais."
                 />
                 <meta
                     property="og:image"

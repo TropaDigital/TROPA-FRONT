@@ -407,8 +407,8 @@ export const ContainerDesenvolvimentos = styled.div`
                 border-radius: 10px;
                 background-image: url('/images/computer-mask.png');
                 background-size: 100% auto;
-                margin-bottom: -250px;
-                z-index: -9;
+                margin-bottom: -100px;
+                z-index:;
                 .browser-case {
                     width: 603px;
                     height: 342px;

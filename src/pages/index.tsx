@@ -20,6 +20,7 @@ import ListCases from '../components/Cases/Cases';
 import { ContainerWaves } from '../components/ContainerWaves/ContainerWaves';
 import { ContainerButtons } from '../components/ContainerButtons/ContainerButtons';
 import { MethodologyItem } from '../components/MethodologyItem/MethodologyItem';
+import Header from '../components/Layout/Header';
 
 interface IPropsMethodology {
     number: number;

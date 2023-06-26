@@ -91,7 +91,7 @@ const AppsPages: any = () => {
                 />
                 <meta
                     name="description"
-                    content="Desenvolvimento de sistemas personalizados sob medida."
+                    content="Desenvolvimento de aplicativos Android & iOS."
                 />
                 <meta
                     property="og:image"
