@@ -638,7 +638,8 @@ export const ContainerDesenvolvimentos = styled.div`
         @media (max-width: 600px) {
             margin-bottom: 0px;
             margin-top: 0px;
-            width: 80%;
+            width: 100%;
+            max-width: unset;
             p {
                 font-size: 30px;
             }
