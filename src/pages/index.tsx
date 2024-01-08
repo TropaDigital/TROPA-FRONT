@@ -86,7 +86,6 @@ const IndexPage: any = ({ section = false }) => {
                 <div className="center-page">
                     <div className="text">
                         <h1>Desenvolvimento de software</h1>
-                        <span>Mais barato e mais rápido</span>
                         <p>
                             Tire seu projeto do papel e alcance seu potencial
                             máximo online! Entre em contato para saber mais e

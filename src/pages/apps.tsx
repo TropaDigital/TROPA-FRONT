@@ -104,7 +104,6 @@ const AppsPages: any = ({ menu = false }) => {
                 <div className="center-page">
                     <div className="text">
                         <h1>Criação de APP Android & iOS</h1>
-                        <span>Mais barato e mais rápido</span>
                         <p>
                             Somos especializados em desenvolvimento de
                             aplicativos para Android e iOS! Aqui, transformamos

@@ -105,7 +105,6 @@ const SistemasPages: any = ({ menu = false }) => {
                 <div className="center-page">
                     <div className="text">
                         <h1>Criação de sistemas sob medida</h1>
-                        <span>Mais barato e mais rápido</span>
                         <p>
                             Oferecemos serviços especializados em
                             desenvolvimento de sistemas sob medida! Nossa equipe

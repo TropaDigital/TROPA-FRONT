@@ -105,7 +105,6 @@ const SquadPages: any = ({ menu = false }) => {
                 <div className="center-page">
                     <div className="text">
                         <h1>Alocação de SQUAD</h1>
-                        <span>Mais barato e mais rápido</span>
                         <p>
                             Descubra as vantagens da alocação de squads da Tropa
                             Digital para o desenvolvimento de sistemas sob

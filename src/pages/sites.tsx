@@ -104,7 +104,6 @@ const SitePages: any = ({ menu = false }) => {
                 <div className="center-page">
                     <div className="text">
                         <h1>Criação de Sites Profissionais</h1>
-                        <span>Mais barato e mais rápido</span>
                         <p>
                             Somos uma agência de criação de sites profissionais,
                             nossos sites são desenvolvidos nas melhores
